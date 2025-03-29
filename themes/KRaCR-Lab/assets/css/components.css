@@ -52,3 +52,127 @@
 .content .btn {
   @apply dark:hover:text-text-dark no-underline hover:!text-white;
 }
+
+/* Light mode (default) */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  color: rgb(0, 0, 0);
+}
+
+/* Dark mode */
+.dark .swiper-button-next::after,
+.dark .swiper-button-prev::after {
+  color: rgb(255, 255, 255);
+}
+
+/* Adding new components for accordion */
+/* ===== Theme Variables ===== */
+:root {
+  /* Light Theme Defaults */
+  --accordion-bg: #f9f9f9;
+  --accordion-text: #333;
+  --table-header-bg: #f4f4f4;
+  --table-border: #ccc;
+  --table-zebra: #f8f8f8;
+  --table-text: #333;
+  --theme-toggle-bg: var(--accordion-bg);
+  --theme-toggle-text: var(--accordion-text);
+}
+
+.dark {
+  /* Dark Theme Overrides */
+  --accordion-bg: #2d2d2d;
+  --accordion-text: #ffffff;
+  --table-header-bg: #333333;
+  --table-border: #4d4d4d;
+  --table-zebra: #262626;
+  --table-text: #e0e0e0;
+}
+
+/* ===== Accordion Styles ===== */
+.accordion {
+  margin-bottom: 10px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.accordion-header {
+  position: relative;
+  background-color: var(--accordion-bg);
+  color: var(--accordion-text);
+  padding: 15px 40px 15px 15px;
+  cursor: pointer;
+  font-weight: bold;
+  border: none;
+  width: 100%;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease;
+}
+
+/* Accordion Arrow */
+.accordion-header::after {
+  content: '';
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%) rotate(0deg);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 6px 4px 0 4px;
+  border-color: var(--accordion-text) transparent transparent transparent;
+  transition: transform 0.3s ease;
+}
+
+.accordion-header.active::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+/* ===== Table Styles ===== */
+.content-wrapper {
+  padding: 15px;
+  background-color: var(--accordion-bg);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  color: var(--table-text);
+}
+
+th, td {
+  border: 1px solid var(--table-border);
+  padding: 10px;
+}
+
+th {
+  background-color: var(--table-header-bg);
+  color: var(--table-text);
+  font-weight: 600;
+}
+
+tr:nth-child(even) {
+  background-color: var(--table-zebra);
+}
+
+/* ===== Theme Toggle Button ===== */
+.theme-toggle {
+  position: relative;
+  z-index: 1000;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background: var(--accordion-bg);
+  color: var(--accordion-text);
+  border: 1px solid var(--table-border);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  filter: brightness(0.9);
+}

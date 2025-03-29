@@ -1,6 +1,6 @@
 {{ define "main" }}
   <!-- Banner -->
-  {{ with .Params.banner }}
+  {{ with .Params.banner }} 
     <section class="section pt-14">
       <div class="container">
         <div class="row justify-center">
@@ -11,6 +11,7 @@
             <p class="mb-8">
               {{ .content | markdownify }}
             </p>
+            <!-- Here the Button is added but i disable it from _index.md page -->
             {{ with .button }}
               {{ if .enable }}
                 <a
@@ -25,58 +26,75 @@
               {{ end }}
             {{ end }}
           </div>
-          <div class="col-12">
-            {{ partial "image" (dict "Src" .image "Alt" "Banner image" "Loading" "eager" "Class" "mx-auto lg:!max-w-[800px]" "DisplayXL" "800x" ) }}
-          </div>
         </div>
       </div>
     </section>
   {{ end }}
   <!-- /Banner -->
 
-  <!-- Features -->
-  {{ range $i, $e:= .Params.features }}
-    <section class="section-sm {{ if (modBool $i 2) }}bg-gradient{{ end }}">
-      <div class="container">
-        <div class="row items-center justify-between">
-          <div
-            class="mb:md-0 {{ if not (modBool $i 2) }}
-              md:order-2
-            {{ end }} md:col-5 mb-6">
-            {{ partial "image" (dict "Src" .image "Alt" "feature image" "DisplayXL" "520x" "DisplayLG" "425x" "DisplayMD" "360x") }}
-          </div>
-          <div
-            class="{{ if not (modBool $i 2) }}
-              md:order-1
-            {{ end }} md:col-7 lg:col-6">
-            <h2 class="mb-4">
-              {{ .title | markdownify }}
-            </h2>
-            <p class="mb-8 text-lg">
-              {{ .content | markdownify }}
-            </p>
-            <ul>
-              {{ range .bulletpoints }}
-                <li class="relative mb-4 pl-6">
-                  <i class="fa fa-check absolute left-0 top-1.5"></i>
-                  {{ . | markdownify }}
-                </li>
+  <!-- About Us with Carousel -->
+  <section class="section-sm bg-gradient">
+    <div class="container">
+      <div class="row items-center justify-between">
+        <div class="mb:md-0 md:col-5 mb-6">
+          <!-- Swiper Carousel -->
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              {{ range $index := (seq 1 13) }}
+                <div class="swiper-slide">
+                  {{ partial "image" (dict "Src" (printf "images/homeCarousel/%d.jpg" $index) "Context" $ "Alt" (printf "Carousel Image %d" $index) "Class" "w-full h-full object-cover" "Size" "520x") }}
+                </div>
               {{ end }}
-            </ul>
-            {{ with .button }}
-              {{ if .enable }}
-                <a class="btn btn-primary mt-6" href="{{ .link | absURL }}">
-                  {{ .label }}
-                  <i class="fa fa-arrow-right pl-2"></i>
-                </a>
-              {{ end }}
-            {{ end }}
+            </div>
+            <!-- Controls -->
+            <div class="swiper-button-next custom-swiper-button"></div>
+            <div class="swiper-button-prev custom-swiper-button"></div>
           </div>
         </div>
+        <div class="md:col-7 lg:col-6">
+          <h2 class="mb-4">
+            {{ .Params.AboutUs.title | markdownify }}
+          </h2>
+          <p class="mb-8 text-lg">
+            {{ .Params.AboutUs.content | markdownify }}
+          </p>
+          <ul>
+            {{ range .Params.AboutUs.bulletpoints }}
+              <li class="relative mb-4 pl-6">
+                <i class="fa fa-check absolute left-0 top-1.5"></i>
+                {{ . | markdownify }}
+              </li>
+            {{ end }}
+          </ul>
+          {{ with .Params.AboutUs.button }}
+            {{ if .enable }}
+              <a class="btn btn-primary mt-6" href="{{ .link | absURL }}">
+                {{ .label }}
+                <i class="fa fa-arrow-right pl-2"></i>
+              </a>
+            {{ end }}
+          {{ end }}
+        </div>
       </div>
-    </section>
-  {{ end }}
-  <!-- /Features -->
+    </div>
+  </section>
+  <!-- /About Us with Carousel -->
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      new Swiper('.mySwiper', {
+        loop: true,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      });
+    });
+  </script>
 
   <!-- Testimonials -->
   {{ with site.GetPage "sections/testimonial" }}
@@ -118,9 +136,6 @@
                             <p class="text-text-dark dark:text-white">
                               {{ .designation | markdownify }}
                             </p>
-                            <a href="https://firebasestorage.googleapis.com/v0/b/kracr-website.appspot.com/o/Publications%2Fbookchapter.pdf?alt=media&token=ec4ba408-e93f-4a5c-94f0-d4c839ba38e9" download>
-                              <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/PDF_file_icon.svg" alt="Download PDF" width="24" height="24">
-                            </a> 
                           </div>
                         </div>
                       </div>
@@ -128,8 +143,13 @@
                   {{ end }}
                 </div>
                 <div class="testimonial-slider-pagination mt-9 flex items-center justify-center text-center"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
               </div>
             {{ end }}
+            <div class="text-center mt-8">
+              <a href="{{ site.Params.Projects.link | relLangURL }}" class="btn btn-outline-primary btn-sm">Show More</a>
+            </div>
           </div>
         </div>
       </div>

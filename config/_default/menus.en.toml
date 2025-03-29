@@ -7,41 +7,46 @@ url = "/"
 weight = 1
 
 [[main]]
-name = "About"
+name = "Team"
 url = "/about"
 weight = 2
 
 [[main]]
-name = "Elements"
+name = "News"
 url = "/elements"
 weight = 3
 
 [[main]]
+name = "Publications"
+url = "/elements"
 weight = 4
-name = "Pages"
 
 [[main]]
-parent = "Pages"
+weight = 5
+name = "Projects"
+
+[[main]]
+parent = "Projects"
 name = "Blog"
 url = "/blog"
 
 [[main]]
-parent = "Pages"
+parent = "Projects"
 name = "Contact"
 url = "/contact"
 
 [[main]]
-parent = "Pages"
+parent = "Projects"
 name = "Authors"
 url = "/authors"
 
 [[main]]
-parent = "Pages"
+parent = "Projects"
 name = "Categories"
 url = "/categories"
 
 [[main]]
-parent = "Pages"
+parent = "Projects"
 name = "404 Page"
 url = "/404"
 
