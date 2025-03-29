@@ -1,0 +1,37 @@
+{{ define "main" }}
+    {{ partial "page-header" . }}
+    <section class="section-sm">
+        <div class="container">
+          <div class="row justify-center">
+            <div class="lg:col-10">
+              <div class="content">
+                {{ range site.Data.formatted_accordions.accordions }}
+                    <div class="accordion">
+                        <button class="accordion-header">{{ .Year }}</button>
+                        <div class="accordion-content">
+                            <div class="content-wrapper">  <!-- Added wrapper div -->
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Date</th>
+                                            <th>Description</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {{ range .table | after 1 }}
+                                        <tr>
+                                            <td>{{ index . 0 }}</td>
+                                            <td>{{ index . 1 }}</td>
+                                        </tr>
+                                        {{ end }}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                {{ end }}
+              </div>
+            </div>
+        </div>
+    </section>
+{{ end }}

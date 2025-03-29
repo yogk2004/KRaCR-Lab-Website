@@ -13,7 +13,7 @@ weight = 2
 
 [[main]]
 name = "News"
-url = "/elements"
+url = "/news"
 weight = 3
 
 [[main]]

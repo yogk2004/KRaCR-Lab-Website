@@ -63,18 +63,12 @@
       const content = this.nextElementSibling;
       const isActive = this.classList.contains("active");
 
-      // Close all other accordions
-      document.querySelectorAll(".accordion-header").forEach((btn) => {
-        btn.classList.remove("active");
-      });
-      document.querySelectorAll(".accordion-content").forEach((content) => {
-        content.style.maxHeight = null;
-      });
-
-      // Toggle current accordion
       if (!isActive) {
         this.classList.add("active");
         content.style.maxHeight = `${content.scrollHeight}px`;
+      } else {
+        this.classList.remove("active");
+        content.style.maxHeight = null;
       }
     });
   });
