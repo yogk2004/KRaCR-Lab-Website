@@ -8,7 +8,7 @@ weight = 1
 
 [[main]]
 name = "Team"
-url = "/about"
+url = "/team"
 weight = 2
 
 [[main]]
@@ -27,8 +27,8 @@ name = "Projects"
 
 [[main]]
 parent = "Projects"
-name = "Blog"
-url = "/blog"
+name = "Projects1"
+url = "/projects"
 
 [[main]]
 parent = "Projects"
@@ -37,8 +37,8 @@ url = "/contact"
 
 [[main]]
 parent = "Projects"
-name = "Authors"
-url = "/authors"
+name = "team"
+url = "/team"
 
 [[main]]
 parent = "Projects"

@@ -1,11 +1,10 @@
 {{ define "main" }}
   {{ partial "page-header" . }}
 
-
   <section class="section">
     <div class="container">
       <div class="row">
-        {{ range .RegularPages }}
+        {{ range site.Data.teams }}
           <div class="md:col-6 lg:col-4 mb-14">
             {{ partial "components/author-card" . }}
           </div>

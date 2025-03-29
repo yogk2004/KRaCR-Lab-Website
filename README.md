@@ -26,7 +26,7 @@ We have included almost everything you need to start your Hugo project. Let's se
 - 💬 Disqus Comment
 - 🔳 Syntax Highlighting
 
-### 📄 15+ Pre-designed Pages
+### 📄 15+ Designed Pages
 
 - 🏠 Homepage
 - 👤 About
@@ -180,6 +180,6 @@ If your problem or idea has not been addressed yet, feel free to [open a new iss
 
 ### 📝 License
 
-All rights for the code, images, content, and related materials in this project are reserved by KRaCR Labs, currently managed by Mr. Raghava Mutharaju. For further inquiries or permissions, please contact through <a href = "https://www.linkedin.com/in/raghavamutharaju/">LinkedIn</a>.
+All rights for the code, images, content, and related materials in this project are reserved by KRaCR Labs, currently managed by Mr. Raghava Mutharaju. For further inquiries or permissions, please contact him through <a href = "https://www.linkedin.com/in/raghavamutharaju/">LinkedIn</a>.
 
 ---
