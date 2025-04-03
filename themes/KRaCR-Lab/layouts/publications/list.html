@@ -1,0 +1,64 @@
+{{ define "main" }}
+  {{ partial "page-header" . }}
+
+  <!-- Line Clamp Style (3 lines as an example) -->
+  <style>
+    .clamp-3 {
+      display: -webkit-box;
+      -webkit-line-clamp: 3; /* Up to 3 lines before ellipses */
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  </style>
+
+  <div class="container mx-auto p-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {{ range .Site.Data.publications }}
+        <div class="bg-[#f9f9f9] dark:bg-[#1f1f1f] text-left rounded-2xl shadow-md p-6 transition-colors duration-300 border border-gray-200 dark:border-white flex flex-col h-full">
+          <!-- Top Section: Title, Year, Authors, Category, Description -->
+          <div>
+            <!-- Title & Year -->
+            <div class="flex justify-between items-baseline w-full mb-2">
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white mr-2">
+                {{ .Title }}
+              </h3>
+              <span class="text-sm text-gray-500 dark:text-gray-200">
+                {{ .Year }}
+              </span>
+            </div>
+            
+            <!-- Authors -->
+            <p class="text-sm text-gray-600 dark:text-gray-200">
+              By: {{ .Authors }}
+            </p>
+            
+            <!-- Category Block -->
+            <span class="mt-2 inline-block px-3 py-1 text-xs font-semibold text-white rounded-full 
+              {{ with (index $.Page.Params.categories .Category).color }}{{ . }}{{ else }}bg-gray-500{{ end }}">
+              {{ .Category }}
+            </span>
+            
+            <!-- Description (line clamp) -->
+            <p class="mt-4 text-gray-700 dark:text-gray-200 text-sm clamp-3">
+              {{ .Description }}
+            </p>
+          </div>
+          
+          <!-- Bottom Section: Buttons pinned at bottom of the flex container -->
+          <div class="mt-auto pt-4 flex justify-between items-center">
+            <!-- Explore more button with link based on unique _id -->
+            <a href="/publications/{{ index ._id "$oid" }}/" class="btn btn-outline-primary btn-sm relative inline-flex items-center group">
+              Explore more
+            </a>
+            <!-- Publication URL styled as a button -->
+            {{ if .PublicationURL }}
+              <a href="{{ .PublicationURL }}" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm">
+                Publication URL
+              </a>
+            {{ end }}
+          </div>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+{{ end }}

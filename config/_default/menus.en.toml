@@ -18,36 +18,37 @@ weight = 3
 
 [[main]]
 name = "Publications"
-url = "/elements"
+url = "/publications"
 weight = 4
 
 [[main]]
 weight = 5
 name = "Projects"
-
-[[main]]
-parent = "Projects"
-name = "Projects1"
 url = "/projects"
 
 [[main]]
 parent = "Projects"
-name = "Contact"
+name = "Ontology Modelling and Enrichment"
+url = "/projects"
+
+[[main]]
+parent = "Projects"
+name = "Description Logic Reasoning"
 url = "/contact"
 
 [[main]]
 parent = "Projects"
-name = "team"
+name = "Knowledge Graphs"
 url = "/team"
 
 [[main]]
 parent = "Projects"
-name = "Categories"
+name = "SPARQL Querying"
 url = "/categories"
 
 [[main]]
 parent = "Projects"
-name = "404 Page"
+name = "Semantic Web Applications"
 url = "/404"
 
 

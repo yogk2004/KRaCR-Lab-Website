@@ -1,40 +1,32 @@
-{{/* Extract the unique id from the URL. Assuming URLs are in the form /publications/<unique_id>/ */}}
-{{ $baseURL := .Site.BaseURL }}
-{{ $id := replace .Permalink (printf "%spublications/" $baseURL) "" | trim "/" }}
-
-{{/* Filter your JSON data using the _id.$oid field */}}
-{{ $pubs := site.Data.publications }}
-{{ $publication := index (where $pubs "_id.$oid" $id) 0 }}
-
-{{ if not $publication }}
-  <h1>Publication not found</h1>
-{{ else }}
+<!-- Currently this pag is not working as expected. It is not showing the publication details. -->
+<!-- This template is used to display a single publication. -->
+{{ define "main" }}
   <section class="section pt-7">
     <div class="container">
       <div class="row justify-center">
         <article class="lg:col-10">
           <!-- Title -->
-          <h1 class="h2 mb-4">{{ $publication.Title }}</h1>
+          <h1 class="h2 mb-4">{{ .Title }}</h1>
           
-          <!-- Metadata: Author, non-clickable Category, Year -->
+          <!-- Metadata (non-clickable category) -->
           <ul class="mb-4">
             <li class="mr-4 inline-block">
-              <i class="fa-regular fa-circle-user mr-2"></i>{{ $publication.Authors }}
+              <i class="fa-regular fa-circle-user mr-2"></i>{{ .Authors }}
             </li>
             <li class="mr-4 inline-block">
-              <i class="fa-regular fa-folder mr-2"></i>{{ $publication.Category }}
+              <i class="fa-regular fa-folder mr-2"></i>{{ .Category }}
             </li>
             <li class="mr-4 inline-block">
-              <i class="fa-regular fa-clock mr-2"></i>{{ $publication.Year }}
+              <i class="fa-regular fa-clock mr-2"></i>{{ .Year }}
             </li>
           </ul>
           
-          <!-- Content: Only the Description from JSON -->
+          <!-- Content (only the Description from the JSON) -->
           <div class="content mb-10">
-            {{ $publication.Description }}
+            {{ .Description }}
           </div>
           
-          <!-- Lower Section: Clickable category tag and share icons -->
+          <!-- Lower section: Clickable category tag & share icons -->
           <div class="row items-start justify-between">
             <div class="lg:col-6 mb-10 flex items-center lg:mb-0">
               <h5 class="mr-3">Category :</h5>
@@ -42,8 +34,8 @@
                 <li class="inline-block">
                   <a 
                     class="bg-light hover:bg-primary dark:bg-darkmode-light dark:hover:bg-darkmode-primary dark:hover:text-text-dark m-1 block rounded px-3 py-1 hover:text-white"
-                    href="/publications/category/{{ $publication.Category | urlize | lower }}/">
-                    {{ $publication.Category }}
+                    href="{{ "publications/category/" | relLangURL }}{{ .Category | urlize | lower }}/">
+                    {{ .Category }}
                   </a>
                 </li>
               </ul>
@@ -54,6 +46,8 @@
               {{ partial "social-share" (dict "Context" . "Class" "share-icons lg:ml-auto" "Title" (T "share") "Whatsapp" false "Telegram" false "Linkedin" false "Pinterest" false "Tumblr" false "Vk" false) }}
             </div>
           </div>
+          
+          <!-- Optionally, include comments here -->
         </article>
       </div>
     </div>
