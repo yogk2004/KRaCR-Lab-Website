@@ -1,53 +1,52 @@
-<!-- Currently this pag is not working as expected. It is not showing the publication details. -->
-<!-- This template is used to display a single publication. -->
 {{ define "main" }}
-  <section class="section pt-7">
+  <section class="section pt-7 dark:bg-gray-900">
     <div class="container">
       <div class="row justify-center">
         <article class="lg:col-10">
-          <!-- Title -->
-          <h1 class="h2 mb-4">{{ .Title }}</h1>
+          <!-- Publication Title -->
+          <h1 class="h2 mb-4 dark:text-white">{{ .Title }}</h1>
           
-          <!-- Metadata (non-clickable category) -->
-          <ul class="mb-4">
+          <!-- Publication Metadata: Authors, Category, and Year -->
+          <ul class="mb-4 dark:text-white">
             <li class="mr-4 inline-block">
-              <i class="fa-regular fa-circle-user mr-2"></i>{{ .Authors }}
+              <i class="fa-regular fa-circle-user mr-2"></i>{{ .Params.authors }}
             </li>
             <li class="mr-4 inline-block">
-              <i class="fa-regular fa-folder mr-2"></i>{{ .Category }}
+              <i class="fa-regular fa-folder mr-2"></i>{{ .Params.category }}
             </li>
             <li class="mr-4 inline-block">
-              <i class="fa-regular fa-clock mr-2"></i>{{ .Year }}
+              <i class="fa-regular fa-clock mr-2"></i>{{ .Params.year }}
             </li>
           </ul>
           
-          <!-- Content (only the Description from the JSON) -->
-          <div class="content mb-10">
-            {{ .Description }}
+          <!-- Publication Description -->
+          <div class="content mb-10 dark:text-white">
+            {{ .Params.description }}
           </div>
           
-          <!-- Lower section: Clickable category tag & share icons -->
-          <div class="row items-start justify-between">
-            <div class="lg:col-6 mb-10 flex items-center lg:mb-0">
-              <h5 class="mr-3">Category :</h5>
-              <ul>
-                <li class="inline-block">
-                  <a 
-                    class="bg-light hover:bg-primary dark:bg-darkmode-light dark:hover:bg-darkmode-primary dark:hover:text-text-dark m-1 block rounded px-3 py-1 hover:text-white"
-                    href="{{ "publications/category/" | relLangURL }}{{ .Category | urlize | lower }}/">
-                    {{ .Category }}
-                  </a>
-                </li>
-              </ul>
+          <!-- Optional Publication URL Button -->
+          {{ if .Params.publication_url }}
+            <div class="mb-10">
+              <a href="{{ .Params.publication_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary">
+                View Publication
+              </a>
             </div>
-            
-            <!-- Social share icons -->
-            <div class="lg:col-6 flex items-center">
-              {{ partial "social-share" (dict "Context" . "Class" "share-icons lg:ml-auto" "Title" (T "share") "Whatsapp" false "Telegram" false "Linkedin" false "Pinterest" false "Tumblr" false "Vk" false) }}
+          {{ end }}
+          
+          <!-- Combined Section: Social Share Icons (left) and Back Button (right) -->
+          <div class="flex justify-between items-center mt-10">
+            <!-- Social Share Icons (aligned left) -->
+            <div class="flex items-center">
+              {{ partial "social-share" (dict "Context" . "Class" "share-icons" "Title" (T "share") "Whatsapp" false "Telegram" false "Linkedin" false "Pinterest" false "Tumblr" false "Vk" false) }}
+            </div>
+            <!-- Back to Publications Button (aligned right) -->
+            <div>
+              {{ $pubPage := site.GetPage "section" "publications" }}
+              <a href="{{ $pubPage.RelPermalink }}" class="btn btn-outline-primary btn-sm relative inline-flex items-center group">
+                Back to Publications
+              </a>
             </div>
           </div>
-          
-          <!-- Optionally, include comments here -->
         </article>
       </div>
     </div>
