@@ -1,650 +1,290 @@
 [
-    {
-        "_id": {
-            "$oid": "632c4049abeef5e3588b3372"
-        },
-        "Authors": "Ying Ding, Chenyan Xiong, Raghava Mutharaju, Huajun Chen, Laura Dietz, Wendy Hall, Deborah McGuinness, Edgar Meij, Sam Molyneux, Varish Mulwad, Jeff Z. Pan, Xiang Ren, Jie Tang, Alex Wade, Mengting Wan, Min Zhang",
-        "Category": "TypeA",
-        "Description": "Co-located with The Web (formerly WWW) Conference, 2019: 672-673",
-        "PublicationURL": "https://dl.acm.org/doi/10.1145/3308560.3317700",
-        "Title": "Proceedings of the First Workshop on Knowledge Graph Technology and Applications (KGTA)",
-        "Year": "2019",
-        "createdAt": {
-            "$date": "2022-09-22T11:00:25.136Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-22T11:00:25.136Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "632c4049abeef5e3588b3376"
-        },
-        "Authors": "\tMaleeha Arif Yasvi, Raghava Mutharaju",
-        "Category": "TypeA",
-        "Description": "Proceedings of the 10th Workshop on Ontology Design and Patterns WOP co-located with 18th International Semantic Web Conference (ISWC), 2019: 71-75",
-        "PublicationURL": "http://ceur-ws.org/Vol-2459/short1.pdf",
-        "Title": "ODPReco - A Tool to Recommend Ontology Design Patterns",
-        "Year": "2019",
-        "createdAt": {
-            "$date": "2022-09-22T11:00:25.14Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-22T11:00:25.14Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6501b8eb430dc0208800929c"
-        },
-        "Authors": "Nidhi Goyal, Jushaan Singh Kalra, Charu Sharma, Raghava Mutharaju, Niharika Sachdeva, Ponnurangam Kumaraguru",
-        "Category": "B.Tech",
-        "Description": "European Association for Computational Linguistics (EACL),  May 1-5, 2023",
-        "PublicationURL": "https://firebasestorage.googleapis.com/v0/b/kracr-website.appspot.com/o/Publications%2Fjobxml-eacl.pdf?alt=media&token=8710ead2-89db-4218-b7c3-78d3e2c603e0",
-        "Title": "JobXMLC: EXtreme Multi-Label Classification of Job Skills with Graph Neural Networks",
-        "Year": "2023",
-        "createdAt": {
-            "$date": "2023-09-13T13:28:11.5Z"
-        },
-        "updatedAt": {
-            "$date": "2023-09-13T13:28:11.5Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6504122e10a16f83ddd4adaa"
-        },
-        "Authors": "Gunjan Singh",
-        "Category": "B.Tech",
-        "Description": "Proceedings of the Doctoral Consortium at ISWC 2023",
-        "PublicationURL": "",
-        "Title": "Benchmarking Symbolic and Neuro-Symbolic Description Logic Reasoners",
-        "Year": "2023",
-        "createdAt": {
-            "$date": "2023-09-15T08:13:34.185Z"
-        },
-        "updatedAt": {
-            "$date": "2023-09-15T08:13:34.185Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "632c4049abeef5e3588b3356"
-        },
-        "Authors": "Amrit Mohan Kaushik, Raghava Mutharaju",
-        "Category": "TypeA",
-        "Description": "Advances in Pattern-Based Ontology Engineering, 2021: 337-348",
-        "PublicationURL": "https://ebooks.iospress.nl/volumearticle/56713",
-        "Title": "An Ontology Design Pattern for Modeling Bias",
-        "Year": "2021",
-        "createdAt": {
-            "$date": "2022-09-22T11:00:25.086Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-22T11:00:25.086Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "632c4049abeef5e3588b336e"
-        },
-        "Authors": "Gunjan Singh, Sumit Bhatia, Raghava Mutharaju",
-        "Category": "TypeA",
-        "Description": "International Semantic Web Conference (ISWC), 2020: 81-96",
-        "PublicationURL": "https://link.springer.com/chapter/10.1007%2F978-3-030-62466-8_6",
-        "Title": "OWL2Bench: A Benchmark for OWL 2 Reasoners",
-        "Year": "2020",
-        "createdAt": {
-            "$date": "2022-09-22T11:00:25.127Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-22T11:00:25.127Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "632c4049abeef5e3588b3362"
-        },
-        "Authors": "Sutapa Mondal, Sumit Bhatia, Raghava Mutharaju",
-        "Category": "TypeA",
-        "Description": " AAAI Spring Symposium: Combining Machine Learning with Knowledge Engineering, 2021",
-        "PublicationURL": "http://ceur-ws.org/Vol-2846/paper19.pdf",
-        "Title": "EmEL++: Embeddings for EL++ Description Logic",
-        "Year": "2021",
-        "createdAt": {
-            "$date": "2022-09-22T11:00:25.105Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-22T11:00:25.105Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "632c4049abeef5e3588b3370"
-        },
-        "Authors": "Monika Jain, Paramita Mirza, Raghava Mutharaju",
-        "Category": "TypeA",
-        "Description": "International Conference on Data Science and Management of Data (CODS-COMAD), 2020: 354-354",
-        "PublicationURL": "https://dl.acm.org/doi/10.1145/3371158.3371223",
-        "Title": "Cardinality Extraction from Text for Ontology Learning",
-        "Year": "2020",
-        "createdAt": {
-            "$date": "2022-09-22T11:00:25.132Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-22T11:00:25.132Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "632c4049abeef5e3588b337a"
-        },
-        "Authors": "\tGrigoris Antoniou, Sotiris Batsakis, Raghava Mutharaju, Jeff Z. Pan, Guilin Qi, Ilias Tachmazidis, Jacopo Urbani, Zhangquan Zhou",
-        "Category": "TypeA",
-        "Description": "Knowledge Engineering Review, 2018: 33. e21",
-        "PublicationURL": "https://www.cambridge.org/core/journals/knowledge-engineering-review/article/abs/survey-of-largescale-reasoning-on-the-web-of-data/5E2EEA4AF7124866669B0CC362D61D65",
-        "Title": "A survey of large-scale reasoning on the Web of data",
-        "Year": "2018",
-        "createdAt": {
-            "$date": "2022-09-22T11:00:25.146Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-22T11:00:25.146Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "632c4049abeef5e3588b337c"
-        },
-        "Authors": "\tSherif Sakr, Marcin Wylot, Raghava Mutharaju, Danh Le Phuoc, Irini Fundulaki",
-        "Category": "TypeA",
-        "Description": "Springer, ISBN 978-3-319-73514-6, 2018: 1-223",
-        "PublicationURL": "https://link.springer.com/book/10.1007%2F978-3-319-73515-3",
-        "Title": "Linked Data - Storing, Querying, and Reasoning",
-        "Year": "2018",
-        "createdAt": {
-            "$date": "2022-09-22T11:00:25.148Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-22T11:00:25.148Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6502841e10a16f83ddd4ac68"
-        },
-        "Authors": "Manohar Kumar, Aisha Aijaz, Omkar Chattar, Raghava Mutharaju, Jainendra Shukla",
-        "Category": "B.Tech",
-        "Description": "IEEE Transactions on Affective Computing 2023",
-        "PublicationURL": "",
-        "Title": "Opacity, Transparency, and the Ethics of Affective Computing",
-        "Year": "2023",
-        "createdAt": {
-            "$date": "2023-09-14T03:55:10.513Z"
-        },
-        "updatedAt": {
-            "$date": "2023-09-14T03:55:10.513Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6503efee10a16f83ddd4ad5f"
-        },
-        "Authors": "Ruchi Dwivedi, Muzamil Yaqoob, Aasim Khan, Praveen Priyadarshi, Saad Ahmad, Sudhir Attri, and Raghava Mutharaju",
-        "Category": "B.Tech",
-        "Description": "The South Asia Multidisciplinary Academic Journal (SAMAJ), special issue on the digitalization of urban governance in India: Ideas, Techniques, Practices; 2023",
-        "PublicationURL": "",
-        "Title": "In search of a Social-AQI: Democratic deficits in the air pollution data regime in Delhi",
-        "Year": "2023",
-        "createdAt": {
-            "$date": "2023-09-15T05:47:26.466Z"
-        },
-        "updatedAt": {
-            "$date": "2023-09-15T05:47:26.466Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6503f29710a16f83ddd4ad70"
-        },
-        "Authors": "Bharath Muppasani, Vishal Pallagani, Biplav Srivastava, Raghava Mutharaju, Michael N. Huhns, Vignesh Narayanan",
-        "Category": "B.Tech",
-        "Description": "Planning and Ontology (PLATO) Workshop,  co-located with ICAPS 2023",
-        "PublicationURL": "",
-        "Title": "A Planning Ontology to Represent and Exploit Planning Knowledge for Performance Efficiency",
-        "Year": "2023",
-        "createdAt": {
-            "$date": "2023-09-15T05:58:47.881Z"
-        },
-        "updatedAt": {
-            "$date": "2023-09-15T05:58:47.881Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "659c069f10a16f83ddd4bd49"
-        },
-        "Authors": "Monika Jain, Raghava Mutharaju, Ramakanth Kavuluru, Kuldeep Singh",
-        "Category": "B.Tech",
-        "Description": "In Thirty-Eighth AAAI Conference on Artificial Intelligence (AAAI-24), Vancouver, Canada, February 22 – February 25, 2024",
-        "PublicationURL": "",
-        "Title": "Revisiting Document-Level Relation Extraction with Context-Guided Link Prediction",
-        "Year": "2024",
-        "createdAt": {
-            "$date": "2024-01-08T14:28:47.984Z"
-        },
-        "updatedAt": {
-            "$date": "2024-01-08T14:28:47.984Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "632c4049abeef5e3588b335c"
-        },
-        "Authors": "Eva Blomqvist, Torsten Hahmann, Karl Hammar, Pascal Hitzler, Rinke Hoekstra, Raghava Mutharaju, María Poveda-Villalón, Cogan Shimizu, Martin G Skjæveland, Monika Solanki, Vojtěch Svátek, Lu Zhou",
-        "Category": "TypeA",
-        "Description": "IOS Press, 2021: 1-404",
-        "PublicationURL": "https://www.iospress.nl/book/advances-in-pattern-based-ontology-engineering/",
-        "Title": "Advances in Pattern-Based Ontology Engineering",
-        "Year": "2021",
-        "createdAt": {
-            "$date": "2022-09-22T11:00:25.093Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-22T11:00:25.093Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "632c4049abeef5e3588b336a"
-        },
-        "Authors": "\tGunjan Singh, Sumit Bhatia, Raghava Mutharaju",
-        "Category": "TypeA",
-        "Description": "International Conference on Data Science and Management of Data (CODS-COMAD), 2020: 353-353",
-        "PublicationURL": "https://link.springer.com/chapter/10.1007%2F978-3-030-62466-8_6",
-        "Title": "A Benchmark for OWL 2 DL Reasoners",
-        "Year": "2020",
-        "createdAt": {
-            "$date": "2022-09-22T11:00:25.118Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-22T11:00:25.118Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "632c4049abeef5e3588b336c"
-        },
-        "Authors": "Gunjan Singh, Ashwat Kumar, Kanav Bhagat, Sumit Bhatia, Raghava Mutharaju",
-        "Category": "TypeA",
-        "Description": "International Semantic Web Conference (ISWC) Demos/Industry, 2020: 344-349",
-        "PublicationURL": "http://ceur-ws.org/Vol-2721/paper587.pdf",
-        "Title": "OWL2Bench: Towards a Customizable Benchmark for OWL 2 Reasoners",
-        "Year": "2020",
-        "createdAt": {
-            "$date": "2022-09-22T11:00:25.121Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-22T11:00:25.121Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "632c4049abeef5e3588b335e"
-        },
-        "Authors": "Nikhil Sachdeva, Monika Jain, Raghava Mutharaju",
-        "Category": "TypeA",
-        "Description": "Extended Semantic Web Conference (ESWC) Poster and Demo Track, 2021 ",
-        "PublicationURL": "https://openreview.net/forum?id=uL5eaPThII2",
-        "Title": "Extraction of Union and Intersection Axioms from Biomedical Text",
-        "Year": "2021",
-        "createdAt": {
-            "$date": "2022-09-22T11:00:25.098Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-22T11:00:25.098Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "632c4049abeef5e3588b3366"
-        },
-        "Authors": "Gunjan Singh, Sutapa Mondal, Sumit Bhatia, Raghava Mutharaju",
-        "Category": "TypeA",
-        "Description": "Association for the Advancement of Artificial Intelligence (AAAI), Student Abstract and Poster Program, 2021",
-        "PublicationURL": "https://gunjansingh1.github.io/files/AAAI.pdf",
-        "Title": "Neuro-Symbolic Techniques for Description Logic Reasoning ",
-        "Year": "2021",
-        "createdAt": {
-            "$date": "2022-09-22T11:00:25.112Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-22T11:00:25.112Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "632c4049abeef5e3588b3374"
-        },
-        "Authors": "\tRaj Kamal Yadav, Gunjan Singh, Raghava Mutharaju, Sumit Bhatia",
-        "Category": "TypeA",
-        "Description": " International Semantic Web Conference (ISWC) Satellites, 2019: 145-148",
-        "PublicationURL": "http://ceur-ws.org/Vol-2456/paper38.pdf",
-        "Title": "Towards a Concurrent Approximate Description Logic Reasoner",
-        "Year": "2019",
-        "createdAt": {
-            "$date": "2022-09-22T11:00:25.137Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-22T11:00:25.137Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6501b3f9430dc0208800927e"
-        },
-        "Authors": "Gunjan Singh, Raghava Mutharaju, Pavan Kapanipathi, Nandana Mihindukulasooriya, Mohnish Dubey, Ricardo Usbeck, Debayan Banerjee",
-        "Category": "B.Tech",
-        "Description": "Co-located with 21st International Semantic Web Conference (ISWC 2022), Hybrid event, Hangzhou, China, October 24-27, 2022",
-        "PublicationURL": "",
-        "Title": "Joint Proceedings of SemREC 2022 and SMART 2022 ",
-        "Year": "2022",
-        "createdAt": {
-            "$date": "2023-09-13T13:07:05.562Z"
-        },
-        "updatedAt": {
-            "$date": "2023-09-13T13:07:05.562Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6501b7c3430dc0208800928a"
-        },
-        "Authors": "\tLakshya A. Agrawal, Nikunj Singhal, Raghava Mutharaju",
-        "Category": "B.Tech",
-        "Description": "International Conference on Data Science and Management of Data (CODS-COMAD), 2022",
-        "PublicationURL": "",
-        "Title": "A SPARQL to Cypher Transpiler: Proposal and Initial Results",
-        "Year": "2022",
-        "createdAt": {
-            "$date": "2023-09-13T13:23:15.022Z"
-        },
-        "updatedAt": {
-            "$date": "2023-09-13T13:23:15.022Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "659c065f10a16f83ddd4bd47"
-        },
-        "Authors": "Monika Jain, Kuldeep Singh, and Raghava Mutharaju",
-        "Category": "B.Tech",
-        "Description": " In Machine Learning and Knowledge Discovery in Databases: Research Track: European Conference, ECML PKDD 2023, Turin, Italy, September 18–22, 2023, Proceedings, Part IV. Springer-Verlag, Berlin, Heidelberg, 230–247.",
-        "PublicationURL": "",
-        "Title": "ReOnto: A Neuro-Symbolic Approach for&nbsp;Biomedical Relation Extraction",
-        "Year": "2023",
-        "createdAt": {
-            "$date": "2024-01-08T14:27:43.76Z"
-        },
-        "updatedAt": {
-            "$date": "2024-01-08T14:27:43.76Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "664da7da10a16f83ddd4ce2b"
-        },
-        "Authors": "Monika Jain, Raghava Mutharaju, Kuldeep Singh, Ramakanth Kavuluru",
-        "Category": "B.Tech",
-        "Description": "62nd Annual Meeting of the Association for Computational Linguistics (ACL 2024), August 11-16, 2024",
-        "PublicationURL": "",
-        "Title": "Knowledge-driven Cross-document Relation Extraction",
-        "Year": "2024",
-        "createdAt": {
-            "$date": "2024-05-22T08:07:54.208Z"
-        },
-        "updatedAt": {
-            "$date": "2024-05-22T08:07:54.208Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "632c4049abeef5e3588b3358"
-        },
-        "Authors": "Kritika Venkatachalam, Raghava Mutharaju and Sumit Bhatia ",
-        "Category": "TypeA",
-        "Description": "33rd IEEE International Conference on Tools with Artificial Intelligence (ICTAI2021), November 1-3, 2021 ",
-        "PublicationURL": "",
-        "Title": "    SERC: Syntactic and Semantic Sequence based Event Relation Classification",
-        "Year": "2021",
-        "createdAt": {
-            "$date": "2022-09-22T11:00:25.089Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-22T11:00:25.089Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "632c4049abeef5e3588b335a"
-        },
-        "Authors": "Pramit Bhattacharyya, Raghava Mutharaju",
-        "Category": "TypeA",
-        "Description": "International Conference on Data Science and Management of Data (CODS-COMAD), 2021: 428-428",
-        "PublicationURL": "https://dl.acm.org/doi/10.1145/3430984.3431067",
-        "Title": "OntoSeer: A Tool to Ease the Ontology Development Process",
-        "Year": "2021",
-        "createdAt": {
-            "$date": "2022-09-22T11:00:25.091Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-22T11:00:25.091Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "632c4049abeef5e3588b3360"
-        },
-        "Authors": "Anmol Singhal, Mihir Goyal, Jainendra Shukla, Raghava Mutharaju",
-        "Category": "TypeA",
-        "Description": "23rd International Conference on Human-Computer Interaction (HCI International), 2021",
-        "PublicationURL": "https://www.springerprofessional.de/en/feature-fused-human-activity-recognition-network-ffhar-net/19327222",
-        "Title": "Feature Fused Human Activity Recognition Network (FFHAR-Net)",
-        "Year": "2021",
-        "createdAt": {
-            "$date": "2022-09-22T11:00:25.103Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-22T11:00:25.103Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "632c4049abeef5e3588b3364"
-        },
-        "Authors": "Saad Ahmad, Sudhir Attri, Raghava Mutharaju",
-        "Category": "TypeA",
-        "Description": "12th Workshop on Ontology Design and Patterns (Co-located with ISWC 2021), WOP 2021 ",
-        "PublicationURL": "",
-        "Title": " An Ontology Design Pattern for Modeling Pollution",
-        "Year": "2021",
-        "createdAt": {
-            "$date": "2022-09-22T11:00:25.108Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-22T11:00:25.108Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "632c4049abeef5e3588b3368"
-        },
-        "Authors": "Maleeha Arif Yasvi, Raghava Mutharaju",
-        "Category": "TypeA",
-        "Description": " Advances in Pattern-Based Ontology Engineering, 2021: 258-272",
-        "PublicationURL": "https://ebooks.iospress.nl/volumearticle/56706",
-        "Title": "An Ontology Design Pattern Recommendation System",
-        "Year": "2021",
-        "createdAt": {
-            "$date": "2022-09-22T11:00:25.115Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-22T11:00:25.115Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "632c4049abeef5e3588b3378"
-        },
-        "Authors": "Varish Mulwad, Ivan Bueno, Raghava Mutharaju",
-        "Category": "TypeA",
-        "Description": "US Patent 10,430,517, 2019",
-        "PublicationURL": "https://patents.google.com/patent/US10430517B1/en",
-        "Title": "Apparatus, system and method for providing an agent that intelligently solves information technology issues",
-        "Year": "2019",
-        "createdAt": {
-            "$date": "2022-09-22T11:00:25.142Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-22T11:00:25.142Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6501b774430dc02088009288"
-        },
-        "Authors": "Monika Jain, Kuldeep Singh, Raghava Mutharaju",
-        "Category": "B.Tech",
-        "Description": "European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases,  September 18-23, 2023",
-        "PublicationURL": "https://firebasestorage.googleapis.com/v0/b/kracr-website.appspot.com/o/Publications%2FReOnto_A_Neuro-Symbolic_Approach_for_Biomedical_Re.pdf?alt=media&token=3a19158d-4bd8-4f04-96a6-ad043d68e529",
-        "Title": "ReOnto: A Neuro-Symbolic Approach for Biomedical Relation Extraction",
-        "Year": "2023",
-        "createdAt": {
-            "$date": "2023-09-13T13:21:56.553Z"
-        },
-        "updatedAt": {
-            "$date": "2023-09-13T13:21:56.553Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6501b80a430dc0208800928c"
-        },
-        "Authors": "Gunjan Singh, Raghava Mutharaju, Pavan Kapanipathi",
-        "Category": "B.Tech",
-        "Description": "Co-located with the 20th International Semantic Web Conference (ISWC 2021), Virtual Event, October 27th, 2021",
-        "PublicationURL": "",
-        "Title": "Proceedings of the Semantic Reasoning Evaluation Challenge (SemREC 2021)",
-        "Year": "2021",
-        "createdAt": {
-            "$date": "2023-09-13T13:24:26.663Z"
-        },
-        "updatedAt": {
-            "$date": "2023-09-13T13:24:26.663Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6503f18f10a16f83ddd4ad6a"
-        },
-        "Authors": "Gunjan Singh, Sumit Bhatia, Raghava Mutharaju",
-        "Category": "B.Tech",
-        "Description": "Compendium of Neurosymbolic Artificial Intelligence, Frontiers in Artificial Intelligence and Applications, Vol. 369, IOS Press, 2023, pp. 29–63. ISBN 978-1-64368-407-9",
-        "PublicationURL": "",
-        "Title": "Neuro-Symbolic RDF and Description Logic Reasoners: The State-Of-The-Art and Challenges",
-        "Year": "2023",
-        "createdAt": {
-            "$date": "2023-09-15T05:54:23.548Z"
-        },
-        "updatedAt": {
-            "$date": "2023-09-15T05:54:23.548Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "659c06c610a16f83ddd4bd4b"
-        },
-        "Authors": "R. Kaur, Monika Jain et al.",
-        "Category": "B.Tech",
-        "Description": "IEEE Access, vol. 11, pp. 142433-142446, 2023",
-        "PublicationURL": "",
-        "Title": "An Ontology and Rule-Based Clinical Decision Support System for Personalized Nutrition Recommendations in the Neonatal Intensive Care Unit",
-        "Year": "2023",
-        "createdAt": {
-            "$date": "2024-01-08T14:29:26.562Z"
-        },
-        "updatedAt": {
-            "$date": "2024-01-08T14:29:26.562Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "65eab50710a16f83ddd4c4c2"
-        },
-        "Authors": "Monika Jain",
-        "Category": "B.Tech",
-        "Description": "PhD Symposium Track, The Web Conference 2024 (WWW'24), SINGAPORE, MAY 13 - 17, 2024",
-        "PublicationURL": "",
-        "Title": "Knowledge Enabled Relation Extraction",
-        "Year": "2024",
-        "createdAt": {
-            "$date": "2024-03-08T06:49:43.537Z"
-        },
-        "updatedAt": {
-            "$date": "2024-03-08T06:49:43.537Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "665d851310a16f83ddd4cf6a"
-        },
-        "Authors": "Aisha Aijaz, Raghava Mutharaju, Manohar Kumar, Omkar Chattar and Jainendra Shukla",
-        "Category": "B.Tech",
-        "Description": "ACM IKDD CODS-COMAD 2024, YRS Track. The paper presents an event context module of a larger applied ethics ontology that is able to capture contextual information regarding a scenario where an ethical issue is present.",
-        "PublicationURL": "https://firebasestorage.googleapis.com/v0/b/kracr-website.appspot.com/o/Publications%2FCODS-COMAD_2024_paper_268.pdf?alt=media&token=ea966ca5-bb22-4acf-9260-f1b6d878848b",
-        "Title": "An Ontology to Capture Contextual Information to Facilitate Ethical Decision-making in AI Systems",
-        "Year": "2024",
-        "createdAt": {
-            "$date": "2024-06-03T08:55:47.647Z"
-        },
-        "updatedAt": {
-            "$date": "2024-06-03T08:55:47.647Z"
-        },
-        "__v": 0
-    }
+  {
+    "Authors": "Ying Ding, Chenyan Xiong, Raghava Mutharaju, Huajun Chen, Laura Dietz, Wendy Hall, Deborah McGuinness, Edgar Meij, Sam Molyneux, Varish Mulwad, Jeff Z. Pan, Xiang Ren, Jie Tang, Alex Wade, Mengting Wan, Min Zhang",
+    "Category": "TypeA",
+    "Description": "Co-located with The Web (formerly WWW) Conference, 2019: 672-673",
+    "PublicationURL": "https://dl.acm.org/doi/10.1145/3308560.3317700",
+    "Title": "Proceedings of the First Workshop on Knowledge Graph Technology and Applications (KGTA)",
+    "Year": "2019"
+  },
+  {
+    "Authors": "\tMaleeha Arif Yasvi, Raghava Mutharaju",
+    "Category": "TypeA",
+    "Description": "Proceedings of the 10th Workshop on Ontology Design and Patterns WOP co-located with 18th International Semantic Web Conference (ISWC), 2019: 71-75",
+    "PublicationURL": "http://ceur-ws.org/Vol-2459/short1.pdf",
+    "Title": "ODPReco - A Tool to Recommend Ontology Design Patterns",
+    "Year": "2019"
+  },
+  {
+    "Authors": "Nidhi Goyal, Jushaan Singh Kalra, Charu Sharma, Raghava Mutharaju, Niharika Sachdeva, Ponnurangam Kumaraguru",
+    "Category": "B.Tech",
+    "Description": "European Association for Computational Linguistics (EACL),  May 1-5, 2023",
+    "PublicationURL": "https://firebasestorage.googleapis.com/v0/b/kracr-website.appspot.com/o/Publications%2Fjobxml-eacl.pdf?alt=media&token=8710ead2-89db-4218-b7c3-78d3e2c603e0",
+    "Title": "JobXMLC: EXtreme Multi-Label Classification of Job Skills with Graph Neural Networks",
+    "Year": "2023"
+  },
+  {
+    "Authors": "Gunjan Singh",
+    "Category": "B.Tech",
+    "Description": "Proceedings of the Doctoral Consortium at ISWC 2023",
+    "PublicationURL": "",
+    "Title": "Benchmarking Symbolic and Neuro-Symbolic Description Logic Reasoners",
+    "Year": "2023"
+  },
+  {
+    "Authors": "Amrit Mohan Kaushik, Raghava Mutharaju",
+    "Category": "TypeA",
+    "Description": "Advances in Pattern-Based Ontology Engineering, 2021: 337-348",
+    "PublicationURL": "https://ebooks.iospress.nl/volumearticle/56713",
+    "Title": "An Ontology Design Pattern for Modeling Bias",
+    "Year": "2021"
+  },
+  {
+    "Authors": "Gunjan Singh, Sumit Bhatia, Raghava Mutharaju",
+    "Category": "TypeA",
+    "Description": "International Semantic Web Conference (ISWC), 2020: 81-96",
+    "PublicationURL": "https://link.springer.com/chapter/10.1007%2F978-3-030-62466-8_6",
+    "Title": "OWL2Bench: A Benchmark for OWL 2 Reasoners",
+    "Year": "2020"
+  },
+  {
+    "Authors": "Sutapa Mondal, Sumit Bhatia, Raghava Mutharaju",
+    "Category": "TypeA",
+    "Description": " AAAI Spring Symposium: Combining Machine Learning with Knowledge Engineering, 2021",
+    "PublicationURL": "http://ceur-ws.org/Vol-2846/paper19.pdf",
+    "Title": "EmEL++: Embeddings for EL++ Description Logic",
+    "Year": "2021"
+  },
+  {
+    "Authors": "Monika Jain, Paramita Mirza, Raghava Mutharaju",
+    "Category": "TypeA",
+    "Description": "International Conference on Data Science and Management of Data (CODS-COMAD), 2020: 354-354",
+    "PublicationURL": "https://dl.acm.org/doi/10.1145/3371158.3371223",
+    "Title": "Cardinality Extraction from Text for Ontology Learning",
+    "Year": "2020"
+  },
+  {
+    "Authors": "\tGrigoris Antoniou, Sotiris Batsakis, Raghava Mutharaju, Jeff Z. Pan, Guilin Qi, Ilias Tachmazidis, Jacopo Urbani, Zhangquan Zhou",
+    "Category": "TypeA",
+    "Description": "Knowledge Engineering Review, 2018: 33. e21",
+    "PublicationURL": "https://www.cambridge.org/core/journals/knowledge-engineering-review/article/abs/survey-of-largescale-reasoning-on-the-web-of-data/5E2EEA4AF7124866669B0CC362D61D65",
+    "Title": "A survey of large-scale reasoning on the Web of data",
+    "Year": "2018"
+  },
+  {
+    "Authors": "\tSherif Sakr, Marcin Wylot, Raghava Mutharaju, Danh Le Phuoc, Irini Fundulaki",
+    "Category": "TypeA",
+    "Description": "Springer, ISBN 978-3-319-73514-6, 2018: 1-223",
+    "PublicationURL": "https://link.springer.com/book/10.1007%2F978-3-319-73515-3",
+    "Title": "Linked Data - Storing, Querying, and Reasoning",
+    "Year": "2018"
+  },
+  {
+    "Authors": "Manohar Kumar, Aisha Aijaz, Omkar Chattar, Raghava Mutharaju, Jainendra Shukla",
+    "Category": "B.Tech",
+    "Description": "IEEE Transactions on Affective Computing 2023",
+    "PublicationURL": "",
+    "Title": "Opacity, Transparency, and the Ethics of Affective Computing",
+    "Year": "2023"
+  },
+  {
+    "Authors": "Ruchi Dwivedi, Muzamil Yaqoob, Aasim Khan, Praveen Priyadarshi, Saad Ahmad, Sudhir Attri, and Raghava Mutharaju",
+    "Category": "B.Tech",
+    "Description": "The South Asia Multidisciplinary Academic Journal (SAMAJ), special issue on the digitalization of urban governance in India: Ideas, Techniques, Practices; 2023",
+    "PublicationURL": "",
+    "Title": "In search of a Social-AQI: Democratic deficits in the air pollution data regime in Delhi",
+    "Year": "2023"
+  },
+  {
+    "Authors": "Bharath Muppasani, Vishal Pallagani, Biplav Srivastava, Raghava Mutharaju, Michael N. Huhns, Vignesh Narayanan",
+    "Category": "B.Tech",
+    "Description": "Planning and Ontology (PLATO) Workshop,  co-located with ICAPS 2023",
+    "PublicationURL": "",
+    "Title": "A Planning Ontology to Represent and Exploit Planning Knowledge for Performance Efficiency",
+    "Year": "2023"
+  },
+  {
+    "Authors": "Monika Jain, Raghava Mutharaju, Ramakanth Kavuluru, Kuldeep Singh",
+    "Category": "B.Tech",
+    "Description": "In Thirty-Eighth AAAI Conference on Artificial Intelligence (AAAI-24), Vancouver, Canada, February 22 \u2013 February 25, 2024",
+    "PublicationURL": "",
+    "Title": "Revisiting Document-Level Relation Extraction with Context-Guided Link Prediction",
+    "Year": "2024"
+  },
+  {
+    "Authors": "Eva Blomqvist, Torsten Hahmann, Karl Hammar, Pascal Hitzler, Rinke Hoekstra, Raghava Mutharaju, Mar\u00eda Poveda-Villal\u00f3n, Cogan Shimizu, Martin G Skj\u00e6veland, Monika Solanki, Vojt\u011bch Sv\u00e1tek, Lu Zhou",
+    "Category": "TypeA",
+    "Description": "IOS Press, 2021: 1-404",
+    "PublicationURL": "https://www.iospress.nl/book/advances-in-pattern-based-ontology-engineering/",
+    "Title": "Advances in Pattern-Based Ontology Engineering",
+    "Year": "2021"
+  },
+  {
+    "Authors": "\tGunjan Singh, Sumit Bhatia, Raghava Mutharaju",
+    "Category": "TypeA",
+    "Description": "International Conference on Data Science and Management of Data (CODS-COMAD), 2020: 353-353",
+    "PublicationURL": "https://link.springer.com/chapter/10.1007%2F978-3-030-62466-8_6",
+    "Title": "A Benchmark for OWL 2 DL Reasoners",
+    "Year": "2020"
+  },
+  {
+    "Authors": "Gunjan Singh, Ashwat Kumar, Kanav Bhagat, Sumit Bhatia, Raghava Mutharaju",
+    "Category": "TypeA",
+    "Description": "International Semantic Web Conference (ISWC) Demos/Industry, 2020: 344-349",
+    "PublicationURL": "http://ceur-ws.org/Vol-2721/paper587.pdf",
+    "Title": "OWL2Bench: Towards a Customizable Benchmark for OWL 2 Reasoners",
+    "Year": "2020"
+  },
+  {
+    "Authors": "Nikhil Sachdeva, Monika Jain, Raghava Mutharaju",
+    "Category": "TypeA",
+    "Description": "Extended Semantic Web Conference (ESWC) Poster and Demo Track, 2021 ",
+    "PublicationURL": "https://openreview.net/forum?id=uL5eaPThII2",
+    "Title": "Extraction of Union and Intersection Axioms from Biomedical Text",
+    "Year": "2021"
+  },
+  {
+    "Authors": "Gunjan Singh, Sutapa Mondal, Sumit Bhatia, Raghava Mutharaju",
+    "Category": "TypeA",
+    "Description": "Association for the Advancement of Artificial Intelligence (AAAI), Student Abstract and Poster Program, 2021",
+    "PublicationURL": "https://gunjansingh1.github.io/files/AAAI.pdf",
+    "Title": "Neuro-Symbolic Techniques for Description Logic Reasoning ",
+    "Year": "2021"
+  },
+  {
+    "Authors": "\tRaj Kamal Yadav, Gunjan Singh, Raghava Mutharaju, Sumit Bhatia",
+    "Category": "TypeA",
+    "Description": " International Semantic Web Conference (ISWC) Satellites, 2019: 145-148",
+    "PublicationURL": "http://ceur-ws.org/Vol-2456/paper38.pdf",
+    "Title": "Towards a Concurrent Approximate Description Logic Reasoner",
+    "Year": "2019"
+  },
+  {
+    "Authors": "Gunjan Singh, Raghava Mutharaju, Pavan Kapanipathi, Nandana Mihindukulasooriya, Mohnish Dubey, Ricardo Usbeck, Debayan Banerjee",
+    "Category": "B.Tech",
+    "Description": "Co-located with 21st International Semantic Web Conference (ISWC 2022), Hybrid event, Hangzhou, China, October 24-27, 2022",
+    "PublicationURL": "",
+    "Title": "Joint Proceedings of SemREC 2022 and SMART 2022 ",
+    "Year": "2022"
+  },
+  {
+    "Authors": "\tLakshya A. Agrawal, Nikunj Singhal, Raghava Mutharaju",
+    "Category": "B.Tech",
+    "Description": "International Conference on Data Science and Management of Data (CODS-COMAD), 2022",
+    "PublicationURL": "",
+    "Title": "A SPARQL to Cypher Transpiler: Proposal and Initial Results",
+    "Year": "2022"
+  },
+  {
+    "Authors": "Monika Jain, Kuldeep Singh, and Raghava Mutharaju",
+    "Category": "B.Tech",
+    "Description": " In Machine Learning and Knowledge Discovery in Databases: Research Track: European Conference, ECML PKDD 2023, Turin, Italy, September 18\u201322, 2023, Proceedings, Part IV. Springer-Verlag, Berlin, Heidelberg, 230\u2013247.",
+    "PublicationURL": "",
+    "Title": "ReOnto: A Neuro-Symbolic Approach for&nbsp;Biomedical Relation Extraction",
+    "Year": "2023"
+  },
+  {
+    "Authors": "Monika Jain, Raghava Mutharaju, Kuldeep Singh, Ramakanth Kavuluru",
+    "Category": "B.Tech",
+    "Description": "62nd Annual Meeting of the Association for Computational Linguistics (ACL 2024), August 11-16, 2024",
+    "PublicationURL": "",
+    "Title": "Knowledge-driven Cross-document Relation Extraction",
+    "Year": "2024"
+  },
+  {
+    "Authors": "Kritika Venkatachalam, Raghava Mutharaju and Sumit Bhatia ",
+    "Category": "TypeA",
+    "Description": "33rd IEEE International Conference on Tools with Artificial Intelligence (ICTAI2021), November 1-3, 2021 ",
+    "PublicationURL": "",
+    "Title": "    SERC: Syntactic and Semantic Sequence based Event Relation Classification",
+    "Year": "2021"
+  },
+  {
+    "Authors": "Pramit Bhattacharyya, Raghava Mutharaju",
+    "Category": "TypeA",
+    "Description": "International Conference on Data Science and Management of Data (CODS-COMAD), 2021: 428-428",
+    "PublicationURL": "https://dl.acm.org/doi/10.1145/3430984.3431067",
+    "Title": "OntoSeer: A Tool to Ease the Ontology Development Process",
+    "Year": "2021"
+  },
+  {
+    "Authors": "Anmol Singhal, Mihir Goyal, Jainendra Shukla, Raghava Mutharaju",
+    "Category": "TypeA",
+    "Description": "23rd International Conference on Human-Computer Interaction (HCI International), 2021",
+    "PublicationURL": "https://www.springerprofessional.de/en/feature-fused-human-activity-recognition-network-ffhar-net/19327222",
+    "Title": "Feature Fused Human Activity Recognition Network (FFHAR-Net)",
+    "Year": "2021"
+  },
+  {
+    "Authors": "Saad Ahmad, Sudhir Attri, Raghava Mutharaju",
+    "Category": "TypeA",
+    "Description": "12th Workshop on Ontology Design and Patterns (Co-located with ISWC 2021), WOP 2021 ",
+    "PublicationURL": "",
+    "Title": " An Ontology Design Pattern for Modeling Pollution",
+    "Year": "2021"
+  },
+  {
+    "Authors": "Maleeha Arif Yasvi, Raghava Mutharaju",
+    "Category": "TypeA",
+    "Description": " Advances in Pattern-Based Ontology Engineering, 2021: 258-272",
+    "PublicationURL": "https://ebooks.iospress.nl/volumearticle/56706",
+    "Title": "An Ontology Design Pattern Recommendation System",
+    "Year": "2021"
+  },
+  {
+    "Authors": "Varish Mulwad, Ivan Bueno, Raghava Mutharaju",
+    "Category": "TypeA",
+    "Description": "US Patent 10,430,517, 2019",
+    "PublicationURL": "https://patents.google.com/patent/US10430517B1/en",
+    "Title": "Apparatus, system and method for providing an agent that intelligently solves information technology issues",
+    "Year": "2019"
+  },
+  {
+    "Authors": "Monika Jain, Kuldeep Singh, Raghava Mutharaju",
+    "Category": "B.Tech",
+    "Description": "European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases,  September 18-23, 2023",
+    "PublicationURL": "https://firebasestorage.googleapis.com/v0/b/kracr-website.appspot.com/o/Publications%2FReOnto_A_Neuro-Symbolic_Approach_for_Biomedical_Re.pdf?alt=media&token=3a19158d-4bd8-4f04-96a6-ad043d68e529",
+    "Title": "ReOnto: A Neuro-Symbolic Approach for Biomedical Relation Extraction",
+    "Year": "2023"
+  },
+  {
+    "Authors": "Gunjan Singh, Raghava Mutharaju, Pavan Kapanipathi",
+    "Category": "B.Tech",
+    "Description": "Co-located with the 20th International Semantic Web Conference (ISWC 2021), Virtual Event, October 27th, 2021",
+    "PublicationURL": "",
+    "Title": "Proceedings of the Semantic Reasoning Evaluation Challenge (SemREC 2021)",
+    "Year": "2021"
+  },
+  {
+    "Authors": "Gunjan Singh, Sumit Bhatia, Raghava Mutharaju",
+    "Category": "B.Tech",
+    "Description": "Compendium of Neurosymbolic Artificial Intelligence, Frontiers in Artificial Intelligence and Applications, Vol. 369, IOS Press, 2023, pp. 29\u201363. ISBN 978-1-64368-407-9",
+    "PublicationURL": "",
+    "Title": "Neuro-Symbolic RDF and Description Logic Reasoners: The State-Of-The-Art and Challenges",
+    "Year": "2023"
+  },
+  {
+    "Authors": "R. Kaur, Monika Jain et al.",
+    "Category": "B.Tech",
+    "Description": "IEEE Access, vol. 11, pp. 142433-142446, 2023",
+    "PublicationURL": "",
+    "Title": "An Ontology and Rule-Based Clinical Decision Support System for Personalized Nutrition Recommendations in the Neonatal Intensive Care Unit",
+    "Year": "2023"
+  },
+  {
+    "Authors": "Monika Jain",
+    "Category": "B.Tech",
+    "Description": "PhD Symposium Track, The Web Conference 2024 (WWW'24), SINGAPORE, MAY 13 - 17, 2024",
+    "PublicationURL": "",
+    "Title": "Knowledge Enabled Relation Extraction",
+    "Year": "2024"
+  },
+  {
+    "Authors": "Aisha Aijaz, Raghava Mutharaju, Manohar Kumar, Omkar Chattar and Jainendra Shukla",
+    "Category": "B.Tech",
+    "Description": "ACM IKDD CODS-COMAD 2024, YRS Track. The paper presents an event context module of a larger applied ethics ontology that is able to capture contextual information regarding a scenario where an ethical issue is present.",
+    "PublicationURL": "https://firebasestorage.googleapis.com/v0/b/kracr-website.appspot.com/o/Publications%2FCODS-COMAD_2024_paper_268.pdf?alt=media&token=ea966ca5-bb22-4acf-9260-f1b6d878848b",
+    "Title": "An Ontology to Capture Contextual Information to Facilitate Ethical Decision-making in AI Systems",
+    "Year": "2024"
+  }
 ]

@@ -2,44 +2,45 @@
   {{ partial "page-header" . }}
 
   <style>
-    .clamp-3 {
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
+    /* Custom scrollbar styles */
+    .scrollbar::-webkit-scrollbar {
+      width: 8px;
+    }
+    .scrollbar::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .scrollbar::-webkit-scrollbar-thumb {
+      background-color: #c89b3f;
+      border-radius: 15px;
     }
   </style>
 
   <div class="container mx-auto p-6">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {{ range .Pages }}
+      {{ range $.Site.Data.publications }}
         <div class="bg-[#f9f9f9] dark:bg-[#1f1f1f] text-left rounded-2xl shadow-md p-6 transition-colors duration-300 border border-gray-200 dark:border-white flex flex-col h-full">
           <div>
             <!-- Title & Year -->
             <div class="flex justify-between items-baseline w-full mb-2">
               <h3 class="text-xl font-bold text-gray-900 dark:text-white mr-2">{{ .Title }}</h3>
-              <span class="text-sm text-gray-500 dark:text-gray-200">{{ .Params.year }}</span>
+              <span class="text-sm text-gray-500 dark:text-gray-200">{{ .Year }}</span>
             </div>
             <!-- Authors -->
-            <p class="text-sm text-gray-600 dark:text-gray-200">By: {{ .Params.authors }}</p>
-            <!-- Category (color fetched from publications _index.md front matter) -->
-            <span class="mt-2 inline-block px-3 py-1 text-xs font-semibold text-white rounded-full 
-              {{ with index (site.GetPage "section" "publications").Params.categories .Params.category }}{{ .color }}{{ else }}bg-gray-500{{ end }}">
-              {{ .Params.category }}
+            <p class="text-sm text-gray-600 dark:text-gray-200">By: {{ .Authors }}</p>
+            <!-- Category with dynamic color from index.html -->
+            <span class="mt-2 inline-block px-3 py-1 text-xs font-semibold text-white rounded-full {{ with index (site.GetPage "section" "publications").Params.categories .Category }}{{ .color }}{{ else }}bg-gray-500{{ end }}">
+              {{ .Category }}
             </span>
-            <!-- Description -->
-            <p class="mt-4 text-gray-700 dark:text-gray-200 text-sm clamp-3">
-              {{ .Params.description }}
-            </p>
+            <!-- Scrollable Description -->
+            <div class="mt-4 text-gray-700 dark:text-gray-200 text-sm max-h-72 overflow-y-scroll scrollbar pr-2">
+              {{ .Description }}
+            </div>
           </div>
           
           <!-- Action Buttons -->
           <div class="mt-auto pt-4 flex justify-between items-center">
-            <a href="{{ .RelPermalink }}" class="btn btn-outline-primary btn-sm relative inline-flex items-center group">
-              Explore more
-            </a>
-            {{ if .Params.publication_url }}
-              <a href="{{ .Params.publication_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm">
+            {{ if .PublicationURL }}
+              <a href="{{ .PublicationURL }}" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm">
                 Publication URL
               </a>
             {{ end }}
