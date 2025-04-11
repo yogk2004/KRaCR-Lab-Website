@@ -3,13 +3,33 @@
 
   <section class="section">
     <div class="container">
-      <div class="row">
-        {{ range site.Data.teams }}
-          <div class="md:col-6 lg:col-4 mb-14">
-            {{ partial "components/team-card" . }}
+      {{/* Define the desired ordering using Hugo’s slice function */}}
+      {{ $order := slice "Faculty" "PhD" "Masters" "BTech" "Collaborator" "Alumni" }}
+      {{/* Load the teams data from your JSON file (adjust the path if needed) */}}
+      {{ $teams := site.Data.teams }}
+
+      {{/* Loop through each desired position */}}
+      {{ range $pos := $order }}
+        {{ $group := where $teams "Position" $pos }}
+        {{ if gt (len $group) 0 }}
+          <!-- Position Heading -->
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white my-6 text-center">
+            {{ $pos }}
+          </h2>
+
+          <!-- Responsive divider -->
+          <div class="w-full border-t border-gray-300 dark:border-gray-600 mb-8"></div>
+
+          <!-- Team cards grid -->
+          <div class="row">
+            {{ range $group }}
+              <div class="md:col-6 lg:col-4 mb-14">
+                {{ partial "components/team-card" . }}
+              </div>
+            {{ end }}
           </div>
         {{ end }}
-      </div>
+      {{ end }}
     </div>
   </section>
 {{ end }}

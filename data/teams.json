@@ -1,3081 +1,1681 @@
 [
-    {
-        "_id": {
-            "$oid": "6332cc33a6cbf319a3ab29d8"
-        },
-        "Name": "Akshala Bhatnagar",
-        "Mail": "akshala18012@iiitd.ac.in",
-        "Position": "Alumni",
-        "Interests": "Natural Language Processing, Machine Learning, Deep Learning",
-        "ImageURL": "image-1664275608676",
-        "Designation": "B. Tech",
-        "githubLink": "https://github.com/akshala",
-        "linkedinLink": "https://www.linkedin.com/in/akshala-bhatnagar-855a88187/",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:10:59.943Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:46:48.693Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc33a6cbf319a3ab29de"
-        },
-        "Name": "Ankit Kumar Kamat",
-        "Mail": "ankit19020@iiitd.ac.in",
-        "Position": "BTech",
-        "Interests": "Web Development",
-        "ImageURL": "image-1664275613722",
-        "Designation": "B. Tech",
-        "githubLink": "https://github.com/ankit-mrexcalibur",
-        "linkedinLink": "https://www.linkedin.com/in/ankitkk22/",
-        "twitterLink": "https://twitter.com/er_ankitkamat",
-        "webpageLink": "https://www.ankitkamat.com/",
-        "createdAt": {
-            "$date": "2022-09-27T10:10:59.957Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:46:53.74Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc33a6cbf319a3ab29e4"
-        },
-        "Name": "Anmol Singhal",
-        "Mail": "anmol17332@iiitd.ac.in",
-        "Position": "Alumni",
-        "Interests": "",
-        "ImageURL": "image-1664275596899",
-        "Designation": "(B. Tech ; 2021)",
-        "githubLink": "",
-        "linkedinLink": "https://www.linkedin.com/in/anmol-singhal-3394a718a/",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:10:59.973Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:46:36.913Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc33a6cbf319a3ab29e6"
-        },
-        "Name": "Anuneet Anand",
-        "Mail": "anuneet18022@iiitd.ac.in",
-        "Position": "Alumni",
-        "Interests": "Privacy, Security, Blockchain, Knowledge Graphs",
-        "ImageURL": "image-1664275598113",
-        "Designation": "B. Tech",
-        "githubLink": "https://github.com/anuneetanand",
-        "linkedinLink": "https://www.linkedin.com/in/anuneet-anand/",
-        "twitterLink": "https://twitter.com/anuneet_anand",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:10:59.979Z"
-        },
-        "updatedAt": {
-            "$date": "2023-02-06T10:30:27.896Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc33a6cbf319a3ab29e0"
-        },
-        "Name": "Ankit Mishra",
-        "Mail": "ankit18019@iiitd.ac.in",
-        "Position": "Alumni",
-        "Interests": "Natural language Processing, Machine Learning, Data Mining, Political Science",
-        "ImageURL": "image-1664275598335",
-        "Designation": " B. Tech",
-        "githubLink": "",
-        "linkedinLink": "https://www.linkedin.com/in/ankit-mishra-2b8969172/",
-        "twitterLink": "https://twitter.com/inversed_matrix",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:10:59.963Z"
-        },
-        "updatedAt": {
-            "$date": "2023-02-06T10:47:19.849Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab29f0"
-        },
-        "Name": "Ashwat Kumar",
-        "Mail": "ashwat16023@iiitd.ac.in",
-        "Position": "Alumni",
-        "Interests": "",
-        "ImageURL": "image-1664275597908",
-        "Designation": "(B. tech ; 2020)",
-        "githubLink": "https://github.com/AshwatKumar",
-        "linkedinLink": "",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.003Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:46:37.92Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab29f4"
-        },
-        "Name": "Biswesh Mohapatra",
-        "Mail": "biswesh.mohapatra@iiitb.org",
-        "Position": "Alumni",
-        "Interests": "Natural Language Processing, Knowledge Graphs, Graph ML",
-        "ImageURL": "image-1664275598092",
-        "Designation": "M.Tech IIIT Bangalore",
-        "githubLink": "https://github.com/biswesh456",
-        "linkedinLink": "https://www.linkedin.com/in/biswesh-mohapatra-199158120/",
-        "twitterLink": "https://twitter.com/bis1602",
-        "webpageLink": "https://biswesh456.github.io/",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.011Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:46:38.104Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a0a"
-        },
-        "Name": "Dr. Priyamvada Trivedi",
-        "Mail": "",
-        "Position": "Collaborator",
-        "Interests": "",
-        "ImageURL": "",
-        "Designation": "Ashoka University, India",
-        "githubLink": "",
-        "linkedinLink": "",
-        "twitterLink": "",
-        "webpageLink": "https://sites.google.com/view/priyamvadatrivedi",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.055Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:11:00.055Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a08"
-        },
-        "Name": "Dr. Praveen Priyadarshi",
-        "Mail": "",
-        "Position": "Collaborator",
-        "Interests": "",
-        "ImageURL": "",
-        "Designation": "IIIT-Delhi, India",
-        "githubLink": "",
-        "linkedinLink": "",
-        "twitterLink": "",
-        "webpageLink": "https://www.linkedin.com/in/praveenpriyadarshi/?originalSubdomain=in",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.052Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:11:00.052Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a16"
-        },
-        "Name": "Dr. Tanmoy Chakraborty ",
-        "Mail": "",
-        "Position": "Collaborator",
-        "Interests": "",
-        "ImageURL": "",
-        "Designation": "IIIT-Delhi, India",
-        "githubLink": "",
-        "linkedinLink": "",
-        "twitterLink": "",
-        "webpageLink": "https://www.linkedin.com/in/tanmoy-chakraborty-89553324/?originalSubdomain=in",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.089Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:11:00.089Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a22"
-        },
-        "Name": "Gunjan Singh",
-        "Mail": "gunjans@iiitd.ac.in",
-        "Position": "PhD",
-        "Interests": "Ontology Reasoning and Benchmarking, Reinforcement Learning, Description Logics",
-        "ImageURL": "image-1664275597925",
-        "Designation": "Ph. D Student, IBM Research Fellow",
-        "githubLink": "https://github.com/GunjanSingh1",
-        "linkedinLink": "https://www.linkedin.com/in/gunjan-singh-7a8a59186/",
-        "twitterLink": "https://twitter.com/GunjanS12/",
-        "webpageLink": "https://gunjansingh1.github.io/",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.117Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:46:37.953Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a2c"
-        },
-        "Name": "Isha Gupta",
-        "Mail": "isha18040@iiitd.ac.in",
-        "Position": "Alumni",
-        "Interests": "Web and App Development, Machine Learning, Knowledge Graphs and Databases.",
-        "ImageURL": "image-1664275600757",
-        "Designation": "B. Tech",
-        "githubLink": "https://github.com/IshaGupta18",
-        "linkedinLink": "https://www.linkedin.com/in/isha-gupta-03b8b3194/",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.133Z"
-        },
-        "updatedAt": {
-            "$date": "2023-02-06T10:29:58.259Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a36"
-        },
-        "Name": "Kritika Venkatachalam",
-        "Mail": "kritika17061@iiitd.ac.in",
-        "Position": "Alumni",
-        "Interests": "",
-        "ImageURL": "image-1664275600779",
-        "Designation": "(B.Tech ;  2021)",
-        "githubLink": "GitHub- https://github.com/29kritika/",
-        "linkedinLink": "https://www.linkedin.com/in/29kritika/",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.146Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:46:40.869Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a26"
-        },
-        "Name": "Harsimar Singh",
-        "Mail": "harsimar17290@iiitd.ac.in",
-        "Position": "Alumni",
-        "Interests": "",
-        "ImageURL": "image-1664275596957",
-        "Designation": "(B. Tech ; 2021)",
-        "githubLink": "",
-        "linkedinLink": "https://www.linkedin.com/in/harsimar-singh-6407961ba/",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.123Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:46:36.963Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a28"
-        },
-        "Name": "Himanshu Raj",
-        "Mail": "himanshu18038@iiitd.ac.in",
-        "Position": "Alumni",
-        "Interests": "Machine Learning, Deep Learning, Web Development",
-        "ImageURL": "image-1664275598400",
-        "Designation": "B. Tech",
-        "githubLink": "",
-        "linkedinLink": "https://www.linkedin.com/in/himanshuraj18/",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.126Z"
-        },
-        "updatedAt": {
-            "$date": "2023-02-06T10:46:29.855Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a40"
-        },
-        "Name": "Meenakshi Maindola",
-        "Mail": "meenakshi18081@iiitd.ac.in",
-        "Position": "Alumni",
-        "Interests": "Knowledge Graphs, Data Mining",
-        "ImageURL": "image-1664275600108",
-        "Designation": "(M. Tech ; 2020)",
-        "githubLink": "",
-        "linkedinLink": "https://www.linkedin.com/in/meenakshi-maindola-61000a14a",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.161Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:46:40.15Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a42"
-        },
-        "Name": "Meetakshi Setiya",
-        "Mail": "meetakshi19253@iiitd.ac.in",
-        "Position": "Alumni",
-        "Interests": "UI/UX design, Computational Biology, Learning and Memory",
-        "ImageURL": "image-1664275607335",
-        "Designation": "B. Tech",
-        "githubLink": "https://github.com/meetakshi253",
-        "linkedinLink": "https://www.linkedin.com/in/meetakshisetiya/",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.163Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:46:47.344Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a48"
-        },
-        "Name": "Mohit Kumar",
-        "Mail": "",
-        "Position": "Collaborator",
-        "Interests": "",
-        "ImageURL": "",
-        "Designation": "Ashoka University, India",
-        "githubLink": "",
-        "linkedinLink": "",
-        "twitterLink": "",
-        "webpageLink": "https://www.linkedin.com/in/mohitkharb/",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.173Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:11:00.173Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a4a"
-        },
-        "Name": "Mohnish Agrawal",
-        "Mail": "mohnish18053@iiitd.ac.in",
-        "Position": "BTech",
-        "Interests": "Big data, Machine & deep learning, Economics ",
-        "ImageURL": "image-1664275608462",
-        "Designation": "B. Tech",
-        "githubLink": "https://github.com/Mohnish-Agrawal ",
-        "linkedinLink": "www.linkedin.com/in/mohnish-agrawal",
-        "twitterLink": "",
-        "webpageLink": "https://mohnish-agrawal.github.io/ ",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.177Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:46:48.48Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a44"
-        },
-        "Name": "Mihir Chaturvedi",
-        "Mail": "mihir19061@iiitd.ac.in",
-        "Position": "BTech",
-        "Interests": "Human-Computer Interaction, Networking",
-        "ImageURL": "image-1664275610421",
-        "Designation": "B. Tech",
-        "githubLink": "https://github.com/plibither8",
-        "linkedinLink": "https://linkedin.com/in/plibither8",
-        "twitterLink": "https://twitter.com/plibither8",
-        "webpageLink": "https://mihir.ch",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.165Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:46:50.553Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a58"
-        },
-        "Name": "Nikhil Sachdeva",
-        "Mail": "nikhil16061@iiitd.ac.in",
-        "Position": "Alumni",
-        "Interests": "",
-        "ImageURL": "image-1664275600784",
-        "Designation": "(B. Tech ; 2020)",
-        "githubLink": "",
-        "linkedinLink": "https://www.linkedin.com/in/nikhil-sachdeva-560093141/",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.207Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:46:40.881Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a50"
-        },
-        "Name": "Muzamil Yaqoob",
-        "Mail": "Muzamil.Yaqoob@sopp.iitd.ac.in",
-        "Position": "Alumni",
-        "Interests": "",
-        "ImageURL": "image-1664275619097",
-        "Designation": "Ph. D Student, IIT Delhi",
-        "githubLink": "",
-        "linkedinLink": "linkedin.com/in/muzamil-yaqoob-133b221a7",
-        "twitterLink": "https://twitter.com/yaqoobmuzamil?lang=en",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.195Z"
-        },
-        "updatedAt": {
-            "$date": "2023-02-06T10:48:08.251Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a6a"
-        },
-        "Name": "Prof. Ponnurangam Kumaraguru",
-        "Mail": "",
-        "Position": "Collaborator",
-        "Interests": "",
-        "ImageURL": "",
-        "Designation": " IIIT-Hyderabad, India",
-        "githubLink": "",
-        "linkedinLink": "",
-        "twitterLink": "",
-        "webpageLink": "https://www.linkedin.com/in/ponguru/?originalSubdomain=in",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.23Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:11:00.23Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a6c"
-        },
-        "Name": "Prof. Srinivasaraghavan",
-        "Mail": "",
-        "Position": "Collaborator",
-        "Interests": "",
-        "ImageURL": "",
-        "Designation": "IIIT-Bangalore, India",
-        "githubLink": "",
-        "linkedinLink": "",
-        "twitterLink": "",
-        "webpageLink": "https://www.iiitb.ac.in/faculty/g-srinivasaraghavan",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.233Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:11:00.233Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a74"
-        },
-        "Name": "Rahul Gupta",
-        "Mail": "rahul20311@iiitd.ac.in",
-        "Position": "Alumni",
-        "Interests": "Machine Learning",
-        "ImageURL": "image-1664275598625",
-        "Designation": "M. Tech",
-        "githubLink": "https://github.com/rahul20311",
-        "linkedinLink": "https://www.linkedin.com/in/rahul-gupta-2b5680128",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.241Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:46:38.656Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a7e"
-        },
-        "Name": "Rishi Raj",
-        "Mail": "rishi19090@iiitd.ac.in",
-        "Position": "BTech",
-        "Interests": "Machine learning, Data Mining",
-        "ImageURL": "image-1664275644132",
-        "Designation": "B. Tech ",
-        "githubLink": "https://github.com/rishiraj4721",
-        "linkedinLink": "",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.261Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:47:24.16Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a68"
-        },
-        "Name": "Priya Rajpurohit",
-        "Mail": "priya15073@iiitd.ac.in",
-        "Position": "Alumni",
-        "Interests": "",
-        "ImageURL": "image-1664275612637",
-        "Designation": "(B. Tech ; 2020)",
-        "githubLink": "https://github.com/Priya15073",
-        "linkedinLink": "https://www.linkedin.com/in/priyarajp",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.228Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:46:52.644Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a6e"
-        },
-        "Name": "Puru Kathuria",
-        "Mail": "puru18143@iiitd.ac.in",
-        "Position": "Alumni",
-        "Interests": "",
-        "ImageURL": "image-1664275597173",
-        "Designation": "(M. Tech ; 2020)",
-        "githubLink": "",
-        "linkedinLink": "https://www.linkedin.com/in/purukathuria/",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.234Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:46:37.185Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a8c"
-        },
-        "Name": "Saad Ahmad",
-        "Mail": "saad18409@iiitd.ac.in",
-        "Position": "BTech",
-        "Interests": "Data Science and Machine Learning, Streamlining data collection and structuring",
-        "ImageURL": "image-1664275602612",
-        "Designation": "B. Tech",
-        "githubLink": "https://github.com/DaasDaham",
-        "linkedinLink": "https://www.linkedin.com/in/saad-ahmad-10384b195/",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.282Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:46:42.624Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a96"
-        },
-        "Name": "Sudhir Attri",
-        "Mail": "sudhir18267@iiitd.ac.in",
-        "Position": "BTech",
-        "Interests": "ML, Computer Vision, Natural Language Processing",
-        "ImageURL": "image-1664275629437",
-        "Designation": "B. Tech",
-        "githubLink": "https://github.com/confusement",
-        "linkedinLink": "https://www.linkedin.com/in/sudhir-attri-58875a1ba/",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.315Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:47:09.534Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a98"
-        },
-        "Name": "Sutapa Mondal",
-        "Mail": "sutapa18056@iiitd.ac.in",
-        "Position": "Alumni",
-        "Interests": "",
-        "ImageURL": "image-1664275623555",
-        "Designation": "(M. Tech ; 2020)",
-        "githubLink": "https://github.com/kracr/EmELpp",
-        "linkedinLink": "https://www.linkedin.com/in/sutapa-mondal-b6080769/",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.317Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:47:03.588Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a82"
-        },
-        "Name": "Ritesh Panwar",
-        "Mail": "ritesh19384@iiitd.ac.in",
-        "Position": "BTech",
-        "Interests": "Machine Learning, Programming and Development, Data Science, Web Technologies, and Economics",
-        "ImageURL": "image-1664275601182",
-        "Designation": "B. Tech",
-        "githubLink": "https://github.com/ritesh-panwar",
-        "linkedinLink": "www.linkedin.com/in/riteshpanwar",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.268Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:46:41.217Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2aa2"
-        },
-        "Name": "Vandana Miglani",
-        "Mail": "vandana.miglani.12@gmail.com",
-        "Position": "Alumni",
-        "Interests": "",
-        "ImageURL": "image-1664275599857",
-        "Designation": "(Intern)",
-        "githubLink": "",
-        "linkedinLink": "https://www.linkedin.com/in/vandana-miglani/",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.327Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:46:39.87Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "63e0d827cee745933f704efb"
-        },
-        "Name": "Khushi Agarwal",
-        "Mail": "khushi19312@iiitd.ac.in",
-        "Position": "BTech",
-        "Interests": "Human-Computer Interaction, Data analysis, and Programmable Networks",
-        "ImageURL": "image-1675679783170",
-        "Designation": "B. Tech",
-        "githubLink": "",
-        "linkedinLink": "https://www.linkedin.com/in/khushi-agarwal-0a14871a7/",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2023-02-06T10:36:23.376Z"
-        },
-        "updatedAt": {
-            "$date": "2023-02-06T10:36:23.376Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6503ec2e10a16f83ddd4ad48"
-        },
-        "Name": "Surya Prakash",
-        "Mail": "",
-        "Position": "Collaborator",
-        "Interests": "",
-        "ImageURL": "",
-        "Designation": "Daksh India",
-        "githubLink": "",
-        "linkedinLink": "",
-        "twitterLink": "",
-        "webpageLink": "https://in.linkedin.com/in/suryaprakashbs",
-        "createdAt": {
-            "$date": "2023-09-15T05:31:26.008Z"
-        },
-        "updatedAt": {
-            "$date": "2023-09-15T05:31:26.008Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6503ed6510a16f83ddd4ad52"
-        },
-        "Name": "Shalini Bansal",
-        "Mail": "",
-        "Position": "Collaborator",
-        "Interests": "",
-        "ImageURL": "",
-        "Designation": "HopOn India",
-        "githubLink": "",
-        "linkedinLink": "https://in.linkedin.com/in/shalini-bansal-7a66226",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2023-09-15T05:36:37.125Z"
-        },
-        "updatedAt": {
-            "$date": "2023-09-15T05:36:37.125Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "655b55bb10a16f83ddd4b63c"
-        },
-        "Name": "Parmesh Yadav",
-        "Mail": "parmesh20319@iiitd.ac.in",
-        "Position": "BTech",
-        "Interests": "LLMs and Prompt Engineering, Knowledge Graphs",
-        "ImageURL": "image-1700484538422",
-        "Designation": "B. Tech",
-        "githubLink": "https://github.com/Parmesh-Yadav",
-        "linkedinLink": "https://www.linkedin.com/in/parmesh-yadav-29542b22b/",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2023-11-20T12:48:59.197Z"
-        },
-        "updatedAt": {
-            "$date": "2023-11-20T12:48:59.197Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "655b598d10a16f83ddd4b648"
-        },
-        "Name": "Daksh Sammi",
-        "Mail": "daksh21459@iiitd.ac.in",
-        "Position": "BTech",
-        "Interests": "Computer Science and biosciences",
-        "ImageURL": "image-1700485516772",
-        "Designation": "B. Tech",
-        "githubLink": "https://github.com/DakshSammi",
-        "linkedinLink": "https://www.linkedin.com/in/daksh-sammi/",
-        "twitterLink": "https://twitter.com/DennisShacks",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2023-11-20T13:05:17.537Z"
-        },
-        "updatedAt": {
-            "$date": "2023-11-20T13:05:17.537Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab29f2"
-        },
-        "Name": "Ayush Garg",
-        "Mail": "ayush19030@iiitd.ac.in",
-        "Position": "BTech",
-        "Interests": "Knowledge Graph, Chatbot Development",
-        "ImageURL": "image-1664275605553",
-        "Designation": "B. Tech",
-        "githubLink": "https://github.com/gargayush18",
-        "linkedinLink": "https://www.linkedin.com/in/ayushhgarg/",
-        "twitterLink": "https://twitter.com/AyushGa15762280",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.007Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:46:45.562Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a00"
-        },
-        "Name": "Dr. Kuldeep Singh",
-        "Mail": "",
-        "Position": "Collaborator",
-        "Interests": "",
-        "ImageURL": "",
-        "Designation": "Cerence, Germany",
-        "githubLink": "",
-        "linkedinLink": "",
-        "twitterLink": "",
-        "webpageLink": "https://www.kulsingh.com/",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.04Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:11:00.04Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab29fe"
-        },
-        "Name": "Dr. Jainendra Shukla",
-        "Mail": "",
-        "Position": "Collaborator",
-        "Interests": "",
-        "ImageURL": "",
-        "Designation": "IIIT-Delhi, India",
-        "githubLink": "",
-        "linkedinLink": "",
-        "twitterLink": "",
-        "webpageLink": "https://jainendra.in/",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.037Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:11:00.037Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a02"
-        },
-        "Name": "Dr. Manohar Kumar",
-        "Mail": "",
-        "Position": "Collaborator",
-        "Interests": "",
-        "ImageURL": "",
-        "Designation": "IIIT-Delhi, India",
-        "githubLink": "",
-        "linkedinLink": "",
-        "twitterLink": "",
-        "webpageLink": "https://www.linkedin.com/in/manohar-kumar-98669ab0/?originalSubdomain=in",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.043Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:11:00.043Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a0e"
-        },
-        "Name": "Dr. Srikanta Bedathur",
-        "Mail": "",
-        "Position": "Collaborator",
-        "Interests": "",
-        "ImageURL": "",
-        "Designation": "IIT-Delhi, India",
-        "githubLink": "",
-        "linkedinLink": "",
-        "twitterLink": "",
-        "webpageLink": "https://www.cse.iitd.ac.in/~srikanta/",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.06Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:11:00.06Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a1a"
-        },
-        "Name": "Dr. Vikram Goyal",
-        "Mail": "",
-        "Position": "Collaborator",
-        "Interests": "",
-        "ImageURL": "",
-        "Designation": "IIIT-Delhi, India",
-        "githubLink": "",
-        "linkedinLink": "",
-        "twitterLink": "",
-        "webpageLink": "https://www.linkedin.com/in/vikram-goyal-7a684213/?originalSubdomain=in",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.1Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:11:00.1Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a14"
-        },
-        "Name": "Dr. Sumit Bhatia",
-        "Mail": "",
-        "Position": "Collaborator",
-        "Interests": "",
-        "ImageURL": "",
-        "Designation": "Adobe Systems, India",
-        "githubLink": "",
-        "linkedinLink": "",
-        "twitterLink": "",
-        "webpageLink": "http://sumitbhatia.net/",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.082Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:11:00.082Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a34"
-        },
-        "Name": "Keshav Gambhir",
-        "Mail": "keshav19249@iiitd.ac.in",
-        "Position": "Alumni",
-        "Interests": "",
-        "ImageURL": "image-1664275597116",
-        "Designation": "B. Tech",
-        "githubLink": "",
-        "linkedinLink": "https://www.linkedin.com/in/keshav-gambhir-97a329188/",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.144Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:46:37.13Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a3e"
-        },
-        "Name": "Mayank Kharbanda",
-        "Mail": "mayankk@iiitd.ac.in",
-        "Position": "PhD",
-        "Interests": "Multi-modal Knowledge Graphs, Discrete Mathematics, Theoretical Machine Learning",
-        "ImageURL": "image-1664275604489",
-        "Designation": "Ph. D Student, UGC Research Fellow",
-        "githubLink": "https://github.com/MayankKharbanda",
-        "linkedinLink": "https://www.linkedin.com/in/mayankkharbanda",
-        "twitterLink": "https://twitter.com/Mayankharbanda",
-        "webpageLink": "https://www.iiitd.edu.in/~mayankk/",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.159Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:46:44.507Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a4e"
-        },
-        "Name": "Mudit Balooja",
-        "Mail": "mudit19258@iiitd.ac.in",
-        "Position": "BTech",
-        "Interests": "Natural Language Processing, Ontology Modelling and Cloud Computing",
-        "ImageURL": "image-1664275627975",
-        "Designation": "B. Tech",
-        "githubLink": "https://github.com/Vikinghacker258",
-        "linkedinLink": "https://www.linkedin.com/in/mudit-balooja-15885a193",
-        "twitterLink": "https://mobile.twitter.com/MBalooja",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.181Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:47:08.01Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a52"
-        },
-        "Name": "Nandika Jain",
-        "Mail": "nandika19064@iiitd.ac.in",
-        "Position": "BTech",
-        "Interests": "Semantic Web, Concurrent and Learned Data Structures",
-        "ImageURL": "image-1664275599982",
-        "Designation": "B. Tech ",
-        "githubLink": "https://github.com/nandikajain",
-        "linkedinLink": "https://www.linkedin.com/in/nandikajain",
-        "twitterLink": "",
-        "webpageLink": "https://nandikajain.github.io",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.198Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:46:39.991Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a62"
-        },
-        "Name": "Pragya Sethi",
-        "Mail": "pragya18067@iiitd.ac.in",
-        "Position": "Alumni",
-        "Interests": "NLP, Semantic web",
-        "ImageURL": "image-1664275602111",
-        "Designation": "B. Tech",
-        "githubLink": "https://github.com/Pragya2804",
-        "linkedinLink": "https://www.linkedin.com/in/pragya-sethi-4618a31a3/",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.217Z"
-        },
-        "updatedAt": {
-            "$date": "2023-02-06T10:30:12.357Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a54"
-        },
-        "Name": "Nidhi Goyal",
-        "Mail": "nidhig@iiitd.ac.in",
-        "Position": "PhD",
-        "Interests": "Knowledge Graphs Construction, Knowledge Graph Embeddings, Machine Learning, NLP",
-        "ImageURL": "image-1664275599092",
-        "Designation": "Ph. D Student, P. M. Research Fellow",
-        "githubLink": "https://github.com/nidhigoyal123",
-        "linkedinLink": "https://www.linkedin.com/in/nidhi-goyal-4b8b5216b/?originalSubdomain=in",
-        "twitterLink": "https://twitter.com/NidhigoyalGoyal",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.201Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:46:39.102Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a5e"
-        },
-        "Name": "Osheen Sachdev",
-        "Mail": "osheen18059@iiitd.ac.in",
-        "Position": "Alumni",
-        "Interests": "Exploring Knowledge Graphs and its applications in chatbots",
-        "ImageURL": "image-1664275604403",
-        "Designation": "B. Tech",
-        "githubLink": "https://github.com/oshhh",
-        "linkedinLink": "http://linkedin.com/in/osheen-sachdev-b74923176/",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.214Z"
-        },
-        "updatedAt": {
-            "$date": "2023-02-06T10:30:22.135Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a7a"
-        },
-        "Name": "Rhythm Patel",
-        "Mail": "rhythmkumar18083@iiitd.ac.in",
-        "Position": "BTech",
-        "Interests": "Machine Learning, Deep Learning, Economics, Big Data",
-        "ImageURL": "image-1664275616505",
-        "Designation": "B. Tech",
-        "githubLink": "https://rhythm-patel.github.io ",
-        "linkedinLink": "https://www.linkedin.com/in/rhythm-patel/",
-        "twitterLink": "https://twitter.com/TheRhythmPatel",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.25Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:46:56.521Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a78"
-        },
-        "Name": "Raunak Mokhasi",
-        "Mail": "raunak17085@iiitd.ac.in",
-        "Position": "Alumni",
-        "Interests": "",
-        "ImageURL": "image-1664275597618",
-        "Designation": "(B. Tech ; 2021)",
-        "githubLink": "",
-        "linkedinLink": "https://www.linkedin.com/in/raunakmokhasi/",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.248Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:46:37.642Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a90"
-        },
-        "Name": "Sanchit Trivedi",
-        "Mail": "sanchit18091@iiitd.ac.in",
-        "Position": "Alumni",
-        "Interests": "Computer Vision, Machine Learning and Semantic Web",
-        "ImageURL": "image-1664275606671",
-        "Designation": "B. Tech",
-        "githubLink": "https://github.com/Sanchit-Trivedi",
-        "linkedinLink": "https://www.linkedin.com/in/sanchit-trivedi/",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.307Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:46:46.677Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a92"
-        },
-        "Name": "Shashikant Kumar",
-        "Mail": "shashikant18096@iiitd.ac.in",
-        "Position": "Alumni",
-        "Interests": "Ontology Reasoning and Benchmarking",
-        "ImageURL": "image-1664275598606",
-        "Designation": "B. Tech",
-        "githubLink": "https://github.com/crook0",
-        "linkedinLink": "https://www.linkedin.com/in/shashikant-kumar-a1bb4b1b0/",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.31Z"
-        },
-        "updatedAt": {
-            "$date": "2023-02-06T10:45:15.35Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a94"
-        },
-        "Name": "Soumyadeep Paul",
-        "Mail": "soumyadeep18104@iiitd.ac.in",
-        "Position": "Alumni",
-        "Interests": "Web/Mobile technologies, Entrepreneurship",
-        "ImageURL": "image-1664275600990",
-        "Designation": "B. Tech",
-        "githubLink": "",
-        "linkedinLink": "https://www.linkedin.com/in/soumyadeep-paul-3a044619a/",
-        "twitterLink": "",
-        "webpageLink": "https://soumyadeep-paul.imfast.io/",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.312Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:46:41.028Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a9c"
-        },
-        "Name": "Udit Bhati",
-        "Mail": "udit19281@iiitd.ac.in",
-        "Position": "BTech",
-        "Interests": "Knowledge graphs, Machine learning and Ontology Reasoning.",
-        "ImageURL": "image-1664275631223",
-        "Designation": "B. Tech",
-        "githubLink": "https://github.com/udit19281",
-        "linkedinLink": "https://www.linkedin.com/in/udit-bhati-7821101ba",
-        "twitterLink": "",
-        "webpageLink": "https://portfolio-udit.herokuapp.com",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.321Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:47:11.363Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2aa4"
-        },
-        "Name": "Vidhi Sharma",
-        "Mail": "vidhi19286@iiitd.ac.in",
-        "Position": "BTech",
-        "Interests": "Machine Learning and data analysis, Knowledge Graphs",
-        "ImageURL": "image-1664275629911",
-        "Designation": "B. Tech",
-        "githubLink": "https://github.com/vidhi448",
-        "linkedinLink": "https://www.linkedin.com/in/vidhi-sharma-9587441b9/",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.329Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:47:09.927Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "63e0d5a1cee745933f704edd"
-        },
-        "Name": "Apurv Dube",
-        "Mail": "apurvd@iiitd.ac.in",
-        "Position": "PhD",
-        "Interests": "Neuro-symbolic reasoning, Knowledge graphs, Computer Vision",
-        "ImageURL": "image-1675679137593",
-        "Designation": "Ph. D Student",
-        "githubLink": "https://github.com/hypercalm",
-        "linkedinLink": "https://linkedin.com/in/sentience",
-        "twitterLink": "",
-        "webpageLink": "https://apurv.com",
-        "createdAt": {
-            "$date": "2023-02-06T10:25:37.957Z"
-        },
-        "updatedAt": {
-            "$date": "2023-02-06T10:25:37.957Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "63e0d77ccee745933f704ef2"
-        },
-        "Name": "Vedant Gupta",
-        "Mail": "vedant20261@iiitd.ac.in",
-        "Position": "BTech",
-        "Interests": "Semantic Web",
-        "ImageURL": "image-1675679611828",
-        "Designation": "B. Tech",
-        "githubLink": "",
-        "linkedinLink": "https://www.linkedin.com/in/vedant-gupta-oo7/",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2023-02-06T10:33:32.02Z"
-        },
-        "updatedAt": {
-            "$date": "2023-02-06T10:33:32.02Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "63e0d85dcee745933f704efe"
-        },
-        "Name": "Yashasvi Chhabra",
-        "Mail": "yashasvi19290@iiitd.ac.in",
-        "Position": "BTech",
-        "Interests": "Machine Learning, Data Science, Knowledge Graphs",
-        "ImageURL": "image-1675679837075",
-        "Designation": "B. Tech",
-        "githubLink": "https://github.com/yashasvi19290",
-        "linkedinLink": "",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2023-02-06T10:37:17.292Z"
-        },
-        "updatedAt": {
-            "$date": "2023-02-06T10:37:17.292Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "63e0d9d8cee745933f704f0b"
-        },
-        "Name": "Yuvraj Garg",
-        "Mail": "yuvraj19291@iiitd.ac.in",
-        "Position": "BTech",
-        "Interests": "Semantic Web, Machine Learning",
-        "ImageURL": "image-1675680216670",
-        "Designation": "B. Tech",
-        "githubLink": "",
-        "linkedinLink": "https://www.linkedin.com/in/yuvrajgarg100/",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2023-02-06T10:43:36.892Z"
-        },
-        "updatedAt": {
-            "$date": "2023-02-06T10:43:36.892Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6503eda610a16f83ddd4ad55"
-        },
-        "Name": "Dr. Harsh Thakkar",
-        "Mail": "",
-        "Position": "Collaborator",
-        "Interests": "",
-        "ImageURL": "",
-        "Designation": "Osthus, Germany",
-        "githubLink": "",
-        "linkedinLink": "",
-        "twitterLink": "",
-        "webpageLink": "https://harshthakkar.in/",
-        "createdAt": {
-            "$date": "2023-09-15T05:37:42.779Z"
-        },
-        "updatedAt": {
-            "$date": "2023-09-15T05:37:42.779Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "655b561310a16f83ddd4b63e"
-        },
-        "Name": "Pranav Sharma ",
-        "Mail": "pranav20395@iiitd.ac.in",
-        "Position": "BTech",
-        "Interests": "Knowledge Graphs, Machine Learning",
-        "ImageURL": "image-1700484626789",
-        "Designation": "B. Tech",
-        "githubLink": "https://github.com/pranav20395",
-        "linkedinLink": "https://www.linkedin.com/in/pranav-sharma-479932200/",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2023-11-20T12:50:27.571Z"
-        },
-        "updatedAt": {
-            "$date": "2023-11-20T12:50:27.571Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc33a6cbf319a3ab29d4"
-        },
-        "Name": "Ahilya Sinha",
-        "Mail": "ahilyasinha99@gmail.com",
-        "Position": "Alumni",
-        "Interests": "",
-        "ImageURL": "image-1664275608871",
-        "Designation": "(B. Tech ; 2020)",
-        "githubLink": "https://github.com/cactusmachete",
-        "linkedinLink": "www.linkedin.com/in/ahilyasinha",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:10:59.93Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:46:48.878Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc33a6cbf319a3ab29d2"
-        },
-        "Name": "Aditya Garg",
-        "Mail": "aditya18124@iiitd.ac.in",
-        "Position": "Alumni",
-        "Interests": "Machine Learning and Deep Learning , Biological and Ayurvedic Sciences, Applied Mathematics",
-        "ImageURL": "image-1664275600144",
-        "Designation": "B. Tech",
-        "githubLink": "https://github.com/AdityaGarg07",
-        "linkedinLink": "https://www.linkedin.com/in/adityagarg07",
-        "twitterLink": "https://twitter.com/adityagarg07",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:10:59.922Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:46:40.163Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc33a6cbf319a3ab29da"
-        },
-        "Name": "Aman Khan",
-        "Mail": "aman19015@iiitd.ac.in",
-        "Position": "Alumni",
-        "Interests": "",
-        "ImageURL": "image-1664275599128",
-        "Designation": "B. Tech",
-        "githubLink": "",
-        "linkedinLink": "https://www.linkedin.com/in/amankhan24/",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:10:59.948Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:46:39.136Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc33a6cbf319a3ab29d6"
-        },
-        "Name": "Aisha Aijaz",
-        "Mail": "aishaa@iiitd.ac.in",
-        "Position": "PhD",
-        "Interests": "Data Science, Artificial Intelligence, Data Analysis, Business Analytics. ",
-        "ImageURL": "image-1664275600315",
-        "Designation": "Ph. D Student",
-        "githubLink": "https://github.com/aishaaijazahmad",
-        "linkedinLink": "https://www.linkedin.com/in/aishaaijazahmad",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:10:59.937Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:46:40.321Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc33a6cbf319a3ab29ea"
-        },
-        "Name": "Arka Sarkar",
-        "Mail": "arka18222@iiitd.ac.in",
-        "Position": "Alumni",
-        "Interests": "Machine Learning, Deep Learning, Computer Vision",
-        "ImageURL": "image-1664275599793",
-        "Designation": "B. Tech",
-        "githubLink": "https://github.com/ArkaSarkar19",
-        "linkedinLink": "https://www.linkedin.com/in/arka-sarkar-6068731b1/",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:10:59.987Z"
-        },
-        "updatedAt": {
-            "$date": "2023-02-06T10:45:11.216Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc33a6cbf319a3ab29ee"
-        },
-        "Name": "Arushi Jain",
-        "Mail": "arushi18071@iiitd.ac.in",
-        "Position": "Alumni",
-        "Interests": "",
-        "ImageURL": "image-1664275601038",
-        "Designation": "(M. Tech ; 2020)",
-        "githubLink": "",
-        "linkedinLink": "https://www.linkedin.com/in/arushi-jain-708a0782/",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:10:59.998Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:46:41.08Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc33a6cbf319a3ab29ec"
-        },
-        "Name": "Arundhati Bhattacharya",
-        "Mail": "arundhati18225@iiitd.ac.in",
-        "Position": "Alumni",
-        "Interests": "Data Science, Ontology Embeddings, Natural Language Processing",
-        "ImageURL": "image-1664275598381",
-        "Designation": "B. Tech",
-        "githubLink": "https://github.com/arundhati-b",
-        "linkedinLink": "https://www.linkedin.com/in/arundhati-bhattacharya-520b52169/",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:10:59.994Z"
-        },
-        "updatedAt": {
-            "$date": "2023-02-06T10:30:32.491Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab29f8"
-        },
-        "Name": "Dev Rajput",
-        "Mail": "dev19034@iiitd.ac.in",
-        "Position": "Alumni",
-        "Interests": "Neuro-Symbolic AI, Robotics, XR",
-        "ImageURL": "image-1664275603051",
-        "Designation": "B. Tech",
-        "githubLink": "https://github.com/thesantatitan",
-        "linkedinLink": "https://www.linkedin.com/in/dev-rajput-294a9a18a ",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.023Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:46:43.06Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab29fc"
-        },
-        "Name": "Dr. Harpreet Singh",
-        "Mail": "",
-        "Position": "Collaborator",
-        "Interests": "",
-        "ImageURL": "",
-        "Designation": "Child Health Imprints Pvt. Ltd.",
-        "githubLink": "",
-        "linkedinLink": "",
-        "twitterLink": "",
-        "webpageLink": "https://www.linkedin.com/in/harpreet-singh-a530573/",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.034Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:11:00.034Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a0c"
-        },
-        "Name": "Dr. Rajiv Ratn Shah",
-        "Mail": "",
-        "Position": "Collaborator",
-        "Interests": "",
-        "ImageURL": "",
-        "Designation": "IIIT-Delhi, India",
-        "githubLink": "",
-        "linkedinLink": "",
-        "twitterLink": "",
-        "webpageLink": "https://www.linkedin.com/in/rajivratn/?originalSubdomain=in",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.057Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:11:00.057Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a06"
-        },
-        "Name": "Dr. Paro Mishra",
-        "Mail": "",
-        "Position": "Collaborator",
-        "Interests": "",
-        "ImageURL": "",
-        "Designation": "IIIT-Delhi, India",
-        "githubLink": "",
-        "linkedinLink": "",
-        "twitterLink": "",
-        "webpageLink": "https://www.linkedin.com/in/paro-mishra-806171184/?originalSubdomain=in",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.05Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:11:00.05Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a04"
-        },
-        "Name": "Dr. Paramita Mirza",
-        "Mail": "",
-        "Position": "Collaborator",
-        "Interests": "",
-        "ImageURL": "",
-        "Designation": "MPI, Saarbrücken, Germany",
-        "githubLink": "",
-        "linkedinLink": "",
-        "twitterLink": "",
-        "webpageLink": "https://paramitamirza.com/",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.047Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:11:00.047Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a1c"
-        },
-        "Name": "Garvita Saxena",
-        "Mail": "garvita18072@iiitd.ac.in",
-        "Position": "Alumni",
-        "Interests": "",
-        "ImageURL": "image-1664275597140",
-        "Designation": "(M. Tech ; 2020)",
-        "githubLink": "",
-        "linkedinLink": "https://www.linkedin.com/in/garvita-saxena-a50293139/",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.104Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:46:37.161Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a20"
-        },
-        "Name": "Gitansh Raj Satija",
-        "Mail": "gitansh19241@iiitd.ac.in",
-        "Position": "Alumni",
-        "Interests": "Multimedia Computing, Natural Language Processing, Interactive Product Design, AI/ML, Operating Systems",
-        "ImageURL": "image-1664275600556",
-        "Designation": "B. Tech",
-        "githubLink": "https://github.com/gitongithub",
-        "linkedinLink": "https://www.linkedin.com/in/gitansh-raj-satija/",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.114Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:46:40.683Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a1e"
-        },
-        "Name": "Gaurav Dawra",
-        "Mail": "gaurav19039@iiitd.ac.in",
-        "Position": "BTech",
-        "Interests": "Machine learning, algorithms, data structures, computational bounds",
-        "ImageURL": "image-1664275599576",
-        "Designation": "B. Tech",
-        "githubLink": "",
-        "linkedinLink": "https://www.linkedin.com/in/gaurav-dawra-a2a935200/",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.11Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:46:39.586Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a18"
-        },
-        "Name": "Dr. Tavpritesh Sethi",
-        "Mail": "",
-        "Position": "Collaborator",
-        "Interests": "",
-        "ImageURL": "",
-        "Designation": "IIIT-Delhi, India",
-        "githubLink": "",
-        "linkedinLink": "",
-        "twitterLink": "",
-        "webpageLink": "https://www.iiitd.ac.in/tavpritesh",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.095Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:11:00.095Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a30"
-        },
-        "Name": "Kanav Bhagat",
-        "Mail": "kanav16046@iiitd.ac.in",
-        "Position": "Alumni",
-        "Interests": "",
-        "ImageURL": "image-1664275607829",
-        "Designation": "(B. Tech ; 2020)",
-        "githubLink": "https://github.com/kanavbhagat",
-        "linkedinLink": "https://in.linkedin.com/in/kanav-bhagat-133229130",
-        "twitterLink": "https://twitter.com/kanavbhagat98",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.139Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:46:47.881Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a2e"
-        },
-        "Name": "Jishnu Raj Parashar",
-        "Mail": "jishnu19048@iiitd.ac.in",
-        "Position": "BTech",
-        "Interests": "Concurrent and Thread-safe programming ",
-        "ImageURL": "image-1664275600569",
-        "Designation": "B. Tech",
-        "githubLink": "",
-        "linkedinLink": "https://www.linkedin.com/in/jishnu-raj-parashar-5889b4190/",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.135Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:46:40.741Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a32"
-        },
-        "Name": "Karunakar Chinnabathini",
-        "Mail": "chinnabathini19008@iiitd.ac.in",
-        "Position": "Alumni",
-        "Interests": "",
-        "ImageURL": "image-1664275600016",
-        "Designation": "(M. Tech ; 2021)",
-        "githubLink": "",
-        "linkedinLink": "https://www.linkedin.com/in/karunakar-chinnabathini-6180b0123",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.142Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:46:40.035Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a46"
-        },
-        "Name": "Mihir Goyal",
-        "Mail": "mihir17166@iiitd.ac.in",
-        "Position": "Alumni",
-        "Interests": "",
-        "ImageURL": "image-1664275599826",
-        "Designation": "(B. Tech ; 2021)",
-        "githubLink": "",
-        "linkedinLink": "https://www.linkedin.com/in/mihir-goyal-1b9b401b1/",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.17Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:46:39.887Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a38"
-        },
-        "Name": "Lakshya A Agrawal",
-        "Mail": "lakshya18242@iiitd.ac.in",
-        "Position": "BTech",
-        "Interests": "Program Analysis, Program Verification, Programming Languages, Transpilation",
-        "ImageURL": "image-1664275610606",
-        "Designation": "B. Tech",
-        "githubLink": "https://github.com/LakshyAAAgrawal/",
-        "linkedinLink": "https://www.linkedin.com/in/lakshyaaagrawal/",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.151Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:46:50.631Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a3c"
-        },
-        "Name": "Manak Bisht",
-        "Mail": "manak18340@iiitd.ac.in",
-        "Position": "Alumni",
-        "Interests": "GPU Computing, Knowledge Representation and Reasoning (KRR), Network Security",
-        "ImageURL": "image-1664275648452",
-        "Designation": "B. Tech",
-        "githubLink": "https://github.com/manakbisht",
-        "linkedinLink": "https://www.linkedin.com/in/manakbisht/",
-        "twitterLink": "https://twitter.com/manakbisht",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.156Z"
-        },
-        "updatedAt": {
-            "$date": "2023-02-06T10:45:51.854Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a64"
-        },
-        "Name": "Pramit Bhattacharyya",
-        "Mail": "pramit18142@iiitd.ac.in",
-        "Position": "Alumni",
-        "Interests": "",
-        "ImageURL": "image-1664275603256",
-        "Designation": "(M. Tech ; 2020)",
-        "githubLink": "https://github.com/Pramit18142",
-        "linkedinLink": "https://www.linkedin.com/in/pramit-bhattacharyya-9a4060122/",
-        "twitterLink": "https://twitter.com/pramit_10",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.219Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:46:43.262Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a60"
-        },
-        "Name": "Pankil Kalra",
-        "Mail": "pankil18061@iiitd.ac.in",
-        "Position": "Alumni",
-        "Interests": "Machine Learning on Graphs, Hyperbolic Space, Social Network Analysis",
-        "ImageURL": "image-1664275603312",
-        "Designation": " B. Tech",
-        "githubLink": "",
-        "linkedinLink": "LinkedIn - https://www.linkedin.com/in/pankil-kalra/",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.216Z"
-        },
-        "updatedAt": {
-            "$date": "2023-02-06T10:47:13.514Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a5a"
-        },
-        "Name": "Nikunj Singhal",
-        "Mail": "nikunj18249@iiitd.ac.in",
-        "Position": "BTech",
-        "Interests": "Machine learning, Semantic web",
-        "ImageURL": "image-1664275600113",
-        "Designation": "B. Tech",
-        "githubLink": "https://github.com/00NoisyMime00",
-        "linkedinLink": "https://www.linkedin.com/in/nikunj-singhal-4a9bb0183/",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.209Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:46:40.137Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a76"
-        },
-        "Name": "Raj Kamal Yadav",
-        "Mail": "raj16076@iiitd.ac.in",
-        "Position": "Alumni",
-        "Interests": "",
-        "ImageURL": "image-1664275597623",
-        "Designation": "(B. Tech ; 2020)",
-        "githubLink": "",
-        "linkedinLink": "",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.245Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:46:37.691Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a66"
-        },
-        "Name": "Pritish Wadhwa",
-        "Mail": "pritish19440@iiitd.ac.in",
-        "Position": "Alumni",
-        "Interests": "AI/ML, Augmented Reality, Operating Systems, Game Design and Development",
-        "ImageURL": "image-1664275608275",
-        "Designation": "B. Tech",
-        "githubLink": "https://github.com/PritishWadhwa",
-        "linkedinLink": "https://www.linkedin.com/in/pritishwadhwa/",
-        "twitterLink": "",
-        "webpageLink": "https://pritishwadhwa.ml/",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.225Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:46:48.312Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a8a"
-        },
-        "Name": "Ruchi Dwivedi",
-        "Mail": "ruchi.18@stu.aud.ac.in",
-        "Position": "Alumni",
-        "Interests": "Urban Environment and Ecology ",
-        "ImageURL": "image-1664275604560",
-        "Designation": "RA",
-        "githubLink": "",
-        "linkedinLink": "https://www.linkedin.com/in/ruchi-dwivedi-225a64200/",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.279Z"
-        },
-        "updatedAt": {
-            "$date": "2023-02-06T10:47:58.947Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a86"
-        },
-        "Name": "Robin Garg",
-        "Mail": "robin19092@iiitd.ac.in",
-        "Position": "BTech",
-        "Interests": "Web Development, Machine Learning",
-        "ImageURL": "image-1664275630701",
-        "Designation": "B. Tech",
-        "githubLink": "",
-        "linkedinLink": "https://www.linkedin.com/in/robin-garg23",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.275Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:47:10.743Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a8e"
-        },
-        "Name": "Sakshi Saini",
-        "Mail": "sakshi17092@iiitd.ac.in",
-        "Position": "Alumni",
-        "Interests": "",
-        "ImageURL": "image-1664275601178",
-        "Designation": "(B.Tech ; 2021)",
-        "githubLink": "https://github.com/SakshiSaini17092",
-        "linkedinLink": "https://www.linkedin.com/in/sakshi-saini-37a760151/",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.285Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:46:41.2Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a9a"
-        },
-        "Name": "Udit Arora",
-        "Mail": "udit18417@iiitd.ac.in",
-        "Position": "Alumni",
-        "Interests": "Machine Learning, Deep Learning, Natural Language Processing",
-        "ImageURL": "image-1664275600538",
-        "Designation": "B. Tech",
-        "githubLink": "",
-        "linkedinLink": "https://www.linkedin.com/in/udit-arora-22195a189/",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.32Z"
-        },
-        "updatedAt": {
-            "$date": "2023-02-06T10:30:16.382Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a80"
-        },
-        "Name": "Ritam Biswas",
-        "Mail": "ritam19043@iiitd.ac.in",
-        "Position": "Alumni",
-        "Interests": "",
-        "ImageURL": "image-1664275598541",
-        "Designation": "(M. Tech ; 2021)",
-        "githubLink": "https://github.com/devrb",
-        "linkedinLink": "https://www.linkedin.com/in/ritam-biswas-devrb-0478a810b",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.266Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:46:38.548Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a9e"
-        },
-        "Name": "Utkarsh Dubey",
-        "Mail": "utkarsh19213@iiitd.ac.in",
-        "Position": "BTech",
-        "Interests": "Web Development",
-        "ImageURL": "image-1664275599957",
-        "Designation": "B. Tech",
-        "githubLink": "https://github.com/utkarsh-dubey",
-        "linkedinLink": "https://www.linkedin.com/in/utkarsh2504/",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.323Z"
-        },
-        "updatedAt": {
-            "$date": "2022-10-06T11:59:34.51Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2aaa"
-        },
-        "Name": "Yugansh Singh",
-        "Mail": "yugansh21108@iiitd.ac.in",
-        "Position": "Masters",
-        "Interests": "Structure of Knowledge graph, Computer Vision Enhancement using KG, Computer Vision",
-        "ImageURL": "image-1664275633577",
-        "Designation": "M. Tech",
-        "githubLink": "https://github.com/yugpsyfer ",
-        "linkedinLink": "https://www.linkedin.com/in/yugansh-singh-368387122",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.334Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:47:13.612Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "63e0d601cee745933f704ee0"
-        },
-        "Name": "Aniket Verma",
-        "Mail": "aniket19233@iiitd.ac.in",
-        "Position": "BTech",
-        "Interests": "Machine Learning, Computer Vision, Deep Learning",
-        "ImageURL": "image-1675679233248",
-        "Designation": "B. Tech",
-        "githubLink": "",
-        "linkedinLink": "https://www.linkedin.com/in/aniket-verma-5768951b1/",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2023-02-06T10:27:13.477Z"
-        },
-        "updatedAt": {
-            "$date": "2023-02-06T10:29:07.401Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "63e0d738cee745933f704eef"
-        },
-        "Name": "Palak Goel",
-        "Mail": "palak19438@iiitd.ac.in",
-        "Position": "BTech",
-        "Interests": "ML, AI, NLP",
-        "ImageURL": "image-1675679544588",
-        "Designation": "B. Tech",
-        "githubLink": "",
-        "linkedinLink": "https://www.linkedin.com/in/gpalak",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2023-02-06T10:32:24.96Z"
-        },
-        "updatedAt": {
-            "$date": "2023-02-06T10:32:24.96Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "63e0d7b4cee745933f704ef5"
-        },
-        "Name": "Kshitij Mohan",
-        "Mail": "kshitij19054@iiitd.ac.in",
-        "Position": "BTech",
-        "Interests": "ML, DL, NLP",
-        "ImageURL": "image-1675679668419",
-        "Designation": "B. Tech",
-        "githubLink": "https://github.com/Kshitij-M",
-        "linkedinLink": "",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2023-02-06T10:34:28.644Z"
-        },
-        "updatedAt": {
-            "$date": "2023-02-06T10:34:28.644Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "63e0d8d3cee745933f704f04"
-        },
-        "Name": "Dhananjay Singh",
-        "Mail": "Dhananjay19161@iiitd.ac.in",
-        "Position": "BTech",
-        "Interests": "Machine Learning, Computer Vision, Deep Learning",
-        "ImageURL": "image-1675679954904",
-        "Designation": "B. Tech",
-        "githubLink": "",
-        "linkedinLink": "https://www.linkedin.com/in/dhananjay-singh-88a82889/",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2023-02-06T10:39:15.183Z"
-        },
-        "updatedAt": {
-            "$date": "2023-02-06T10:39:15.183Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6501e43d10a16f83ddd4ac24"
-        },
-        "Name": "Deepak Sharma",
-        "Mail": "deepaks@iiitd.ac.in",
-        "Position": "PhD",
-        "Interests": "",
-        "ImageURL": "image-1694622781054",
-        "Designation": "PhD Student (Decisions Sponsored)",
-        "githubLink": "",
-        "linkedinLink": "https://www.linkedin.com/in/deepak-sharma-7b9a669a/?originalSubdomain=in",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2023-09-13T16:33:01.31Z"
-        },
-        "updatedAt": {
-            "$date": "2023-09-13T16:33:01.31Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6503ed1110a16f83ddd4ad4e"
-        },
-        "Name": "Dr. Niharika Sachdeva",
-        "Mail": "",
-        "Position": "Collaborator",
-        "Interests": "",
-        "ImageURL": "",
-        "Designation": "InfoEdge India Limited",
-        "githubLink": "",
-        "linkedinLink": "",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2023-09-15T05:35:13.806Z"
-        },
-        "updatedAt": {
-            "$date": "2023-09-15T05:35:13.806Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6503ed3910a16f83ddd4ad50"
-        },
-        "Name": "Dr. Charu Sharma",
-        "Mail": "",
-        "Position": "Collaborator",
-        "Interests": "",
-        "ImageURL": "",
-        "Designation": "IIIT Hyderabad",
-        "githubLink": "",
-        "linkedinLink": "",
-        "twitterLink": "",
-        "webpageLink": "https://www.iiit.ac.in/people/faculty/Charusharma/",
-        "createdAt": {
-            "$date": "2023-09-15T05:35:53.752Z"
-        },
-        "updatedAt": {
-            "$date": "2023-09-15T05:35:53.752Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6503edd710a16f83ddd4ad57"
-        },
-        "Name": "Dr. Pieter Bonte",
-        "Mail": "",
-        "Position": "Collaborator",
-        "Interests": "",
-        "ImageURL": "",
-        "Designation": "Ghent University, Belgium",
-        "githubLink": "",
-        "linkedinLink": "",
-        "twitterLink": "",
-        "webpageLink": "http://pieterbonte.be/",
-        "createdAt": {
-            "$date": "2023-09-15T05:38:31.605Z"
-        },
-        "updatedAt": {
-            "$date": "2023-09-15T05:38:31.605Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6503edfa10a16f83ddd4ad59"
-        },
-        "Name": "Dr. Riccardo Tommasini",
-        "Mail": "",
-        "Position": "Collaborator",
-        "Interests": "",
-        "ImageURL": "",
-        "Designation": "INSA, Lyon, France",
-        "githubLink": "",
-        "linkedinLink": "",
-        "twitterLink": "",
-        "webpageLink": "https://riccardotommasini.com/",
-        "createdAt": {
-            "$date": "2023-09-15T05:39:06.511Z"
-        },
-        "updatedAt": {
-            "$date": "2023-09-15T05:39:06.511Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "655b556f10a16f83ddd4b637"
-        },
-        "Name": "Ojasva Singh",
-        "Mail": "ojasva20318@iiitd.ac.in",
-        "Position": "BTech",
-        "Interests": "LLMs, Knowledge Graphs and Prompt Engineering",
-        "ImageURL": "image-1700484463134",
-        "Designation": "B. Tech ",
-        "githubLink": "https://github.com/lucious20318",
-        "linkedinLink": "https://www.linkedin.com/in/ojasvasingh/",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2023-11-20T12:47:43.927Z"
-        },
-        "updatedAt": {
-            "$date": "2023-11-20T12:47:43.927Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "655b58ac10a16f83ddd4b640"
-        },
-        "Name": "Yogender Kumar",
-        "Mail": "Yogender21505@iiitd.ac.in",
-        "Position": "BTech",
-        "Interests": "Database Management and Operating system",
-        "ImageURL": "image-1700485291791",
-        "Designation": "B. Tech",
-        "githubLink": "",
-        "linkedinLink": "https://www.linkedin.com/in/yogender-kumar-b0448b216/",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2023-11-20T13:01:32.273Z"
-        },
-        "updatedAt": {
-            "$date": "2023-11-20T13:01:32.273Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "655b58de10a16f83ddd4b642"
-        },
-        "Name": "Anmol Gupta",
-        "Mail": "anmol21233@iiitd.ac.in",
-        "Position": "BTech",
-        "Interests": "Cyber Security, Machine Learning.",
-        "ImageURL": "image-1700485342249",
-        "Designation": "B. Tech",
-        "githubLink": "",
-        "linkedinLink": "https://www.linkedin.com/in/anmol-gupta-95983526a/",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2023-11-20T13:02:22.703Z"
-        },
-        "updatedAt": {
-            "$date": "2023-11-20T13:02:22.703Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "655b590f10a16f83ddd4b644"
-        },
-        "Name": "Aniketh",
-        "Mail": "aniketh20360@iiitd.ac.in",
-        "Position": "BTech",
-        "Interests": "Deep Learning, Natural Language Processing, Knowledge Graphs",
-        "ImageURL": "image-1700485391031",
-        "Designation": "B. Tech",
-        "githubLink": "",
-        "linkedinLink": "https://www.linkedin.com/in/aniketh-garikaparthi-793002202/",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2023-11-20T13:03:11.848Z"
-        },
-        "updatedAt": {
-            "$date": "2023-11-20T13:03:11.848Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "655b594110a16f83ddd4b646"
-        },
-        "Name": "Aanchal Gupta",
-        "Mail": "aanchal21224@iiitd.ac.in",
-        "Position": "BTech",
-        "Interests": "Development and Programming",
-        "ImageURL": "image-1700485440121",
-        "Designation": "B. Tech",
-        "githubLink": "",
-        "linkedinLink": "https://www.linkedin.com/in/aanchal-gupta-32a974222/",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2023-11-20T13:04:01.02Z"
-        },
-        "updatedAt": {
-            "$date": "2023-11-20T13:04:01.02Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "661d0ca310a16f83ddd4c952"
-        },
-        "Name": "Sohel Aman Khan",
-        "Mail": "sohelk@iiitd.ac.in",
-        "Position": "PhD",
-        "Interests": "Data Analytics, GNN, PyTorch",
-        "ImageURL": "image-1713179810538",
-        "Designation": "PhD",
-        "githubLink": "",
-        "linkedinLink": "https://www.linkedin.com/in/sohel-aman-khan-04b718194/",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2024-04-15T11:16:51.043Z"
-        },
-        "updatedAt": {
-            "$date": "2024-04-15T11:16:51.043Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc33a6cbf319a3ab29d0"
-        },
-        "Name": "Aayush Jain",
-        "Mail": "aayush.jain95@gmail.com",
-        "Position": "Alumni",
-        "Interests": "",
-        "ImageURL": "image-1664275607901",
-        "Designation": "(M. Tech ; 2020)",
-        "githubLink": "",
-        "linkedinLink": "http://www.linkedin.com/in/aayush-jain-b55a2217b",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:10:59.908Z"
-        },
-        "updatedAt": {
-            "$date": "2022-10-06T11:55:13.818Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc33a6cbf319a3ab29dc"
-        },
-        "Name": "Amrit Mohan Kaushik ",
-        "Mail": "amrit18022@iiitd.ac.in",
-        "Position": "Alumni",
-        "Interests": "",
-        "ImageURL": "image-1664275608200",
-        "Designation": "(M.Tech ; 2020)",
-        "githubLink": "",
-        "linkedinLink": "https://www.linkedin.com/in/amrit-kaushik-4a9a697a",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:10:59.952Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:46:48.21Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc33a6cbf319a3ab29e2"
-        },
-        "Name": "Anmol Kumar",
-        "Mail": "anmol18382@iiitd.ac.in",
-        "Position": "BTech",
-        "Interests": "Knowledge Graphs Reasoning, Computational Biology and UX Research",
-        "ImageURL": "image-1664275630944",
-        "Designation": "B. Tech",
-        "githubLink": "",
-        "linkedinLink": "https://www.linkedin.com/in/anmolkumar18/",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:10:59.968Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:47:10.984Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc33a6cbf319a3ab29e8"
-        },
-        "Name": "Anurag",
-        "Mail": "anurag19006@iiitd.ac.in",
-        "Position": "Alumni",
-        "Interests": "",
-        "ImageURL": "image-1664275602580",
-        "Designation": "(M. Tech ; 2021)",
-        "githubLink": "",
-        "linkedinLink": "linkedin.com/in/anurag-dhamija-19a549bb/",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:10:59.983Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:46:42.585Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab29fa"
-        },
-        "Name": "Dr. Aasim Khan",
-        "Mail": "",
-        "Position": "Collaborator",
-        "Interests": "",
-        "ImageURL": "",
-        "Designation": "IIIT-Delhi, India",
-        "githubLink": "",
-        "linkedinLink": "",
-        "twitterLink": "",
-        "webpageLink": "https://www.iiitd.ac.in/aasim",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.028Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:11:00.028Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab29f6"
-        },
-        "Name": "Daksh Thapar",
-        "Mail": "daksh18137@iiitd.ac.in",
-        "Position": "Alumni",
-        "Interests": "Deep Learning, Computer Vision, Machine Learning",
-        "ImageURL": "image-1664275615343",
-        "Designation": "B. Tech",
-        "githubLink": "https://github.com/dak-7309",
-        "linkedinLink": "https://www.linkedin.com/in/daksh-thapar-615a7511a/",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.015Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:46:55.38Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a10"
-        },
-        "Name": "Dr. Sudip Mittal",
-        "Mail": "",
-        "Position": "Collaborator",
-        "Interests": "",
-        "ImageURL": "",
-        "Designation": "Mississippi State University",
-        "githubLink": "",
-        "linkedinLink": "",
-        "twitterLink": "s",
-        "webpageLink": "https://www.sudipmittal.com/",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.071Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:11:00.071Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a12"
-        },
-        "Name": "Dr. Suman Roy",
-        "Mail": "",
-        "Position": "Collaborator",
-        "Interests": "",
-        "ImageURL": "",
-        "Designation": "Optum Global Services, India",
-        "githubLink": "",
-        "linkedinLink": "",
-        "twitterLink": "",
-        "webpageLink": "https://scholar.google.com/citations?user=JD8T25MAAAAJ&hl=en",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.076Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:11:00.076Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a2a"
-        },
-        "Name": "Hrithik Chopra",
-        "Mail": "hrithik16237@iiitd.ac.in",
-        "Position": "Alumni",
-        "Interests": "",
-        "ImageURL": "image-1664275598794",
-        "Designation": "(B. Tech ; 2020)",
-        "githubLink": "",
-        "linkedinLink": "https://www.linkedin.com/in/hrithik-chopra-6bb800108",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.13Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:46:38.802Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a24"
-        },
-        "Name": "Hardik Garg",
-        "Mail": "hardik19040@iiitd.ac.in",
-        "Position": "Alumni",
-        "Interests": "Neuro-Symbolic AI",
-        "ImageURL": "image-1664275613604",
-        "Designation": "B. Tech",
-        "githubLink": "",
-        "linkedinLink": "https://in.linkedin.com/in/hardik-garg-ba168b1ba",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.12Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:46:53.618Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a4c"
-        },
-        "Name": "Monika Jain",
-        "Mail": "monikaja@iiitd.ac.in",
-        "Position": "PhD",
-        "Interests": "Ontology learning, Knowledge graph, Natural language processing",
-        "ImageURL": "image-1664275607028",
-        "Designation": "Ph. D Student, P. M. Research Fellow",
-        "githubLink": "https://monikajain19.github.io/",
-        "linkedinLink": "https://www.linkedin.com/in/monika-jain-61a4312a",
-        "twitterLink": "https://twitter.com/monika_jain19?s=09, monikajain1908",
-        "webpageLink": "https://monikajain19.github.io/",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.179Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:46:47.037Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a3a"
-        },
-        "Name": "Maleeha Arif Yasvi",
-        "Mail": "maleeha18112@iiitd.ac.in",
-        "Position": "Alumni",
-        "Interests": "",
-        "ImageURL": "image-1664275599812",
-        "Designation": "(M. Tech ; 2020)",
-        "githubLink": "",
-        "linkedinLink": "http://linkedin.com/in/maleeha-yasvi-45a188162",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.153Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:46:39.861Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a56"
-        },
-        "Name": "Niharika Arora",
-        "Mail": "niharika18114@iiitd.ac.in",
-        "Position": "Alumni",
-        "Interests": "",
-        "ImageURL": "image-1664275599773",
-        "Designation": "(M. Tech ; 2020)",
-        "githubLink": "",
-        "linkedinLink": "",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.203Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:46:39.815Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a70"
-        },
-        "Name": "Raghav Rathi",
-        "Mail": "raghav17083@iiitd.ac.in",
-        "Position": "Alumni",
-        "Interests": "",
-        "ImageURL": "image-1664275622112",
-        "Designation": "(B. Tech ; 2021)",
-        "githubLink": "https://github.com/raghav17083",
-        "linkedinLink": "https://www.linkedin.com/in/raghav-rathi-a78bb0152/",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.236Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:47:02.13Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a72"
-        },
-        "Name": "Raghava Mutharaju",
-        "Mail": "raghava.mutharaju@iiitd.ac.in",
-        "Position": "Faculty",
-        "Interests": "Knowledge Graphs, Ontology Modeling and Reasoning, Semantic Web Applications",
-        "ImageURL": "image-1664275597007",
-        "Designation": "Assistant Professor",
-        "githubLink": "http://github.com/raghavam",
-        "linkedinLink": "http://linkedin.com/in/raghavamutharaju",
-        "twitterLink": "http://twitter.com/mraghava",
-        "webpageLink": "http://raghavam.github.io/",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.239Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:46:37.016Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a88"
-        },
-        "Name": "Rohan Dhar",
-        "Mail": "rohan19443@iiitd.ac.in",
-        "Position": "BTech",
-        "Interests": " Natural Language Processing, Deep Learning ",
-        "ImageURL": "image-1664275608238",
-        "Designation": "B. Tech",
-        "githubLink": "https://github.com/rohan-dhar",
-        "linkedinLink": "https://www.linkedin.com/in/rohan-dhar-421057b8/",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.277Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:46:48.254Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2a84"
-        },
-        "Name": "Ritik Khanna",
-        "Mail": "ritik18084@iiitd.ac.in",
-        "Position": "Alumni",
-        "Interests": "Reasoning over Knowledge Graphs, Mobile and Web Technologies",
-        "ImageURL": "image-1664275606125",
-        "Designation": "B. Tech",
-        "githubLink": "https://github.com/ritik__khanna",
-        "linkedinLink": "https://www.linkedin.com/in/ritik-khanna-9931951b2/",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.27Z"
-        },
-        "updatedAt": {
-            "$date": "2023-02-06T10:46:17.025Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2aa0"
-        },
-        "Name": "VISHAL KUMAR",
-        "Mail": "vishal20305@iiitd.ac.in",
-        "Position": "Alumni",
-        "Interests": "Data Mining, Android and Machine Learning",
-        "ImageURL": "image-1664275601055",
-        "Designation": "M. Tech",
-        "githubLink": "",
-        "linkedinLink": "https://www.linkedin.com/in/vishal-singh-202893119/",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.325Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:46:41.122Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2aa8"
-        },
-        "Name": "Vipul Saini",
-        "Mail": "vipul16117@iiitd.ac.in",
-        "Position": "Alumni",
-        "Interests": "",
-        "ImageURL": "image-1664275606927",
-        "Designation": "(B.Tech ; 2020)",
-        "githubLink": "",
-        "linkedinLink": "https://www.linkedin.com/in/vipul-saini-96a7a7134",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.332Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:46:46.935Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6332cc34a6cbf319a3ab2aa6"
-        },
-        "Name": "Vikhyat Yadav",
-        "Mail": "vikhyat19127@iiitd.ac.in",
-        "Position": "BTech",
-        "Interests": "ChatBot in React Native",
-        "Designation": "B. Tech",
-        "githubLink": "https://github.com/vikhyat-github",
-        "linkedinLink": "https://www.linkedin.com/in/vikhyat-yadav-9b7554196/",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2022-09-27T10:11:00.33Z"
-        },
-        "updatedAt": {
-            "$date": "2022-09-27T10:11:00.33Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "63e0d6fdcee745933f704eec"
-        },
-        "Name": "Ashutosh Vashist",
-        "Mail": "ashutosh19154@iiitd.ac.in",
-        "Position": "BTech",
-        "Interests": "Backend Development",
-        "ImageURL": "image-1675679485790",
-        "Designation": "B. Tech",
-        "githubLink": "",
-        "linkedinLink": "https://www.linkedin.com/in/ashutosh-vashist/",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2023-02-06T10:31:25.984Z"
-        },
-        "updatedAt": {
-            "$date": "2023-02-06T10:31:25.984Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "63e0d7eccee745933f704ef8"
-        },
-        "Name": "Ashwin R Nair",
-        "Mail": "ashwin20037@iiitd.ac.in",
-        "Position": "BTech",
-        "Interests": "Machine Learning , Web Development",
-        "ImageURL": "image-1675679724112",
-        "Designation": "B. Tech",
-        "githubLink": "https://github.com/AshwinRNair-ARN?tab=repositories",
-        "linkedinLink": "https://www.linkedin.com/in/ashwin-r-nair-3305681a8",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2023-02-06T10:35:24.33Z"
-        },
-        "updatedAt": {
-            "$date": "2023-02-06T10:35:24.33Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "63e0d89ecee745933f704f01"
-        },
-        "Name": "Jahnvi Kadia",
-        "Mail": "jahnvi21123@iiitd.ac.in",
-        "Position": "Masters",
-        "Interests": "Mobile App Development, Ontology Reasoning, Natural Language Processing and Computer Security",
-        "ImageURL": "image-1675679902355",
-        "Designation": "M. Tech",
-        "githubLink": "https://github.com/JahnviKadia",
-        "linkedinLink": "https://www.linkedin.com/in/jahnvi-kadia-ab25b71b9/",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2023-02-06T10:38:22.569Z"
-        },
-        "updatedAt": {
-            "$date": "2023-02-06T10:38:22.569Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "63e0d933cee745933f704f07"
-        },
-        "Name": "Arham Ali",
-        "Mail": "arham19411@iiitd.ac.in",
-        "Position": "BTech",
-        "Interests": "Android and IOS",
-        "ImageURL": "image-1675680051323",
-        "Designation": "B. Tech",
-        "githubLink": "https://github.com/javachip8786",
-        "linkedinLink": "https://www.linkedin.com/in/arham-ali-145838196/",
-        "twitterLink": "https://twitter.com/arhama73",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2023-02-06T10:40:51.616Z"
-        },
-        "updatedAt": {
-            "$date": "2023-02-06T10:40:51.616Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6501e4ab10a16f83ddd4ac26"
-        },
-        "Name": "Anwar Shaikh",
-        "Mail": "anwars@iiitd.ac.in",
-        "Position": "PhD",
-        "Interests": "Information Retrieval, Knowledge Graphs and Visual Question Answering",
-        "ImageURL": "image-1694622890761",
-        "Designation": "Ph. D Student (Cisco Sponsored)",
-        "githubLink": "",
-        "linkedinLink": "https://in.linkedin.com/in/shaikhanwar",
-        "twitterLink": "",
-        "webpageLink": "",
-        "createdAt": {
-            "$date": "2023-09-13T16:34:51.16Z"
-        },
-        "updatedAt": {
-            "$date": "2023-09-13T16:34:51.16Z"
-        },
-        "__v": 0
-    },
-    {
-        "_id": {
-            "$oid": "6503ec7610a16f83ddd4ad4c"
-        },
-        "Name": "Prof. Biplav Srivastava",
-        "Mail": "",
-        "Position": "Collaborator",
-        "Interests": "",
-        "ImageURL": "",
-        "Designation": "University of South Carolina, USA",
-        "githubLink": "",
-        "linkedinLink": "",
-        "twitterLink": "",
-        "webpageLink": "https://sc.edu/study/colleges_schools/engineering_and_computing/faculty-staff/srivastava.php",
-        "createdAt": {
-            "$date": "2023-09-15T05:32:38.023Z"
-        },
-        "updatedAt": {
-            "$date": "2023-09-15T05:32:38.023Z"
-        },
-        "__v": 0
-    }
+  {
+    "Name": "Akshala Bhatnagar",
+    "Mail": "akshala18012@iiitd.ac.in",
+    "Position": "Alumni",
+    "Interests": "Natural Language Processing, Machine Learning, Deep Learning",
+    "ImageURL": "image-1664275608676",
+    "Designation": "B. Tech",
+    "githubLink": "https://github.com/akshala",
+    "linkedinLink": "https://www.linkedin.com/in/akshala-bhatnagar-855a88187/",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Ankit Kumar Kamat",
+    "Mail": "ankit19020@iiitd.ac.in",
+    "Position": "BTech",
+    "Interests": "Web Development",
+    "ImageURL": "image-1664275613722",
+    "Designation": "B. Tech",
+    "githubLink": "https://github.com/ankit-mrexcalibur",
+    "linkedinLink": "https://www.linkedin.com/in/ankitkk22/",
+    "twitterLink": "https://twitter.com/er_ankitkamat",
+    "webpageLink": "https://www.ankitkamat.com/"
+  },
+  {
+    "Name": "Anmol Singhal",
+    "Mail": "anmol17332@iiitd.ac.in",
+    "Position": "Alumni",
+    "Interests": "",
+    "ImageURL": "image-1664275596899",
+    "Designation": "(B. Tech ; 2021)",
+    "githubLink": "",
+    "linkedinLink": "https://www.linkedin.com/in/anmol-singhal-3394a718a/",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Anuneet Anand",
+    "Mail": "anuneet18022@iiitd.ac.in",
+    "Position": "Alumni",
+    "Interests": "Privacy, Security, Blockchain, Knowledge Graphs",
+    "ImageURL": "image-1664275598113",
+    "Designation": "B. Tech",
+    "githubLink": "https://github.com/anuneetanand",
+    "linkedinLink": "https://www.linkedin.com/in/anuneet-anand/",
+    "twitterLink": "https://twitter.com/anuneet_anand",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Ankit Mishra",
+    "Mail": "ankit18019@iiitd.ac.in",
+    "Position": "Alumni",
+    "Interests": "Natural language Processing, Machine Learning, Data Mining, Political Science",
+    "ImageURL": "image-1664275598335",
+    "Designation": " B. Tech",
+    "githubLink": "",
+    "linkedinLink": "https://www.linkedin.com/in/ankit-mishra-2b8969172/",
+    "twitterLink": "https://twitter.com/inversed_matrix",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Ashwat Kumar",
+    "Mail": "ashwat16023@iiitd.ac.in",
+    "Position": "Alumni",
+    "Interests": "",
+    "ImageURL": "image-1664275597908",
+    "Designation": "(B. tech ; 2020)",
+    "githubLink": "https://github.com/AshwatKumar",
+    "linkedinLink": "",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Biswesh Mohapatra",
+    "Mail": "biswesh.mohapatra@iiitb.org",
+    "Position": "Alumni",
+    "Interests": "Natural Language Processing, Knowledge Graphs, Graph ML",
+    "ImageURL": "image-1664275598092",
+    "Designation": "M.Tech IIIT Bangalore",
+    "githubLink": "https://github.com/biswesh456",
+    "linkedinLink": "https://www.linkedin.com/in/biswesh-mohapatra-199158120/",
+    "twitterLink": "https://twitter.com/bis1602",
+    "webpageLink": "https://biswesh456.github.io/"
+  },
+  {
+    "Name": "Dr. Priyamvada Trivedi",
+    "Mail": "",
+    "Position": "Collaborator",
+    "Interests": "",
+    "ImageURL": "",
+    "Designation": "Ashoka University, India",
+    "githubLink": "",
+    "linkedinLink": "",
+    "twitterLink": "",
+    "webpageLink": "https://sites.google.com/view/priyamvadatrivedi"
+  },
+  {
+    "Name": "Dr. Praveen Priyadarshi",
+    "Mail": "",
+    "Position": "Collaborator",
+    "Interests": "",
+    "ImageURL": "",
+    "Designation": "IIIT-Delhi, India",
+    "githubLink": "",
+    "linkedinLink": "",
+    "twitterLink": "",
+    "webpageLink": "https://www.linkedin.com/in/praveenpriyadarshi/?originalSubdomain=in"
+  },
+  {
+    "Name": "Dr. Tanmoy Chakraborty ",
+    "Mail": "",
+    "Position": "Collaborator",
+    "Interests": "",
+    "ImageURL": "",
+    "Designation": "IIIT-Delhi, India",
+    "githubLink": "",
+    "linkedinLink": "",
+    "twitterLink": "",
+    "webpageLink": "https://www.linkedin.com/in/tanmoy-chakraborty-89553324/?originalSubdomain=in"
+  },
+  {
+    "Name": "Gunjan Singh",
+    "Mail": "gunjans@iiitd.ac.in",
+    "Position": "PhD",
+    "Interests": "Ontology Reasoning and Benchmarking, Reinforcement Learning, Description Logics",
+    "ImageURL": "image-1664275597925",
+    "Designation": "Ph. D Student, IBM Research Fellow",
+    "githubLink": "https://github.com/GunjanSingh1",
+    "linkedinLink": "https://www.linkedin.com/in/gunjan-singh-7a8a59186/",
+    "twitterLink": "https://twitter.com/GunjanS12/",
+    "webpageLink": "https://gunjansingh1.github.io/"
+  },
+  {
+    "Name": "Isha Gupta",
+    "Mail": "isha18040@iiitd.ac.in",
+    "Position": "Alumni",
+    "Interests": "Web and App Development, Machine Learning, Knowledge Graphs and Databases.",
+    "ImageURL": "image-1664275600757",
+    "Designation": "B. Tech",
+    "githubLink": "https://github.com/IshaGupta18",
+    "linkedinLink": "https://www.linkedin.com/in/isha-gupta-03b8b3194/",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Kritika Venkatachalam",
+    "Mail": "kritika17061@iiitd.ac.in",
+    "Position": "Alumni",
+    "Interests": "",
+    "ImageURL": "image-1664275600779",
+    "Designation": "(B.Tech ;  2021)",
+    "githubLink": "GitHub- https://github.com/29kritika/",
+    "linkedinLink": "https://www.linkedin.com/in/29kritika/",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Harsimar Singh",
+    "Mail": "harsimar17290@iiitd.ac.in",
+    "Position": "Alumni",
+    "Interests": "",
+    "ImageURL": "image-1664275596957",
+    "Designation": "(B. Tech ; 2021)",
+    "githubLink": "",
+    "linkedinLink": "https://www.linkedin.com/in/harsimar-singh-6407961ba/",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Himanshu Raj",
+    "Mail": "himanshu18038@iiitd.ac.in",
+    "Position": "Alumni",
+    "Interests": "Machine Learning, Deep Learning, Web Development",
+    "ImageURL": "image-1664275598400",
+    "Designation": "B. Tech",
+    "githubLink": "",
+    "linkedinLink": "https://www.linkedin.com/in/himanshuraj18/",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Meenakshi Maindola",
+    "Mail": "meenakshi18081@iiitd.ac.in",
+    "Position": "Alumni",
+    "Interests": "Knowledge Graphs, Data Mining",
+    "ImageURL": "image-1664275600108",
+    "Designation": "(M. Tech ; 2020)",
+    "githubLink": "",
+    "linkedinLink": "https://www.linkedin.com/in/meenakshi-maindola-61000a14a",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Meetakshi Setiya",
+    "Mail": "meetakshi19253@iiitd.ac.in",
+    "Position": "Alumni",
+    "Interests": "UI/UX design, Computational Biology, Learning and Memory",
+    "ImageURL": "image-1664275607335",
+    "Designation": "B. Tech",
+    "githubLink": "https://github.com/meetakshi253",
+    "linkedinLink": "https://www.linkedin.com/in/meetakshisetiya/",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Mohit Kumar",
+    "Mail": "",
+    "Position": "Collaborator",
+    "Interests": "",
+    "ImageURL": "",
+    "Designation": "Ashoka University, India",
+    "githubLink": "",
+    "linkedinLink": "",
+    "twitterLink": "",
+    "webpageLink": "https://www.linkedin.com/in/mohitkharb/"
+  },
+  {
+    "Name": "Mohnish Agrawal",
+    "Mail": "mohnish18053@iiitd.ac.in",
+    "Position": "BTech",
+    "Interests": "Big data, Machine & deep learning, Economics ",
+    "ImageURL": "image-1664275608462",
+    "Designation": "B. Tech",
+    "githubLink": "https://github.com/Mohnish-Agrawal ",
+    "linkedinLink": "www.linkedin.com/in/mohnish-agrawal",
+    "twitterLink": "",
+    "webpageLink": "https://mohnish-agrawal.github.io/ "
+  },
+  {
+    "Name": "Mihir Chaturvedi",
+    "Mail": "mihir19061@iiitd.ac.in",
+    "Position": "BTech",
+    "Interests": "Human-Computer Interaction, Networking",
+    "ImageURL": "image-1664275610421",
+    "Designation": "B. Tech",
+    "githubLink": "https://github.com/plibither8",
+    "linkedinLink": "https://linkedin.com/in/plibither8",
+    "twitterLink": "https://twitter.com/plibither8",
+    "webpageLink": "https://mihir.ch"
+  },
+  {
+    "Name": "Nikhil Sachdeva",
+    "Mail": "nikhil16061@iiitd.ac.in",
+    "Position": "Alumni",
+    "Interests": "",
+    "ImageURL": "image-1664275600784",
+    "Designation": "(B. Tech ; 2020)",
+    "githubLink": "",
+    "linkedinLink": "https://www.linkedin.com/in/nikhil-sachdeva-560093141/",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Muzamil Yaqoob",
+    "Mail": "Muzamil.Yaqoob@sopp.iitd.ac.in",
+    "Position": "Alumni",
+    "Interests": "",
+    "ImageURL": "image-1664275619097",
+    "Designation": "Ph. D Student, IIT Delhi",
+    "githubLink": "",
+    "linkedinLink": "linkedin.com/in/muzamil-yaqoob-133b221a7",
+    "twitterLink": "https://twitter.com/yaqoobmuzamil?lang=en",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Prof. Ponnurangam Kumaraguru",
+    "Mail": "",
+    "Position": "Collaborator",
+    "Interests": "",
+    "ImageURL": "",
+    "Designation": " IIIT-Hyderabad, India",
+    "githubLink": "",
+    "linkedinLink": "",
+    "twitterLink": "",
+    "webpageLink": "https://www.linkedin.com/in/ponguru/?originalSubdomain=in"
+  },
+  {
+    "Name": "Prof. Srinivasaraghavan",
+    "Mail": "",
+    "Position": "Collaborator",
+    "Interests": "",
+    "ImageURL": "",
+    "Designation": "IIIT-Bangalore, India",
+    "githubLink": "",
+    "linkedinLink": "",
+    "twitterLink": "",
+    "webpageLink": "https://www.iiitb.ac.in/faculty/g-srinivasaraghavan"
+  },
+  {
+    "Name": "Rahul Gupta",
+    "Mail": "rahul20311@iiitd.ac.in",
+    "Position": "Alumni",
+    "Interests": "Machine Learning",
+    "ImageURL": "image-1664275598625",
+    "Designation": "M. Tech",
+    "githubLink": "https://github.com/rahul20311",
+    "linkedinLink": "https://www.linkedin.com/in/rahul-gupta-2b5680128",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Rishi Raj",
+    "Mail": "rishi19090@iiitd.ac.in",
+    "Position": "BTech",
+    "Interests": "Machine learning, Data Mining",
+    "ImageURL": "image-1664275644132",
+    "Designation": "B. Tech ",
+    "githubLink": "https://github.com/rishiraj4721",
+    "linkedinLink": "",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Priya Rajpurohit",
+    "Mail": "priya15073@iiitd.ac.in",
+    "Position": "Alumni",
+    "Interests": "",
+    "ImageURL": "image-1664275612637",
+    "Designation": "(B. Tech ; 2020)",
+    "githubLink": "https://github.com/Priya15073",
+    "linkedinLink": "https://www.linkedin.com/in/priyarajp",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Puru Kathuria",
+    "Mail": "puru18143@iiitd.ac.in",
+    "Position": "Alumni",
+    "Interests": "",
+    "ImageURL": "image-1664275597173",
+    "Designation": "(M. Tech ; 2020)",
+    "githubLink": "",
+    "linkedinLink": "https://www.linkedin.com/in/purukathuria/",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Saad Ahmad",
+    "Mail": "saad18409@iiitd.ac.in",
+    "Position": "BTech",
+    "Interests": "Data Science and Machine Learning, Streamlining data collection and structuring",
+    "ImageURL": "image-1664275602612",
+    "Designation": "B. Tech",
+    "githubLink": "https://github.com/DaasDaham",
+    "linkedinLink": "https://www.linkedin.com/in/saad-ahmad-10384b195/",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Sudhir Attri",
+    "Mail": "sudhir18267@iiitd.ac.in",
+    "Position": "BTech",
+    "Interests": "ML, Computer Vision, Natural Language Processing",
+    "ImageURL": "image-1664275629437",
+    "Designation": "B. Tech",
+    "githubLink": "https://github.com/confusement",
+    "linkedinLink": "https://www.linkedin.com/in/sudhir-attri-58875a1ba/",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Sutapa Mondal",
+    "Mail": "sutapa18056@iiitd.ac.in",
+    "Position": "Alumni",
+    "Interests": "",
+    "ImageURL": "image-1664275623555",
+    "Designation": "(M. Tech ; 2020)",
+    "githubLink": "https://github.com/kracr/EmELpp",
+    "linkedinLink": "https://www.linkedin.com/in/sutapa-mondal-b6080769/",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Ritesh Panwar",
+    "Mail": "ritesh19384@iiitd.ac.in",
+    "Position": "BTech",
+    "Interests": "Machine Learning, Programming and Development, Data Science, Web Technologies, and Economics",
+    "ImageURL": "image-1664275601182",
+    "Designation": "B. Tech",
+    "githubLink": "https://github.com/ritesh-panwar",
+    "linkedinLink": "www.linkedin.com/in/riteshpanwar",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Vandana Miglani",
+    "Mail": "vandana.miglani.12@gmail.com",
+    "Position": "Alumni",
+    "Interests": "",
+    "ImageURL": "image-1664275599857",
+    "Designation": "(Intern)",
+    "githubLink": "",
+    "linkedinLink": "https://www.linkedin.com/in/vandana-miglani/",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Khushi Agarwal",
+    "Mail": "khushi19312@iiitd.ac.in",
+    "Position": "BTech",
+    "Interests": "Human-Computer Interaction, Data analysis, and Programmable Networks",
+    "ImageURL": "image-1675679783170",
+    "Designation": "B. Tech",
+    "githubLink": "",
+    "linkedinLink": "https://www.linkedin.com/in/khushi-agarwal-0a14871a7/",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Surya Prakash",
+    "Mail": "",
+    "Position": "Collaborator",
+    "Interests": "",
+    "ImageURL": "",
+    "Designation": "Daksh India",
+    "githubLink": "",
+    "linkedinLink": "",
+    "twitterLink": "",
+    "webpageLink": "https://in.linkedin.com/in/suryaprakashbs"
+  },
+  {
+    "Name": "Shalini Bansal",
+    "Mail": "",
+    "Position": "Collaborator",
+    "Interests": "",
+    "ImageURL": "",
+    "Designation": "HopOn India",
+    "githubLink": "",
+    "linkedinLink": "https://in.linkedin.com/in/shalini-bansal-7a66226",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Parmesh Yadav",
+    "Mail": "parmesh20319@iiitd.ac.in",
+    "Position": "BTech",
+    "Interests": "LLMs and Prompt Engineering, Knowledge Graphs",
+    "ImageURL": "image-1700484538422",
+    "Designation": "B. Tech",
+    "githubLink": "https://github.com/Parmesh-Yadav",
+    "linkedinLink": "https://www.linkedin.com/in/parmesh-yadav-29542b22b/",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Daksh Sammi",
+    "Mail": "daksh21459@iiitd.ac.in",
+    "Position": "BTech",
+    "Interests": "Computer Science and biosciences",
+    "ImageURL": "image-1700485516772",
+    "Designation": "B. Tech",
+    "githubLink": "https://github.com/DakshSammi",
+    "linkedinLink": "https://www.linkedin.com/in/daksh-sammi/",
+    "twitterLink": "https://twitter.com/DennisShacks",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Ayush Garg",
+    "Mail": "ayush19030@iiitd.ac.in",
+    "Position": "BTech",
+    "Interests": "Knowledge Graph, Chatbot Development",
+    "ImageURL": "image-1664275605553",
+    "Designation": "B. Tech",
+    "githubLink": "https://github.com/gargayush18",
+    "linkedinLink": "https://www.linkedin.com/in/ayushhgarg/",
+    "twitterLink": "https://twitter.com/AyushGa15762280",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Dr. Kuldeep Singh",
+    "Mail": "",
+    "Position": "Collaborator",
+    "Interests": "",
+    "ImageURL": "",
+    "Designation": "Cerence, Germany",
+    "githubLink": "",
+    "linkedinLink": "",
+    "twitterLink": "",
+    "webpageLink": "https://www.kulsingh.com/"
+  },
+  {
+    "Name": "Dr. Jainendra Shukla",
+    "Mail": "",
+    "Position": "Collaborator",
+    "Interests": "",
+    "ImageURL": "",
+    "Designation": "IIIT-Delhi, India",
+    "githubLink": "",
+    "linkedinLink": "",
+    "twitterLink": "",
+    "webpageLink": "https://jainendra.in/"
+  },
+  {
+    "Name": "Dr. Manohar Kumar",
+    "Mail": "",
+    "Position": "Collaborator",
+    "Interests": "",
+    "ImageURL": "",
+    "Designation": "IIIT-Delhi, India",
+    "githubLink": "",
+    "linkedinLink": "",
+    "twitterLink": "",
+    "webpageLink": "https://www.linkedin.com/in/manohar-kumar-98669ab0/?originalSubdomain=in"
+  },
+  {
+    "Name": "Dr. Srikanta Bedathur",
+    "Mail": "",
+    "Position": "Collaborator",
+    "Interests": "",
+    "ImageURL": "",
+    "Designation": "IIT-Delhi, India",
+    "githubLink": "",
+    "linkedinLink": "",
+    "twitterLink": "",
+    "webpageLink": "https://www.cse.iitd.ac.in/~srikanta/"
+  },
+  {
+    "Name": "Dr. Vikram Goyal",
+    "Mail": "",
+    "Position": "Collaborator",
+    "Interests": "",
+    "ImageURL": "",
+    "Designation": "IIIT-Delhi, India",
+    "githubLink": "",
+    "linkedinLink": "",
+    "twitterLink": "",
+    "webpageLink": "https://www.linkedin.com/in/vikram-goyal-7a684213/?originalSubdomain=in"
+  },
+  {
+    "Name": "Dr. Sumit Bhatia",
+    "Mail": "",
+    "Position": "Collaborator",
+    "Interests": "",
+    "ImageURL": "",
+    "Designation": "Adobe Systems, India",
+    "githubLink": "",
+    "linkedinLink": "",
+    "twitterLink": "",
+    "webpageLink": "http://sumitbhatia.net/"
+  },
+  {
+    "Name": "Keshav Gambhir",
+    "Mail": "keshav19249@iiitd.ac.in",
+    "Position": "Alumni",
+    "Interests": "",
+    "ImageURL": "image-1664275597116",
+    "Designation": "B. Tech",
+    "githubLink": "",
+    "linkedinLink": "https://www.linkedin.com/in/keshav-gambhir-97a329188/",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Mayank Kharbanda",
+    "Mail": "mayankk@iiitd.ac.in",
+    "Position": "PhD",
+    "Interests": "Multi-modal Knowledge Graphs, Discrete Mathematics, Theoretical Machine Learning",
+    "ImageURL": "image-1664275604489",
+    "Designation": "Ph. D Student, UGC Research Fellow",
+    "githubLink": "https://github.com/MayankKharbanda",
+    "linkedinLink": "https://www.linkedin.com/in/mayankkharbanda",
+    "twitterLink": "https://twitter.com/Mayankharbanda",
+    "webpageLink": "https://www.iiitd.edu.in/~mayankk/"
+  },
+  {
+    "Name": "Mudit Balooja",
+    "Mail": "mudit19258@iiitd.ac.in",
+    "Position": "BTech",
+    "Interests": "Natural Language Processing, Ontology Modelling and Cloud Computing",
+    "ImageURL": "image-1664275627975",
+    "Designation": "B. Tech",
+    "githubLink": "https://github.com/Vikinghacker258",
+    "linkedinLink": "https://www.linkedin.com/in/mudit-balooja-15885a193",
+    "twitterLink": "https://mobile.twitter.com/MBalooja",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Nandika Jain",
+    "Mail": "nandika19064@iiitd.ac.in",
+    "Position": "BTech",
+    "Interests": "Semantic Web, Concurrent and Learned Data Structures",
+    "ImageURL": "image-1664275599982",
+    "Designation": "B. Tech ",
+    "githubLink": "https://github.com/nandikajain",
+    "linkedinLink": "https://www.linkedin.com/in/nandikajain",
+    "twitterLink": "",
+    "webpageLink": "https://nandikajain.github.io"
+  },
+  {
+    "Name": "Pragya Sethi",
+    "Mail": "pragya18067@iiitd.ac.in",
+    "Position": "Alumni",
+    "Interests": "NLP, Semantic web",
+    "ImageURL": "image-1664275602111",
+    "Designation": "B. Tech",
+    "githubLink": "https://github.com/Pragya2804",
+    "linkedinLink": "https://www.linkedin.com/in/pragya-sethi-4618a31a3/",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Nidhi Goyal",
+    "Mail": "nidhig@iiitd.ac.in",
+    "Position": "PhD",
+    "Interests": "Knowledge Graphs Construction, Knowledge Graph Embeddings, Machine Learning, NLP",
+    "ImageURL": "image-1664275599092",
+    "Designation": "Ph. D Student, P. M. Research Fellow",
+    "githubLink": "https://github.com/nidhigoyal123",
+    "linkedinLink": "https://www.linkedin.com/in/nidhi-goyal-4b8b5216b/?originalSubdomain=in",
+    "twitterLink": "https://twitter.com/NidhigoyalGoyal",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Osheen Sachdev",
+    "Mail": "osheen18059@iiitd.ac.in",
+    "Position": "Alumni",
+    "Interests": "Exploring Knowledge Graphs and its applications in chatbots",
+    "ImageURL": "image-1664275604403",
+    "Designation": "B. Tech",
+    "githubLink": "https://github.com/oshhh",
+    "linkedinLink": "http://linkedin.com/in/osheen-sachdev-b74923176/",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Rhythm Patel",
+    "Mail": "rhythmkumar18083@iiitd.ac.in",
+    "Position": "BTech",
+    "Interests": "Machine Learning, Deep Learning, Economics, Big Data",
+    "ImageURL": "image-1664275616505",
+    "Designation": "B. Tech",
+    "githubLink": "https://rhythm-patel.github.io ",
+    "linkedinLink": "https://www.linkedin.com/in/rhythm-patel/",
+    "twitterLink": "https://twitter.com/TheRhythmPatel",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Raunak Mokhasi",
+    "Mail": "raunak17085@iiitd.ac.in",
+    "Position": "Alumni",
+    "Interests": "",
+    "ImageURL": "image-1664275597618",
+    "Designation": "(B. Tech ; 2021)",
+    "githubLink": "",
+    "linkedinLink": "https://www.linkedin.com/in/raunakmokhasi/",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Sanchit Trivedi",
+    "Mail": "sanchit18091@iiitd.ac.in",
+    "Position": "Alumni",
+    "Interests": "Computer Vision, Machine Learning and Semantic Web",
+    "ImageURL": "image-1664275606671",
+    "Designation": "B. Tech",
+    "githubLink": "https://github.com/Sanchit-Trivedi",
+    "linkedinLink": "https://www.linkedin.com/in/sanchit-trivedi/",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Shashikant Kumar",
+    "Mail": "shashikant18096@iiitd.ac.in",
+    "Position": "Alumni",
+    "Interests": "Ontology Reasoning and Benchmarking",
+    "ImageURL": "image-1664275598606",
+    "Designation": "B. Tech",
+    "githubLink": "https://github.com/crook0",
+    "linkedinLink": "https://www.linkedin.com/in/shashikant-kumar-a1bb4b1b0/",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Soumyadeep Paul",
+    "Mail": "soumyadeep18104@iiitd.ac.in",
+    "Position": "Alumni",
+    "Interests": "Web/Mobile technologies, Entrepreneurship",
+    "ImageURL": "image-1664275600990",
+    "Designation": "B. Tech",
+    "githubLink": "",
+    "linkedinLink": "https://www.linkedin.com/in/soumyadeep-paul-3a044619a/",
+    "twitterLink": "",
+    "webpageLink": "https://soumyadeep-paul.imfast.io/"
+  },
+  {
+    "Name": "Udit Bhati",
+    "Mail": "udit19281@iiitd.ac.in",
+    "Position": "BTech",
+    "Interests": "Knowledge graphs, Machine learning and Ontology Reasoning.",
+    "ImageURL": "image-1664275631223",
+    "Designation": "B. Tech",
+    "githubLink": "https://github.com/udit19281",
+    "linkedinLink": "https://www.linkedin.com/in/udit-bhati-7821101ba",
+    "twitterLink": "",
+    "webpageLink": "https://portfolio-udit.herokuapp.com"
+  },
+  {
+    "Name": "Vidhi Sharma",
+    "Mail": "vidhi19286@iiitd.ac.in",
+    "Position": "BTech",
+    "Interests": "Machine Learning and data analysis, Knowledge Graphs",
+    "ImageURL": "image-1664275629911",
+    "Designation": "B. Tech",
+    "githubLink": "https://github.com/vidhi448",
+    "linkedinLink": "https://www.linkedin.com/in/vidhi-sharma-9587441b9/",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Apurv Dube",
+    "Mail": "apurvd@iiitd.ac.in",
+    "Position": "PhD",
+    "Interests": "Neuro-symbolic reasoning, Knowledge graphs, Computer Vision",
+    "ImageURL": "image-1675679137593",
+    "Designation": "Ph. D Student",
+    "githubLink": "https://github.com/hypercalm",
+    "linkedinLink": "https://linkedin.com/in/sentience",
+    "twitterLink": "",
+    "webpageLink": "https://apurv.com"
+  },
+  {
+    "Name": "Vedant Gupta",
+    "Mail": "vedant20261@iiitd.ac.in",
+    "Position": "BTech",
+    "Interests": "Semantic Web",
+    "ImageURL": "image-1675679611828",
+    "Designation": "B. Tech",
+    "githubLink": "",
+    "linkedinLink": "https://www.linkedin.com/in/vedant-gupta-oo7/",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Yashasvi Chhabra",
+    "Mail": "yashasvi19290@iiitd.ac.in",
+    "Position": "BTech",
+    "Interests": "Machine Learning, Data Science, Knowledge Graphs",
+    "ImageURL": "image-1675679837075",
+    "Designation": "B. Tech",
+    "githubLink": "https://github.com/yashasvi19290",
+    "linkedinLink": "",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Yuvraj Garg",
+    "Mail": "yuvraj19291@iiitd.ac.in",
+    "Position": "BTech",
+    "Interests": "Semantic Web, Machine Learning",
+    "ImageURL": "image-1675680216670",
+    "Designation": "B. Tech",
+    "githubLink": "",
+    "linkedinLink": "https://www.linkedin.com/in/yuvrajgarg100/",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Dr. Harsh Thakkar",
+    "Mail": "",
+    "Position": "Collaborator",
+    "Interests": "",
+    "ImageURL": "",
+    "Designation": "Osthus, Germany",
+    "githubLink": "",
+    "linkedinLink": "",
+    "twitterLink": "",
+    "webpageLink": "https://harshthakkar.in/"
+  },
+  {
+    "Name": "Pranav Sharma ",
+    "Mail": "pranav20395@iiitd.ac.in",
+    "Position": "BTech",
+    "Interests": "Knowledge Graphs, Machine Learning",
+    "ImageURL": "image-1700484626789",
+    "Designation": "B. Tech",
+    "githubLink": "https://github.com/pranav20395",
+    "linkedinLink": "https://www.linkedin.com/in/pranav-sharma-479932200/",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Ahilya Sinha",
+    "Mail": "ahilyasinha99@gmail.com",
+    "Position": "Alumni",
+    "Interests": "",
+    "ImageURL": "image-1664275608871",
+    "Designation": "(B. Tech ; 2020)",
+    "githubLink": "https://github.com/cactusmachete",
+    "linkedinLink": "www.linkedin.com/in/ahilyasinha",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Aditya Garg",
+    "Mail": "aditya18124@iiitd.ac.in",
+    "Position": "Alumni",
+    "Interests": "Machine Learning and Deep Learning , Biological and Ayurvedic Sciences, Applied Mathematics",
+    "ImageURL": "image-1664275600144",
+    "Designation": "B. Tech",
+    "githubLink": "https://github.com/AdityaGarg07",
+    "linkedinLink": "https://www.linkedin.com/in/adityagarg07",
+    "twitterLink": "https://twitter.com/adityagarg07",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Aman Khan",
+    "Mail": "aman19015@iiitd.ac.in",
+    "Position": "Alumni",
+    "Interests": "",
+    "ImageURL": "image-1664275599128",
+    "Designation": "B. Tech",
+    "githubLink": "",
+    "linkedinLink": "https://www.linkedin.com/in/amankhan24/",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Aisha Aijaz",
+    "Mail": "aishaa@iiitd.ac.in",
+    "Position": "PhD",
+    "Interests": "Data Science, Artificial Intelligence, Data Analysis, Business Analytics. ",
+    "ImageURL": "image-1664275600315",
+    "Designation": "Ph. D Student",
+    "githubLink": "https://github.com/aishaaijazahmad",
+    "linkedinLink": "https://www.linkedin.com/in/aishaaijazahmad",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Arka Sarkar",
+    "Mail": "arka18222@iiitd.ac.in",
+    "Position": "Alumni",
+    "Interests": "Machine Learning, Deep Learning, Computer Vision",
+    "ImageURL": "image-1664275599793",
+    "Designation": "B. Tech",
+    "githubLink": "https://github.com/ArkaSarkar19",
+    "linkedinLink": "https://www.linkedin.com/in/arka-sarkar-6068731b1/",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Arushi Jain",
+    "Mail": "arushi18071@iiitd.ac.in",
+    "Position": "Alumni",
+    "Interests": "",
+    "ImageURL": "image-1664275601038",
+    "Designation": "(M. Tech ; 2020)",
+    "githubLink": "",
+    "linkedinLink": "https://www.linkedin.com/in/arushi-jain-708a0782/",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Arundhati Bhattacharya",
+    "Mail": "arundhati18225@iiitd.ac.in",
+    "Position": "Alumni",
+    "Interests": "Data Science, Ontology Embeddings, Natural Language Processing",
+    "ImageURL": "image-1664275598381",
+    "Designation": "B. Tech",
+    "githubLink": "https://github.com/arundhati-b",
+    "linkedinLink": "https://www.linkedin.com/in/arundhati-bhattacharya-520b52169/",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Dev Rajput",
+    "Mail": "dev19034@iiitd.ac.in",
+    "Position": "Alumni",
+    "Interests": "Neuro-Symbolic AI, Robotics, XR",
+    "ImageURL": "image-1664275603051",
+    "Designation": "B. Tech",
+    "githubLink": "https://github.com/thesantatitan",
+    "linkedinLink": "https://www.linkedin.com/in/dev-rajput-294a9a18a ",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Dr. Harpreet Singh",
+    "Mail": "",
+    "Position": "Collaborator",
+    "Interests": "",
+    "ImageURL": "",
+    "Designation": "Child Health Imprints Pvt. Ltd.",
+    "githubLink": "",
+    "linkedinLink": "",
+    "twitterLink": "",
+    "webpageLink": "https://www.linkedin.com/in/harpreet-singh-a530573/"
+  },
+  {
+    "Name": "Dr. Rajiv Ratn Shah",
+    "Mail": "",
+    "Position": "Collaborator",
+    "Interests": "",
+    "ImageURL": "",
+    "Designation": "IIIT-Delhi, India",
+    "githubLink": "",
+    "linkedinLink": "",
+    "twitterLink": "",
+    "webpageLink": "https://www.linkedin.com/in/rajivratn/?originalSubdomain=in"
+  },
+  {
+    "Name": "Dr. Paro Mishra",
+    "Mail": "",
+    "Position": "Collaborator",
+    "Interests": "",
+    "ImageURL": "",
+    "Designation": "IIIT-Delhi, India",
+    "githubLink": "",
+    "linkedinLink": "",
+    "twitterLink": "",
+    "webpageLink": "https://www.linkedin.com/in/paro-mishra-806171184/?originalSubdomain=in"
+  },
+  {
+    "Name": "Dr. Paramita Mirza",
+    "Mail": "",
+    "Position": "Collaborator",
+    "Interests": "",
+    "ImageURL": "",
+    "Designation": "MPI, Saarbr\u00fccken, Germany",
+    "githubLink": "",
+    "linkedinLink": "",
+    "twitterLink": "",
+    "webpageLink": "https://paramitamirza.com/"
+  },
+  {
+    "Name": "Garvita Saxena",
+    "Mail": "garvita18072@iiitd.ac.in",
+    "Position": "Alumni",
+    "Interests": "",
+    "ImageURL": "image-1664275597140",
+    "Designation": "(M. Tech ; 2020)",
+    "githubLink": "",
+    "linkedinLink": "https://www.linkedin.com/in/garvita-saxena-a50293139/",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Gitansh Raj Satija",
+    "Mail": "gitansh19241@iiitd.ac.in",
+    "Position": "Alumni",
+    "Interests": "Multimedia Computing, Natural Language Processing, Interactive Product Design, AI/ML, Operating Systems",
+    "ImageURL": "image-1664275600556",
+    "Designation": "B. Tech",
+    "githubLink": "https://github.com/gitongithub",
+    "linkedinLink": "https://www.linkedin.com/in/gitansh-raj-satija/",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Gaurav Dawra",
+    "Mail": "gaurav19039@iiitd.ac.in",
+    "Position": "BTech",
+    "Interests": "Machine learning, algorithms, data structures, computational bounds",
+    "ImageURL": "image-1664275599576",
+    "Designation": "B. Tech",
+    "githubLink": "",
+    "linkedinLink": "https://www.linkedin.com/in/gaurav-dawra-a2a935200/",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Dr. Tavpritesh Sethi",
+    "Mail": "",
+    "Position": "Collaborator",
+    "Interests": "",
+    "ImageURL": "",
+    "Designation": "IIIT-Delhi, India",
+    "githubLink": "",
+    "linkedinLink": "",
+    "twitterLink": "",
+    "webpageLink": "https://www.iiitd.ac.in/tavpritesh"
+  },
+  {
+    "Name": "Kanav Bhagat",
+    "Mail": "kanav16046@iiitd.ac.in",
+    "Position": "Alumni",
+    "Interests": "",
+    "ImageURL": "image-1664275607829",
+    "Designation": "(B. Tech ; 2020)",
+    "githubLink": "https://github.com/kanavbhagat",
+    "linkedinLink": "https://in.linkedin.com/in/kanav-bhagat-133229130",
+    "twitterLink": "https://twitter.com/kanavbhagat98",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Jishnu Raj Parashar",
+    "Mail": "jishnu19048@iiitd.ac.in",
+    "Position": "BTech",
+    "Interests": "Concurrent and Thread-safe programming ",
+    "ImageURL": "image-1664275600569",
+    "Designation": "B. Tech",
+    "githubLink": "",
+    "linkedinLink": "https://www.linkedin.com/in/jishnu-raj-parashar-5889b4190/",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Karunakar Chinnabathini",
+    "Mail": "chinnabathini19008@iiitd.ac.in",
+    "Position": "Alumni",
+    "Interests": "",
+    "ImageURL": "image-1664275600016",
+    "Designation": "(M. Tech ; 2021)",
+    "githubLink": "",
+    "linkedinLink": "https://www.linkedin.com/in/karunakar-chinnabathini-6180b0123",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Mihir Goyal",
+    "Mail": "mihir17166@iiitd.ac.in",
+    "Position": "Alumni",
+    "Interests": "",
+    "ImageURL": "image-1664275599826",
+    "Designation": "(B. Tech ; 2021)",
+    "githubLink": "",
+    "linkedinLink": "https://www.linkedin.com/in/mihir-goyal-1b9b401b1/",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Lakshya A Agrawal",
+    "Mail": "lakshya18242@iiitd.ac.in",
+    "Position": "BTech",
+    "Interests": "Program Analysis, Program Verification, Programming Languages, Transpilation",
+    "ImageURL": "image-1664275610606",
+    "Designation": "B. Tech",
+    "githubLink": "https://github.com/LakshyAAAgrawal/",
+    "linkedinLink": "https://www.linkedin.com/in/lakshyaaagrawal/",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Manak Bisht",
+    "Mail": "manak18340@iiitd.ac.in",
+    "Position": "Alumni",
+    "Interests": "GPU Computing, Knowledge Representation and Reasoning (KRR), Network Security",
+    "ImageURL": "image-1664275648452",
+    "Designation": "B. Tech",
+    "githubLink": "https://github.com/manakbisht",
+    "linkedinLink": "https://www.linkedin.com/in/manakbisht/",
+    "twitterLink": "https://twitter.com/manakbisht",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Pramit Bhattacharyya",
+    "Mail": "pramit18142@iiitd.ac.in",
+    "Position": "Alumni",
+    "Interests": "",
+    "ImageURL": "image-1664275603256",
+    "Designation": "(M. Tech ; 2020)",
+    "githubLink": "https://github.com/Pramit18142",
+    "linkedinLink": "https://www.linkedin.com/in/pramit-bhattacharyya-9a4060122/",
+    "twitterLink": "https://twitter.com/pramit_10",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Pankil Kalra",
+    "Mail": "pankil18061@iiitd.ac.in",
+    "Position": "Alumni",
+    "Interests": "Machine Learning on Graphs, Hyperbolic Space, Social Network Analysis",
+    "ImageURL": "image-1664275603312",
+    "Designation": " B. Tech",
+    "githubLink": "",
+    "linkedinLink": "LinkedIn - https://www.linkedin.com/in/pankil-kalra/",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Nikunj Singhal",
+    "Mail": "nikunj18249@iiitd.ac.in",
+    "Position": "BTech",
+    "Interests": "Machine learning, Semantic web",
+    "ImageURL": "image-1664275600113",
+    "Designation": "B. Tech",
+    "githubLink": "https://github.com/00NoisyMime00",
+    "linkedinLink": "https://www.linkedin.com/in/nikunj-singhal-4a9bb0183/",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Raj Kamal Yadav",
+    "Mail": "raj16076@iiitd.ac.in",
+    "Position": "Alumni",
+    "Interests": "",
+    "ImageURL": "image-1664275597623",
+    "Designation": "(B. Tech ; 2020)",
+    "githubLink": "",
+    "linkedinLink": "",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Pritish Wadhwa",
+    "Mail": "pritish19440@iiitd.ac.in",
+    "Position": "Alumni",
+    "Interests": "AI/ML, Augmented Reality, Operating Systems, Game Design and Development",
+    "ImageURL": "image-1664275608275",
+    "Designation": "B. Tech",
+    "githubLink": "https://github.com/PritishWadhwa",
+    "linkedinLink": "https://www.linkedin.com/in/pritishwadhwa/",
+    "twitterLink": "",
+    "webpageLink": "https://pritishwadhwa.ml/"
+  },
+  {
+    "Name": "Ruchi Dwivedi",
+    "Mail": "ruchi.18@stu.aud.ac.in",
+    "Position": "Alumni",
+    "Interests": "Urban Environment and Ecology ",
+    "ImageURL": "image-1664275604560",
+    "Designation": "RA",
+    "githubLink": "",
+    "linkedinLink": "https://www.linkedin.com/in/ruchi-dwivedi-225a64200/",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Robin Garg",
+    "Mail": "robin19092@iiitd.ac.in",
+    "Position": "BTech",
+    "Interests": "Web Development, Machine Learning",
+    "ImageURL": "image-1664275630701",
+    "Designation": "B. Tech",
+    "githubLink": "",
+    "linkedinLink": "https://www.linkedin.com/in/robin-garg23",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Sakshi Saini",
+    "Mail": "sakshi17092@iiitd.ac.in",
+    "Position": "Alumni",
+    "Interests": "",
+    "ImageURL": "image-1664275601178",
+    "Designation": "(B.Tech ; 2021)",
+    "githubLink": "https://github.com/SakshiSaini17092",
+    "linkedinLink": "https://www.linkedin.com/in/sakshi-saini-37a760151/",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Udit Arora",
+    "Mail": "udit18417@iiitd.ac.in",
+    "Position": "Alumni",
+    "Interests": "Machine Learning, Deep Learning, Natural Language Processing",
+    "ImageURL": "image-1664275600538",
+    "Designation": "B. Tech",
+    "githubLink": "",
+    "linkedinLink": "https://www.linkedin.com/in/udit-arora-22195a189/",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Ritam Biswas",
+    "Mail": "ritam19043@iiitd.ac.in",
+    "Position": "Alumni",
+    "Interests": "",
+    "ImageURL": "image-1664275598541",
+    "Designation": "(M. Tech ; 2021)",
+    "githubLink": "https://github.com/devrb",
+    "linkedinLink": "https://www.linkedin.com/in/ritam-biswas-devrb-0478a810b",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Utkarsh Dubey",
+    "Mail": "utkarsh19213@iiitd.ac.in",
+    "Position": "BTech",
+    "Interests": "Web Development",
+    "ImageURL": "image-1664275599957",
+    "Designation": "B. Tech",
+    "githubLink": "https://github.com/utkarsh-dubey",
+    "linkedinLink": "https://www.linkedin.com/in/utkarsh2504/",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Yugansh Singh",
+    "Mail": "yugansh21108@iiitd.ac.in",
+    "Position": "Masters",
+    "Interests": "Structure of Knowledge graph, Computer Vision Enhancement using KG, Computer Vision",
+    "ImageURL": "image-1664275633577",
+    "Designation": "M. Tech",
+    "githubLink": "https://github.com/yugpsyfer ",
+    "linkedinLink": "https://www.linkedin.com/in/yugansh-singh-368387122",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Aniket Verma",
+    "Mail": "aniket19233@iiitd.ac.in",
+    "Position": "BTech",
+    "Interests": "Machine Learning, Computer Vision, Deep Learning",
+    "ImageURL": "image-1675679233248",
+    "Designation": "B. Tech",
+    "githubLink": "",
+    "linkedinLink": "https://www.linkedin.com/in/aniket-verma-5768951b1/",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Palak Goel",
+    "Mail": "palak19438@iiitd.ac.in",
+    "Position": "BTech",
+    "Interests": "ML, AI, NLP",
+    "ImageURL": "image-1675679544588",
+    "Designation": "B. Tech",
+    "githubLink": "",
+    "linkedinLink": "https://www.linkedin.com/in/gpalak",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Kshitij Mohan",
+    "Mail": "kshitij19054@iiitd.ac.in",
+    "Position": "BTech",
+    "Interests": "ML, DL, NLP",
+    "ImageURL": "image-1675679668419",
+    "Designation": "B. Tech",
+    "githubLink": "https://github.com/Kshitij-M",
+    "linkedinLink": "",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Dhananjay Singh",
+    "Mail": "Dhananjay19161@iiitd.ac.in",
+    "Position": "BTech",
+    "Interests": "Machine Learning, Computer Vision, Deep Learning",
+    "ImageURL": "image-1675679954904",
+    "Designation": "B. Tech",
+    "githubLink": "",
+    "linkedinLink": "https://www.linkedin.com/in/dhananjay-singh-88a82889/",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Deepak Sharma",
+    "Mail": "deepaks@iiitd.ac.in",
+    "Position": "PhD",
+    "Interests": "",
+    "ImageURL": "image-1694622781054",
+    "Designation": "PhD Student (Decisions Sponsored)",
+    "githubLink": "",
+    "linkedinLink": "https://www.linkedin.com/in/deepak-sharma-7b9a669a/?originalSubdomain=in",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Dr. Niharika Sachdeva",
+    "Mail": "",
+    "Position": "Collaborator",
+    "Interests": "",
+    "ImageURL": "",
+    "Designation": "InfoEdge India Limited",
+    "githubLink": "",
+    "linkedinLink": "",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Dr. Charu Sharma",
+    "Mail": "",
+    "Position": "Collaborator",
+    "Interests": "",
+    "ImageURL": "",
+    "Designation": "IIIT Hyderabad",
+    "githubLink": "",
+    "linkedinLink": "",
+    "twitterLink": "",
+    "webpageLink": "https://www.iiit.ac.in/people/faculty/Charusharma/"
+  },
+  {
+    "Name": "Dr. Pieter Bonte",
+    "Mail": "",
+    "Position": "Collaborator",
+    "Interests": "",
+    "ImageURL": "",
+    "Designation": "Ghent University, Belgium",
+    "githubLink": "",
+    "linkedinLink": "",
+    "twitterLink": "",
+    "webpageLink": "http://pieterbonte.be/"
+  },
+  {
+    "Name": "Dr. Riccardo Tommasini",
+    "Mail": "",
+    "Position": "Collaborator",
+    "Interests": "",
+    "ImageURL": "",
+    "Designation": "INSA, Lyon, France",
+    "githubLink": "",
+    "linkedinLink": "",
+    "twitterLink": "",
+    "webpageLink": "https://riccardotommasini.com/"
+  },
+  {
+    "Name": "Ojasva Singh",
+    "Mail": "ojasva20318@iiitd.ac.in",
+    "Position": "BTech",
+    "Interests": "LLMs, Knowledge Graphs and Prompt Engineering",
+    "ImageURL": "image-1700484463134",
+    "Designation": "B. Tech ",
+    "githubLink": "https://github.com/lucious20318",
+    "linkedinLink": "https://www.linkedin.com/in/ojasvasingh/",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Yogender Kumar",
+    "Mail": "Yogender21505@iiitd.ac.in",
+    "Position": "BTech",
+    "Interests": "Database Management and Operating system",
+    "ImageURL": "image-1700485291791",
+    "Designation": "B. Tech",
+    "githubLink": "",
+    "linkedinLink": "https://www.linkedin.com/in/yogender-kumar-b0448b216/",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Anmol Gupta",
+    "Mail": "anmol21233@iiitd.ac.in",
+    "Position": "BTech",
+    "Interests": "Cyber Security, Machine Learning.",
+    "ImageURL": "image-1700485342249",
+    "Designation": "B. Tech",
+    "githubLink": "",
+    "linkedinLink": "https://www.linkedin.com/in/anmol-gupta-95983526a/",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Aniketh",
+    "Mail": "aniketh20360@iiitd.ac.in",
+    "Position": "BTech",
+    "Interests": "Deep Learning, Natural Language Processing, Knowledge Graphs",
+    "ImageURL": "image-1700485391031",
+    "Designation": "B. Tech",
+    "githubLink": "",
+    "linkedinLink": "https://www.linkedin.com/in/aniketh-garikaparthi-793002202/",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Aanchal Gupta",
+    "Mail": "aanchal21224@iiitd.ac.in",
+    "Position": "BTech",
+    "Interests": "Development and Programming",
+    "ImageURL": "image-1700485440121",
+    "Designation": "B. Tech",
+    "githubLink": "",
+    "linkedinLink": "https://www.linkedin.com/in/aanchal-gupta-32a974222/",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Sohel Aman Khan",
+    "Mail": "sohelk@iiitd.ac.in",
+    "Position": "PhD",
+    "Interests": "Data Analytics, GNN, PyTorch",
+    "ImageURL": "image-1713179810538",
+    "Designation": "PhD",
+    "githubLink": "",
+    "linkedinLink": "https://www.linkedin.com/in/sohel-aman-khan-04b718194/",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Aayush Jain",
+    "Mail": "aayush.jain95@gmail.com",
+    "Position": "Alumni",
+    "Interests": "",
+    "ImageURL": "image-1664275607901",
+    "Designation": "(M. Tech ; 2020)",
+    "githubLink": "",
+    "linkedinLink": "http://www.linkedin.com/in/aayush-jain-b55a2217b",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Amrit Mohan Kaushik ",
+    "Mail": "amrit18022@iiitd.ac.in",
+    "Position": "Alumni",
+    "Interests": "",
+    "ImageURL": "image-1664275608200",
+    "Designation": "(M.Tech ; 2020)",
+    "githubLink": "",
+    "linkedinLink": "https://www.linkedin.com/in/amrit-kaushik-4a9a697a",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Anmol Kumar",
+    "Mail": "anmol18382@iiitd.ac.in",
+    "Position": "BTech",
+    "Interests": "Knowledge Graphs Reasoning, Computational Biology and UX Research",
+    "ImageURL": "image-1664275630944",
+    "Designation": "B. Tech",
+    "githubLink": "",
+    "linkedinLink": "https://www.linkedin.com/in/anmolkumar18/",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Anurag",
+    "Mail": "anurag19006@iiitd.ac.in",
+    "Position": "Alumni",
+    "Interests": "",
+    "ImageURL": "image-1664275602580",
+    "Designation": "(M. Tech ; 2021)",
+    "githubLink": "",
+    "linkedinLink": "linkedin.com/in/anurag-dhamija-19a549bb/",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Dr. Aasim Khan",
+    "Mail": "",
+    "Position": "Collaborator",
+    "Interests": "",
+    "ImageURL": "",
+    "Designation": "IIIT-Delhi, India",
+    "githubLink": "",
+    "linkedinLink": "",
+    "twitterLink": "",
+    "webpageLink": "https://www.iiitd.ac.in/aasim"
+  },
+  {
+    "Name": "Daksh Thapar",
+    "Mail": "daksh18137@iiitd.ac.in",
+    "Position": "Alumni",
+    "Interests": "Deep Learning, Computer Vision, Machine Learning",
+    "ImageURL": "image-1664275615343",
+    "Designation": "B. Tech",
+    "githubLink": "https://github.com/dak-7309",
+    "linkedinLink": "https://www.linkedin.com/in/daksh-thapar-615a7511a/",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Dr. Sudip Mittal",
+    "Mail": "",
+    "Position": "Collaborator",
+    "Interests": "",
+    "ImageURL": "",
+    "Designation": "Mississippi State University",
+    "githubLink": "",
+    "linkedinLink": "",
+    "twitterLink": "s",
+    "webpageLink": "https://www.sudipmittal.com/"
+  },
+  {
+    "Name": "Dr. Suman Roy",
+    "Mail": "",
+    "Position": "Collaborator",
+    "Interests": "",
+    "ImageURL": "",
+    "Designation": "Optum Global Services, India",
+    "githubLink": "",
+    "linkedinLink": "",
+    "twitterLink": "",
+    "webpageLink": "https://scholar.google.com/citations?user=JD8T25MAAAAJ&hl=en"
+  },
+  {
+    "Name": "Hrithik Chopra",
+    "Mail": "hrithik16237@iiitd.ac.in",
+    "Position": "Alumni",
+    "Interests": "",
+    "ImageURL": "image-1664275598794",
+    "Designation": "(B. Tech ; 2020)",
+    "githubLink": "",
+    "linkedinLink": "https://www.linkedin.com/in/hrithik-chopra-6bb800108",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Hardik Garg",
+    "Mail": "hardik19040@iiitd.ac.in",
+    "Position": "Alumni",
+    "Interests": "Neuro-Symbolic AI",
+    "ImageURL": "image-1664275613604",
+    "Designation": "B. Tech",
+    "githubLink": "",
+    "linkedinLink": "https://in.linkedin.com/in/hardik-garg-ba168b1ba",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Monika Jain",
+    "Mail": "monikaja@iiitd.ac.in",
+    "Position": "PhD",
+    "Interests": "Ontology learning, Knowledge graph, Natural language processing",
+    "ImageURL": "image-1664275607028",
+    "Designation": "Ph. D Student, P. M. Research Fellow",
+    "githubLink": "https://monikajain19.github.io/",
+    "linkedinLink": "https://www.linkedin.com/in/monika-jain-61a4312a",
+    "twitterLink": "https://twitter.com/monika_jain19?s=09, monikajain1908",
+    "webpageLink": "https://monikajain19.github.io/"
+  },
+  {
+    "Name": "Maleeha Arif Yasvi",
+    "Mail": "maleeha18112@iiitd.ac.in",
+    "Position": "Alumni",
+    "Interests": "",
+    "ImageURL": "image-1664275599812",
+    "Designation": "(M. Tech ; 2020)",
+    "githubLink": "",
+    "linkedinLink": "http://linkedin.com/in/maleeha-yasvi-45a188162",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Niharika Arora",
+    "Mail": "niharika18114@iiitd.ac.in",
+    "Position": "Alumni",
+    "Interests": "",
+    "ImageURL": "image-1664275599773",
+    "Designation": "(M. Tech ; 2020)",
+    "githubLink": "",
+    "linkedinLink": "",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Raghav Rathi",
+    "Mail": "raghav17083@iiitd.ac.in",
+    "Position": "Alumni",
+    "Interests": "",
+    "ImageURL": "image-1664275622112",
+    "Designation": "(B. Tech ; 2021)",
+    "githubLink": "https://github.com/raghav17083",
+    "linkedinLink": "https://www.linkedin.com/in/raghav-rathi-a78bb0152/",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Raghava Mutharaju",
+    "Mail": "raghava.mutharaju@iiitd.ac.in",
+    "Position": "Faculty",
+    "Interests": "Knowledge Graphs, Ontology Modeling and Reasoning, Semantic Web Applications",
+    "ImageURL": "image-1664275597007",
+    "Designation": "Assistant Professor",
+    "githubLink": "http://github.com/raghavam",
+    "linkedinLink": "http://linkedin.com/in/raghavamutharaju",
+    "twitterLink": "http://twitter.com/mraghava",
+    "webpageLink": "http://raghavam.github.io/"
+  },
+  {
+    "Name": "Rohan Dhar",
+    "Mail": "rohan19443@iiitd.ac.in",
+    "Position": "BTech",
+    "Interests": " Natural Language Processing, Deep Learning ",
+    "ImageURL": "image-1664275608238",
+    "Designation": "B. Tech",
+    "githubLink": "https://github.com/rohan-dhar",
+    "linkedinLink": "https://www.linkedin.com/in/rohan-dhar-421057b8/",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Ritik Khanna",
+    "Mail": "ritik18084@iiitd.ac.in",
+    "Position": "Alumni",
+    "Interests": "Reasoning over Knowledge Graphs, Mobile and Web Technologies",
+    "ImageURL": "image-1664275606125",
+    "Designation": "B. Tech",
+    "githubLink": "https://github.com/ritik__khanna",
+    "linkedinLink": "https://www.linkedin.com/in/ritik-khanna-9931951b2/",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "VISHAL KUMAR",
+    "Mail": "vishal20305@iiitd.ac.in",
+    "Position": "Alumni",
+    "Interests": "Data Mining, Android and Machine Learning",
+    "ImageURL": "image-1664275601055",
+    "Designation": "M. Tech",
+    "githubLink": "",
+    "linkedinLink": "https://www.linkedin.com/in/vishal-singh-202893119/",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Vipul Saini",
+    "Mail": "vipul16117@iiitd.ac.in",
+    "Position": "Alumni",
+    "Interests": "",
+    "ImageURL": "image-1664275606927",
+    "Designation": "(B.Tech ; 2020)",
+    "githubLink": "",
+    "linkedinLink": "https://www.linkedin.com/in/vipul-saini-96a7a7134",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Vikhyat Yadav",
+    "Mail": "vikhyat19127@iiitd.ac.in",
+    "Position": "BTech",
+    "Interests": "ChatBot in React Native",
+    "Designation": "B. Tech",
+    "githubLink": "https://github.com/vikhyat-github",
+    "linkedinLink": "https://www.linkedin.com/in/vikhyat-yadav-9b7554196/",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Ashutosh Vashist",
+    "Mail": "ashutosh19154@iiitd.ac.in",
+    "Position": "BTech",
+    "Interests": "Backend Development",
+    "ImageURL": "image-1675679485790",
+    "Designation": "B. Tech",
+    "githubLink": "",
+    "linkedinLink": "https://www.linkedin.com/in/ashutosh-vashist/",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Ashwin R Nair",
+    "Mail": "ashwin20037@iiitd.ac.in",
+    "Position": "BTech",
+    "Interests": "Machine Learning , Web Development",
+    "ImageURL": "image-1675679724112",
+    "Designation": "B. Tech",
+    "githubLink": "https://github.com/AshwinRNair-ARN?tab=repositories",
+    "linkedinLink": "https://www.linkedin.com/in/ashwin-r-nair-3305681a8",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Jahnvi Kadia",
+    "Mail": "jahnvi21123@iiitd.ac.in",
+    "Position": "Masters",
+    "Interests": "Mobile App Development, Ontology Reasoning, Natural Language Processing and Computer Security",
+    "ImageURL": "image-1675679902355",
+    "Designation": "M. Tech",
+    "githubLink": "https://github.com/JahnviKadia",
+    "linkedinLink": "https://www.linkedin.com/in/jahnvi-kadia-ab25b71b9/",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Arham Ali",
+    "Mail": "arham19411@iiitd.ac.in",
+    "Position": "BTech",
+    "Interests": "Android and IOS",
+    "ImageURL": "image-1675680051323",
+    "Designation": "B. Tech",
+    "githubLink": "https://github.com/javachip8786",
+    "linkedinLink": "https://www.linkedin.com/in/arham-ali-145838196/",
+    "twitterLink": "https://twitter.com/arhama73",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Anwar Shaikh",
+    "Mail": "anwars@iiitd.ac.in",
+    "Position": "PhD",
+    "Interests": "Information Retrieval, Knowledge Graphs and Visual Question Answering",
+    "ImageURL": "image-1694622890761",
+    "Designation": "Ph. D Student (Cisco Sponsored)",
+    "githubLink": "",
+    "linkedinLink": "https://in.linkedin.com/in/shaikhanwar",
+    "twitterLink": "",
+    "webpageLink": ""
+  },
+  {
+    "Name": "Prof. Biplav Srivastava",
+    "Mail": "",
+    "Position": "Collaborator",
+    "Interests": "",
+    "ImageURL": "",
+    "Designation": "University of South Carolina, USA",
+    "githubLink": "",
+    "linkedinLink": "",
+    "twitterLink": "",
+    "webpageLink": "https://sc.edu/study/colleges_schools/engineering_and_computing/faculty-staff/srivastava.php"
+  }
 ]
