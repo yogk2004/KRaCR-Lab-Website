@@ -22,9 +22,44 @@ url = "/publications"
 weight = 4
 
 [[main]]
+name = "Blogs"
+url = "/blog"
 weight = 5
+
+[[main]]
+name = "Resources"
+url = "/resources"
+weight = 6
+
+[[main]]
+parent = "Resources"
+name = "Tools"
+url = "/projects"
+
+[[main]]
+parent = "Resources"
+name = "Ontologies"
+url = "/contact"
+
+[[main]]
+parent = "Resources"
+name = "Benchmark"
+url = "/team"
+
+[[main]]
+parent = "Resources"
+name = "Teaching Material"
+url = "/categories"
+
+[[main]]
+parent = "Resources"
+name = "Lab GitHub Link"
+url = "/404"
+
+[[main]]
 name = "Projects"
 url = "/projects"
+weight = 7
 
 [[main]]
 parent = "Projects"

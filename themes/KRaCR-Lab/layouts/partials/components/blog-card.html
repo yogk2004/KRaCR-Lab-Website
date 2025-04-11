@@ -30,7 +30,15 @@
       </li>
     </ul>
   {{ end }}
-  <p class="mb-6">{{ .Summary | plainify }}</p>
+  {{ $maxLength := 150 }}
+  {{ $summary := .Summary | plainify }}
+  <p class="mb-6">
+    {{ if gt (len $summary) $maxLength }}
+      {{ substr $summary 0 $maxLength }}......
+    {{ else }}
+      {{ $summary }}
+    {{ end }}
+  </p>
   <a class="btn btn-outline-primary btn-sm" href="{{ .RelPermalink }}">
     {{ T "read_more" }}
   </a>
