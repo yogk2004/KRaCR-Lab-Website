@@ -1,0 +1,692 @@
+[
+  {
+    "Date": {
+      "$date": "2022-01-01T00:00:00Z"
+    },
+    "Title": "Aisha and Pramit are selected for the \u201cResearch Week with Google\u201d 2022."
+  },
+  {
+    "Date": {
+      "$date": "2022-01-01T00:00:00Z"
+    },
+    "Title": "Raghava gave a talk on \u201cKnowledge Graphs for Structuring and Integrating Data\u201d at the TechCohere event organized by Infosys."
+  },
+  {
+    "Date": {
+      "$date": "2021-09-01T00:00:00Z"
+    },
+    "Title": " Kritika\u2019s paper titled \u201cSERC: Syntactic and Semantic Sequence based Event Relation Classification\u201d is accepted at The 33rd IEEE International Conference on Tools with Artificial Intelligence (ICTAI)."
+  },
+  {
+    "Date": {
+      "$date": "2021-05-01T00:00:00Z"
+    },
+    "Title": "Raghava is one of the editors of the book titled \u201cAdvances in Pattern-Based Ontology Engineering\u201d by IOS Press. This book is available at https://ebooks.iospress.nl/volume/advances-in-pattern-based-ontology-engineering. "
+  },
+  {
+    "Date": {
+      "$date": "2021-05-01T00:00:00Z"
+    },
+    "Title": "Raghava will give a keynote at the \u201cInternational Conference on Artificial Intelligence (ICAI-2021)\u201d organized by the Artificial Intelligence Foundation Trust, India."
+  },
+  {
+    "Date": {
+      "$date": "2021-05-01T00:00:00Z"
+    },
+    "Title": "Amrit\u2019s work titled \u201cAn Ontology Design Pattern for Modeling Bias\u201d has been published as a chapter in the book titled \u201cAdvances in Pattern-Based Ontology Engineering\u201d by IOS Press and edited by E. Blomqvist, T. Hahmann, et. al."
+  },
+  {
+    "Date": {
+      "$date": "2021-01-01T00:00:00Z"
+    },
+    "Title": "Raghava gives an invited talk on \u201cSemantic Explainability\u201d at the workshop on \u201cTrustworthiness of AI Systems and its Impact on Society in Developing Nations\u201d held virtually by IIIT-Delhi and IIT Hyderabad."
+  },
+  {
+    "Date": {
+      "$date": "2020-11-01T00:00:00Z"
+    },
+    "Title": "Gunjan, Monika, and Raghava attend ISWC 2020."
+  },
+  {
+    "Date": {
+      "$date": "2020-07-01T00:00:00Z"
+    },
+    "Title": "Maleeha successfully defended her M.Tech thesis titled \u201cAn Ontology Design Pattern Recommendation System\u201d."
+  },
+  {
+    "Date": {
+      "$date": "2020-07-01T00:00:00Z"
+    },
+    "Title": "Sutapa successfully defended her M.Tech thesis titled \u201cEmbeddings for EL++ Description Logic\u201d."
+  },
+  {
+    "Date": {
+      "$date": "2020-05-01T00:00:00Z"
+    },
+    "Title": "Gunjan and Monika attended Knowledge Graph Conference 2020"
+  },
+  {
+    "Date": {
+      "$date": "2020-03-01T00:00:00Z"
+    },
+    "Title": "Gunjan is awarded the prestigious IBM PhD Fellowship for two years (Aug 2020 - Aug 2022)"
+  },
+  {
+    "Date": {
+      "$date": "2020-01-01T00:00:00Z"
+    },
+    "Title": "Mihir, Anmol, Pramit, Gunjan, and Monika showcase their work at IIIT-D\u2019s annual research and innovation event named RIISE 2020."
+  },
+  {
+    "Date": {
+      "$date": "2019-10-01T00:00:00Z"
+    },
+    "Title": "Raghava gives a talk titled \u201cCloud Computing, Big Data, and the Semantic Web\u201d at the Guru Gobind Singh Indraprastha University (GGSIPU), Delhi."
+  },
+  {
+    "Date": {
+      "$date": "2019-08-01T00:00:00Z"
+    },
+    "Title": "Raghava gives a talk on \u201cIntroduction to AI\u201d at the Indian School, Delhi."
+  },
+  {
+    "Date": {
+      "$date": "2019-07-01T00:00:00Z"
+    },
+    "Title": "Raghava is one of the speakers at the summer school on \u201cAI Assisted Data Analytics\u201d (AIDA) 2019 held at IIIT-Delhi, New Delhi, India."
+  },
+  {
+    "Date": {
+      "$date": "2022-10-23T00:00:00Z"
+    },
+    "Title": "Gunjan attended International Semantic Web Conference (ISWC) 2022"
+  },
+  {
+    "Date": {
+      "$date": "2022-07-01T00:00:00Z"
+    },
+    "Title": "Aisha, Gunjan and Monika attended ACM-W Grad Cohort 2022"
+  },
+  {
+    "Date": {
+      "$date": "2022-12-13T00:00:00Z"
+    },
+    "Title": "Nidhi Goyal and Gunjan Singh attends 14th Asian Conference on Machine Learning (ACML) 2022 at Indian School of Business, Hyderabad"
+  },
+  {
+    "Date": {
+      "$date": "2023-08-29T00:00:00Z"
+    },
+    "Title": "Gunjan Singh attended Neuro-Symbolic AI Summer School 2023"
+  },
+  {
+    "Date": {
+      "$date": "2023-02-14T00:00:00Z"
+    },
+    "Title": "Nidhi Goyal attended ACM India Annual Event 2023"
+  },
+  {
+    "Date": {
+      "$date": "2023-07-17T00:00:00Z"
+    },
+    "Title": "Aisha Aijaz, Mayank Kharbanda, and Monika Singh volunteered and participated in the AI Summer School organized by CAI IIITD. The program focused on Federated Learning and other recently trending AI topics."
+  },
+  {
+    "Date": {
+      "$date": "2021-12-01T00:00:00Z"
+    },
+    "Title": "Lakshya and Nikunj get the student travel grant for CoDS-COMAD 2022."
+  },
+  {
+    "Date": {
+      "$date": "2022-04-01T00:00:00Z"
+    },
+    "Title": "Gunjan\u2019s challenge proposal titled \u201cSemREC (Semantic Reasoning Evaluation Challenge)\u201d is accepted at ISWC 2022."
+  },
+  {
+    "Date": {
+      "$date": "2022-08-15T00:00:00Z"
+    },
+    "Title": "Raghava joins the editorial board of the AI Open Journal."
+  },
+  {
+    "Date": {
+      "$date": "2022-10-01T00:00:00Z"
+    },
+    "Title": "Raghava is invited to join the editorial board of the new Neurosymbolic Artificial Intelligence journal from IOS Press."
+  },
+  {
+    "Date": {
+      "$date": "2023-01-02T00:00:00Z"
+    },
+    "Title": "Jan 2023: Mayank and Nidhi attend CoDS-COMAD conference in Mumbai, India."
+  },
+  {
+    "Date": {
+      "$date": "2023-09-18T00:00:00Z"
+    },
+    "Title": "Monika Jain presented her research paper titled 'ReOnto: A Neuro-Symbolic Approach for Biomedical Relation Extraction,' along with her PhD forum poster titled \"Contextually-Guided Textual Relationship Extraction at ECML PKDD 2023."
+  },
+  {
+    "Date": {
+      "$date": "2024-05-01T00:00:00Z"
+    },
+    "Title": "Monika Jain presented her research paper titled Knowledgd-Enabled Relation Extraction, PhD Symposium Track at WWW'24"
+  },
+  {
+    "Date": {
+      "$date": "2021-09-01T00:00:00Z"
+    },
+    "Title": "Several members of the lab are on the Dean\u2019s list (academics) of students."
+  },
+  {
+    "Date": {
+      "$date": "2021-08-01T00:00:00Z"
+    },
+    "Title": "Nirali and Aisha join the KRaCR Lab for their PhD."
+  },
+  {
+    "Date": {
+      "$date": "2021-07-01T00:00:00Z"
+    },
+    "Title": "Raghava is one of the speakers of the FDP on Semantic Intelligence organized by Dr. Sarika Jain of NIT, Kurukshetra."
+  },
+  {
+    "Date": {
+      "$date": "2021-07-01T00:00:00Z"
+    },
+    "Title": "Raghava is a keynote speaker of the workshop on Computational Intelligence organized by VJIT, Hyderabad."
+  },
+  {
+    "Date": {
+      "$date": "2021-05-01T00:00:00Z"
+    },
+    "Title": "Maleeha\u2019s work titled \u201cAn Ontology Design Pattern Recommendation System\u201d has been published as a chapter in the book titled \u201cAdvances in Pattern-Based Ontology Engineering\u201d by IOS Press and edited by E. Blomqvist, T. Hahmann, et. al."
+  },
+  {
+    "Date": {
+      "$date": "2021-04-01T00:00:00Z"
+    },
+    "Title": "Semantic Reasoner Evaluation Challenge (SemREC) accepted at ISWC 2021."
+  },
+  {
+    "Date": {
+      "$date": "2021-04-01T00:00:00Z"
+    },
+    "Title": "Nikhil and Monika\u2019s paper titled \u201cExtraction of Union and Intersection Axioms from Biomedical Text\u201d is accepted as a poster at ESWC 2021."
+  },
+  {
+    "Date": {
+      "$date": "2021-01-01T00:00:00Z"
+    },
+    "Title": "Gunjan and Monika are selected as student volunteers for AAAI 2021."
+  },
+  {
+    "Date": {
+      "$date": "2021-01-01T00:00:00Z"
+    },
+    "Title": "Sutapa\u2019s paper titled \u201cEmEL++ : Embeddings for the EL++  Description Logic\u201d is accepted at AAAI-MAKE 2021, Spring Symposium on Combining Machine Learning and Knowledge Engineering."
+  },
+  {
+    "Date": {
+      "$date": "2020-10-01T00:00:00Z"
+    },
+    "Title": "Gunjan and Monika get the student grant for ISWC 2020."
+  },
+  {
+    "Date": {
+      "$date": "2020-09-01T00:00:00Z"
+    },
+    "Title": "A poster by Gunjan, Ashwat, and Kanav, titled \u201cOWL2Bench: Towards a Customizable Benchmark for OWL 2 Reasoners\u201d has been accepted at ISWC 2020 (posters & demos track)."
+  },
+  {
+    "Date": {
+      "$date": "2020-07-01T00:00:00Z"
+    },
+    "Title": "Gunjan attended the IEEE Signal Processing Society Workshop on Deep Learning and Reinforcement Learning using MATLAB"
+  },
+  {
+    "Date": {
+      "$date": "2020-08-01T00:00:00Z"
+    },
+    "Title": "Gunjan\u2019s paper on \u201cOWL2Bench: A Benchmark for OWL 2 Reasoners\u201d is accepted to the ISWC 2020 resources track."
+  },
+  {
+    "Date": {
+      "$date": "2020-07-01T00:00:00Z"
+    },
+    "Title": "Gunjan and Monika attended the ACM-W Grad Cohort 2020."
+  },
+  {
+    "Date": {
+      "$date": "2019-10-01T00:00:00Z"
+    },
+    "Title": "Raj\u2019s poster titled \u201cTowards a Concurrent Approximate Description Logic Reasoner\u201d gets nominated for the best poster award at ISWC 2019."
+  },
+  {
+    "Date": {
+      "$date": "2019-10-01T00:00:00Z"
+    },
+    "Title": "Monika\u2019s paper titled \u201cCardinality Extraction from Text for Ontology Learning\u201d gets accepted to the YRS track of CoDS-COMAD 2020."
+  },
+  {
+    "Date": {
+      "$date": "2019-10-01T00:00:00Z"
+    },
+    "Title": "Gunjan\u2019s paper titled \u201cA Benchmark for OWL 2 DL Reasoners\u201d gets accepted to the YRS track of CoDS-COMAD 2020."
+  },
+  {
+    "Date": {
+      "$date": "2019-07-01T00:00:00Z"
+    },
+    "Title": "Raghava gives an invited talk titled \u201cBig Data and Semantic Web\u201d at the summer school on Cloud and IoT based Systems organised by Jaypee Institute of Information Technology, Noida, India."
+  },
+  {
+    "Date": {
+      "$date": "2018-11-01T00:00:00Z"
+    },
+    "Title": "Raghava gives a talk on \u201cDistributed Rule-Based Ontology Reasoning\u201d at TCS Research Lab, Gurgaon, India."
+  },
+  {
+    "Date": {
+      "$date": "2022-10-10T00:00:00Z"
+    },
+    "Title": "Gunjan got the student grant for ISWC 2022 and ACML 2022"
+  },
+  {
+    "Date": {
+      "$date": "2023-06-01T00:00:00Z"
+    },
+    "Title": "Suneera C M, a PhD student from NIT Calicut, visited us as the ACM India Anveshan Setu fellow."
+  },
+  {
+    "Date": {
+      "$date": "2023-05-23T00:00:00Z"
+    },
+    "Title": "Aisha Aijaz's paper titled \"Opacity, Transparency, and the Ethics of Affective Computing\" has been accepted at the IEEE Transactions of Affective Computing."
+  },
+  {
+    "Date": {
+      "$date": "2021-11-01T00:00:00Z"
+    },
+    "Title": "Osheen and Mohnish get the Chanakya UG Fellowship from TiH-Anubhuti."
+  },
+  {
+    "Date": {
+      "$date": "2022-06-15T00:00:00Z"
+    },
+    "Title": "Abhilekha from DaSe Lab at Kansas State University will visit us during the summer. "
+  },
+  {
+    "Date": {
+      "$date": "2022-07-01T00:00:00Z"
+    },
+    "Title": "Raghava gives a lecture on Description Logics at the 9th Indian School on Logic and its Applications (ISLA) 2022."
+  },
+  {
+    "Date": {
+      "$date": "2022-08-01T00:00:00Z"
+    },
+    "Title": "Mayank joins the KRaCR Lab for his PhD."
+  },
+  {
+    "Date": {
+      "$date": "2022-08-15T00:00:00Z"
+    },
+    "Title": "Monika gives a talk at the AI Summer School (AISS) 2022."
+  },
+  {
+    "Date": {
+      "$date": "2022-11-02T00:00:00Z"
+    },
+    "Title": "Nidhi, Monika and Mayank get a student grant to attend the CoDS-COMAD 2023 conference."
+  },
+  {
+    "Date": {
+      "$date": "2023-01-04T00:00:00Z"
+    },
+    "Title": "Nidhi\u2019s paper titled \u201cJobXMLC: EXtreme Multi-Label Classification of Job Skills with Graph Neural Networks\u201d is accepted to EACL 2023 findings."
+  },
+  {
+    "Date": {
+      "$date": "2024-05-24T00:00:00Z"
+    },
+    "Title": "Aisha Aijaz and Monika Jain presented their work at the WiDS @ Mastercard Event that was organized by the Mastercard AI Garage."
+  },
+  {
+    "Date": {
+      "$date": "2021-10-01T00:00:00Z"
+    },
+    "Title": "Lakshya and Nikunj\u2019s paper titled \u201cA SPARQL to Cypher Transpiler: Proposal and Initial Results\u201d is accepted at the CODS-COMAD 2022, Young Researcher\u2019s Symposium (YRS) track"
+  },
+  {
+    "Date": {
+      "$date": "2021-10-01T00:00:00Z"
+    },
+    "Title": "Saad, Sudhir, Gunjan, Aisha, Monika, Anmol, Nirali and Nidhi get the student grant for ISWC 2021."
+  },
+  {
+    "Date": {
+      "$date": "2021-10-01T00:00:00Z"
+    },
+    "Title": "Raghava is one of the chairs for the workshop and tutorial track at ISWC 2022."
+  },
+  {
+    "Date": {
+      "$date": "2021-09-01T00:00:00Z"
+    },
+    "Title": "Saad\u2019s and Sudhir\u2019s paper titled \u201cAn Ontology Design Pattern for Modeling Pollution\u201d is accepted at the 12th Workshop on Ontology Design and Patterns (WOP 2021), co-located with ISWC 2021."
+  },
+  {
+    "Date": {
+      "$date": "2021-05-01T00:00:00Z"
+    },
+    "Title": "Monika, Gunjan and Lakshya are selected as student volunteers for ESWC 2021."
+  },
+  {
+    "Date": {
+      "$date": "2021-03-01T00:00:00Z"
+    },
+    "Title": "Anmol and Mihir\u2019s paper titled \u201cFeature Fused Human Activity Recognition Network (FFHAR-Net)\u201d is accepted as a short paper at HCI International 2021."
+  },
+  {
+    "Date": {
+      "$date": "2021-02-01T00:00:00Z"
+    },
+    "Title": "Raghava gives an invited talk on \u201cSemantic Explainability for Machine Learning Models\u201d at ITS Engineering College, Noida, India. This is part of the Faculty Development Program on Machine Learning."
+  },
+  {
+    "Date": {
+      "$date": "2020-10-01T00:00:00Z"
+    },
+    "Title": "Pramit\u2019s paper titled \u201cOntoSeer: A Tool to Ease the  Ontology Development Process\u201d is accepted to the Young Researcher\u2019s Symposium track of CoDS-COMAD 2021."
+  },
+  {
+    "Date": {
+      "$date": "2020-10-01T00:00:00Z"
+    },
+    "Title": "Sutapa gets the letter of appreciation from IIIT-D for her M.Tech thesis on \u201cEmbeddings in EL++ Description Logic\u201d."
+  },
+  {
+    "Date": {
+      "$date": "2020-08-01T00:00:00Z"
+    },
+    "Title": "Kritika is selected for the Google Research India AI Summer School."
+  },
+  {
+    "Date": {
+      "$date": "2020-06-01T00:00:00Z"
+    },
+    "Title": "Raghava wins the IBM Faculty Award."
+  },
+  {
+    "Date": {
+      "$date": "2020-04-01T00:00:00Z"
+    },
+    "Title": "Gunjan and Monika attended Women in Data Science Workshop at ICDE 2020"
+  },
+  {
+    "Date": {
+      "$date": "2020-01-01T00:00:00Z"
+    },
+    "Title": "Raghava gives a talk titled \u201cIntroduction to Semantic Web\u201d at the Banarsidas Chandiwala Institute of Information technology (BCIIT), New Delhi, India."
+  },
+  {
+    "Date": {
+      "$date": "2020-01-01T00:00:00Z"
+    },
+    "Title": "KRaCR Lab members, Monika, Gunjan, and Raghava attended the CoDS-COMAD 2020 conference in Hyderabad, India"
+  },
+  {
+    "Date": {
+      "$date": "2019-07-01T00:00:00Z"
+    },
+    "Title": "Gunjan and Monika attended the ACM-W Grad Cohort 2019 held at IIT Delhi, India."
+  },
+  {
+    "Date": {
+      "$date": "2019-05-01T00:00:00Z"
+    },
+    "Title": "Raghava attended The Web (WWW) 2019 Conference and co-organized the workshop titled \u201cKnowledge Graph Technology and Applications\u201d. This was held in San Francisco, USA."
+  },
+  {
+    "Date": {
+      "$date": "2018-09-01T00:00:00Z"
+    },
+    "Title": "Raghava joins IIIT-D as an assistant professor in the CSE department."
+  },
+  {
+    "Date": {
+      "$date": "2023-06-01T00:00:00Z"
+    },
+    "Title": " Nidhi Goyal joins as Assistant Professor in the Department of CSE at Ecole Centrale School of Engineering, Mahindra University"
+  },
+  {
+    "Date": {
+      "$date": "2023-01-29T00:00:00Z"
+    },
+    "Title": "Nidhi Goyal and Gunjan Singh attended Google Research Week in Bangalore"
+  },
+  {
+    "Date": {
+      "$date": "2023-04-14T00:00:00Z"
+    },
+    "Title": "Nidhi Goyal received Microsoft Research Travel Grant 2023 to present her work \"JobXMLC: EXtreme Multi-Label Classification of Job Skills with Graph Neural Networks\" at EACL 2023"
+  },
+  {
+    "Date": {
+      "$date": "2022-03-01T00:00:00Z"
+    },
+    "Title": "Raghava is invited to give a talk at the RoCED workshop co-located with the KGC 2022."
+  },
+  {
+    "Date": {
+      "$date": "2022-08-15T00:00:00Z"
+    },
+    "Title": "Raghava gave a talk on \u201cNeuro-Symbolic Approaches for Description Logic Reasoning\u201d at ADP Inc., New York, USA."
+  },
+  {
+    "Date": {
+      "$date": "2022-08-01T00:00:00Z"
+    },
+    "Title": "Raghava gives a lecture on Neuro-Symbolic AI at the AI Summer School (AISS) 2022 organized by the Centre for AI, IIIT-Delhi."
+  },
+  {
+    "Date": {
+      "$date": "2022-10-01T00:00:00Z"
+    },
+    "Title": "Gunjan, Aisha, and Monika get the student grants to attend ISWC 2022."
+  },
+  {
+    "Date": {
+      "$date": "2022-11-01T00:00:00Z"
+    },
+    "Title": "Gunjan and Nidhi get a student grant to attend the Asian Conference on Machine Learning (ACML) 2022."
+  },
+  {
+    "Date": {
+      "$date": "2023-06-01T00:00:00Z"
+    },
+    "Title": "Monika's paper \u2018ReOnto: A Neuro-Symbolic Approach for Biomedical Relation Extraction\u2019 got accepted at ECML PKDD 2023."
+  },
+  {
+    "Date": {
+      "$date": "2024-05-24T00:00:00Z"
+    },
+    "Title": "Aisha Aijaz won the Best Poster Award for her poster titled \"Technical Endeavors in Developing Inherently Moral AI\" at the WiDS @ Mastercard event."
+  },
+  {
+    "Date": {
+      "$date": "2024-01-04T00:00:00Z"
+    },
+    "Title": "Aisha Aijaz's paper entitled \"An Ontology to Capture Contextual Information to Facilitate Ethical Decision-making in AI Systems\" was accepted at ACM IKDD CODS-COMAD 2024 as an extended abstract in the Young Researcher's Symposium (YRS)."
+  },
+  {
+    "Date": {
+      "$date": "2021-10-01T00:00:00Z"
+    },
+    "Title": "Nidhi is selected to attend the Online Asian Machine Learning School (OAMLS), 2021."
+  },
+  {
+    "Date": {
+      "$date": "2021-09-01T00:00:00Z"
+    },
+    "Title": "Gunjan, Monika and Nidhi are attending the Reasoning Web summer school 2021."
+  },
+  {
+    "Date": {
+      "$date": "2021-08-01T00:00:00Z"
+    },
+    "Title": "Lakshya is selected for the VLDB fellowship to attend VLDB 2021."
+  },
+  {
+    "Date": {
+      "$date": "2021-08-01T00:00:00Z"
+    },
+    "Title": "Monika and Gunjan are selected for the student grant and can attend the 34th International Workshop on Description Logics (DL 2021) in the online mode."
+  },
+  {
+    "Date": {
+      "$date": "2021-05-01T00:00:00Z"
+    },
+    "Title": "Several members of the group have started their Summer internships."
+  },
+  {
+    "Date": {
+      "$date": "2020-11-01T00:00:00Z"
+    },
+    "Title": "Gunjan\u2019s paper on \u201cNeuro-Symbolic Techniques for Description Logic Reasoning\u201d is accepted as a student abstract at AAAI 2021."
+  },
+  {
+    "Date": {
+      "$date": "2020-10-01T00:00:00Z"
+    },
+    "Title": "Amrit\u2019s paper on \u201cAn Ontology Design Pattern for Modeling Bias\u201d is accepted at the workshop on Ontology Design and Patterns (WOP 2020), co-located with ISWC 2020."
+  },
+  {
+    "Date": {
+      "$date": "2020-09-01T00:00:00Z"
+    },
+    "Title": "Gitansh, Meetakshi, Pritish, Mihir, Anmol, Pragya, Osheen are on the dean\u2019s list of students (academics)."
+  },
+  {
+    "Date": {
+      "$date": "2020-09-01T00:00:00Z"
+    },
+    "Title": "Raghava won the teaching excellence award for \u201cIntroduction to Programming\u201d taught in Monsoon 2019."
+  },
+  {
+    "Date": {
+      "$date": "2020-09-01T00:00:00Z"
+    },
+    "Title": "Raghava is a speaker at the AICTE FDP on \u201cSemantic Intelligence, Perspectives and Applications\u201d organized at NIT Kurukshetra (it is virtual now)."
+  },
+  {
+    "Date": {
+      "$date": "2020-07-01T00:00:00Z"
+    },
+    "Title": "Pramit successfully defended his M.Tech thesis titled \u201cA Recommendation System Involving Human-in-the-loop to Improve the Quality of Ontologies\u201d."
+  },
+  {
+    "Date": {
+      "$date": "2020-07-01T00:00:00Z"
+    },
+    "Title": "Raghava gives a talk titled \u201cKnowledge Graphs and their Applications\u201d at the AI Foundation, Lucknow, India."
+  },
+  {
+    "Date": {
+      "$date": "2019-12-01T00:00:00Z"
+    },
+    "Title": "Monika is awarded the prestigious Prime Minister\u2019s Fellowship for four years (Jan 2020 - Jan 2024)."
+  },
+  {
+    "Date": {
+      "$date": "2019-12-01T00:00:00Z"
+    },
+    "Title": "Raghava gave a tutorial talk titled \u201cKnowledge Graphs: Representation, Management, and Applications\u201d at the BDA 2019 conference, Ahmedabad, India."
+  },
+  {
+    "Date": {
+      "$date": "2019-10-01T00:00:00Z"
+    },
+    "Title": "Raghava gave a tutorial talk titled \u201cLinked Data: Querying, Reasoning, and Benchmarking\u201d at ISWC 2019."
+  },
+  {
+    "Date": {
+      "$date": "2019-07-01T00:00:00Z"
+    },
+    "Title": "Maleeha\u2019s paper titled \u201cODPReco - A Tool to Recommend Ontology Design Patterns\u201d gets accepted to the workshop on Ontology Design and Patterns (WOP 2019), co-located with ISWC 2019."
+  },
+  {
+    "Date": {
+      "$date": "2019-09-01T00:00:00Z"
+    },
+    "Title": "Raghava gives an invited talk titled \u201cSemantic Web: Mining Knowledge from the Web\u201d at the Manipal University, Jaipur, India."
+  },
+  {
+    "Date": {
+      "$date": "2019-01-01T00:00:00Z"
+    },
+    "Title": "Monika and Gunjan join the KRaCR lab as PhD students."
+  },
+  {
+    "Date": {
+      "$date": "2019-06-01T00:00:00Z"
+    },
+    "Title": "Raghava is one of the speakers at the \u201cRepresentation in AI\u201d (RinAI) 2019 summer school held at IIT Mandi, Himachal Pradesh, India."
+  },
+  {
+    "Date": {
+      "$date": "2019-06-01T00:00:00Z"
+    },
+    "Title": "Monika and Gunjan attend the \u201cRepresentation in AI\u201d (RinAI) 2019 summer school held at IIT Mandi, Himachal Pradesh, India."
+  },
+  {
+    "Date": {
+      "$date": "2018-10-01T00:00:00Z"
+    },
+    "Title": "Raghava gives a talk on \u201cDistributed Rule-Based Ontology Reasoning\u201d at IBM Research, Delhi, India."
+  },
+  {
+    "Date": {
+      "$date": "2023-01-23T00:00:00Z"
+    },
+    "Title": "Gunjan attended IBM Neuro-Symbolic AI Workshop 2023"
+  },
+  {
+    "Date": {
+      "$date": "2023-09-01T00:00:00Z"
+    },
+    "Title": "Monika jain received SoBigData Award for Diversity and Inclusion, Microsoft travel grant and ACM/IARCS grant for the European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases, Turin, Italy"
+  },
+  {
+    "Date": {
+      "$date": "2023-07-14T00:00:00Z"
+    },
+    "Title": "Gunjan Singh's paper titled 'Benchmarking Symbolic and Neuro-Symbolic Description Logic Reasoners' got accepted at ISWC (DC Track) 2023"
+  },
+  {
+    "Date": {
+      "$date": "2022-04-01T00:00:00Z"
+    },
+    "Title": "Raghava is the chair of the session on \u201cknowledge bases\u201d at DASFAA 2022."
+  },
+  {
+    "Date": {
+      "$date": "2022-09-01T00:00:00Z"
+    },
+    "Title": "Nidhi gets a travel grant to attend the Indian Symposium on ML ( IndoML)."
+  },
+  {
+    "Date": {
+      "$date": "2023-12-21T00:00:00Z"
+    },
+    "Title": "Aisha Aijaz attended the IndoML Conference at IIT-Bombay."
+  },
+  {
+    "Date": {
+      "$date": "2024-07-02T00:00:00Z"
+    },
+    "Title": "Aisha Aijaz has successfully completed the 'Responsible AI Tour' Executive Certificate Program conducted by Centre for Outreach and Digital Education (CODE), IIT Madras in collaboration with Wadhwani School of Data Science and Artificial Intelligence, IIT Madras."
+  }
+]

@@ -1,37 +1,145 @@
 {{ define "main" }}
-    {{ partial "page-header" . }}
-    <section class="section-sm">
-        <div class="container">
-          <div class="row justify-center">
-            <div class="lg:col-10">
-              <div class="content">
-                {{ range site.Data.formatted_accordions.accordions }}
-                    <div class="accordion">
-                        <button class="accordion-header">{{ .Year }}</button>
-                        <div class="accordion-content">
-                            <div class="content-wrapper">  <!-- Added wrapper div -->
-                                <table>
-                                    <thead>
-                                        <tr>
-                                            <th>Date</th>
-                                            <th>Description</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {{ range .table | after 1 }}
-                                        <tr>
-                                            <td>{{ index . 0 }}</td>
-                                            <td>{{ index . 1 }}</td>
-                                        </tr>
-                                        {{ end }}
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+  {{ partial "page-header" . }}
+  <section class="section-sm">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="lg:col-10">
+          <div class="content">
+
+            {{ $rawNews := site.Data.news }}
+            {{ if not $rawNews }}
+              <p>No news data found! Please ensure your CSV file (news.csv) is in /data and has valid "Date" values.</p>
+            {{ else }}
+              {{ $news := slice }}
+              {{ range $rawNews }}
+                {{ $dateString := or (index .Date "$date") .Date }}
+                {{ $parsedDate := time $dateString }}
+                {{ $newItem := merge . (dict "ParsedDate" $parsedDate) }}
+                {{ $news = $news | append $newItem }}
+              {{ end }}
+
+              {{ $news = sort $news "ParsedDate" "desc" }}
+              {{ $grouped := dict }}
+              {{ range $news }}
+                {{ $year := .ParsedDate | dateFormat "2006" }}
+                {{ $cur := index $grouped $year | default (slice) }}
+                {{ $cur = $cur | append . }}
+                {{ $grouped = merge $grouped (dict $year $cur) }}
+              {{ end }}
+
+              {{ $yearsSlice := slice }}
+              {{ range $yr, $items := $grouped }}
+                {{ $yearsSlice = $yearsSlice | append $yr }}
+              {{ end }}
+              {{ $sortedYears := sort $yearsSlice }}
+              {{ $n := len $sortedYears }}
+
+              {{ range $i, $_ := $sortedYears }}
+                {{ $year := index $sortedYears (sub (sub $n 1) $i) }}
+                <div class="accordion mb-4 border rounded bg-white shadow">
+                  <button class="accordion-header w-full text-left px-4 py-3 font-semibold text-gray-800 focus:outline-none">
+                    {{ $year }}
+                  </button>
+                  <div class="accordion-content" style="max-height: 0; overflow: hidden; transition: max-height 0.2s ease-out;">
+                    <div class="content-wrapper px-4 py-2">
+                      <ol class="gradient-list">
+                        {{ $events := sort (index $grouped $year) "ParsedDate" "desc" }}
+                        {{ range $events }}
+                          <li>
+                            <div><strong>{{ .ParsedDate | dateFormat "Jan 2, 2006" }}</strong></div>
+                            <div>{{ .Title }}</div>
+                          </li>
+                        {{ end }}
+                      </ol>
                     </div>
-                {{ end }}
-              </div>
-            </div>
+                  </div>
+                </div>
+              {{ end }}
+            {{ end }}
+
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var accHeaders = document.querySelectorAll(".accordion-header");
+      accHeaders.forEach(function(header) {
+        header.addEventListener("click", function() {
+          var content = this.nextElementSibling;
+          var computedMaxHeight = window.getComputedStyle(content).maxHeight;
+          if (computedMaxHeight !== "0px") {
+            content.style.maxHeight = "0px";
+          } else {
+            void content.offsetHeight;
+            content.style.maxHeight = content.scrollHeight + "px";
+          }
+        });
+      });
+    });
+  </script>
+
+  <style>
+    /* ----- Gradient List (Arrow Cards) ----- */
+    .gradient-list {
+      counter-reset: gradient-counter;
+      list-style: none;
+      margin: 1.75rem 0;
+      padding-left: 1rem;
+    }
+    .gradient-list li {
+      background: #fff;
+      border-radius: 0 0.5rem 0.5rem 0.5rem;
+      box-shadow: 0.25rem 0.25rem 0.6rem rgba(0,0,0,0.05), 0 0.5rem 1.125rem rgba(75,0,0,0.05);
+      counter-increment: gradient-counter;
+      margin-top: 2.5rem;
+      margin-bottom: 1.5rem;
+      min-height: 3rem;
+      padding: 1rem 1rem 1rem 3rem;
+      position: relative;
+    }
+
+    /* The index bubble uses a gold/beige gradient to approximate your example */
+    .gradient-list li::before,
+    .gradient-list li::after {
+      content: "";
+      background: linear-gradient(135deg, #d4b575 0%, #f7e4c2 100%);
+      border-radius: 1rem 1rem 0 1rem;
+      height: 3rem;
+      width: 3rem;
+      position: absolute;
+      top: -1rem;
+      left: -1rem;
+      overflow: hidden;
+    }
+
+    /* The large number inside the bubble; default is black text in light mode */
+    .gradient-list li::before {
+      content: counter(gradient-counter);
+      color: #1d1f20;
+      display: flex;
+      font-size: 1.3em;
+      font-weight: 900;
+      align-items: flex-end;
+      justify-content: flex-end;
+      padding: 1em 0.25em 0.125em 0.25em;
+      z-index: 1;
+    }
+
+    /* ----- Dark Mode Overrides ----- */
+    .dark .gradient-list li {
+      background: #000;
+      color: #fff;
+    }
+    .dark .gradient-list li::before,
+    .dark .gradient-list li::after {
+      /* Keep the same gold gradient, but change text to white. */
+      background: linear-gradient(135deg, #d4b575 0%, #f7e4c2 100%);
+    }
+    .dark .gradient-list li::before {
+      color: #000000;
+    }
+  </style>
 {{ end }}
