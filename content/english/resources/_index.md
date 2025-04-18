@@ -12,11 +12,8 @@ resources:
 
 
   "Github Repository":
-    - title: "Homiese Frontend"
-      url: "https://github.com/yourusername/homiese-frontend"
-
-    - title: "Homiese Backend"
-      url: "https://github.com/yourusername/homiese-backend"
+    - title: "Visit Github of KRaCR Lab"
+      url: "https://github.com/kracr"
 
 
   Ontologies:
