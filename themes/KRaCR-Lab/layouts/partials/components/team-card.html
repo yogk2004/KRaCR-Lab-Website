@@ -1,6 +1,20 @@
 <div class="bg-[#f9f9f9] dark:bg-[#1f1f1f] text-center rounded-2xl shadow-md p-6 transition-colors duration-300 border border-gray-200 dark:border-white flex flex-col justify-center items-center {{ if .ImageURL }}h-96{{ else }}h-50{{ end }}">
   {{ if .ImageURL }}
-    <img src="/images/{{ .ImageURL }}.jpg" alt="{{ .Name }}" loading="lazy" class="w-32 h-32 rounded-full shadow-lg mb-4">
+    {{ $path  := replace .ImageURL "\\" "/" }}
+    {{ $image := resources.Get $path }}
+    {{ if $image }}
+      <img
+        src="{{ $image.RelPermalink }}"
+        alt="{{ .Name }}"
+        loading="lazy"
+        class="w-32 h-40 object-contain rounded-md shadow-lg mb-4"
+      >
+  {{ else }}
+      <!-- fallback if Hugo can’t find that asset -->
+      <div class="w-32 h-32 flex items-center justify-center bg-gray-200 text-gray-500 mb-4">
+        Image not found
+      </div>
+  {{ end }}
   {{ else if .Mail }}
     <img src="https://www.gravatar.com/avatar/{{ .Mail | md5 }}?s=128&pg&d=identicon" alt="{{ .Name }}" loading="lazy" class="w-32 h-32 rounded-full shadow-lg mb-4">
   {{ end }}
