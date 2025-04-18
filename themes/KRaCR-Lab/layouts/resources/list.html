@@ -1,0 +1,52 @@
+{{ define "main" }}
+  {{ partial "page-header" . }}
+
+  <section class="section">
+    <div class="container">
+      {{ $page := . }}
+
+      {{ range $category, $links := $page.Params.resources }}
+        {{ if $links }}
+          <div class="mb-8">
+            <!-- Category header with arrow -->
+            <div class="flex justify-between items-center">
+              <h2 class="text-3xl font-bold text-gray-900 dark:text-white text-left">
+                {{ title $category }}
+              </h2>
+            </div>
+
+            <!-- Divider -->
+            <div class="w-full border-t border-gray-300 dark:border-gray-600 my-4"></div>
+
+            <!-- Links grid -->
+            <div class="row">
+              {{ range $links }}
+                <div class="md:col-6 lg:col-4 mb-14">
+                  <a
+                    href="{{ .url }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="block bg-[#f9f9f9] dark:bg-[#1f1f1f]
+                           rounded-2xl shadow-md p-6
+                           border border-gray-200 dark:border-white
+                           hover:shadow-lg transition-shadow duration-300
+                           flex flex-col items-center justify-start h-25"
+                  >
+                    <!-- Resource title -->
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-1">
+                      {{ .title }}
+                    </h3>
+                    <!-- Resource URL with ellipsis -->
+                    <p class="text-sm text-gray-600 dark:text-gray-200 truncate w-full text-center mt-1">
+                      {{ .url }}
+                    </p>
+                  </a>
+                </div>
+              {{ end }}
+            </div>
+          </div>
+        {{ end }}
+      {{ end }}
+    </div>
+  </section>
+{{ end }}
