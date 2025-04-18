@@ -10,51 +10,76 @@
             {{ if not $rawNews }}
               <p>No news data found! Please ensure your CSV file (news.csv) is in /data and has valid "Date" values.</p>
             {{ else }}
+
+              <!-- 1) Parse + augment + sort desc -->
               {{ $news := slice }}
               {{ range $rawNews }}
-                {{ $dateString := or (index .Date "$date") .Date }}
-                {{ $parsedDate := time $dateString }}
-                {{ $newItem := merge . (dict "ParsedDate" $parsedDate) }}
-                {{ $news = $news | append $newItem }}
+                {{ $ds := index .Date "$date" }}
+                {{ $pd := time $ds }}
+                {{ $news = $news | append (merge . (dict "ParsedDate" $pd)) }}
               {{ end }}
-
               {{ $news = sort $news "ParsedDate" "desc" }}
-              {{ $grouped := dict }}
+
+              <!-- 2) Group into a map year→[]items -->
+              {{ $byYear := dict }}
               {{ range $news }}
-                {{ $year := .ParsedDate | dateFormat "2006" }}
-                {{ $cur := index $grouped $year | default (slice) }}
-                {{ $cur = $cur | append . }}
-                {{ $grouped = merge $grouped (dict $year $cur) }}
+                {{ $yr := .ParsedDate | dateFormat "2006" }}
+                {{ $slice := index $byYear $yr | default (slice) }}
+                {{ $slice = $slice | append . }}
+                {{ $byYear = merge $byYear (dict $yr $slice) }}
               {{ end }}
 
-              {{ $yearsSlice := slice }}
-              {{ range $yr, $items := $grouped }}
-                {{ $yearsSlice = $yearsSlice | append $yr }}
-              {{ end }}
-              {{ $sortedYears := sort $yearsSlice }}
-              {{ $n := len $sortedYears }}
+              <!-- 3) Build and reverse‑iterate sorted year keys -->
+              {{ $years := slice }}
+              {{ range $y, $_ := $byYear }} {{ $years = $years | append $y }} {{ end }}
+              {{ $years = sort $years }}
+              {{ $nYears := len $years }}
 
-              {{ range $i, $_ := $sortedYears }}
-                {{ $year := index $sortedYears (sub (sub $n 1) $i) }}
+              {{ range $i, $_ := $years }}
+                {{ $year := index $years (sub (sub $nYears 1) $i) }}
                 <div class="accordion mb-4 border rounded bg-white shadow">
                   <button class="accordion-header w-full text-left px-4 py-3 font-semibold text-gray-800 focus:outline-none">
                     {{ $year }}
                   </button>
-                  <div class="accordion-content" style="max-height: 0; overflow: hidden; transition: max-height 0.2s ease-out;">
+                  <div class="accordion-content" style="max-height:0;overflow:hidden;transition:max-height 0.2s ease-out;">
                     <div class="content-wrapper px-4 py-2">
-                      <ol class="gradient-list">
-                        {{ $events := sort (index $grouped $year) "ParsedDate" "desc" }}
-                        {{ range $events }}
-                          <li>
-                            <div><strong>{{ .ParsedDate | dateFormat "Jan 2, 2006" }}</strong></div>
-                            <div>{{ .Title }}</div>
-                          </li>
+
+                      <!-- 4) Group this year’s items by full month name -->
+                      {{ $events := index $byYear $year }}
+                      {{ $byMonth := dict }}
+                      {{ range $events }}
+                        {{ $mn := .ParsedDate | dateFormat "January" }}
+                        {{ $mslice := index $byMonth $mn | default (slice) }}
+                        {{ $mslice = $mslice | append . }}
+                        {{ $byMonth = merge $byMonth (dict $mn $mslice) }}
+                      {{ end }}
+
+                      <!-- 5) Month display order: Dec → Jan -->
+                      {{ $monthOrder := slice
+                          "December" "November" "October" "September"
+                          "August" "July" "June" "May"
+                          "April" "March" "February" "January"
+                      }}
+
+                      {{ range $month := $monthOrder }}
+                        {{ $items := index $byMonth $month }}
+                        {{ if $items }}
+                          <div class="month-box">
+                            <div><strong>{{ $month }}</strong></div>
+                            <ul class="list-disc">
+                              {{ range $items }}
+                                <li>{{ .Title }}</li>
+                              {{ end }}
+                            </ul>
+                          </div>
                         {{ end }}
-                      </ol>
+                      {{ end }}
+
                     </div>
                   </div>
                 </div>
               {{ end }}
+
             {{ end }}
 
           </div>
@@ -65,45 +90,34 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      var accHeaders = document.querySelectorAll(".accordion-header");
-      accHeaders.forEach(function(header) {
+      document.querySelectorAll(".accordion-header").forEach(function(header) {
         header.addEventListener("click", function() {
           var content = this.nextElementSibling;
-          var computedMaxHeight = window.getComputedStyle(content).maxHeight;
-          if (computedMaxHeight !== "0px") {
-            content.style.maxHeight = "0px";
-          } else {
-            void content.offsetHeight;
-            content.style.maxHeight = content.scrollHeight + "px";
-          }
+          content.style.maxHeight = (content.style.maxHeight && content.style.maxHeight !== "0px")
+            ? "0px"
+            : content.scrollHeight + "px";
         });
       });
     });
   </script>
 
   <style>
-    /* ----- Gradient List (Arrow Cards) ----- */
-    .gradient-list {
-      counter-reset: gradient-counter;
-      list-style: none;
-      margin: 1.75rem 0;
-      padding-left: 1rem;
-    }
-    .gradient-list li {
+    /* month‑box styling + decorative bubble (matches original li) */
+    .month-box {
+      position: relative;
       background: #fff;
       border-radius: 0 0.5rem 0.5rem 0.5rem;
-      box-shadow: 0.25rem 0.25rem 0.6rem rgba(0,0,0,0.05), 0 0.5rem 1.125rem rgba(75,0,0,0.05);
-      counter-increment: gradient-counter;
+      box-shadow:
+        0.25rem 0.25rem 0.6rem rgba(0,0,0,0.05),
+        0 0.5rem 1.125rem rgba(75,0,0,0.05);
       margin-top: 2.5rem;
       margin-bottom: 1.5rem;
       min-height: 3rem;
-      padding: 1rem 1rem 1rem 3rem;
-      position: relative;
+      padding: 0.5rem 1rem 0.5rem 3rem;
+      color: #1d1f20;
     }
-
-    /* The index bubble uses a gold/beige gradient to approximate your example */
-    .gradient-list li::before,
-    .gradient-list li::after {
+    .month-box::before,
+    .month-box::after {
       content: "";
       background: linear-gradient(135deg, #d4b575 0%, #f7e4c2 100%);
       border-radius: 1rem 1rem 0 1rem;
@@ -112,34 +126,29 @@
       position: absolute;
       top: -1rem;
       left: -1rem;
-      overflow: hidden;
+    }
+    .month-box::before { z-index: 2; }
+    .month-box::after  { z-index: 1; }
+
+    /* adjust spacing & bullet alignment */
+    .month-box ul {
+      margin-top: 0.25rem;  /* less gap under month */
+      padding-left: 1.75rem; /* indent bullet and wrap text under first word */
+    }
+    .month-box ul li {
+      margin-top: 0.5rem;   /* reduced space between bullets */
+    }
+    .month-box ul li:first-child {
+      margin-top: 0;
     }
 
-    /* The large number inside the bubble; default is black text in light mode */
-    .gradient-list li::before {
-      content: counter(gradient-counter);
-      color: #1d1f20;
-      display: flex;
-      font-size: 1.3em;
-      font-weight: 900;
-      align-items: flex-end;
-      justify-content: flex-end;
-      padding: 1em 0.25em 0.125em 0.25em;
-      z-index: 1;
-    }
-
-    /* ----- Dark Mode Overrides ----- */
-    .dark .gradient-list li {
+    /* dark mode override */
+    .dark .month-box {
       background: #000;
       color: #fff;
     }
-    .dark .gradient-list li::before,
-    .dark .gradient-list li::after {
-      /* Keep the same gold gradient, but change text to white. */
-      background: linear-gradient(135deg, #d4b575 0%, #f7e4c2 100%);
-    }
-    .dark .gradient-list li::before {
-      color: #000000;
+    .dark .month-box ul li {
+      color: #fff;
     }
   </style>
 {{ end }}
