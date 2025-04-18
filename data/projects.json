@@ -1,0 +1,142 @@
+[
+  {
+    "Title": "OntoSeer - A Recommendation System to Improve the Quality of Ontologies",
+    "Description": "Building an ontology is not only a time-consuming process, but it is also confusing, especially for beginners and the inexperienced. Although ontology developers can take the help of domain experts in building an ontology, they are not readily available in several cases for a variety of reasons. Ontology developers have to grapple with several questions related to the choice of classes, properties, and the axioms that should be included. Apart from this, there are aspects such as modularity and reusability that should be taken care of. From among the thousands of publicly available ontologies and vocabularies in repositories such as Linked Open Vocabularies (LOV) and BioPortal, it is hard to know the terms (classes and properties) that can be reused in the development of an ontology. A similar problem exists in implementing the right set of ontology design patterns (ODPs) from among the several available. Generally, ontology developers make use of their experience in handling these issues, and the inexperienced ones have a hard time. In order to bridge this gap, we propose a tool named OntoSeer, that monitors the ontology development process and provides suggestions in real-time to improve the quality of the ontology under development. It can provide suggestions on the naming conventions to follow, vocabulary to reuse, ODPs to implement, and axioms to be added to the ontology.",
+    "Authors": "Pramit Bhattacharyya",
+    "Category": "Ontology Modelling and Enrichment",
+    "githubUrl": "https://github.com/kracr/ontoseer"
+  },
+  {
+    "Title": "ODPReco - An Ontology Design Pattern Recommendation System",
+    "Description": "Ontologies evolve over time due to changes in the domain and the requirements of the application. Maintaining an ontology over time and keeping it up-to-date with respect to the changes in the domain and the requirements of application is hard. But a high quality ontology can significantly reduce the effort and the cost of ontology maintenance. Ontology Design Patterns (ODPs) can be used to improve the quality of an ontology and make it more modular and reusable. But with  increasing number of ODPs spread across different categories, it is not easy to determine the right set of ODPs to choose for a particular use case even for experts. This becomes even more difficult in the case of refactoring existing ontologies using the right set of ODPs. We built a tool named ODPReco that can recommend the possible ODPs to use in a given ontology by analyzing its lexical, structural, and behavioural aspects.",
+    "Authors": "Maleeha Arif Yasvi",
+    "Category": "Ontology Modelling and Enrichment",
+    "githubUrl": "https://github.com/kracr/ODPReco"
+  },
+  {
+    "Title": "Reinforcement Learning for Description Logic Reasoning",
+    "Description": "Motivated by the need for reasoning approaches that can scale well even on the most expressive, and large ontologies, neuro-symbolic approaches have received major attention in recent times. The idea is to combine the robustness and learning capabilities of the artificial neural networks along with the precise reasoning abilities of logic-based approaches. We are exploring a reinforcement learning solution that can take advantage of the exploration-exploitation trade-off to reduce the overall time complexity of the reasoning algorithms.",
+    "Authors": "Gunjan Singh, Sumit Bhatia",
+    "Category": "Description Logic Reasoning",
+    "githubUrl": ""
+  },
+  {
+    "Title": "SAQI: An Ontology based Knowledge GraphPlatform for Social Air Quality Index",
+    "Description": " The Social Air Quality Index(SAQI) ontology is used to integrate the data from local and centralmonitoring sensors, meteorological data, and data from field surveys.This data is converted into a Knowledge Graph, which in turn is used tobuild an application for civic engagement with the public on pollution inorder to improve community participation of the local institutions andindividuals.",
+    "Authors": "Saad Ahmad, Sudhir Attri, Ruchi Dwivedi, Muzamil Yaqoob, AasimKhan, Praveen Priyadarshi, and Raghava Mutharaju",
+    "Category": "Ontology Modelling and Enrichment",
+    "githubUrl": "https://github.com/kracr/aq-structured-platform"
+  },
+  {
+    "Title": "OWL2StreamBench",
+    "Description": "The speed at which data is flowing has been steadily increasing and is anticipated to accelerate further due to the growth of Social Media and the emergence of sensor networks. However, when it comes to making smart decisions in areas like the Internet of Things (IoT) or Social Media, it often requires blending the events in these data streams with intricate domain knowledge. Despite commendable progress made by the stream reasoning community, there are limitations in how knowledge is represented, especially when it comes to OWL-based RDF Stream Processing.  To advance research in this direction, we introduce OWL2StreamBench, a benchmark framework built around Twitter data generated during an Academic Conference Event. OWL2StreamBench comprises a TBox designed for each of the four OWL 2 profiles (EL, QL, RL, and DL), a generator for both static and streaming Twitter data, a collection of queries, and performance metrics. Although our primary focus is on OWL-based RDF Stream Processing engines, OWL2StreamBench is adaptable and poses substantial challenges even for traditional OWL 2-based static reasoners.  In addition to describing the benchmark framework, we assess the performance of three cutting-edge stream reasoners that support reasoning over expressive OWL profiles. We also delve into some of the performance limitations and other insights observed during our evaluation.",
+    "Authors": "Gunjan Singh, Udit Arora, Nandika Jain, Jishnu Raj Parashar, Shashikant Kumar, Riccardo Tommasini, Pieter Bonte, Sumit Bhatia, and Raghava Mutharaju",
+    "Category": "Description Logic Reasoning",
+    "githubUrl": "https://github.com/kracr/owl2streambench"
+  },
+  {
+    "Title": "Ontologies for the Indian Legal System",
+    "Description": "We are assessing the suitability of SALI (and other legal domain) ontologies for the Indian legal system and extending them wherever required. We will model a few use cases using these ontologies. The project also involves exploring ways to enhance LLMs with ontological knowledge to aid in their understanding of legal domain tasks.",
+    "Authors": "Apurv Dube, Dr. Vikram Goyal, Dr. Raghava Mutharaju",
+    "Category": "Ontology Modelling and Enrichment",
+    "githubUrl": ""
+  },
+  {
+    "Title": "A Structured, Integrated Platform for Air Quality and Healthcare Data",
+    "Description": "Although data is available in different forms and formats, they are related to each other. For example, air pollution and weather are connected. So are patient records and their test results. Unless a common structure is provided, along with integrating and connecting (linking) them, it would be hard to query and analyze the data. We make use of Semantic Web technologies such as OWL 2 and RDF to create such a platform.",
+    "Authors": "Saad Ahmad, Sudhir Attri, Raghav Rathi, Vishal Kumar, Rahul Gupta, Tavpritesh Sethi, Ponnurangam Kumaraguru",
+    "Category": "Semantic Web Applications",
+    "githubUrl": ""
+  },
+  {
+    "Title": "Enriching Ontologies using Cardinality, Union and Intersection Axioms",
+    "Description": "Ontologies that are built automatically by the learning systems scale well in terms of the number of concepts, relationships, and the coverage. But their quality is not good. Other axiom types, apart from simple subclass relations, are missing in these ontologies. In this project, we focus on extracting the minimum, maximum and exact cardinality relations as well as the union and intersection axioms from text.",
+    "Authors": "Monika Jain, Nikhil Sachdeva",
+    "Category": "Ontology Modelling and Enrichment",
+    "githubUrl": ""
+  },
+  {
+    "Title": "Ontology Reasoning on Resource Constrained Devices",
+    "Description": "Ontology reasoning is expensive in terms of the memory and computational resources required. But it provides benefits such as completion of the knowledge that can be useful in question-answering applications and checking the consistency of the knowledge base. Resource constrained devices such as mobile phones, Raspberry Pi and other IoT devices are now part of our day-to-day activities. In this project, we explore the possibilities of bringing the intelligence offered by Knowledge Graphs and ontology reasoning on to these resource constrained devices. In particular, we look at ways to port the existing reasoners to Android mobile phones and Raspberry Pi. We also measure the power consumption on these devices when the reasoners operate on them.",
+    "Authors": "Arushi Jain",
+    "Category": "Description Logic Reasoning",
+    "githubUrl": ""
+  },
+  {
+    "Title": "Benchmarking Neuro-Symbolic Reasoners",
+    "Description": "Neuro-Symbolic approaches bring together symbolic logic and neural network-based machine learning. This has the potential to build robust reasoning systems. However, the field faces challenges due to diverse design approaches and evaluation methods. So, in this project, we address the latter challenge by emphasizing the critical requirement for a comprehensive benchmark framework tailored to the unique evaluation needs of neuro-symbolic reasoning systems. This work contributes towards a more systematic and principled evaluation framework for neuro-symbolic reasoning, highlighting the broader role of benchmarks in advancing the field.",
+    "Authors": "Gunjan Singh, Riccardo Tommasini, Sumit Bhatia and Raghava Mutharaju",
+    "Category": "Description Logic Reasoning",
+    "githubUrl": ""
+  },
+  {
+    "Title": "Relation extraction from biomedical text",
+    "Description": "Relation Extraction (RE) is the task of extracting semantic relationships between entities in a sentence and aligning them to relations defined in a vocabulary, which is generally in the form of a Knowledge Graph (KG) or an ontology. Various approaches have been proposed so far to address this task. However, applying these techniques to biomedical text often yields unsatisfactory results because it is hard to infer  relations directly from sentences due to the nature of the  biomedical relations. To address these issues, we present a novel technique called ReOnto, that makes use of neuro symbolic knowledge for the RE task. ReOnto employs a graph neural network to acquire the sentence representation and leverages publicly accessible ontologies as prior knowledge  to identify the sentential relation between two entities. The approach involves extracting the relation path between the two entities from the ontology. We evaluate the effect of using symbolic knowledge from ontologies with graph neural networks. Experimental results on two public biomedical datasets,  BioRel and ADE, shows that our method outperforms all the baselines.",
+    "Authors": "Monika Jain, Kuldeep Singh, Raghava Mutharaju",
+    "Category": "B.Tech-",
+    "githubUrl": ""
+  },
+  {
+    "Title": " Knowledge Graphs for Legal Domain",
+    "Description": "The various legislations across India, including state laws, central laws, ordinances, and amendments are in different formats and not digitized. We aim to create a single source of laws using Knowledge Graphs to connect all the related sections across the laws and to create a structured platform that makes it easy to run analytics. This enables all the stakeholders to interact and understand the laws that impact their lives.",
+    "Authors": "Vidhi Sharma, Udit Bhati, Ayush Garg, Arham Ali, Abhyudit Badhul, Vikram Goel, Sandhya PR, Surya Prakash",
+    "Category": "Knowledge Graphs",
+    "githubUrl": "https://javachip8786.github.io/ProtoTypeForLegalDomain/"
+  },
+  {
+    "Title": "An Ontology based Recommendation System for Neonatologists",
+    "Description": "Preterm babies in NICUs are monitored carefully to make sure that they are getting the right balance of fluids and nutrition. We are developing an ontology based nutrition guideline system that captures the information of neonates such as day of life, signs and symptoms. This system will recommend the feed amount and the nutrition for the preterm babies.",
+    "Authors": "Monika Jain, Harpreet Singh",
+    "Category": "Semantic Web Applications",
+    "githubUrl": ""
+  },
+  {
+    "Title": "OWL2Bench: A Benchmark for OWL 2 Reasoners",
+    "Description": "There  are  several  existing  ontology  reasoners  that  span  awide spectrum in terms of their performance and the expressivity that they support. In order to benchmark these reasoners to find and improve the performance bottlenecks, we ideally need several real-world ontologies that span the wide spectrum in terms of their size and expressivity. This is often not the case. One of the potential reasons for the ontology developers to not build ontologies that vary in terms of size and expressivity, is the performance bottleneck of the reasoners. To solve this chicken and egg problem, we need high quality ontology benchmarks that have good coverage of the OWL 2 language constructs, and can test the scalability of the reasoners by generating arbitrarily large ontologies. OWL2Bench is a work in that direction. It is an extension of the well-known University Ontology Benchmark (UOBM). OWL2Bench consists of the following - TBox axioms for each of the four OWL 2 profiles (EL, QL, RL, and DL), a synthetic ABox axiom generator that can generate axioms of arbitrary size, and a set of SPARQL queries that involve reasoning over the OWL 2 language constructs. ",
+    "Authors": "Gunjan Singh, Ashwat Kumar, Kanav Bhagat, Ritam Biswas, Sumit Bhatia",
+    "Category": "Description Logic Reasoning",
+    "githubUrl": "https://github.com/kracr/owl2bench"
+  },
+  {
+    "Title": "Ontology Learning and Enrichment Benchmark",
+    "Description": "Ontology learning is the process of building ontologies automatically from unstructured data sources such as text. Several ontology learning systems have been developed, but they have been trained and tested on different datasets. In order to evaluate and compare these systems as well as make progress in ontology learning, it is critical to have good benchmarks. In this project, we work on generating text with annotations that can be used to build ontologies with different types of axioms.",
+    "Authors": "Anurag, Monika Jain",
+    "Category": "Ontology Modelling and Enrichment",
+    "githubUrl": "https://github.com/kracr/OntoLearnBench"
+  },
+  {
+    "Title": "A SPARQL to Cypher Transpiler",
+    "Description": "RDF graphs and Property Graphs (PG) are the two popular Knowledge Graph (KG) representation formats. SPARQL is the standard and the W3C recommended query language for RDF graphs. There are several query languages for PGs, but one of the most used query languages is Cypher. Although it is easier to model the data in the form of PGs when compared to RDF graphs, they are not standardized. So having a bridge between these two formats and query languages is very useful. In this project, we are working on building a SPARQL to Cypher query converter. ",
+    "Authors": "Lakshya Agrawal, Nikunj Singhal",
+    "Category": "SPARQL Querying",
+    "githubUrl": "https://github.com/kracr/sparql-cypher-transpiler"
+  },
+  {
+    "Title": "Embeddings for EL++ Description Logic",
+    "Description": "Most of the knowledge graph embedding models focus on capturing the structural properties of the graph and the interaction between the entities. They do not take into account the constraints and characteristics of the underlying ontology. Consequently, the embeddings produced by such methods are not suitable for reasoning tasks such as classification, satisfiability and consistency checking. So we are working on mapping the classes and the relations in an ontology to an n-dimensional vector space such that the relations between them are preserved.",
+    "Authors": "Sutapa Mondal, Biswesh Mohapatra, Sumit Bhatia, Srinivasaraghavan",
+    "Category": "Description Logic Reasoning",
+    "githubUrl": "https://github.com/kracr/EmELpp"
+  },
+  {
+    "Title": "Tool to Improve the Quality of Knowledge Graphs",
+    "Description": "The quality of the Knowledge Graphs built automatically from text using open information extraction tools such as OpenIE, ClausIE, OLLIE and Graphene is not good, especially on long and complex sentences. In this project, we explore mechanisms to improve the quality of the triples that make up the Knowledge Graph using heuristics and rules. ",
+    "Authors": "Pragya Sethi, Nidhi Goyal, Ponnurangam Kumaraguru",
+    "Category": "Knowledge Graphs",
+    "githubUrl": ""
+  },
+  {
+    "Title": "Multi-Modal Knowledge Graphs",
+    "Description": "Multi-Modal Knowledge Graphs represent a significant evolution from conventional knowledge graphs, as they seamlessly integrate diverse data types, including text, images, and videos. This integration of complex structures significantly boosts their performance in KG-related tasks, such as query answering and information extraction, enriching the available information and yielding superior results. This enhanced capability extends to a wide range of applications, including natural language processing and decision-making processes.",
+    "Authors": "Mayank Kharbanda, Dr. Rajiv Ratn Shah, Dr. Raghava Mutharaju",
+    "Category": "Knowledge Graphs",
+    "githubUrl": ""
+  },
+  {
+    "Title": "An Ontology to Capture Ethical Theory and Contextual Information",
+    "Description": "The domain of ethical philosophy has evolved significantly alongside the advancement of AI decision-making systems. However, there is yet to be a practical convergence between these two disciplines. Most AI systems deployed in decision-making capacities lack the ability to make any moral decisions, although their decisions have very real consequences. Thus, it is imperative that AI research takes a step towards developing not only artificial intelligence but also artificial moral intelligence. This project is an attempt to capture ethical information in a real-world context to aid moral decision making using knowledge representation. A dedicated ontology that describes the salient ethical features of a scenario gives way to ethical analysis and judgment. This will allow us to represent moral and contextual information about events and resolve ethical dilemmas that have profound consequences. ",
+    "Authors": "Aisha Aijaz, Raghava Mutharaju, Manohar Kumar, Omkar Chattar, Jainendra Shukla",
+    "Category": "Ontology Modelling and Enrichment",
+    "githubUrl": ""
+  }
+]
