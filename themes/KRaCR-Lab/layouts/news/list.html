@@ -20,7 +20,7 @@
               {{ end }}
               {{ $news = sort $news "ParsedDate" "desc" }}
 
-              <!-- 2) Group into a map year→[]items -->
+              <!-- 2) Group into a map year → []items -->
               {{ $byYear := dict }}
               {{ range $news }}
                 {{ $yr := .ParsedDate | dateFormat "2006" }}
@@ -41,7 +41,7 @@
                   <button class="accordion-header w-full text-left px-4 py-3 font-semibold text-gray-800 focus:outline-none">
                     {{ $year }}
                   </button>
-                  <div class="accordion-content" style="max-height:0;overflow:hidden;transition:max-height 0.2s ease-out;">
+                  <div class="accordion-content" style="max-height: 0; overflow: hidden; transition: max-height 0.2s ease-out;">
                     <div class="content-wrapper px-4 py-2">
 
                       <!-- 4) Group this year’s items by full month name -->
@@ -68,7 +68,9 @@
                             <div><strong>{{ $month }}</strong></div>
                             <ul class="list-disc">
                               {{ range $items }}
-                                <li>{{ .Title }}</li>
+                                <li>
+                                  {{ .Title }}
+                                </li>
                               {{ end }}
                             </ul>
                           </div>
@@ -93,16 +95,21 @@
       document.querySelectorAll(".accordion-header").forEach(function(header) {
         header.addEventListener("click", function() {
           var content = this.nextElementSibling;
-          content.style.maxHeight = (content.style.maxHeight && content.style.maxHeight !== "0px")
-            ? "0px"
-            : content.scrollHeight + "px";
+          // use computed style so we know its true current height
+          var computedMax = window.getComputedStyle(content).maxHeight;
+          if (computedMax !== "0px") {
+            content.style.maxHeight = "0px";
+          } else {
+            void content.offsetHeight;                // force a reflow
+            content.style.maxHeight = content.scrollHeight + "px";
+          }
         });
       });
     });
   </script>
 
   <style>
-    /* month‑box styling + decorative bubble (matches original li) */
+    /* month‑box styling + decorative bubble */
     .month-box {
       position: relative;
       background: #fff;
@@ -113,7 +120,7 @@
       margin-top: 2.5rem;
       margin-bottom: 1.5rem;
       min-height: 3rem;
-      padding: 0.5rem 1rem 0.5rem 3rem;
+      padding: 0.5rem 0.5rem 0.5rem 3rem;
       color: #1d1f20;
     }
     .month-box::before,
@@ -130,13 +137,13 @@
     .month-box::before { z-index: 2; }
     .month-box::after  { z-index: 1; }
 
-    /* adjust spacing & bullet alignment */
+    /* tighten up spacing & bullet indent */
     .month-box ul {
-      margin-top: 0.25rem;  /* less gap under month */
-      padding-left: 1.75rem; /* indent bullet and wrap text under first word */
+      margin-top: 0.25rem;
+      padding-left: 1.75rem;
     }
     .month-box ul li {
-      margin-top: 0.5rem;   /* reduced space between bullets */
+      margin-top: 0.5rem;
     }
     .month-box ul li:first-child {
       margin-top: 0;

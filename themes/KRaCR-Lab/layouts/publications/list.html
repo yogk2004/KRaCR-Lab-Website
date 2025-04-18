@@ -3,50 +3,81 @@
 
   <style>
     /* Custom scrollbar styles */
-    .scrollbar::-webkit-scrollbar {
-      width: 8px;
-    }
-    .scrollbar::-webkit-scrollbar-track {
-      background: transparent;
-    }
-    .scrollbar::-webkit-scrollbar-thumb {
-      background-color: #c89b3f;
-      border-radius: 15px;
-    }
+    .scrollbar::-webkit-scrollbar { width: 8px; }
+    .scrollbar::-webkit-scrollbar-track { background: transparent; }
+    .scrollbar::-webkit-scrollbar-thumb { background-color: #c89b3f; border-radius: 15px; }
   </style>
 
   <div class="container mx-auto p-6">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {{ range $.Site.Data.publications }}
-        <div class="bg-[#f9f9f9] dark:bg-[#1f1f1f] text-left rounded-2xl shadow-md p-6 transition-colors duration-300 border border-gray-200 dark:border-white flex flex-col h-full">
-          <div>
-            <!-- Title & Year -->
-            <div class="flex justify-between items-baseline w-full mb-2">
-              <h3 class="text-xl font-bold text-gray-900 dark:text-white mr-2">{{ .Title }}</h3>
-              <span class="text-sm text-gray-500 dark:text-gray-200">{{ .Year }}</span>
-            </div>
-            <!-- Authors -->
-            <p class="text-sm text-gray-600 dark:text-gray-200">By: {{ .Authors }}</p>
-            <!-- Category with dynamic color from index.html -->
-            <span class="mt-2 inline-block px-3 py-1 text-xs font-semibold text-white rounded-full {{ with index (site.GetPage "section" "publications").Params.categories .Category }}{{ .color }}{{ else }}bg-gray-500{{ end }}">
-              {{ .Category }}
-            </span>
-            <!-- Scrollable Description -->
-            <div class="mt-4 text-gray-700 dark:text-gray-200 text-sm max-h-72 overflow-y-scroll scrollbar pr-2">
-              {{ .Description }}
-            </div>
-          </div>
-          
-          <!-- Action Buttons -->
-          <div class="mt-auto pt-4 flex justify-between items-center">
-            {{ if .PublicationURL }}
-              <a href="{{ .PublicationURL }}" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm">
-                Publication URL
-              </a>
+    {{/* 1) Sort and group publications by Year descending */}}
+    {{ $pubs := sort site.Data.publications "Year" "desc" }}
+    {{ $byYear := dict }}
+    {{ range $pubs }}
+      {{ $yr := .Year }}
+      {{ $slice := index $byYear $yr | default (slice) }}
+      {{ $slice = $slice | append . }}
+      {{ $byYear = merge $byYear (dict $yr $slice) }}
+    {{ end }}
+
+    {{/* 2) Build sorted list of years */}}
+    {{ $years := slice }}
+    {{ range $y, $_ := $byYear }}
+      {{ $years = $years | append $y }}
+    {{ end }}
+    {{ $years = sort $years }}
+    {{ $nYears := len $years }}
+
+    {{/* 3) Render accordion per year */}}
+    {{ range $i, $_ := $years }}
+      {{ $year := index $years (sub (sub $nYears 1) $i) }}
+      <div class="accordion mb-4 border rounded bg-white shadow">
+        <button class="accordion-header w-full text-left px-4 py-3 font-semibold text-gray-800 focus:outline-none">
+          {{ $year }}
+        </button>
+        <div class="accordion-content" style="max-height: 0; overflow: hidden; transition: max-height 0.2s ease-out;">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4 pb-6 scrollbar">
+            {{ range index $byYear $year }}
+              <div class="bg-[#f9f9f9] dark:bg-[#1f1f1f] text-left rounded-2xl shadow-md p-6 border border-gray-200 dark:border-white flex flex-col h-full">
+                <div>
+                  <!-- Title -->
+                  <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">{{ .Title }}</h3>
+                  <!-- Authors -->
+                  <p class="text-sm text-gray-600 dark:text-gray-200">By: {{ .Authors }}</p>
+                  <!-- Description -->
+                  <div class="mt-4 text-gray-700 dark:text-gray-200 text-sm max-h-72 overflow-y-scroll pr-2 scrollbar">
+                    {{ .Description }}
+                  </div>
+                </div>
+                <!-- Publication URL Button -->
+                <div class="mt-auto pt-4 flex justify-between items-center">
+                  {{ if .PublicationURL }}
+                    <a href="{{ .PublicationURL }}" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm">
+                      Publication URL
+                    </a>
+                  {{ end }}
+                </div>
+              </div>
             {{ end }}
           </div>
         </div>
-      {{ end }}
-    </div>
+      </div>
+    {{ end }}
   </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      document.querySelectorAll(".accordion-header").forEach(function(header) {
+        header.addEventListener("click", function() {
+          var content = this.nextElementSibling;
+          var computedMaxHeight = window.getComputedStyle(content).maxHeight;
+          if (computedMaxHeight !== "0px") {
+            content.style.maxHeight = "0px";
+          } else {
+            void content.offsetHeight; // force repaint
+            content.style.maxHeight = content.scrollHeight + "px";
+          }
+        });
+      });
+    });
+  </script>
 {{ end }}
