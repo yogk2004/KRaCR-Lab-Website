@@ -9,9 +9,17 @@ node_modules
 builds
 package-lock.json
 public
-resources
 .hugo_build.lock
 jsconfig.json
 hugo_stats.json
 go.sum
 yarn.lock
+# ignore any resources folder…
+resources
+
+# …but do track these two
+!themes/KRaCR-Lab/layouts/resources/
+!themes/KRaCR-Lab/layouts/resources/**
+
+!content/English/resources/
+!content/English/resources/**
