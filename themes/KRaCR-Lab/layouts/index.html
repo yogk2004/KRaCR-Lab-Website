@@ -681,11 +681,16 @@
           <!-- Parse and sort news -->
           {{ $news := slice }}
           {{ range $rawNews }}
-            {{ if .Date }}
-              {{ $ds := .Date }}
-              {{ $pd := time.AsTime $ds }}
-              {{ if ge ($pd.Year) 2022 }}
-                {{ $news = $news | append (merge . (dict "ParsedDate" $pd)) }}
+            {{ $dateString := "" }}
+            {{ if reflect.IsMap .Date }}
+              {{ $dateString = index .Date "$date" }}
+            {{ else }}
+              {{ $dateString = .Date }}
+            {{ end }}
+            {{ if $dateString }}
+              {{ $parsedDate := time.AsTime $dateString }}
+              {{ if ge $parsedDate.Year 2022 }}
+                {{ $news = $news | append (merge . (dict "ParsedDate" $parsedDate)) }}
               {{ end }}
             {{ end }}
           {{ end }}
