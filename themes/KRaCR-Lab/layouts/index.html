@@ -697,7 +697,7 @@
             <!-- Display news items -->
             {{ range $index, $item := $news }}
               <div class="md:col-6 animate-news-card {{ if eq (mod $index 2) 0 }}news-card-left{{ else }}news-card-right{{ end }}" style="animation-delay: {{ printf "%.1fs" (mul $index 0.3) }};">
-                <div class="relative flex {{ if even $index }}justify-start{{ else }}justify-end{{ end }} items-start">
+                <div class="relative flex {{ if eq (mod $index 2) 0 }}justify-start{{ else }}justify-end{{ end }} items-start">
                   <!-- News Card -->
                   <div class="w-full md:w-4/5 bg-white/80 dark:bg-gray-800/80 backdrop-blur-md rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:rotate-1 group relative overflow-hidden h-[150px] flex flex-col">
                     <div class="p-4 flex-grow">
