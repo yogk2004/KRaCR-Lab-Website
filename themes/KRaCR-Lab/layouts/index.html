@@ -667,56 +667,70 @@
       <div class="row justify-center relative gap-y-16">
         <!-- Timeline Line -->
         <div class="absolute top-0 bottom-0 left-1/2 w-1 bg-gradient-to-b from-blue-500 to-purple-600 dark:from-blue-400 dark:to-purple-500 transform -translate-x-1/2 z-0"></div>
+
         {{ $rawNews := site.Data.news }}
         {{ if not $rawNews }}
           <div class="col-12 text-center">
             <p class="text-gray-600 dark:text-gray-400">No news available at the moment.</p>
           </div>
+        {{ else if ne (kindOf $rawNews) "slice" }}
+          <div class="col-12 text-center">
+            <p class="text-gray-600 dark:text-gray-400">Error: Invalid news data format.</p>
+          </div>
         {{ else }}
           <!-- Parse and sort news -->
           {{ $news := slice }}
           {{ range $rawNews }}
-            {{ $ds := index .Date "$date" }}
-            {{ $pd := time $ds }}
-            {{ if ge $pd.Year 2022 }}
-              {{ $news = $news | append (merge . (dict "ParsedDate" $pd)) }}
+            {{ if .Date }}
+              {{ $ds := .Date }}
+              {{ $pd := time.AsTime $ds }}
+              {{ if ge ($pd.Year) 2022 }}
+                {{ $news = $news | append (merge . (dict "ParsedDate" $pd)) }}
+              {{ end }}
             {{ end }}
           {{ end }}
-          {{ $news = sort $news "ParsedDate" "desc" }}
-          <!-- Limit to latest 2-4 news items -->
-          {{ $news = first 4 $news }}
-          <!-- Display news items -->
-          {{ range $index, $item := $news }}
-            <div class="md:col-6 animate-news-card {{ if mod $index 2 }}news-card-right{{ else }}news-card-left{{ end }}" style="animation-delay: {{ mul $index 0.3 }}s;">
-              <div class="relative flex {{ if mod $index 2 }}justify-end{{ else }}justify-start{{ end }} items-start">
-                <!-- News Card -->
-                <div class="w-full md:w-4/5 bg-white/80 dark:bg-gray-800/80 backdrop-blur-md rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:rotate-1 group relative overflow-hidden h-[150px] flex flex-col">
-                  <div class="p-4 flex-grow">
-                    <p class="text-xs text-gray-500 dark:text-gray-400 italic mb-2 inline-flex items-center">
-                      {{ if eq $item.Category "Paper" }}
-                        <i class="fas fa-file-alt text-blue-500 dark:text-blue-300 mr-2 text-base"></i>
-                      {{ else if eq $item.Category "Talk" }}
-                        <i class="fas fa-microphone-alt text-blue-500 dark:text-blue-300 mr-2 text-base"></i>
-                      {{ else }}
-                        <i class="fas fa-star text-blue-500 dark:text-blue-300 mr-2 text-base"></i>
-                      {{ end }}
-                      {{ $item.Category | default "General" }}
-                    </p>
-                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2 line-clamp-2">
-                      {{ if $item.Url }}
-                        <a href="{{ $item.Url | absURL }}" class="hover:underline">{{ $item.Title | markdownify }}</a>
-                      {{ else }}
-                        {{ $item.Title | markdownify }}
-                      {{ end }}
-                    </h3>
-                    {{ if $item.Excerpt }}
-                      <p class="text-gray-600 dark:text-gray-300 text-xs line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        {{ $item.Excerpt | markdownify }}
+
+          {{ if $news }}
+            {{ $news = sort $news "ParsedDate" "desc" }}
+            {{ $news = first 4 $news }}
+
+            <!-- Display news items -->
+            {{ range $index, $item := $news }}
+              <div class="md:col-6 animate-news-card {{ if even $index }}news-card-left{{ else }}news-card-right{{ end }}" style="animation-delay: {{ printf "%.1fs" (mul $index 0.3) }};">
+                <div class="relative flex {{ if even $index }}justify-start{{ else }}justify-end{{ end }} items-start">
+                  <!-- News Card -->
+                  <div class="w-full md:w-4/5 bg-white/80 dark:bg-gray-800/80 backdrop-blur-md rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:rotate-1 group relative overflow-hidden h-[150px] flex flex-col">
+                    <div class="p-4 flex-grow">
+                      <p class="text-xs text-gray-500 dark:text-gray-400 italic mb-2 inline-flex items-center">
+                        {{ if eq $item.Category "Paper" }}
+                          <i class="fas fa-file-alt text-blue-500 dark:text-blue-300 mr-2 text-base"></i>
+                        {{ else if eq $item.Category "Talk" }}
+                          <i class="fas fa-microphone-alt text-blue-500 dark:text-blue-300 mr-2 text-base"></i>
+                        {{ else }}
+                          <i class="fas fa-star text-blue-500 dark:text-blue-300 mr-2 text-base"></i>
+                        {{ end }}
+                        {{ $item.Category | default "General" }}
                       </p>
-                    {{ end }}
+                      <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2 line-clamp-2">
+                        {{ if $item.Url }}
+                          <a href="{{ $item.Url | absURL }}" class="hover:underline">{{ $item.Title | markdownify | safeHTML }}</a>
+                        {{ else }}
+                          {{ $item.Title | markdownify | safeHTML }}
+                        {{ end }}
+                      </h3>
+                      {{ if $item.Excerpt }}
+                        <p class="text-gray-600 dark:text-gray-300 text-xs line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          {{ $item.Excerpt | markdownify | safeHTML }}
+                        </p>
+                      {{ end }}
+                    </div>
                   </div>
                 </div>
               </div>
+            {{ end }}
+          {{ else }}
+            <div class="col-12 text-center">
+              <p class="text-gray-600 dark:text-gray-400">No recent news available.</p>
             </div>
           {{ end }}
         {{ end }}
@@ -737,12 +751,15 @@
         opacity: 0;
         animation: fadeInSlide 0.8s ease-out forwards;
       }
+
       .news-card-left {
         transform: translateX(-50px);
       }
+
       .news-card-right {
         transform: translateX(50px);
       }
+
       @keyframes fadeInSlide {
         to {
           opacity: 1;
@@ -754,6 +771,7 @@
       .news-card-left .flex {
         margin-right: 1rem; /* Gap for left-aligned cards */
       }
+
       .news-card-right .flex {
         margin-left: 1rem; /* Gap for right-aligned cards */
       }
@@ -765,6 +783,7 @@
         -webkit-box-orient: vertical;
         overflow: hidden;
       }
+
       .line-clamp-3 {
         display: -webkit-box;
         -webkit-line-clamp: 3;
@@ -777,23 +796,28 @@
         .md\:col-6 {
           width: 100%;
         }
-        .md\:w-4/5 {
+
+        .md\:w-4\/5 {
           width: 100%;
         }
+
         .news-card-left,
         .news-card-right {
           transform: translateX(0);
           justify-content: center !important;
         }
+
         .news-card-left .flex,
         .news-card-right .flex {
           margin-left: 0;
           margin-right: 0; /* Remove gap on mobile */
         }
+
         .timeline-section .container {
           padding-top: 3rem;
         }
-        .absolute.top-0.bottom-0.left-1/2 {
+
+        .absolute.top-0.bottom-0.left-1\/2 {
           display: none;
         }
       }
@@ -810,7 +834,8 @@
               entry.target.classList.add('animate-news-card-active');
               observer.unobserve(entry.target);
             }
-          }, { threshold: 0.1 });
+          });
+        }, { threshold: 0.1 });
 
         newsCards.forEach(card => {
           observer.observe(card);
@@ -1032,7 +1057,7 @@
           {{ end }}
           <!-- Display publications -->
           {{ range $index, $pub := $displayPublications }}
-            <div class="col-12 mb-6 animate-publication" style="animation-delay: {{ mul $index 0.2 }}s;">
+            <div class="col-12 mb-6 animate-publication" style="animation-delay: {{ printf "%.1fs" (mul $index 0.2) }};">
               <div class="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-lg shadow-md hover:shadow-xl transition-all duration-300 border-l-4 border-green-500 dark:border-green-400 group">
                 <div class="p-6 flex flex-col md:flex-row md:items-center md:justify-between">
                   <!-- Publication Details -->
