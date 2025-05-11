@@ -726,12 +726,14 @@
                       <p class="text-xs text-gray-500 dark:text-gray-400 italic mb-2 inline-flex items-center">
                         {{ if eq $item.Category "Paper" }}
                           <i class="fas fa-file-alt text-blue-500 dark:text-blue-300 mr-2 text-base"></i>
+                          {{ $item.Category }}
                         {{ else if eq $item.Category "Talk" }}
                           <i class="fas fa-microphone-alt text-blue-500 dark:text-blue-300 mr-2 text-base"></i>
+                          {{ $item.Category }}
                         {{ else }}
-                          <i class="fas fa-star text-blue-500 dark:text-blue-300 mr-2 text-base"></i>
+                          <i class="fas fa-calendar-alt text-blue-500 dark:text-blue-300 mr-2 text-base"></i>
+                          {{ $item.ParsedDate.Format "January 2, 2006" }}
                         {{ end }}
-                        {{ $item.Category | default "General" }}
                       </p>
                       <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2 line-clamp-2">
                         {{ if $item.Url }}
