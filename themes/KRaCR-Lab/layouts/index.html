@@ -673,7 +673,7 @@
           <div class="col-12 text-center">
             <p class="text-gray-600 dark:text-gray-400">No news available at the moment.</p>
           </div>
-        {{ else if ne (kindOf $rawNews) "slice" }}
+        {{ else if not (reflect.IsSlice $rawNews) }}
           <div class="col-12 text-center">
             <p class="text-gray-600 dark:text-gray-400">Error: Invalid news data format.</p>
           </div>
