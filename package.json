@@ -28,6 +28,7 @@
     "tailwindcss": "^4.1.2"
   },
   "dependencies": {
-    "hugoplate": "file:"
+    "hugoplate": "file:",
+    "particles.js": "^2.0.0"
   }
 }

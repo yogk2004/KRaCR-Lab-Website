@@ -1,21 +1,26 @@
 {{ define "main" }}
   <!-- Banner -->
-  {{ with .Params.banner }} 
-    <section class="section pt-14">
-      <div class="container">
+  {{ with .Params.banner }}
+    <section class="section pt-14 relative overflow-hidden">
+      <!-- Particle Canvas -->
+      <canvas id="particle-canvas" class="absolute top-0 left-0 w-full h-full pointer-events-none"></canvas>
+
+      <!-- Custom Cursor -->
+      <div id="custom-cursor" class="fixed w-8 h-8 rounded-full pointer-events-none transform -translate-x-1/2 -translate-y-1/2 mix-blend-difference z-50 bg-white transition-transform duration-75 ease-linear"></div>
+
+      <div class="container relative z-10">
         <div class="row justify-center">
           <div class="lg:col-7 md:col-9 mb-8 text-center">
-            <h1 class="mb-4 text-h3 lg:text-h1">
+            <h1 class="mb-4 text-h3 lg:text-h1 animate-fadeInUp">
               {{ .title | markdownify }}
             </h1>
-            <p class="mb-8">
+            <p class="mb-8 animate-fadeInUp delay-100">
               {{ .content | markdownify }}
             </p>
-            <!-- Here the Button is added but i disable it from _index.md page -->
             {{ with .button }}
               {{ if .enable }}
                 <a
-                  class="btn btn-primary"
+                  class="btn btn-primary hover:scale-105 transition-transform animate-fadeInUp delay-200"
                   href="{{ .link | absURL }}"
                   {{ if strings.HasPrefix .link `http` }}
                     target="_blank" rel="noopener"
@@ -28,133 +33,1212 @@
           </div>
         </div>
       </div>
+
+      <style>
+        /* Text animation styles */
+        .animate-fadeInUp {
+          opacity: 0;
+          transform: translateY(20px);
+          animation: fadeInUp 0.8s ease-out forwards;
+        }
+        .delay-100 {
+          animation-delay: 0.2s;
+        }
+        .delay-200 {
+          animation-delay: 0.4s;
+        }
+        @keyframes fadeInUp {
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      </style>
+
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const canvas = document.getElementById('particle-canvas');
+          const ctx = canvas.getContext('2d');
+          let particles = [];
+          const particleCount = 60;
+          let mouse = { x: null, y: null, radius: 120 };
+          let cursorSize = 32;
+
+          // Custom cursor element with optimized performance
+          const cursor = document.getElementById('custom-cursor');
+          let cursorX = 0;
+          let cursorY = 0;
+          let targetX = 0;
+          let targetY = 0;
+          let animationFrameId;
+
+          // Smooth cursor animation using requestAnimationFrame
+          function animateCursor() {
+            cursorX += (targetX - cursorX) * 0.2;
+            cursorY += (targetY - cursorY) * 0.2;
+
+            cursor.style.left = `${cursorX}px`;
+            cursor.style.top = `${cursorY}px`;
+
+            animationFrameId = requestAnimationFrame(animateCursor);
+          }
+
+          // Start cursor animation
+          animateCursor();
+
+          // Set canvas size
+          function resizeCanvas() {
+            const section = canvas.closest('section');
+            canvas.width = section.offsetWidth;
+            canvas.height = section.offsetHeight;
+          }
+
+          // Initialize particles with simplified shapes
+          function initParticles() {
+            particles = [];
+            const color = document.documentElement.classList.contains('dark') ? '255, 255, 255' : '0, 0, 0';
+
+            for (let i = 0; i < particleCount; i++) {
+              const size = Math.random() * 12 + 5;
+              const type = Math.floor(Math.random() * 2); // Only 2 shapes now (0 = circle, 1 = triangle)
+
+              particles.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                size: size,
+                baseSize: size,
+                speedX: (Math.random() * 1 - 0.5) * 1.5,
+                speedY: (Math.random() * 1 - 0.5) * 1.5,
+                color: `rgba(${color}, ${Math.random() * 0.3 + 0.2})`,
+                type: type,
+                rotation: Math.random() * 360,
+                rotationSpeed: (Math.random() * 1 - 0.5) * 0.5,
+                density: Math.random() * 8 + 3
+              });
+            }
+          }
+
+          // Draw shapes (only circles and triangles now)
+          function drawShape(particle) {
+            ctx.save();
+            ctx.translate(particle.x, particle.y);
+            ctx.rotate(particle.rotation * Math.PI / 180);
+            ctx.fillStyle = particle.color;
+
+            if (particle.type === 0) { // Circle
+              ctx.beginPath();
+              ctx.arc(0, 0, particle.size/2, 0, Math.PI * 2);
+              ctx.fill();
+            } else { // Triangle
+              ctx.beginPath();
+              ctx.moveTo(0, -particle.size/2);
+              ctx.lineTo(particle.size/2, particle.size/2);
+              ctx.lineTo(-particle.size/2, particle.size/2);
+              ctx.closePath();
+              ctx.fill();
+            }
+
+            ctx.restore();
+          }
+
+          // Connect particles near each other
+          function connectParticles() {
+            for (let a = 0; a < particles.length; a++) {
+              for (let b = a; b < particles.length; b++) {
+                const dx = particles[a].x - particles[b].x;
+                const dy = particles[a].y - particles[b].y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+
+                if (distance < 120) {
+                  const opacity = 1 - distance/120;
+                  ctx.strokeStyle = `rgba(${document.documentElement.classList.contains('dark') ? '255, 255, 255' : '0, 0, 0'}, ${opacity*0.3})`;
+                  ctx.lineWidth = 1.5;
+                  ctx.beginPath();
+                  ctx.moveTo(particles[a].x, particles[a].y);
+                  ctx.lineTo(particles[b].x, particles[b].y);
+                  ctx.stroke();
+                }
+              }
+            }
+          }
+
+          // Handle mouse interaction
+          function handleMouseInteraction() {
+            for (let i = 0; i < particles.length; i++) {
+              const p = particles[i];
+
+              // Calculate distance from mouse
+              const dx = mouse.x - p.x;
+              const dy = mouse.y - p.y;
+              const distance = Math.sqrt(dx * dx + dy * dy);
+
+              if (distance < mouse.radius && mouse.x && mouse.y) {
+                // Push particles away from mouse
+                const forceDirectionX = dx / distance;
+                const forceDirectionY = dy / distance;
+                const force = (mouse.radius - distance) / mouse.radius;
+
+                p.x -= forceDirectionX * force * p.density * 0.3;
+                p.y -= forceDirectionY * force * p.density * 0.3;
+
+                // Make particles grow when near mouse
+                p.size = p.baseSize + (10 * force);
+
+                // Increase rotation speed when near mouse
+                p.rotationSpeed = force * 3;
+
+                // Change cursor size when interacting with particles
+                cursorSize = 32 + (10 * force);
+                cursor.style.width = `${cursorSize}px`;
+                cursor.style.height = `${cursorSize}px`;
+              } else {
+                if (p.size > p.baseSize) {
+                  p.size -= 0.2;
+                }
+                p.rotationSpeed = (Math.random() * 1 - 0.5) * 0.5;
+
+                // Reset cursor size
+                if (cursorSize > 32) {
+                  cursorSize -= 0.5;
+                  cursor.style.width = `${cursorSize}px`;
+                  cursor.style.height = `${cursorSize}px`;
+                }
+              }
+
+              // Update rotation
+              p.rotation += p.rotationSpeed;
+            }
+          }
+
+          // Animation loop
+          function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            for (let i = 0; i < particles.length; i++) {
+              let p = particles[i];
+
+              // Update position (slower movement)
+              p.x += p.speedX * 0.8;
+              p.y += p.speedY * 0.8;
+
+              // Wrap around edges
+              if (p.x < -p.size) p.x = canvas.width + p.size;
+              if (p.x > canvas.width + p.size) p.x = -p.size;
+              if (p.y < -p.size) p.y = canvas.height + p.size;
+              if (p.y > canvas.height + p.size) p.y = -p.size;
+
+              // Draw particle
+              drawShape(p);
+            }
+
+            handleMouseInteraction();
+            connectParticles();
+
+            requestAnimationFrame(animate);
+          }
+
+          // Mouse event handlers
+          window.addEventListener('mousemove', function(e) {
+            targetX = e.clientX;
+            targetY = e.clientY;
+            mouse.x = e.clientX;
+            mouse.y = e.clientY;
+
+            // Subtler pulse effect when moving
+            cursor.style.transform = `translate(-50%, -50%) scale(${1 + Math.random() * 0.1})`;
+            setTimeout(() => {
+              cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+            }, 100);
+          });
+
+          window.addEventListener('mouseout', function() {
+            mouse.x = null;
+            mouse.y = null;
+          });
+
+          // Handle button hover effects
+          const buttons = document.querySelectorAll('a, button');
+          buttons.forEach(button => {
+            button.addEventListener('mouseenter', () => {
+              cursor.style.backgroundColor = '#3b82f6';
+              cursor.style.transform = 'translate(-50%, -50%) scale(1.3)';
+            });
+            button.addEventListener('mouseleave', () => {
+              cursor.style.backgroundColor = 'white';
+              cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+            });
+          });
+
+          // Handle dark mode changes
+          const observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+              if (mutation.attributeName === 'class') {
+                initParticles();
+              }
+            });
+          });
+
+          observer.observe(document.documentElement, {
+            attributes: true
+          });
+
+          // Initialize
+          resizeCanvas();
+          initParticles();
+          animate();
+
+          // Handle window resize
+          window.addEventListener('resize', function() {
+            resizeCanvas();
+            initParticles();
+          });
+
+          // Clean up animation frame on unmount
+          window.addEventListener('beforeunload', function() {
+            cancelAnimationFrame(animationFrameId);
+          });
+        });
+      </script>
     </section>
   {{ end }}
-  <!-- /Banner -->
 
-  <!-- About Us with Carousel -->
-  <section class="section-sm bg-gradient">
-    <div class="container">
+  <!-- Modern About Us Section with Research Symbols -->
+  <section class="section-sm bg-gradient relative overflow-hidden">
+    <!-- Semi-Transparent Research Symbols -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <!-- Ontology Modelling: Hierarchical Tree -->
+      <div class="absolute left-12 top-20 w-48 h-48 animate-symbol1 opacity-30">
+        <svg class="w-full h-full text-green-500 dark:text-green-300" fill="currentColor" viewBox="0 0 100 100">
+          <path d="M50 10c-5 0-9 4-9 9s4 9 9 9 9-4 9-9-4-9-9-9zm0 12c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3z"/>
+          <path d="M50 28v24"/>
+          <path d="M30 52c-5 0-9 4-9 9s4 9 9 9 9-4 9-9-4-9-9-9zm0 12c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3z"/>
+          <path d="M70 52c-5 0-9 4-9 9s4 9 9 9 9-4 9-9-4-9-9-9zm0 12c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3z"/>
+          <path d="M50 28L30 52"/>
+          <path d="M50 28L70 52"/>
+        </svg>
+      </div>
+
+      <!-- Knowledge Graphs: Node-Link Graph -->
+      <div class="absolute right-16 bottom-1/4 w-40 h-40 animate-symbol2 opacity-30">
+        <svg class="w-full h-full text-blue-500 dark:text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="10" fill="currentColor" />
+          <circle cx="30" cy="30" r="8" fill="currentColor" />
+          <circle cx="70" cy="30" r="8" fill="currentColor" />
+          <circle cx="30" cy="70" r="8" fill="currentColor" />
+          <circle cx="70" cy="70" r="8" fill="currentColor" />
+          <line x1="50" y1="50" x2="30" y2="30" stroke-width="2" />
+          <line x1="50" y1="50" x2="70" y2="30" stroke-width="2" />
+          <line x1="50" y1="50" x2="30" y2="70" stroke-width="2" />
+          <line x1="50" y1="50" x2="70" y2="70" stroke-width="2" />
+        </svg>
+      </div>
+
+      <!-- Ontology Reasoning: Light Bulb -->
+      <div class="absolute left-1/3 bottom-16 w-44 h-44 animate-symbol3 opacity-30">
+        <svg class="w-full h-full text-yellow-500 dark:text-yellow-300" fill="currentColor" viewBox="0 0 100 100">
+          <path d="M50 20c-12 0-22 10-22 22 0 8 4 15 10 19v9h24v-9c6-4 10-11 10-19 0-12-10-22-22-22zm0 36c-8 0-14-6-14-14s6-14 14-14 14 6 14 14-6 14-14 14z"/>
+          <path d="M44 70h12v6H44z"/>
+          <path d="M46 76h8v4h-8z"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="container relative z-10">
       <div class="row items-center justify-between">
-        <div class="mb:md-0 md:col-5 mb-6">
-          <!-- Swiper Carousel -->
-          <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-              {{ range $index := (seq 1 13) }}
-                <div class="swiper-slide">
-                  {{ partial "image" (dict "Src" (printf "images/homeCarousel/%d.jpg" $index) "Context" $ "Alt" (printf "Carousel Image %d" $index) "Class" "w-full h-full object-cover" "Size" "520x") }}
-                </div>
-              {{ end }}
+        <!-- 3D Carousel -->
+        <div class="mb:md-0 md:col-5 mb-10 animate-slideInLeft relative">
+          <!-- 3D Carousel Container -->
+          <div class="perspective-1000">
+            <div class="swiper mySwiper rounded-xl shadow-2xl transform-style-preserve-3d">
+              <div class="swiper-wrapper">
+                {{ range $index := (seq 1 13) }}
+                  <div class="swiper-slide relative group transform-style-preserve-3d transition-transform duration-500 hover:scale-105 bg-gray-200 dark:bg-gray-700">
+                    <!-- Image with hover effect -->
+                    <div class="relative w-full h-full transform-style-preserve-3d transition-transform duration-700">
+                      {{ partial "image" (dict "Src" (printf "images/homeCarousel/%d.jpg" $index) "Context" $ "Alt" (printf "Carousel Image %d" $index) "Class" "w-full h-full object-cover" "Size" "520x") }}
+                      <!-- 3D reflection effect -->
+                      <div class="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </div>
+                  </div>
+                {{ end }}
+              </div>
+
+              <!-- Custom 3D pagination -->
+              <!-- Change 1: Removed grey background (bg-gray-200 dark:bg-gray-700), padding (px-1 py-1), and rounded-full -->
+              <!-- Change 2: Adjusted position to !bottom-8 (was !bottom-4) -->
+              <div class="swiper-pagination !bottom-8 flex justify-center space-x-1"></div>
             </div>
-            <!-- Controls -->
-            <div class="swiper-button-next custom-swiper-button"></div>
-            <div class="swiper-button-prev custom-swiper-button"></div>
           </div>
+
+          <!-- Floating decorative elements -->
+          <div class="absolute -z-10 -top-6 -right-6 w-24 h-24 rounded-full bg-blue-100/40 dark:bg-blue-900/20 blur-xl"></div>
+          <div class="absolute -z-10 -bottom-6 -left-6 w-28 h-28 rounded-full bg-purple-100/40 dark:bg-purple-900/20 blur-xl"></div>
         </div>
-        <div class="md:col-7 lg:col-6">
-          <h2 class="mb-4">
-            {{ .Params.AboutUs.title | markdownify }}
-          </h2>
-          <p class="mb-8 text-lg">
+
+        <!-- Content with Animated 3D Icons -->
+        <div class="md:col-7 lg:col-6 animate-fadeInUp delay-300">
+          <div class="relative">
+            <!-- 3D Section title decoration -->
+            <div class="absolute -left-10 top-0 w-16 h-16 rounded-full bg-blue-100/30 dark:bg-blue-900/20 blur-lg"></div>
+            <h2 class="mb-6 text-4xl font-bold text-gray-900 dark:text-white relative">
+              <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-600">{{ .Params.AboutUs.title | markdownify }}</span>
+            </h2>
+          </div>
+
+          <p class="mb-8 text-lg text-gray-700 dark:text-gray-300 relative pl-8 border-l-4 border-blue-300 dark:border-blue-700/50">
             {{ .Params.AboutUs.content | markdownify }}
           </p>
-          <ul>
-            {{ range .Params.AboutUs.bulletpoints }}
-              <li class="relative mb-4 pl-6">
-                <i class="fa fa-check absolute left-0 top-1.5"></i>
-                {{ . | markdownify }}
+
+          <ul class="space-y-6">
+            {{ range $index, $point := .Params.AboutUs.bulletpoints }}
+              <li class="relative mb-8 pl-12 animate-fadeInUp group hover:translate-x-2 transition-transform duration-300">
+                <!-- 3D Animated icon -->
+                <div class="absolute left-0 top-0 flex items-center justify-center w-10 h-10 rounded-lg bg-white dark:bg-gray-800 shadow-lg group-hover:shadow-xl group-hover:-translate-y-1 transition-all duration-300 transform-style-preserve-3d group-hover:rotate-y-10">
+                  <div class="relative w-full h-full transform-style-preserve-3d">
+                    <!-- Front face -->
+                    <div class="absolute inset-0 flex items-center justify-center backface-hidden bg-gradient-to-br from-blue-100 to-blue-50 dark:from-blue-900/50 dark:to-blue-800/30 rounded-lg">
+                      {{ if eq (mod $index 4) 0 }}
+                        <svg class="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                      {{ else if eq (mod $index 4) 1 }}
+                        <svg class="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                      {{ else if eq (mod $index 4) 2 }}
+                        <svg class="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+                        </svg>
+                      {{ else }}
+                        <svg class="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                        </svg>
+                      {{ end }}
+                    </div>
+                    <!-- Back face (visible on hover) -->
+                    <div class="absolute inset-0 flex items-center justify-center backface-hidden bg-gradient-to-br from-blue-600 to-blue-400 rounded-lg transform rotate-y-180 text-white">
+                      {{ add $index 1 }}
+                    </div>
+                  </div>
+                </div>
+                <span class="text-gray-700 dark:text-gray-300 text-lg leading-relaxed">{{ $point | markdownify }}</span>
               </li>
             {{ end }}
           </ul>
+
           {{ with .Params.AboutUs.button }}
             {{ if .enable }}
-              <a class="btn btn-primary mt-6" href="{{ .link | absURL }}">
-                {{ .label }}
-                <i class="fa fa-arrow-right pl-2"></i>
+              <a class="mt-8 btn btn-primary inline-flex items-center group transition-all duration-300 hover:-translate-y-1 hover:shadow-lg transform-style-preserve-3d hover:rotate-x-5" href="{{ .link | absURL }}">
+                <span class="relative z-10">{{ .label }}</span>
+                <i class="fa fa-arrow-right pl-2 transition-transform group-hover:translate-x-2"></i>
+                <!-- Button 3D effect -->
+                <span class="absolute inset-0 bg-blue-700 rounded-lg transform translate-z-6 group-hover:translate-z-10 transition-transform duration-300 -z-1"></span>
               </a>
             {{ end }}
           {{ end }}
         </div>
       </div>
     </div>
-  </section>
-  <!-- /About Us with Carousel -->
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      new Swiper('.mySwiper', {
-        loop: true,
-        autoplay: {
-          delay: 3000,
-          disableOnInteraction: false,
-        },
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
+    <style>
+      /* 3D Transformations */
+      .perspective-1000 {
+        perspective: 1000px;
+      }
+      .transform-style-preserve-3d {
+        transform-style: preserve-3d;
+      }
+      .backface-hidden {
+        backface-visibility: hidden;
+      }
+      .rotate-y-10 {
+        transform: rotateY(10deg);
+      }
+      .rotate-y-180 {
+        transform: rotateY(180deg);
+      }
+      .translate-z-6 {
+        transform: translateZ(-6px);
+      }
+      .translate-z-10 {
+        transform: translateZ(-10px);
+      }
+
+      /* Symbol Animations */
+      @keyframes symbol1 {
+        0%, 100% {
+          transform: rotateZ(0deg) scale(1);
+          opacity: 0.3;
+        }
+        50% {
+          transform: rotateZ(45deg) scale(1.05);
+          opacity: 0.4;
+        }
+      }
+      @keyframes symbol2 {
+        0%, 100% {
+          transform: rotateZ(0deg) scale(1);
+          opacity: 0.3;
+        }
+        50% {
+          transform: rotateZ(-45deg) scale(1.05);
+          opacity: 0.4;
+        }
+      }
+      @keyframes symbol3 {
+        0%, 100% {
+          transform: rotateZ(0deg) scale(1);
+          opacity: 0.3;
+        }
+        50% {
+          transform: rotateZ(30deg) scale(1.05);
+          opacity: 0.4;
+        }
+      }
+      .animate-symbol1 {
+        animation: symbol1 14s ease-in-out infinite;
+      }
+      .animate-symbol2 {
+        animation: symbol2 15s ease-in-out infinite;
+        animation-delay: 1s;
+      }
+      .animate-symbol3 {
+        animation: symbol3 13s ease-in-out infinite;
+        animation-delay: 2s;
+      }
+
+      /* Carousel 3D effect */
+      .swiper-slide {
+        transition: all 0.5s ease;
+      }
+      .swiper-slide-active {
+        transform: scale(1.05) translateZ(10px);
+        z-index: 10;
+      }
+      .swiper-slide-prev,
+      .swiper-slide-next {
+        opacity: 0.8;
+        transform: scale(0.95) translateZ(5px);
+      }
+
+      /* Custom pagination bullets */
+      .swiper-pagination {
+        position: absolute;
+        bottom: 2rem; /* Matches !bottom-8 */
+        z-index: 20; /* Ensure pagination is above other elements */
+      }
+      .swiper-pagination-bullet {
+        width: 8px;
+        height: 8px;
+        background: rgba(0,0,0,0.4); /* Slightly darker for visibility */
+        opacity: 1;
+        transition: all 0.3s ease;
+        transform-style: preserve-3d;
+        /* Change 3: Added shadow for visibility */
+        box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+      }
+      .swiper-pagination-bullet-active {
+        background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+        width: 16px;
+        height: 8px;
+        border-radius: 4px;
+        transform: translateZ(5px);
+        /* Change 4: Added shadow for active bullet */
+        box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+      }
+
+      /* Navigation buttons */
+      .swiper-button-next,
+      .swiper-button-prev {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.9);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+        color: #3b82f6;
+        transform-style: preserve-3d;
+      }
+      .swiper-button-next:after,
+      .swiper-button-prev:after {
+        font-size: 16px;
+        font-weight: bold;
+      }
+      .swiper-button-next:hover,
+      .swiper-button-prev:hover {
+        transform: scale(1.1) translateZ(5px);
+        background: white;
+      }
+
+      /* Slide in animation */
+      .animate-slideInLeft {
+        opacity: 0;
+        transform: translateX(-30px) rotateY(15deg);
+        animation: slideInLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+      @keyframes slideInLeft {
+        to {
+          opacity: 1;
+          transform: translateX(0) rotateY(0);
+        }
+      }
+    </style>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        // Initialize 3D Carousel
+        const aboutSwiper = new Swiper('.mySwiper', {
+          loop: true,
+          effect: 'coverflow',
+          grabCursor: true,
+          centeredSlides: true,
+          slidesPerView: 'auto',
+          coverflowEffect: {
+            rotate: 5,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true,
+          },
+          autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+          },
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+          on: {
+            init: function () {
+              // Add 3D effect to slides
+              const slides = this.slides;
+              for (let i = 0; i < slides.length; i++) {
+                slides[i].style.transform = `rotateY(${(i - this.activeIndex) * 15}deg) translateZ(${Math.abs(i - this.activeIndex) * -20}px)`;
+              }
+            },
+            slideChange: function () {
+              // Update 3D effect on slide change
+              const slides = this.slides;
+              for (let i = 0; i < slides.length; i++) {
+                slides[i].style.transform = `rotateY(${(i - this.activeIndex) * 15}deg) translateZ(${Math.abs(i - this.activeIndex) * -20}px)`;
+                slides[i].style.opacity = Math.abs(i - this.activeIndex) > 1 ? '0.6' : '1';
+              }
+            }
+          }
+        });
+
+        // Animate bullet points on scroll
+        const bulletPoints = document.querySelectorAll('li.animate-fadeInUp');
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+              entry.target.style.animationDelay = `${index * 0.1}s`;
+              entry.target.classList.add('animate-fadeInUp-active');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+
+        bulletPoints.forEach(point => {
+          observer.observe(point);
+        });
       });
-    });
-  </script>
+    </script>
+  </section>
 
-  <!-- Testimonials -->
-  {{ with site.GetPage "sections/testimonial" }}
-  {{ if .Params.enable }}
-    <section class="section">
-      <div class="container">
-        <div class="row">
-          <div class="md:col-10 lg:col-8 xl:col-6 mx-auto mb-12 text-center">
-            <h2 class="mb-4">
-              {{ .Title | markdownify }}
-            </h2>
-            <p>
-              {{ .Params.description | markdownify }}
-            </p>
+  <!-- Latest News Section (Timeline Layout without Date Circles) -->
+  <section class="section-sm relative">
+    <div class="container py-8">
+      <div class="row">
+        <div class="md:col-10 lg:col-8 xl:col-6 mx-auto mb-12 text-center">
+          <h2 class="mb-4 text-4xl font-bold text-gray-900 dark:text-white">
+            <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-600">Latest News</span>
+          </h2>
+          <p class="text-lg text-gray-700 dark:text-gray-300">
+            Discover our latest achievements and events in ontology and knowledge graph research.
+          </p>
+        </div>
+      </div>
+      <div class="row justify-center relative gap-y-16">
+        <!-- Timeline Line -->
+        <div class="absolute top-0 bottom-0 left-1/2 w-1 bg-gradient-to-b from-blue-500 to-purple-600 dark:from-blue-400 dark:to-purple-500 transform -translate-x-1/2 z-0"></div>
+        {{ $rawNews := site.Data.news }}
+        {{ if not $rawNews }}
+          <div class="col-12 text-center">
+            <p class="text-gray-600 dark:text-gray-400">No news available at the moment.</p>
           </div>
-          <div class="col-12">
-            {{ range .Params.testimonials }}
-              <div class="text-center mb-8">
-                <h3 class="text-2xl font-semibold mt-6">{{ .subheading }}</h3>
+        {{ else }}
+          <!-- Parse and sort news -->
+          {{ $news := slice }}
+          {{ range $rawNews }}
+            {{ $ds := index .Date "$date" }}
+            {{ $pd := time $ds }}
+            {{ if ge $pd.Year 2022 }}
+              {{ $news = $news | append (merge . (dict "ParsedDate" $pd)) }}
+            {{ end }}
+          {{ end }}
+          {{ $news = sort $news "ParsedDate" "desc" }}
+          <!-- Limit to latest 2-4 news items -->
+          {{ $news = first 4 $news }}
+          <!-- Display news items -->
+          {{ range $index, $item := $news }}
+            <div class="md:col-6 animate-news-card {{ if mod $index 2 }}news-card-right{{ else }}news-card-left{{ end }}" style="animation-delay: {{ mul $index 0.3 }}s;">
+              <div class="relative flex {{ if mod $index 2 }}justify-end{{ else }}justify-start{{ end }} items-start">
+                <!-- News Card -->
+                <div class="w-full md:w-4/5 bg-white/80 dark:bg-gray-800/80 backdrop-blur-md rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:rotate-1 group relative overflow-hidden h-[150px] flex flex-col">
+                  <div class="p-4 flex-grow">
+                    <p class="text-xs text-gray-500 dark:text-gray-400 italic mb-2 inline-flex items-center">
+                      {{ if eq $item.Category "Paper" }}
+                        <i class="fas fa-file-alt text-blue-500 dark:text-blue-300 mr-2 text-base"></i>
+                      {{ else if eq $item.Category "Talk" }}
+                        <i class="fas fa-microphone-alt text-blue-500 dark:text-blue-300 mr-2 text-base"></i>
+                      {{ else }}
+                        <i class="fas fa-star text-blue-500 dark:text-blue-300 mr-2 text-base"></i>
+                      {{ end }}
+                      {{ $item.Category | default "General" }}
+                    </p>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2 line-clamp-2">
+                      {{ if $item.Url }}
+                        <a href="{{ $item.Url | absURL }}" class="hover:underline">{{ $item.Title | markdownify }}</a>
+                      {{ else }}
+                        {{ $item.Title | markdownify }}
+                      {{ end }}
+                    </h3>
+                    {{ if $item.Excerpt }}
+                      <p class="text-gray-600 dark:text-gray-300 text-xs line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        {{ $item.Excerpt | markdownify }}
+                      </p>
+                    {{ end }}
+                  </div>
+                </div>
               </div>
-              <div class="swiper testimonial-slider">
-                <div class="swiper-wrapper">
-                  {{ range .items }}
-                    <div class="swiper-slide">
-                      <div class="bg-light dark:bg-darkmode-light rounded-lg px-7 py-10">
-                        <div class="text-text-dark dark:text-white">
-                          <svg width="33" height="20" viewBox="0 0 33 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1.28375 19.41L0.79375 18.64C1.21375 17.0067 1.75042 15.07 2.40375 12.83C3.05708 10.5433 3.75708 8.28 4.50375 6.04C5.29708 3.75333 6.06708 1.77 6.81375 0.0899959H15.3538C14.9338 2.09666 14.4904 4.26667 14.0238 6.6C13.5571 8.88666 13.1371 11.15 12.7638 13.39C12.4371 15.5833 12.1571 17.59 11.9238 19.41H1.28375ZM31.69 0.0899959L32.18 0.859998C31.76 2.54 31.2233 4.5 30.57 6.74C29.9167 8.98 29.2167 11.2433 28.47 13.53C27.7233 15.77 26.9533 17.73 26.16 19.41H17.69C18.0167 17.9167 18.3433 16.33 18.67 14.65C18.9967 12.9233 19.3 11.22 19.58 9.54C19.9067 7.81333 20.1867 6.15667 20.42 4.57C20.7 2.93666 20.91 1.44333 21.05 0.0899959H31.69Z" fill="currentColor" />
-                          </svg>
-                        </div>
-                        <blockquote class="mt-8">
-                          {{ .content | markdownify }}
-                        </blockquote>
-                        <div class="mt-11 flex items-center">
-                          <div class="ml-4">
-                            <h3 class="h5 font-primary font-semibold">
-                                {{ .name }}               
-                            </h3>                          
-                            <p class="text-text-dark dark:text-white">
-                              {{ .designation | markdownify }}
-                            </p>
-                          </div>
+            </div>
+          {{ end }}
+        {{ end }}
+      </div>
+      <div class="text-center mt-12">
+        <a
+          href="{{ "news/" | relURL }}"
+          class="btn btn-primary inline-flex items-center group transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+          <span class="relative z-10">See All News</span>
+          <i class="fa fa-arrow-right pl-2 transition-transform group-hover:translate-x-2"></i>
+        </a>
+      </div>
+    </div>
+
+    <style>
+      /* News card animations */
+      .animate-news-card {
+        opacity: 0;
+        animation: fadeInSlide 0.8s ease-out forwards;
+      }
+      .news-card-left {
+        transform: translateX(-50px);
+      }
+      .news-card-right {
+        transform: translateX(50px);
+      }
+      @keyframes fadeInSlide {
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      /* Add gap between cards and timeline line */
+      .news-card-left .flex {
+        margin-right: 1rem; /* Gap for left-aligned cards */
+      }
+      .news-card-right .flex {
+        margin-left: 1rem; /* Gap for right-aligned cards */
+      }
+
+      /* Line clamp */
+      .line-clamp-2 {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      .line-clamp-3 {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .md\:col-6 {
+          width: 100%;
+        }
+        .md\:w-4/5 {
+          width: 100%;
+        }
+        .news-card-left,
+        .news-card-right {
+          transform: translateX(0);
+          justify-content: center !important;
+        }
+        .news-card-left .flex,
+        .news-card-right .flex {
+          margin-left: 0;
+          margin-right: 0; /* Remove gap on mobile */
+        }
+        .timeline-section .container {
+          padding-top: 3rem;
+        }
+        .absolute.top-0.bottom-0.left-1/2 {
+          display: none;
+        }
+      }
+    </style>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        // Animate news cards on scroll
+        const newsCards = document.querySelectorAll('.animate-news-card');
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+              entry.target.style.animationDelay = `${index * 0.3}s`;
+              entry.target.classList.add('animate-news-card-active');
+              observer.unobserve(entry.target);
+            }
+          }, { threshold: 0.1 });
+
+        newsCards.forEach(card => {
+          observer.observe(card);
+        });
+      });
+    </script>
+  </section>
+
+  <!-- Projects Glimpse (Scrollable Carousel with Uniform Heights) -->
+  <section class="section">
+    <div class="container">
+      <div class="row">
+        <div class="md:col-10 lg:col-8 xl:col-6 mx-auto mb-12 text-center">
+          <h2 class="mb-4 text-4xl font-bold text-gray-900 dark:text-white">
+            <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-600">Our Projects</span>
+          </h2>
+          <p class="text-lg text-gray-700 dark:text-gray-300">
+            Explore our cutting-edge research in ontology and knowledge graph technologies.
+          </p>
+        </div>
+      </div>
+      <div class="row justify-center">
+        <div class="col-12">
+          <div class="swiper projectSwiper">
+            <div class="swiper-wrapper">
+              {{ with site.Data.projects }}
+                {{ range . }}
+                  <div class="swiper-slide w-80 mx-2 animate-project-card bg-gray-200 dark:bg-gray-700 rounded-xl">
+                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col">
+                      <div class="p-6 flex flex-col flex-grow min-h-[280px]">
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                          {{ .Title | markdownify }}
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-4 line-clamp-3 flex-grow">
+                          {{ .Description | truncate 120 | markdownify }}
+                        </p>
+                        <p class="text-blue-600 dark:text-blue-400 text-sm mb-4">
+                          <span class="font-medium">Category:</span> {{ .Category }}
+                        </p>
+                        <div class="mt-auto h-6">
+                          {{ if .githubUrl }}
+                            <a
+                              href="{{ .githubUrl }}"
+                              target="_blank"
+                              rel="noopener"
+                              class="text-blue-500 dark:text-blue-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 inline-block">
+                              <i class="fab fa-github mr-1"></i> View on GitHub
+                            </a>
+                          {{ else }}
+                            <div class="h-6"></div>
+                          {{ end }}
                         </div>
                       </div>
+                      <div class="h-1 bg-gradient-to-r from-blue-500 to-purple-600 rounded-b-xl"></div>
                     </div>
-                  {{ end }}
-                </div>
-                <div class="testimonial-slider-pagination mt-9 flex items-center justify-center text-center"></div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-              </div>
+                  </div>
+                {{ end }}
+              {{ end }}
+            </div>
+            <!-- Navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-6">
+        <a
+          href="{{ "projects/" | relURL }}"
+          class="btn btn-primary inline-flex items-center group transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+          <span class="relative z-10">See All Projects</span>
+          <i class="fa fa-arrow-right pl-2 transition-transform group-hover:translate-x-2"></i>
+        </a>
+      </div>
+    </div>
+
+    <style>
+      /* Project card animation */
+      .animate-project-card {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 0.6s ease-out forwards;
+      }
+
+      /* Line clamp for description */
+      .line-clamp-3 {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      /* Swiper styles */
+      .projectSwiper .swiper-slide {
+        width: 320px; /* Fixed card width */
+        margin-right: 16px;
+        transition: all 0.3s ease;
+      }
+      .projectSwiper .swiper-slide-active {
+        transform: scale(1.02);
+        opacity: 1;
+      }
+      .projectSwiper .swiper-slide-prev,
+      .projectSwiper .swiper-slide-next {
+        opacity: 0.8;
+      }
+
+      /* Ensure uniform card height */
+      .projectSwiper .swiper-slide .flex {
+        height: 100%;
+      }
+      .projectSwiper .swiper-slide .flex-col {
+        justify-content: space-between;
+      }
+
+      /* Responsive breakpoints */
+      @media (max-width: 768px) {
+        .projectSwiper .swiper-slide {
+          width: 280px;
+        }
+      }
+      @media (max-width: 480px) {
+        .projectSwiper .swiper-slide {
+          width: 260px;
+        }
+      }
+    </style>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        // Initialize Project Carousel
+        const projectSwiper = new Swiper('.projectSwiper', {
+          loop: true,
+          slidesPerView: 'auto',
+          spaceBetween: 16,
+          grabCursor: true,
+          autoplay: {
+            delay: 3000,
+            disableOnInteraction: true,
+          },
+          navigation: {
+            nextEl: '.projectSwiper .swiper-button-prev',
+            prevEl: '.projectSwiper .swiper-button-next',
+          },
+          breakpoints: {
+            480: {
+              slidesPerView: 'auto',
+              spaceBetween: 12,
+            },
+            768: {
+              slidesPerView: 'auto',
+              spaceBetween: 16,
+            },
+            1024: {
+              slidesPerView: 'auto',
+              spaceBetween: 16,
+            },
+          },
+        });
+
+        // Animate project cards on scroll
+        const projectCards = document.querySelectorAll('.animate-project-card');
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+              entry.target.style.animationDelay = `${index * 0.1}s`;
+              entry.target.classList.add('animate-fadeInUp-active');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+
+        projectCards.forEach(card => {
+          observer.observe(card);
+        });
+      });
+    </script>
+  </section>
+
+
+  <!-- Latest Publications Section -->
+  <section class="section-sm relative">
+    <div class="container py-8">
+      <div class="row">
+        <div class="md:col-10 lg:col-8 xl:col-6 mx-auto mb-12 text-center">
+          <h2 class="mb-4 text-4xl font-bold text-gray-900 dark:text-white">
+            <span class="bg-clip-text text-transparent bg-gradient-to-r from-green-500 to-teal-600">Latest Publications</span>
+          </h2>
+          <p class="text-lg text-gray-700 dark:text-gray-300">
+            Explore our most recent contributions to ontology and knowledge graph research.
+          </p>
+        </div>
+      </div>
+      <div class="row justify-center">
+        {{ $rawPublications := site.Data.publications }}
+        {{ if not $rawPublications }}
+          <div class="col-12 text-center">
+            <p class="text-gray-600 dark:text-gray-400">No publications available at the moment.</p>
+          </div>
+        {{ else }}
+          <!-- Filter publications for current year (2025) -->
+          {{ $currentYear := now.Format "2006" }}
+          {{ $currentYearPublications := slice }}
+          {{ $allPublications := slice }}
+          {{ range $rawPublications }}
+            {{ $year := .Year }}
+            {{ if eq $year $currentYear }}
+              {{ $currentYearPublications = $currentYearPublications | append . }}
             {{ end }}
-            <div class="text-center mt-8">
-              <a href="{{ site.Params.Projects.link | relLangURL }}" class="btn btn-outline-primary btn-sm">Show More</a>
+            {{ $allPublications = $allPublications | append . }}
+          {{ end }}
+          <!-- Sort all publications by year (descending) -->
+          {{ $allPublications = sort $allPublications "Year" "desc" }}
+          <!-- Decide which publications to display -->
+          {{ $displayPublications := slice }}
+          {{ if gt (len $currentYearPublications) 0 }}
+            {{ $displayPublications = $currentYearPublications }}
+          {{ else }}
+            {{ $displayPublications = first 3 $allPublications }}
+          {{ end }}
+          <!-- Display publications -->
+          {{ range $index, $pub := $displayPublications }}
+            <div class="col-12 mb-6 animate-publication" style="animation-delay: {{ mul $index 0.2 }}s;">
+              <div class="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-lg shadow-md hover:shadow-xl transition-all duration-300 border-l-4 border-green-500 dark:border-green-400 group">
+                <div class="p-6 flex flex-col md:flex-row md:items-center md:justify-between">
+                  <!-- Publication Details -->
+                  <div class="flex-1 mb-4 md:mb-0">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">
+                      {{ if $pub.PublicationURL }}
+                        <a href="{{ $pub.PublicationURL | absURL }}" target="_blank" rel="noopener noreferrer" class="hover:underline">
+                          {{ $pub.Title | markdownify }}
+                        </a>
+                      {{ else }}
+                        {{ $pub.Title | markdownify }}
+                      {{ end }}
+                    </h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 italic mb-2 line-clamp-2">
+                      {{ $pub.Authors | markdownify }}
+                    </p>
+                    <p class="text-sm text-gray-700 dark:text-gray-300 line-clamp-2">
+                      {{ $pub.Description | markdownify }}
+                    </p>
+                  </div>
+                  <!-- Year -->
+                  <div class="md:ml-6 flex-shrink-0">
+                    <span class="inline-block px-4 py-2 bg-green-100 dark:bg-green-900/50 text-green-800 dark:text-green-300 rounded-full text-sm font-semibold">
+                      {{ $pub.Year }}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {{ end }}
+        {{ end }}
+      </div>
+      <!-- See All Publications Button -->
+      <div class="text-center mt-12">
+        <a
+          href="{{ "publications/" | relURL }}"
+          class="btn btn-primary inline-flex items-center group transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+          <span class="relative z-10">See All Publications</span>
+          <i class="fa fa-arrow-right pl-2 transition-transform group-hover:translate-x-2"></i>
+        </a>
+      </div>
+    </div>
+
+    <style>
+      /* Publication animation */
+      .animate-publication {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 0.6s ease-out forwards;
+      }
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Line clamp */
+      .line-clamp-2 {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+    </style>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        // Animate publications on scroll
+        const publications = document.querySelectorAll('.animate-publication');
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+              entry.target.style.animationDelay = `${index * 0.2}s`;
+              entry.target.classList.add('animate-publication-active');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+
+        publications.forEach(pub => {
+          observer.observe(pub);
+        });
+      });
+    </script>
+  </section>
+
+
+
+  <!-- Get in Touch Section (Gradient Background with Animated Elements) -->
+  <section class="section relative overflow-hidden">
+    <!-- Animated abstract shapes background -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <!-- Floating circles -->
+      <div class="absolute -left-20 -top-20 w-64 h-64 rounded-full bg-blue-500/10 dark:bg-blue-400/5 blur-3xl animate-float1"></div>
+      <div class="absolute -right-20 -bottom-20 w-72 h-72 rounded-full bg-purple-500/10 dark:bg-purple-400/5 blur-3xl animate-float2"></div>
+
+      <!-- Abstract grid pattern - enhanced contrast -->
+      <div class="absolute inset-0 opacity-40 dark:opacity-40">
+        <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+          <pattern id="grid-pattern" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" stroke-width="0.5"/>
+          </pattern>
+          <rect width="100%" height="100%" fill="url(#grid-pattern)"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="container relative z-10">
+      <div class="row justify-center">
+        <div class="lg:col-8 md:col-10 text-center mb-16">
+          <h2 class="mb-6 text-4xl font-bold text-gray-900 dark:text-white">
+            <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-600">Let's Collaborate on Your Next Research Challenge</span>
+          </h2>
+          <p class="text-xl text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
+            Whether you're interested in our research, have questions about our projects, or want to explore collaboration opportunities, we'd love to hear from you. Our team is ready to discuss how we can work together to advance knowledge graph and ontology research.
+          </p>
+
+          <!-- Animated CTA button with 3D effect -->
+          <div class="relative inline-block group">
+            <a
+              href="{{ "contact/" | relURL }}"
+              class="relative z-10 inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl shadow-2xl hover:shadow-3xl transition-all duration-300 transform group-hover:-translate-y-1 group-hover:scale-105"
+            >
+              <span>Contact Our Team</span>
+              <i class="fas fa-paper-plane ml-3 transition-transform group-hover:translate-x-2"></i>
+            </a>
+            <!-- 3D effect behind button -->
+            <span class="absolute -z-1 -bottom-2 left-4 right-4 h-6 bg-gradient-to-r from-blue-700 to-purple-700 rounded-xl opacity-60 group-hover:opacity-80 blur-md transition-all duration-300 transform group-hover:translate-y-1"></span>
+          </div>
+
+
+          <!-- Alternative contact methods -->
+          <div class="mt-12 flex flex-wrap justify-center gap-6">
+            <!-- Email -->
+            <div class="flex items-center bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm px-6 py-3 rounded-lg shadow-sm hover:shadow-md transition-all">
+              <div class="mr-4 p-2 bg-blue-100 dark:bg-blue-900/50 rounded-full">
+                <i class="fas fa-envelope text-blue-600 dark:text-blue-400 text-xl"></i>
+              </div>
+              <div>
+                <p class="text-sm text-gray-500 dark:text-gray-400">Email us at</p>
+                <a href="mailto:raghava.mutharaju@iiitd.ac.in" class="text-blue-600 dark:text-blue-400 font-medium hover:underline">raghava.mutharaju@iiitd.ac.in</a>
+              </div>
+            </div>
+
+            <!-- Social Media -->
+            <div class="flex items-center bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm px-6 py-3 rounded-lg shadow-sm hover:shadow-md transition-all">
+              <div class="mr-4 p-2 bg-purple-100 dark:bg-purple-900/50 rounded-full">
+                <i class="fas fa-hashtag text-purple-600 dark:text-purple-400 text-xl"></i>
+              </div>
+              <div>
+                <p class="text-sm text-gray-500 dark:text-gray-400">Connect with us</p>
+                <div class="flex space-x-3 mt-1">
+                  <a href="https://www.linkedin.com/in/kracr-lab-425762204/" target="_blank" rel="noopener noreferrer" class="text-gray-700 dark:text-gray-300 hover:text-blue-800 dark:hover:text-blue-300 transition-colors">
+                    <i class="fab fa-linkedin text-lg"></i>
+                  </a>
+                  <a href="https://github.com/kracr" target="_blank" rel="noopener noreferrer" class="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
+                    <i class="fab fa-github text-lg"></i>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-  {{ end }}
-  {{ end }}
-  <!-- /Testimonials -->
+    </div>
+
+    <style>
+      /* Floating animations for background elements */
+      @keyframes float1 {
+        0%, 100% { transform: translate(0, 0) rotate(0deg); }
+        50% { transform: translate(-20px, -20px) rotate(5deg); }
+      }
+      @keyframes float2 {
+        0%, 100% { transform: translate(0, 0) rotate(0deg); }
+        50% { transform: translate(20px, 20px) rotate(-5deg); }
+      }
+      .animate-float1 {
+        animation: float1 12s ease-in-out infinite;
+      }
+      .animate-float2 {
+        animation: float2 15s ease-in-out infinite;
+        animation-delay: 2s;
+      }
+
+      /* Enhanced grid contrast */
+      .dark #grid-pattern path {
+        stroke: rgba(255, 255, 255, 0.5);
+      }
+      #grid-pattern path {
+        stroke: rgba(0, 0, 0, 0.5);
+      }
+
+      /* 3D button hover effect */
+      .group:hover .btn-3d-effect {
+        transform: translateY(4px);
+        opacity: 0.8;
+      }
+
+      /* Smooth transitions for contact cards */
+      .transition-all {
+        transition-property: all;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 300ms;
+      }
+    </style>
+  </section>
+
 {{ end }}
