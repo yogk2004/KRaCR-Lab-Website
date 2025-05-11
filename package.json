@@ -28,7 +28,10 @@
     "tailwindcss": "^4.1.2"
   },
   "dependencies": {
+    "autoprefixer": "^10.4.21",
     "hugoplate": "file:",
-    "particles.js": "^2.0.0"
+    "particles.js": "^2.0.0",
+    "postcss": "^8.5.3",
+    "postcss-cli": "^11.0.1"
   }
 }
