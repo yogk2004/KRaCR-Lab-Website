@@ -5,9 +5,6 @@
       <!-- Particle Canvas -->
       <canvas id="particle-canvas" class="absolute top-0 left-0 w-full h-full pointer-events-none"></canvas>
 
-      <!-- Custom Cursor -->
-
-
       <div class="container relative z-10">
         <div class="row justify-center">
           <div class="lg:col-7 md:col-9 mb-8 text-center">
@@ -62,29 +59,6 @@
           let particles = [];
           const particleCount = 60;
           let mouse = { x: null, y: null, radius: 120 };
-          let cursorSize = 32;
-
-          // Custom cursor element with optimized performance
-          const cursor = document.getElementById('custom-cursor');
-          let cursorX = 0;
-          let cursorY = 0;
-          let targetX = 0;
-          let targetY = 0;
-          let animationFrameId;
-
-          // Smooth cursor animation using requestAnimationFrame
-          function animateCursor() {
-            cursorX += (targetX - cursorX) * 0.2;
-            cursorY += (targetY - cursorY) * 0.2;
-
-            cursor.style.left = `${cursorX}px`;
-            cursor.style.top = `${cursorY}px`;
-
-            animationFrameId = requestAnimationFrame(animateCursor);
-          }
-
-          // Start cursor animation
-          animateCursor();
 
           // Set canvas size
           function resizeCanvas() {
@@ -100,7 +74,7 @@
 
             for (let i = 0; i < particleCount; i++) {
               const size = Math.random() * 12 + 5;
-              const type = Math.floor(Math.random() * 2); // Only 2 shapes now (0 = circle, 1 = triangle)
+              const type = Math.floor(Math.random() * 2); // 0 = circle, 1 = triangle
 
               particles.push({
                 x: Math.random() * canvas.width,
@@ -118,7 +92,7 @@
             }
           }
 
-          // Draw shapes (only circles and triangles now)
+          // Draw shapes (circles and triangles)
           function drawShape(particle) {
             ctx.save();
             ctx.translate(particle.x, particle.y);
@@ -127,13 +101,13 @@
 
             if (particle.type === 0) { // Circle
               ctx.beginPath();
-              ctx.arc(0, 0, particle.size/2, 0, Math.PI * 2);
+              ctx.arc(0, 0, particle.size / 2, 0, Math.PI * 2);
               ctx.fill();
             } else { // Triangle
               ctx.beginPath();
-              ctx.moveTo(0, -particle.size/2);
-              ctx.lineTo(particle.size/2, particle.size/2);
-              ctx.lineTo(-particle.size/2, particle.size/2);
+              ctx.moveTo(0, -particle.size / 2);
+              ctx.lineTo(particle.size / 2, particle.size / 2);
+              ctx.lineTo(-particle.size / 2, particle.size / 2);
               ctx.closePath();
               ctx.fill();
             }
@@ -150,8 +124,8 @@
                 const distance = Math.sqrt(dx * dx + dy * dy);
 
                 if (distance < 120) {
-                  const opacity = 1 - distance/120;
-                  ctx.strokeStyle = `rgba(${document.documentElement.classList.contains('dark') ? '255, 255, 255' : '0, 0, 0'}, ${opacity*0.3})`;
+                  const opacity = 1 - distance / 120;
+                  ctx.strokeStyle = `rgba(${document.documentElement.classList.contains('dark') ? '255, 255, 255' : '0, 0, 0'}, ${opacity * 0.3})`;
                   ctx.lineWidth = 1.5;
                   ctx.beginPath();
                   ctx.moveTo(particles[a].x, particles[a].y);
@@ -186,23 +160,11 @@
 
                 // Increase rotation speed when near mouse
                 p.rotationSpeed = force * 3;
-
-                // Change cursor size when interacting with particles
-                cursorSize = 32 + (10 * force);
-                cursor.style.width = `${cursorSize}px`;
-                cursor.style.height = `${cursorSize}px`;
               } else {
                 if (p.size > p.baseSize) {
                   p.size -= 0.2;
                 }
                 p.rotationSpeed = (Math.random() * 1 - 0.5) * 0.5;
-
-                // Reset cursor size
-                if (cursorSize > 32) {
-                  cursorSize -= 0.5;
-                  cursor.style.width = `${cursorSize}px`;
-                  cursor.style.height = `${cursorSize}px`;
-                }
               }
 
               // Update rotation
@@ -217,7 +179,7 @@
             for (let i = 0; i < particles.length; i++) {
               let p = particles[i];
 
-              // Update position (slower movement)
+              // Update position
               p.x += p.speedX * 0.8;
               p.y += p.speedY * 0.8;
 
@@ -239,34 +201,13 @@
 
           // Mouse event handlers
           window.addEventListener('mousemove', function(e) {
-            targetX = e.clientX;
-            targetY = e.clientY;
             mouse.x = e.clientX;
             mouse.y = e.clientY;
-
-            // Subtler pulse effect when moving
-            cursor.style.transform = `translate(-50%, -50%) scale(${1 + Math.random() * 0.1})`;
-            setTimeout(() => {
-              cursor.style.transform = 'translate(-50%, -50%) scale(1)';
-            }, 100);
           });
 
           window.addEventListener('mouseout', function() {
             mouse.x = null;
             mouse.y = null;
-          });
-
-          // Handle button hover effects
-          const buttons = document.querySelectorAll('a, button');
-          buttons.forEach(button => {
-            button.addEventListener('mouseenter', () => {
-              cursor.style.backgroundColor = '#3b82f6';
-              cursor.style.transform = 'translate(-50%, -50%) scale(1.3)';
-            });
-            button.addEventListener('mouseleave', () => {
-              cursor.style.backgroundColor = 'white';
-              cursor.style.transform = 'translate(-50%, -50%) scale(1)';
-            });
           });
 
           // Handle dark mode changes
@@ -291,11 +232,6 @@
           window.addEventListener('resize', function() {
             resizeCanvas();
             initParticles();
-          });
-
-          // Clean up animation frame on unmount
-          window.addEventListener('beforeunload', function() {
-            cancelAnimationFrame(animationFrameId);
           });
         });
       </script>
