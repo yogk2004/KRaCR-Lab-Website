@@ -1,63 +1,65 @@
-<div class="bg-[#f9f9f9] dark:bg-[#1f1f1f] text-center rounded-2xl shadow-md p-6 transition-colors duration-300 border border-gray-200 dark:border-white flex flex-col justify-center items-center {{ if .ImageURL }}h-96{{ else }}h-50{{ end }}">
-  {{ if .ImageURL }}
-    {{ $path  := replace .ImageURL "\\" "/" }}
-    {{ $image := resources.Get $path }}
-    {{ if $image }}
-      <img
-        src="{{ $image.RelPermalink }}"
-        alt="{{ .Name }}"
-        loading="lazy"
-        class="w-32 h-40 object-contain rounded-md shadow-lg mb-4"
-      >
-  {{ else }}
-      <!-- fallback if Hugo can’t find that asset -->
-      <div class="w-32 h-32 flex items-center justify-center bg-gray-200 text-gray-500 mb-4">
-        Image not found
-      </div>
-  {{ end }}
-  {{ else if .Mail }}
-    <img src="https://www.gravatar.com/avatar/{{ .Mail | md5 }}?s=128&pg&d=identicon" alt="{{ .Name }}" loading="lazy" class="w-32 h-32 rounded-full shadow-lg mb-4">
-  {{ end }}
+<div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border-0 flex flex-col {{ if .ImageURL }}h-96{{ else }}h-50{{ end }}">
+  <div class="p-5 flex flex-col flex-grow w-full items-center justify-center">
+    {{ if .ImageURL }}
+      {{ $path  := replace .ImageURL "\\" "/" }}
+      {{ $image := resources.Get $path }}
+      {{ if $image }}
+        <img
+          src="{{ $image.RelPermalink }}"
+          alt="{{ .Name }}"
+          loading="lazy"
+          class="w-32 h-40 object-contain rounded-md shadow-lg mb-4"
+        >
+    {{ else }}
+        <div class="w-32 h-32 flex items-center justify-center bg-gray-200 text-gray-500 mb-4 rounded-md">
+          Image not found
+        </div>
+    {{ end }}
+    {{ else if .Mail }}
+      <img src="https://www.gravatar.com/avatar/{{ .Mail | md5 }}?s=128&pg&d=identicon" alt="{{ .Name }}" loading="lazy" class="w-32 h-32 rounded-full shadow-lg mb-4">
+    {{ end }}
 
-  <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-    {{ .Name }}
-  </h2>
+    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-2 line-clamp-2">
+      {{ .Name }}
+    </h2>
 
-  <p class="text-gray-600 dark:text-gray-300 text-sm mb-1">
-    {{ .Position }}{{ if .Designation }}, {{ .Designation }}{{ end }}
-  </p>
-
-  {{ if .Interests }}
-    <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
-      {{ .Interests }}
+    <p class="text-gray-600 dark:text-gray-300 text-sm mb-1 line-clamp-2">
+      {{ .Position }}{{ if .Designation }}, {{ .Designation }}{{ end }}
     </p>
-  {{ end }}
 
-  <div class="flex justify-center mt-6 space-x-6 text-gray-600 dark:text-gray-300 text-2xl">
-    {{ if .Mail }}
-      <a href="mailto:{{ .Mail }}" aria-label="Email" title="Email" class="transition transform hover:text-blue-600 hover:scale-110">
-        <i class="fas fa-envelope"></i>
-      </a>
+    {{ if .Interests }}
+      <p class="mt-2 text-sm text-gray-600 dark:text-gray-400 line-clamp-3">
+        {{ .Interests }}
+      </p>
     {{ end }}
-    {{ if .linkedinLink }}
-      <a href="{{ .linkedinLink }}" target="_blank" aria-label="LinkedIn" title="LinkedIn" class="transition transform hover:text-blue-700 hover:scale-110">
-        <i class="fab fa-linkedin"></i>
-      </a>
-    {{ end }}
-    {{ if .twitterLink }}
-      <a href="{{ .twitterLink }}" target="_blank" aria-label="Twitter" title="Twitter" class="transition transform hover:text-sky-500 hover:scale-110">
-        <i class="fab fa-twitter"></i>
-      </a>
-    {{ end }}
-    {{ if .githubLink }}
-      <a href="{{ .githubLink }}" target="_blank" aria-label="GitHub" title="GitHub" class="transition transform hover:text-gray-800 dark:hover:text-white hover:scale-110">
-        <i class="fab fa-github"></i>
-      </a>
-    {{ end }}
-    {{ if .webpageLink }}
-      <a href="{{ .webpageLink }}" target="_blank" aria-label="Website" title="Website" class="transition transform hover:text-green-600 hover:scale-110">
-        <i class="fas fa-globe"></i>
-      </a>
-    {{ end }}
+
+    <div class="flex justify-center mt-6 space-x-6 text-gray-600 dark:text-gray-300 text-2xl">
+      {{ if .Mail }}
+        <a href="mailto:{{ .Mail }}" aria-label="Email" title="Email" class="transition transform hover:text-blue-600 hover:scale-110">
+          <i class="fas fa-envelope"></i>
+        </a>
+      {{ end }}
+      {{ if .linkedinLink }}
+        <a href="{{ .linkedinLink }}" target="_blank" aria-label="LinkedIn" title="LinkedIn" class="transition transform hover:text-blue-700 hover:scale-110">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      {{ end }}
+      {{ if .twitterLink }}
+        <a href="{{ .twitterLink }}" target="_blank" aria-label="Twitter" title="Twitter" class="transition transform hover:text-sky-500 hover:scale-110">
+          <i class="fab fa-twitter"></i>
+        </a>
+      {{ end }}
+      {{ if .githubLink }}
+        <a href="{{ .githubLink }}" target="_blank" aria-label="GitHub" title="GitHub" class="transition transform hover:text-gray-800 dark:hover:text-white hover:scale-110">
+          <i class="fab fa-github"></i>
+        </a>
+      {{ end }}
+      {{ if .webpageLink }}
+        <a href="{{ .webpageLink }}" target="_blank" aria-label="Website" title="Website" class="transition transform hover:text-green-600 hover:scale-110">
+          <i class="fas fa-globe"></i>
+        </a>
+      {{ end }}
+    </div>
   </div>
+  <div class="h-1 bg-gradient-to-r from-blue-500 to-purple-600 rounded-b-xl mx-1.76"></div>
 </div>
