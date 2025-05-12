@@ -1,8 +1,9 @@
 ---
 # Banner
 banner:
-  title: "Welcome to KRaCR"
-  content: "Knowledgeable Computing and Reasoning Lab\n Cracker of a Lab"
+  title: "KRaCR"
+  subtitle: "Knowledgeable Computing and Reasoning Lab"
+  tagline: "Cracker Of A Lab"
   image: "/images/banner.png"
   button:
     enable: false

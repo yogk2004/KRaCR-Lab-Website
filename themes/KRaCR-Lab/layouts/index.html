@@ -2,239 +2,366 @@
   <!-- Banner -->
   {{ with .Params.banner }}
     <section class="section pt-14 relative overflow-hidden">
-      <!-- Particle Canvas -->
-      <canvas id="particle-canvas" class="absolute top-0 left-0 w-full h-full pointer-events-none"></canvas>
+  <!-- Particle Canvas -->
+  <canvas id="particle-canvas" class="absolute top-0 left-0 w-full h-full pointer-events-none"></canvas>
 
-      <div class="container relative z-10">
-        <div class="row justify-center">
-          <div class="lg:col-7 md:col-9 mb-8 text-center">
-            <h1 class="mb-4 text-h3 lg:text-h1 animate-fadeInUp">
-              {{ .title | markdownify }}
-            </h1>
-            <p class="mb-8 animate-fadeInUp delay-100">
-              {{ .content | markdownify }}
-            </p>
-            {{ with .button }}
-              {{ if .enable }}
-                <a
-                  class="btn btn-primary hover:scale-105 transition-transform animate-fadeInUp delay-200"
-                  href="{{ .link | absURL }}"
-                  {{ if strings.HasPrefix .link `http` }}
-                    target="_blank" rel="noopener"
-                  {{ end }}>
-                  {{ .label }}
-                  <i class="fa fa-arrow-right pl-2"></i>
-                </a>
-              {{ end }}
-            {{ end }}
-          </div>
-        </div>
-      </div>
+  <div class="kracr-hero w-full py-12">
+    <div class="max-w-4xl mx-auto px-6 flex flex-col">
+      <!-- Subtitle - Top Line (adjust 'left-[10%]' value) -->
+      <p class="hero-subtitle mb-6 sm:mb-8 sm:self-start sm:left[30%] sm:relative">
+        KNOWLEDGEABLE COMPUTING &<br> REASONING LAB
+      </p>
 
-      <style>
-        /* Text animation styles */
-        .animate-fadeInUp {
-          opacity: 0;
-          transform: translateY(20px);
-          animation: fadeInUp 0.8s ease-out forwards;
+      <!-- Title - Middle Line -->
+      <h1 class="hero-title my-6 sm:my-8 self-center">
+        Welcome to KRaCR
+      </h1>
+
+      <!-- Tagline - Bottom Line (adjust 'right-[10%]' value) -->
+      <p class="hero-tagline mt-6 sm:mt-8 sm:self-end sm:right[30%] sm:relative">
+        CRACKER OF A LAB
+      </p>
+    </div>
+  </div>
+
+  <style>
+    /* Base Styles */
+    .kracr-hero {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    .hero-subtitle,
+    .hero-tagline {
+      font-family: 'Roboto Condensed', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: #4b5563;
+      opacity: 0;
+      text-transform: uppercase;
+    }
+
+    .hero-subtitle {
+      transform: translateX(-30px) scale(0.98);
+      animation: slideFadeInLeft 1s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.3s;
+    }
+
+    .hero-title {
+      font-size: clamp(3.5rem, 8vw, 6rem);
+      font-weight: 800;
+      line-height: 1;
+      color: transparent;
+      background-clip: text;
+      background-image: linear-gradient(to right, #3b82f6, #9333ea);
+      margin: 0;
+      opacity: 0;
+      transform: scale(0.9);
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 4px solid transparent;
+      animation: scaleInBounce 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.6s, typing 2s steps(15, end) forwards 0.6s, blink 0.75s step-end infinite 0.6s;
+    }
+
+    .hero-tagline {
+      transform: translateX(30px) scale(0.98);
+      animation: slideFadeInRight 1s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.9s;
+    }
+
+    /* Animations */
+    @keyframes slideFadeInLeft {
+      0% {
+        opacity: 0;
+        transform: translateX(-30px) scale(0.98);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+      }
+    }
+
+    @keyframes slideFadeInRight {
+      0% {
+        opacity: 0;
+        transform: translateX(30px) scale(0.98);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+      }
+    }
+
+    @keyframes scaleInBounce {
+      0% {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.02);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+      to {
+        width: 100%;
+      }
+    }
+
+    @keyframes blink {
+      50% {
+        border-color: transparent;
+      }
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 640px) {
+      .hero-subtitle,
+      .hero-tagline {
+        align-self: center !important;
+        left: auto !important;
+        right: auto !important;
+        font-size: 0.95rem;
+      }
+      .hero-title {
+        font-size: clamp(2.5rem, 6vw, 4rem);
+      }
+      .hero-title {
+        animation: scaleInBounce 1s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.6s, typing 1.5s steps(15, end) forwards 0.6s, blink 0.75s step-end infinite 0.6s;
+      }
+    }
+
+    /* Dark Mode */
+    .dark .hero-subtitle,
+    .dark .hero-tagline {
+      color: #e5e7eb;
+    }
+
+    /* Respect reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      .hero-subtitle,
+      .hero-title,
+      .hero-tagline {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+        width: 100% !important;
+        border-right: none !important;
+      }
+    }
+  </style>
+
+  <style>
+    /* Text animation styles for button (if added later) */
+    .animate-fadeInUp {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+    .delay-100 {
+      animation-delay: 0.2s;
+    }
+    .delay-200 {
+      animation-delay: 0.4s;
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const canvas = document.getElementById('particle-canvas');
+      const ctx = canvas.getContext('2d');
+      let particles = [];
+      const particleCount = 60;
+      let mouse = { x: null, y: null, radius: 120 };
+
+      // Set canvas size
+      function resizeCanvas() {
+        const section = canvas.closest('section');
+        canvas.width = section.offsetWidth;
+        canvas.height = section.offsetHeight;
+      }
+
+      // Initialize particles with simplified shapes
+      function initParticles() {
+        particles = [];
+        const color = document.documentElement.classList.contains('dark') ? '255, 255, 255' : '0, 0, 0';
+
+        for (let i = 0; i < particleCount; i++) {
+          const size = Math.random() * 12 + 5;
+          const type = Math.floor(Math.random() * 2); // 0 = circle, 1 = triangle
+
+          particles.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            size: size,
+            baseSize: size,
+            speedX: (Math.random() * 1 - 0.5) * 1.5,
+            speedY: (Math.random() * 1 - 0.5) * 1.5,
+            color: `rgba(${color}, ${Math.random() * 0.3 + 0.2})`,
+            type: type,
+            rotation: Math.random() * 360,
+            rotationSpeed: (Math.random() * 1 - 0.5) * 0.5,
+            density: Math.random() * 8 + 3
+          });
         }
-        .delay-100 {
-          animation-delay: 0.2s;
+      }
+
+      // Draw shapes (circles and triangles)
+      function drawShape(particle) {
+        ctx.save();
+        ctx.translate(particle.x, particle.y);
+        ctx.rotate(particle.rotation * Math.PI / 180);
+        ctx.fillStyle = particle.color;
+
+        if (particle.type === 0) { // Circle
+          ctx.beginPath();
+          ctx.arc(0, 0, particle.size / 2, 0, Math.PI * 2);
+          ctx.fill();
+        } else { // Triangle
+          ctx.beginPath();
+          ctx.moveTo(0, -particle.size / 2);
+          ctx.lineTo(particle.size / 2, particle.size / 2);
+          ctx.lineTo(-particle.size / 2, particle.size / 2);
+          ctx.closePath();
+          ctx.fill();
         }
-        .delay-200 {
-          animation-delay: 0.4s;
-        }
-        @keyframes fadeInUp {
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      </style>
 
-      <script>
-        document.addEventListener('DOMContentLoaded', function() {
-          const canvas = document.getElementById('particle-canvas');
-          const ctx = canvas.getContext('2d');
-          let particles = [];
-          const particleCount = 60;
-          let mouse = { x: null, y: null, radius: 120 };
+        ctx.restore();
+      }
 
-          // Set canvas size
-          function resizeCanvas() {
-            const section = canvas.closest('section');
-            canvas.width = section.offsetWidth;
-            canvas.height = section.offsetHeight;
-          }
+      // Connect particles near each other
+      function connectParticles() {
+        for (let a = 0; a < particles.length; a++) {
+          for (let b = a; b < particles.length; b++) {
+            const dx = particles[a].x - particles[b].x;
+            const dy = particles[a].y - particles[b].y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
 
-          // Initialize particles with simplified shapes
-          function initParticles() {
-            particles = [];
-            const color = document.documentElement.classList.contains('dark') ? '255, 255, 255' : '0, 0, 0';
-
-            for (let i = 0; i < particleCount; i++) {
-              const size = Math.random() * 12 + 5;
-              const type = Math.floor(Math.random() * 2); // 0 = circle, 1 = triangle
-
-              particles.push({
-                x: Math.random() * canvas.width,
-                y: Math.random() * canvas.height,
-                size: size,
-                baseSize: size,
-                speedX: (Math.random() * 1 - 0.5) * 1.5,
-                speedY: (Math.random() * 1 - 0.5) * 1.5,
-                color: `rgba(${color}, ${Math.random() * 0.3 + 0.2})`,
-                type: type,
-                rotation: Math.random() * 360,
-                rotationSpeed: (Math.random() * 1 - 0.5) * 0.5,
-                density: Math.random() * 8 + 3
-              });
-            }
-          }
-
-          // Draw shapes (circles and triangles)
-          function drawShape(particle) {
-            ctx.save();
-            ctx.translate(particle.x, particle.y);
-            ctx.rotate(particle.rotation * Math.PI / 180);
-            ctx.fillStyle = particle.color;
-
-            if (particle.type === 0) { // Circle
+            if (distance < 120) {
+              const opacity = 1 - distance / 120;
+              ctx.strokeStyle = `rgba(${document.documentElement.classList.contains('dark') ? '255, 255, 255' : '0, 0, 0'}, ${opacity * 0.3})`;
+              ctx.lineWidth = 1.5;
               ctx.beginPath();
-              ctx.arc(0, 0, particle.size / 2, 0, Math.PI * 2);
-              ctx.fill();
-            } else { // Triangle
-              ctx.beginPath();
-              ctx.moveTo(0, -particle.size / 2);
-              ctx.lineTo(particle.size / 2, particle.size / 2);
-              ctx.lineTo(-particle.size / 2, particle.size / 2);
-              ctx.closePath();
-              ctx.fill();
-            }
-
-            ctx.restore();
-          }
-
-          // Connect particles near each other
-          function connectParticles() {
-            for (let a = 0; a < particles.length; a++) {
-              for (let b = a; b < particles.length; b++) {
-                const dx = particles[a].x - particles[b].x;
-                const dy = particles[a].y - particles[b].y;
-                const distance = Math.sqrt(dx * dx + dy * dy);
-
-                if (distance < 120) {
-                  const opacity = 1 - distance / 120;
-                  ctx.strokeStyle = `rgba(${document.documentElement.classList.contains('dark') ? '255, 255, 255' : '0, 0, 0'}, ${opacity * 0.3})`;
-                  ctx.lineWidth = 1.5;
-                  ctx.beginPath();
-                  ctx.moveTo(particles[a].x, particles[a].y);
-                  ctx.lineTo(particles[b].x, particles[b].y);
-                  ctx.stroke();
-                }
-              }
+              ctx.moveTo(particles[a].x, particles[a].y);
+              ctx.lineTo(particles[b].x, particles[b].y);
+              ctx.stroke();
             }
           }
+        }
+      }
 
-          // Handle mouse interaction
-          function handleMouseInteraction() {
-            for (let i = 0; i < particles.length; i++) {
-              const p = particles[i];
+      // Handle mouse interaction
+      function handleMouseInteraction() {
+        for (let i = 0; i < particles.length; i++) {
+          const p = particles[i];
 
-              // Calculate distance from mouse
-              const dx = mouse.x - p.x;
-              const dy = mouse.y - p.y;
-              const distance = Math.sqrt(dx * dx + dy * dy);
+          // Calculate distance from mouse
+          const dx = mouse.x - p.x;
+          const dy = mouse.y - p.y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
 
-              if (distance < mouse.radius && mouse.x && mouse.y) {
-                // Push particles away from mouse
-                const forceDirectionX = dx / distance;
-                const forceDirectionY = dy / distance;
-                const force = (mouse.radius - distance) / mouse.radius;
+          if (distance < mouse.radius && mouse.x && mouse.y) {
+            // Push particles away from mouse
+            const forceDirectionX = dx / distance;
+            const forceDirectionY = dy / distance;
+            const force = (mouse.radius - distance) / mouse.radius;
 
-                p.x -= forceDirectionX * force * p.density * 0.3;
-                p.y -= forceDirectionY * force * p.density * 0.3;
+            p.x -= forceDirectionX * force * p.density * 0.3;
+            p.y -= forceDirectionY * force * p.density * 0.3;
 
-                // Make particles grow when near mouse
-                p.size = p.baseSize + (10 * force);
+            // Make particles grow when near mouse
+            p.size = p.baseSize + (10 * force);
 
-                // Increase rotation speed when near mouse
-                p.rotationSpeed = force * 3;
-              } else {
-                if (p.size > p.baseSize) {
-                  p.size -= 0.2;
-                }
-                p.rotationSpeed = (Math.random() * 1 - 0.5) * 0.5;
-              }
-
-              // Update rotation
-              p.rotation += p.rotationSpeed;
+            // Increase rotation speed when near mouse
+            p.rotationSpeed = force * 3;
+          } else {
+            if (p.size > p.baseSize) {
+              p.size -= 0.2;
             }
+            p.rotationSpeed = (Math.random() * 1 - 0.5) * 0.5;
           }
 
-          // Animation loop
-          function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
+          // Update rotation
+          p.rotation += p.rotationSpeed;
+        }
+      }
 
-            for (let i = 0; i < particles.length; i++) {
-              let p = particles[i];
+      // Animation loop
+      function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-              // Update position
-              p.x += p.speedX * 0.8;
-              p.y += p.speedY * 0.8;
+        for (let i = 0; i < particles.length; i++) {
+          let p = particles[i];
 
-              // Wrap around edges
-              if (p.x < -p.size) p.x = canvas.width + p.size;
-              if (p.x > canvas.width + p.size) p.x = -p.size;
-              if (p.y < -p.size) p.y = canvas.height + p.size;
-              if (p.y > canvas.height + p.size) p.y = -p.size;
+          // Update position
+          p.x += p.speedX * 0.8;
+          p.y += p.speedY * 0.8;
 
-              // Draw particle
-              drawShape(p);
-            }
+          // Wrap around edges
+          if (p.x < -p.size) p.x = canvas.width + p.size;
+          if (p.x > canvas.width + p.size) p.x = -p.size;
+          if (p.y < -p.size) p.y = canvas.height + p.size;
+          if (p.y > canvas.height + p.size) p.y = -p.size;
 
-            handleMouseInteraction();
-            connectParticles();
+          // Draw particle
+          drawShape(p);
+        }
 
-            requestAnimationFrame(animate);
-          }
+        handleMouseInteraction();
+        connectParticles();
 
-          // Mouse event handlers
-          window.addEventListener('mousemove', function(e) {
-            mouse.x = e.clientX;
-            mouse.y = e.clientY;
-          });
+        requestAnimationFrame(animate);
+      }
 
-          window.addEventListener('mouseout', function() {
-            mouse.x = null;
-            mouse.y = null;
-          });
+      // Mouse event handlers
+      window.addEventListener('mousemove', function(e) {
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+      });
 
-          // Handle dark mode changes
-          const observer = new MutationObserver(function(mutations) {
-            mutations.forEach(function(mutation) {
-              if (mutation.attributeName === 'class') {
-                initParticles();
-              }
-            });
-          });
+      window.addEventListener('mouseout', function() {
+        mouse.x = null;
+        mouse.y = null;
+      });
 
-          observer.observe(document.documentElement, {
-            attributes: true
-          });
-
-          // Initialize
-          resizeCanvas();
-          initParticles();
-          animate();
-
-          // Handle window resize
-          window.addEventListener('resize', function() {
-            resizeCanvas();
+      // Handle dark mode changes
+      const observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+          if (mutation.attributeName === 'class') {
             initParticles();
-          });
+          }
         });
-      </script>
+      });
+
+      observer.observe(document.documentElement, {
+        attributes: true
+      });
+
+      // Initialize
+      resizeCanvas();
+      initParticles();
+      animate();
+
+      // Handle window resize
+      window.addEventListener('resize', function() {
+        resizeCanvas();
+        initParticles();
+      });
+    });
+  </script>
     </section>
   {{ end }}
 
