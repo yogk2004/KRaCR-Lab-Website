@@ -190,6 +190,16 @@
           scroll-margin-top: 60px;
         }
       }
+
+      /* Gradient line for headers */
+      .header-divider {
+        height: 4px;
+        background: linear-gradient(to right, #3b82f6, #9333ea);
+        border-radius: 2px;
+        margin: 0 auto 2rem;
+        width: 100%;
+        max-width: 1200px; /* Matches .container max-width */
+      }
     </style>
 
     <!-- Animated abstract shapes and grid background -->
@@ -241,8 +251,8 @@
                   {{ $pos }}
                 </span>
               </h2>
-              <!-- Responsive divider -->
-              <div class="w-full border-t border-gray-300 dark:border-gray-600 mb-8"></div>
+              <!-- Gradient divider -->
+              <div class="header-divider"></div>
 
               <!-- Team cards grid -->
               <div class="row">
