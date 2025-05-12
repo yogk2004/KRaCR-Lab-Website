@@ -1,193 +1,198 @@
 {{ define "main" }}
-  {{ partial "page-header" . }}
+  <!-- Wrapper to hold the grid background -->
+  <div class="template-wrapper">
+    {{ partial "page-header" . }}
 
-  <style>
-    /* Modern typography */
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      margin: 0;
-      background: #f8fafc; /* Light mode background */
-    }
-    .dark body {
-      background: #1c1c1c; /* Dark mode background */
-    }
-
-    /* Container styling */
-    .section {
-      padding: 2rem 0;
-      position: relative;
-      overflow: hidden;
-    }
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-      position: relative;
-      z-index: 10;
-    }
-
-    /* Team section */
-    .team-section {
-      scroll-margin-top: 80px; /* Offset for smooth scrolling */
-      padding-top: 1rem;
-    }
-
-    /* Quick-scroll sidebar */
-    .quick-nav {
-      position: fixed;
-      right: 1rem;
-      top: 50%;
-      transform: translateY(-50%);
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-      z-index: 1000;
-    }
-    .quick-nav a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.5rem 1rem;
-      background: linear-gradient(to right, #3b82f6, #9333ea);
-      color: white;
-      font-size: 0.875rem;
-      font-weight: 500;
-      border-radius: 9999px;
-      text-decoration: none;
-      transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
-      position: relative;
-      white-space: nowrap;
-      min-width: 100px;
-      text-align: center;
-      opacity: 0;
-      transform: translateX(20px);
-      animation: fadeInRight 0.6s ease-out forwards;
-    }
-    .quick-nav a:nth-child(1) { animation-delay: 0.1s; }
-    .quick-nav a:nth-child(2) { animation-delay: 0.2s; }
-    .quick-nav a:nth-child(3) { animation-delay: 0.3s; }
-    .quick-nav a:nth-child(4) { animation-delay: 0.4s; }
-    .quick-nav a:nth-child(5) { animation-delay: 0.5s; }
-    .quick-nav a:nth-child(6) { animation-delay: 0.6s; }
-    .quick-nav a:hover {
-      transform: scale(1.05);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    }
-    .quick-nav a.active {
-      background: linear-gradient(to right, #2563eb, #7e22ce);
-      transform: scale(1.15);
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
-    }
-    .quick-nav a:focus {
-      outline: none;
-      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
-    }
-
-    /* Tooltip */
-    .quick-nav a::after {
-      content: attr(data-tooltip);
-      position: absolute;
-      right: 110%;
-      top: 50%;
-      transform: translateY(-50%);
-      background: #1e293b;
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      font-size: 0.75rem;
-      white-space: nowrap;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.3s ease, visibility 0.3s ease;
-      pointer-events: none;
-    }
-    .dark .quick-nav a::after {
-      background: #475569;
-    }
-    .quick-nav a:hover::after {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    /* Background animations */
-    @keyframes float1 {
-      0%, 100% { transform: translate(0, 0) rotate(0deg); }
-      50% { transform: translate(-20px, -20px) rotate(5deg); }
-    }
-    @keyframes float2 {
-      0%, 100% { transform: translate(0, 0) rotate(0deg); }
-      50% { transform: translate(20px, 20px) rotate(-5deg); }
-    }
-    .animate-float1 {
-      animation: float1 12s ease-in-out infinite;
-    }
-    .animate-float2 {
-      animation: float2 15s ease-in-out infinite;
-      animation-delay: 2s;
-    }
-
-    /* Grid pattern */
-    .grid-background {
-      position: absolute;
-      inset: 0;
-      opacity: 0.80;
-      z-index: 1;
-    }
-    #grid-pattern path {
-      stroke: rgba(0, 0, 0, 0.5);
-    }
-    .dark #grid-pattern path {
-      stroke: rgba(255, 255, 255, 0.5);
-    }
-
-    /* Quick-nav animation */
-    @keyframes fadeInRight {
-      to {
-        opacity: 1;
-        transform: translateX(0);
+    <style>
+      /* Modern typography */
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        margin: 0;
+        background: #f8fafc; /* Light mode background */
       }
-    }
+      .dark body {
+        background: #1c1c1c; /* Dark mode background */
+      }
 
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
+      /* Container styling */
+      .section {
+        padding: 2rem 0;
+        position: relative;
+        overflow: hidden;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+        position: relative;
+        z-index: 10;
+      }
+
+      /* Team section */
+      .team-section {
+        scroll-margin-top: 80px; /* Offset for smooth scrolling */
+        padding-top: 1rem;
+      }
+
+      /* Quick-scroll sidebar */
       .quick-nav {
-        flex-direction: row;
-        top: auto;
-        bottom: 1rem;
-        right: auto;
-        left: 50%;
-        transform: translateX(-50%);
-        padding: 0.5rem;
-        background: rgba(255, 255, 255, 0.9);
-        border-radius: 9999px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        overflow-x: auto;
-        white-space: nowrap;
-      }
-      .dark .quick-nav {
-        background: rgba(31, 41, 55, 0.9);
+        position: fixed;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        z-index: 1000;
       }
       .quick-nav a {
-        padding: 0.5rem 0.75rem;
-        min-width: 80px;
-        font-size: 0.75rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.5rem 1rem;
+        background: linear-gradient(to right, #3b82f6, #9333ea);
+        color: white;
+        font-size: 0.875rem;
+        font-weight: 500;
+        border-radius: 9999px;
+        text-decoration: none;
+        transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+        white-space: nowrap;
+        min-width: 100px;
+        text-align: center;
+        opacity: 0;
+        transform: translateX(20px);
+        animation: fadeInRight 0.6s ease-out forwards;
       }
-      .quick-nav a::after {
-        right: auto;
-        bottom: 100%;
-        top: auto;
-        transform: translateX(-50%);
-        left: 50%;
-        margin-bottom: 0.5rem;
+      .quick-nav a:nth-child(1) { animation-delay: 0.1s; }
+      .quick-nav a:nth-child(2) { animation-delay: 0.2s; }
+      .quick-nav a:nth-child(3) { animation-delay: 0.3s; }
+      .quick-nav a:nth-child(4) { animation-delay: 0.4s; }
+      .quick-nav a:nth-child(5) { animation-delay: 0.5s; }
+      .quick-nav a:nth-child(6) { animation-delay: 0.6s; }
+      .quick-nav a:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
       }
-      .team-section {
-        scroll-margin-top: 60px;
+      .quick-nav a.active {
+        background: linear-gradient(to right, #2563eb, #7e22ce);
+        transform: scale(1.15);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
       }
-    }
-  </style>
+      .quick-nav a:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+      }
 
-  <section class="section">
-    <!-- Animated abstract shapes background -->
+      /* Tooltip */
+      .quick-nav a::after {
+        content: attr(data-tooltip);
+        position: absolute;
+        right: 110%;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #1e293b;
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        font-size: 0.75rem;
+        white-space: nowrap;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+        pointer-events: none;
+      }
+      .dark .quick-nav a::after {
+        background: #475569;
+      }
+      .quick-nav a:hover::after {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      /* Background animations */
+      @keyframes float1 {
+        0%, 100% { transform: translate(0, 0) rotate(0deg); }
+        50% { transform: translate(-20px, -20px) rotate(5deg); }
+      }
+      @keyframes float2 {
+        0%, 100% { transform: translate(0, 0) rotate(0deg); }
+        50% { transform: translate(20px, 20px) rotate(-5deg); }
+      }
+      .animate-float1 {
+        animation: float1 12s ease-in-out infinite;
+      }
+      .animate-float2 {
+        animation: float2 15s ease-in-out infinite;
+        animation-delay: 2s;
+      }
+
+      /* Grid pattern for the entire template */
+      .template-wrapper {
+        position: relative;
+        min-height: 100vh;
+      }
+      .grid-background {
+        position: absolute;
+        inset: 0;
+        opacity: 0.80;
+        z-index: 1;
+      }
+      #grid-pattern path {
+        stroke: rgba(0, 0, 0, 0.5);
+      }
+      .dark #grid-pattern path {
+        stroke: rgba(255, 255, 255, 0.5);
+      }
+
+      /* Quick-nav animation */
+      @keyframes fadeInRight {
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .quick-nav {
+          flex-direction: row;
+          top: auto;
+          bottom: 1rem;
+          right: auto;
+          left: 50%;
+          transform: translateX(-50%);
+          padding: 0.5rem;
+          background: rgba(255, 255, 255, 0.9);
+          border-radius: 9999px;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+          overflow-x: auto;
+          white-space: nowrap;
+        }
+        .dark .quick-nav {
+          background: rgba(31, 41, 55, 0.9);
+        }
+        .quick-nav a {
+          padding: 0.5rem 0.75rem;
+          min-width: 80px;
+          font-size: 0.75rem;
+        }
+        .quick-nav a::after {
+          right: auto;
+          bottom: 100%;
+          top: auto;
+          transform: translateX(-50%);
+          left: 50%;
+          margin-bottom: 0.5rem;
+        }
+        .team-section {
+          scroll-margin-top: 60px;
+        }
+      }
+    </style>
+
+    <!-- Animated abstract shapes and grid background -->
     <div class="absolute inset-0 overflow-hidden pointer-events-none" style="z-index: 1;">
       <!-- Floating circles -->
       <div class="absolute -left-20 -top-20 w-64 h-64 rounded-full bg-blue-500/10 dark:bg-blue-400/5 blur-3xl animate-float1"></div>
@@ -204,53 +209,55 @@
       </div>
     </div>
 
-    <div class="container">
-      <!-- Quick-Scroll Sidebar Navigation -->
-      <nav class="quick-nav" role="navigation" aria-label="Team category quick navigation">
+    <section class="section">
+      <div class="container">
+        <!-- Quick-Scroll Sidebar Navigation -->
+        <nav class="quick-nav" role="navigation" aria-label="Team category quick navigation">
+          {{ $order := slice "Faculty" "PhD" "Masters" "BTech" "Collaborator" "Alumni" }}
+          {{ range $pos := $order }}
+            {{ $group := where site.Data.teams "Position" $pos }}
+            {{ if gt (len $group) 0 }}
+              <a href="#{{ $pos | lower }}"
+                 data-target="{{ $pos | lower }}"
+                 data-tooltip="{{ $pos }}"
+                 aria-label="Scroll to {{ $pos }} team members">
+                {{ $pos }}
+              </a>
+            {{ end }}
+          {{ end }}
+        </nav>
+
+        <!-- Team Sections -->
         {{ $order := slice "Faculty" "PhD" "Masters" "BTech" "Collaborator" "Alumni" }}
+        {{ $teams := site.Data.teams }}
+
         {{ range $pos := $order }}
-          {{ $group := where site.Data.teams "Position" $pos }}
+          {{ $group := where $teams "Position" $pos }}
           {{ if gt (len $group) 0 }}
-            <a href="#{{ $pos | lower }}"
-               data-target="{{ $pos | lower }}"
-               data-tooltip="{{ $pos }}"
-               aria-label="Scroll to {{ $pos }} team members">
-              {{ $pos }}
-            </a>
+            <section class="team-section" id="{{ $pos | lower }}" aria-labelledby="{{ $pos | lower }}-heading">
+              <!-- Position Heading -->
+              <h2 id="{{ $pos | lower }}-heading" class="mb-4 text-4xl font-bold text-gray-900 dark:text-white text-center">
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-600">
+                  {{ $pos }}
+                </span>
+              </h2>
+              <!-- Responsive divider -->
+              <div class="w-full border-t border-gray-300 dark:border-gray-600 mb-8"></div>
+
+              <!-- Team cards grid -->
+              <div class="row">
+                {{ range $group }}
+                  <div class="md:col-6 lg:col-4 mb-14">
+                    {{ partial "components/team-card" . }}
+                  </div>
+                {{ end }}
+              </div>
+            </section>
           {{ end }}
         {{ end }}
-      </nav>
-
-      <!-- Team Sections -->
-      {{ $order := slice "Faculty" "PhD" "Masters" "BTech" "Collaborator" "Alumni" }}
-      {{ $teams := site.Data.teams }}
-
-      {{ range $pos := $order }}
-        {{ $group := where $teams "Position" $pos }}
-        {{ if gt (len $group) 0 }}
-          <section class="team-section" id="{{ $pos | lower }}" aria-labelledby="{{ $pos | lower }}-heading">
-            <!-- Position Heading -->
-            <h2 id="{{ $pos | lower }}-heading" class="mb-4 text-4xl font-bold text-gray-900 dark:text-white text-center">
-              <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-600">
-                {{ $pos }}
-              </span>
-            </h2>
-            <!-- Responsive divider -->
-            <div class="w-full border-t border-gray-300 dark:border-gray-600 mb-8"></div>
-
-            <!-- Team cards grid -->
-            <div class="row">
-              {{ range $group }}
-                <div class="md:col-6 lg:col-4 mb-14">
-                  {{ partial "components/team-card" . }}
-                </div>
-              {{ end }}
-            </div>
-          </section>
-        {{ end }}
-      {{ end }}
-    </div>
-  </section>
+      </div>
+    </section>
+  </div>
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
