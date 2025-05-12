@@ -991,16 +991,16 @@
             <div class="swiper-wrapper">
               {{ with site.Data.projects }}
                 {{ range . }}
-                  <div class="swiper-slide w-80 mx-2 animate-project-card rounded-xl">
-                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col h-[340px]">
-                      <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2 line-clamp-2">
+                  <div class="swiper-slide animate-project-card rounded-xl">
+                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col min-h-[340px]">
+                      <div class="p-5 flex flex-col flex-grow">
+                        <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2 line-clamp-2">
                           {{ .Title | markdownify }}
                         </h3>
-                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-4 line-clamp-3 flex-grow">
+                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-3 line-clamp-4 flex-grow">
                           {{ .Description | markdownify }}
                         </p>
-                        <p class="text-blue-600 dark:text-blue-400 text-sm mb-4 line-clamp-1">
+                        <p class="text-blue-600 dark:text-blue-400 text-sm mb-3 line-clamp-1 hidden md:block">
                           <span class="font-medium">Category:</span> {{ .Category }}
                         </p>
                         <div class="mt-auto h-6">
@@ -1024,8 +1024,8 @@
               {{ end }}
             </div>
             <!-- Navigation buttons -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev hidden md:block"></div>
+            <div class="swiper-button-next hidden md:block"></div>
           </div>
         </div>
       </div>
@@ -1066,18 +1066,35 @@
         -webkit-box-orient: vertical;
         overflow: hidden;
       }
+      .line-clamp-4 {
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
 
       /* Swiper styles */
+      .projectSwiper {
+        overflow: hidden; /* Prevent overflow */
+        padding: 0; /* Remove padding to maximize space */
+      }
+
+      .projectSwiper .swiper-wrapper {
+        align-items: center; /* Ensure slides are centered vertically */
+      }
+
       .projectSwiper .swiper-slide {
-        width: 320px; /* Fixed card width */
-        height: 340px; /* Fixed card height */
-        margin-right: 16px;
+        width: 320px; /* Default card width */
+        min-height: 340px; /* Use min-height */
+        margin-right: 0; /* Remove margin, rely on spaceBetween */
         transition: all 0.3s ease;
       }
+
       .projectSwiper .swiper-slide-active {
         transform: scale(1.02);
         opacity: 1;
       }
+
       .projectSwiper .swiper-slide-prev,
       .projectSwiper .swiper-slide-next {
         opacity: 0.8;
@@ -1101,22 +1118,26 @@
         transition: all 0.3s ease;
         color: #3b82f6; /* Blue arrow in light mode */
       }
+
       /* Dark mode: white arrow with white circle */
       .dark .swiper-button-prev,
       .dark .swiper-button-next {
-        background: #3b82f6; /* White circle background */
-        color: #ffffff; /* White arrow for better visibility */
+        background: #3b82f6;
+        color: #ffffff;
       }
+
       .swiper-button-prev:hover,
       .swiper-button-next:hover {
         transform: scale(1.1);
         background: white;
       }
+
       .dark .swiper-button-prev:hover,
       .dark .swiper-button-next:hover {
         background: white;
-        color: #ffffff; /* Ensure white arrow on hover */
+        color: #ffffff;
       }
+
       .swiper-button-prev:after,
       .swiper-button-next:after {
         font-size: 16px;
@@ -1126,14 +1147,54 @@
       /* Responsive breakpoints */
       @media (max-width: 768px) {
         .projectSwiper .swiper-slide {
-          width: 280px;
-          height: 340px; /* Maintain fixed height */
+          width: 80vw; /* Reduced width for better fit */
+          min-height: 360px; /* Increased for more vertical space */
+        }
+        .projectSwiper .swiper-slide .p-5 {
+          padding: 0.75rem;
+        }
+        .projectSwiper .swiper-slide h3 {
+          font-size: 0.95rem;
+          margin-bottom: 0.5rem;
+        }
+        .projectSwiper .swiper-slide p {
+          font-size: 0.85rem;
+          margin-bottom: 0.5rem;
+        }
+        .projectSwiper .swiper-slide .text-gray-600 {
+          -webkit-line-clamp: 3; /* Reduce description to 3 lines on mobile */
         }
       }
+
       @media (max-width: 480px) {
         .projectSwiper .swiper-slide {
-          width: 260px;
-          height: 340px; /* Maintain fixed height */
+          width: 80vw;
+          min-height: 360px;
+        }
+        .projectSwiper .swiper-slide .p-5 {
+          padding: 0.5rem;
+        }
+        .projectSwiper .swiper-slide h3 {
+          font-size: 0.9rem;
+        }
+        .projectSwiper .swiper-slide p {
+          font-size: 0.8rem;
+        }
+      }
+
+      @media (max-width: 360px) {
+        .projectSwiper .swiper-slide {
+          width: 85vw;
+          min-height: 340px; /* Slightly smaller for very small screens */
+        }
+        .projectSwiper .swiper-slide .p-5 {
+          padding: 0.5rem;
+        }
+        .projectSwiper .swiper-slide h3 {
+          font-size: 0.85rem;
+        }
+        .projectswiper .swiper-slide p {
+          font-size: 0.75rem;
         }
       }
     </style>
@@ -1143,29 +1204,38 @@
         // Initialize Project Carousel
         const projectSwiper = new Swiper('.projectSwiper', {
           loop: true,
-          slidesPerView: 'auto',
-          spaceBetween: 16,
+          slidesPerView: 1, /* Show one slide at a time on mobile */
+          spaceBetween: 4,
+          centeredSlides: true,
           grabCursor: true,
           autoplay: {
             delay: 3000,
             disableOnInteraction: true,
           },
           navigation: {
-            nextEl: '.projectSwiper .swiper-button-next', // Moves to previous slide
-            prevEl: '.projectSwiper .swiper-button-prev', // Moves to next slide
+            nextEl: '.projectSwiper .swiper-button-next',
+            prevEl: '.projectSwiper .swiper-button-prev',
           },
           breakpoints: {
+            360: {
+              slidesPerView: 1,
+              spaceBetween: 4,
+              centeredSlides: true,
+            },
             480: {
-              slidesPerView: 'auto',
-              spaceBetween: 12,
+              slidesPerView: 1,
+              spaceBetween: 4,
+              centeredSlides: true,
             },
             768: {
               slidesPerView: 'auto',
-              spaceBetween: 16,
+              spaceBetween: 12,
+              centeredSlides: false,
             },
             1024: {
               slidesPerView: 'auto',
               spaceBetween: 16,
+              centeredSlides: false,
             },
           },
         });
