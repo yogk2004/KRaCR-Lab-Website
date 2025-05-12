@@ -1,35 +1,535 @@
 {{ define "main" }}
   {{ partial "page-header" . }}
 
+  <style>
+    /* Modern typography */
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      margin: 0;
+      background: #f8fafc; /* Light mode background */
+    }
+    .dark body {
+      background: #1c1c1c; /* Dark mode background */
+    }
+
+    /* Container styling */
+    .section {
+      padding: 2rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      position: relative;
+      z-index: 10;
+    }
+
+    /* Team section heading */
+    .team-section {
+      scroll-margin-top: 80px; /* Offset for smooth scrolling */
+      padding-top: 1rem;
+    }
+
+    /* Quick-scroll sidebar */
+    .quick-nav {
+      position: fixed;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      z-index: 1000;
+    }
+    .quick-nav a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem 1rem;
+      background: linear-gradient(to right, #3b82f6, #9333ea); /* Matches team card gradient */
+      color: white;
+      font-size: 0.875rem;
+      font-weight: 500;
+      border-radius: 9999px;
+      text-decoration: none;
+      transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      white-space: nowrap;
+      min-width: 100px;
+      text-align: center;
+      opacity: 0;
+      transform: translateX(20px);
+      animation: fadeInRight 0.6s ease-out forwards;
+    }
+    .quick-nav a:nth-child(1) { animation-delay: 0.1s; }
+    .quick-nav a:nth-child(2) { animation-delay: 0.2s; }
+    .quick-nav a:nth-child(3) { animation-delay: 0.3s; }
+    .quick-nav a:nth-child(4) { animation-delay: 0.4s; }
+    .quick-nav a:nth-child(5) { animation-delay: 0.5s; }
+    .quick-nav a:nth-child(6) { animation-delay: 0.6s; }
+    .quick-nav a:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    .quick-nav a.active {
+      background: linear-gradient(to right, #2563eb, #7e22ce); /* Brighter gradient for active */
+      transform: scale(1.15);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    }
+    .quick-nav a:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+    }
+
+    /* Tooltip */
+    .quick-nav a::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      right: 110%;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #1e293b;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      white-space: nowrap;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      pointer-events: none;
+    }
+    .dark .quick-nav a::after {
+      background: #475569;
+    }
+    .quick-nav a:hover::after {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Team card (styled like project card) */
+    .team-card {
+      background: white;
+      border-radius: 1rem; /* rounded-xl */
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      height: 340px;
+      overflow: hidden;
+    }
+    .dark .team-card {
+      background: #1f2937; /* bg-gray-800 */
+    }
+    .team-card:hover {
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); /* hover:shadow-xl */
+      transform: translateY(-4px); /* hover:-translate-y-1 */
+    }
+
+    /* Team card image */
+    .team-card-image {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 1rem auto 0.5rem;
+      border: 2px solid #e5e7eb; /* border-gray-200 */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .dark .team-card-image {
+      border-color: #4b5563; /* border-gray-600 */
+    }
+    .team-card-placeholder {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: #e5e7eb; /* bg-gray-200 */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem auto 0.5rem;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #6b7280; /* text-gray-500 */
+      border: 2px solid #e5e7eb;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .dark .team-card-placeholder {
+      background: #4b5563; /* bg-gray-600 */
+      color: #d1d5db; /* text-gray-300 */
+      border-color: #4b5563;
+    }
+
+    /* Team card content */
+    .team-card-content {
+      padding: 1rem; /* p-4 (adjusted for image) */
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      text-align: center;
+    }
+    .team-card-content h3 {
+      font-size: 1.25rem; /* text-xl */
+      font-weight: 600; /* font-semibold */
+      color: #111827; /* text-gray-900 */
+      margin-bottom: 0.25rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .dark .team-card-content h3 {
+      color: #ffffff; /* text-white */
+    }
+    .team-card-content p {
+      font-size: 0.875rem; /* text-sm */
+      color: #4b5563; /* text-gray-600 */
+      margin-bottom: 0.5rem;
+    }
+    .dark .team-card-content p {
+      color: #d1d5db; /* text-gray-300 */
+    }
+    .team-card-content .interests {
+      flex-grow: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 2; /* Reduced to fit image */
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .team-card-content .social-links {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: auto;
+    }
+    .team-card-content a {
+      color: #3b82f6; /* text-blue-500 */
+      transition: color 0.2s ease;
+    }
+    .dark .team-card-content a {
+      color: #93c5fd; /* text-blue-300 */
+    }
+    .team-card-content a:hover {
+      color: #2563eb; /* hover:text-blue-600 */
+    }
+    .dark .team-card-content a:hover {
+      color: #60a5fa; /* hover:text-blue-400 */
+    }
+
+    /* Gradient border */
+    .gradient-border {
+      height: 4px; /* h-1 */
+      background: linear-gradient(to right, #3b82f6, #9333ea); /* from-blue-500 to-purple-600 */
+      border-bottom-left-radius: 1rem;
+      border-bottom-right-radius: 1rem;
+    }
+
+    /* Animations */
+    .animate-team-card {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes fadeInRight {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    @keyframes float1 {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); }
+      50% { transform: translate(-20px, -20px) rotate(5deg); }
+    }
+    @keyframes float2 {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); }
+      50% { transform: translate(20px, 20px) rotate(-5deg); }
+    }
+    .animate-float1 {
+      animation: float1 12s ease-in-out infinite;
+    }
+    .animate-float2 {
+      animation: float2 15s ease-in-out infinite;
+      animation-delay: 2s;
+    }
+
+    /* Grid pattern */
+    .grid-background {
+      position: absolute;
+      inset: 0;
+      opacity: 0.80;
+      z-index: 1;
+    }
+    #grid-pattern path {
+      stroke: rgba(0, 0, 0, 0.5);
+    }
+    .dark #grid-pattern path {
+      stroke: rgba(255, 255, 255, 0.5);
+    }
+
+    /* Line clamp */
+    .line-clamp-1 {
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .line-clamp-2 {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .quick-nav {
+        flex-direction: row;
+        top: auto;
+        bottom: 1rem;
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 0.5rem;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 9999px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+      .dark .quick-nav {
+        background: rgba(31, 41, 55, 0.9); /* bg-gray-800 */
+      }
+      .quick-nav a {
+        padding: 0.5rem 0.75rem;
+        min-width: 80px;
+        font-size: 0.75rem;
+      }
+      .quick-nav a::after {
+        right: auto;
+        bottom: 100%;
+        top: auto;
+        transform: translateX(-50%);
+        left: 50%;
+        margin-bottom: 0.5rem;
+      }
+      .team-section {
+        scroll-margin-top: 60px;
+      }
+      .team-card {
+        height: 340px; /* Maintain fixed height */
+      }
+      .team-card-image,
+      .team-card-placeholder {
+        width: 60px;
+        height: 60px;
+        font-size: 1.25rem;
+      }
+    }
+  </style>
+
   <section class="section">
+    <!-- Animated abstract shapes background -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none" style="z-index: 1;">
+      <!-- Floating circles -->
+      <div class="absolute -left-20 -top-20 w-64 h-64 rounded-full bg-blue-500/10 dark:bg-blue-400/5 blur-3xl animate-float1"></div>
+      <div class="absolute -right-20 -bottom-20 w-72 h-72 rounded-full bg-purple-500/10 dark:bg-purple-400/5 blur-3xl animate-float2"></div>
+
+      <!-- Abstract grid pattern -->
+      <div class="grid-background">
+        <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+          <pattern id="grid-pattern" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" stroke-width="0.5"/>
+          </pattern>
+          <rect width="100%" height="100%" fill="url(#grid-pattern)"/>
+        </svg>
+      </div>
+    </div>
+
     <div class="container">
-      {{/* Define the desired ordering using Hugo’s slice function */}}
+      <!-- Quick-Scroll Sidebar Navigation -->
+      <nav class="quick-nav" role="navigation" aria-label="Team category quick navigation">
+        {{ $order := slice "Faculty" "PhD" "Masters" "BTech" "Collaborator" "Alumni" }}
+        {{ range $pos := $order }}
+          {{ $group := where site.Data.teams "Position" $pos }}
+          {{ if gt (len $group) 0 }}
+            <a href="#{{ $pos | lower }}"
+               data-target="{{ $pos | lower }}"
+               data-tooltip="{{ $pos }}"
+               aria-label="Scroll to {{ $pos }} team members">
+              {{ $pos }}
+            </a>
+          {{ end }}
+        {{ end }}
+      </nav>
+
+      <!-- Team Sections -->
       {{ $order := slice "Faculty" "PhD" "Masters" "BTech" "Collaborator" "Alumni" }}
-      {{/* Load the teams data from your JSON file (adjust the path if needed) */}}
       {{ $teams := site.Data.teams }}
 
-      {{/* Loop through each desired position */}}
       {{ range $pos := $order }}
         {{ $group := where $teams "Position" $pos }}
         {{ if gt (len $group) 0 }}
-          <!-- Position Heading -->
-          <h2 class="text-3xl font-bold text-gray-900 dark:text-white my-6 text-center">
-            {{ $pos }}
-          </h2>
+          <section class="team-section" id="{{ $pos | lower }}" aria-labelledby="{{ $pos | lower }}-heading">
+            <!-- Position Heading -->
+            <h2 id="{{ $pos | lower }}-heading"
+                class="mb-4 text-4xl font-bold text-gray-900 dark:text-white text-center">
+              <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-600">
+                {{ $pos }}
+              </span>
+            </h2>
+            <div class="w-full border-t border-gray-300 dark:border-gray-600 mb-8"></div>
 
-          <!-- Responsive divider -->
-          <div class="w-full border-t border-gray-300 dark:border-gray-600 mb-8"></div>
-
-          <!-- Team cards grid -->
-          <div class="row">
-            {{ range $group }}
-              <div class="md:col-6 lg:col-4 mb-14">
-                {{ partial "components/team-card" . }}
-              </div>
-            {{ end }}
-          </div>
+            <!-- Team cards grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {{ range $group }}
+                <div class="team-card animate-team-card">
+                  {{ if .ImageURL }}
+                    <img src="{{ .ImageURL | absURL }}"
+                         alt="{{ .Name }}'s profile picture"
+                         class="team-card-image"
+                         onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                    <div class="team-card-placeholder" style="display: none;">
+                      {{ slicestr .Name 0 1 }}
+                    </div>
+                  {{ else }}
+                    <div class="team-card-placeholder">
+                      {{ slicestr .Name 0 1 }}
+                    </div>
+                  {{ end }}
+                  <div class="team-card-content">
+                    <h3>{{ .Name }}</h3>
+                    {{ if .Designation }}
+                      <p class="line-clamp-1">{{ .Designation }}</p>
+                    {{ end }}
+                    {{ if .Interests }}
+                      <p class="interests">{{ .Interests }}</p>
+                    {{ end }}
+                    {{ if .Mail }}
+                      <p class="text-blue-600 dark:text-blue-400 text-sm line-clamp-1">
+                        <span class="font-medium">Email:</span> <a href="mailto:{{ .Mail }}">{{ .Mail }}</a>
+                      </p>
+                    {{ end }}
+                    <div class="social-links mt-auto">
+                      {{ if .linkedinLink }}
+                        <a href="{{ .linkedinLink }}" target="_blank" rel="noopener noreferrer" aria-label="Visit {{ .Name }}'s LinkedIn profile">
+                          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                          </svg>
+                        </a>
+                      {{ end }}
+                      {{ if .githubLink }}
+                        <a href="{{ .githubLink }}" target="_blank" rel="noopener noreferrer" aria-label="Visit {{ .Name }}'s GitHub profile">
+                          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.153-1.11-1.461-1.11-1.461-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.087.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.026 2.747-1.026.546 1.378.203 2.397.1 2.65.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.686-4.566 4.936.359.308.678.916.678 1.846 0 1.335-.012 2.415-.012 2.741 0 .267.18 .579.688.481C19.138 20.161 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+                          </svg>
+                        </a>
+                      {{ end }}
+                      {{ if .twitterLink }}
+                        <a href="{{ .twitterLink }}" target="_blank" rel="noopener noreferrer" aria-label="Visit {{ .Name }}'s Twitter profile">
+                          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05A4.28 4.28 0 0 0 16.07 4c-2.36 0-4.28 1.92-4.28 4.29 0 .34.04.67.11 1-3.56-.18-6.73-1.89-8.84-4.48-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.05c0 2.08 1.48 3.82 3.44 4.21-.36.1-.74.15-1.13.15-.28 0-.55-.03-.81-.08.55 1.72 2.14 2.97 4.03 3.01-1.48 1.16-3.34 1.85-5.36 1.85-.35 0-.69-.02-1.03-.06 1.91 1.23 4.18 1.94 6.62 1.94 7.94 0 12.29-6.58 12.29-12.29 0-.19 0-.37-.01-.56.84-.61 1.57-1.37 2.14-2.24z"/>
+                          </svg>
+                        </a>
+                      {{ end }}
+                      {{ if .webpageLink }}
+                        <a href="{{ .webpageLink }}" target="_blank" rel="noopener noreferrer" aria-label="Visit {{ .Name }}'s personal webpage">
+                          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 14v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1h-6v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                          </svg>
+                        </a>
+                      {{ end }}
+                    </div>
+                  </div>
+                  <div class="gradient-border"></div>
+                </div>
+              {{ end }}
+            </div>
+          </section>
         {{ end }}
       {{ end }}
     </div>
   </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const navLinks = document.querySelectorAll('.quick-nav a');
+      const mainContainer = document.querySelector('.section');
+
+      // Smooth scroll to section heading
+      navLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('data-target');
+          const targetHeading = document.getElementById(`${targetId}-heading`);
+
+          if (targetHeading) {
+            const header = document.querySelector('.page-header') || { offsetHeight: 0 };
+            const scrollOffset = header.offsetHeight + 20;
+            const targetPosition = targetHeading.getBoundingClientRect().top + window.pageYOffset - scrollOffset;
+
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+
+            history.pushState(null, null, `#${targetId}`);
+          }
+        });
+      });
+
+      // Intersection Observer for active link highlighting and card animations
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const id = entry.target.getAttribute('id');
+              navLinks.forEach(link => {
+                link.classList.toggle('active', link.getAttribute('data-target') === id);
+              });
+              // Animate team cards in the visible section
+              const cards = entry.target.querySelectorAll('.animate-team-card');
+              cards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+              });
+            }
+          });
+        },
+        {
+          root: null,
+          threshold: 0.3,
+          rootMargin: '-80px 0px -50% 0px'
+        }
+      );
+
+      // Observe all team sections
+      document.querySelectorAll('.team-section').forEach(section => {
+        observer.observe(section);
+      });
+
+      // Handle initial hash in URL
+      if (window.location.hash) {
+        const targetId = window.location.hash.substring(1);
+        const targetHeading = document.getElementById(`${targetId}-heading`);
+        if (targetHeading) {
+          setTimeout(() => {
+            const header = document.querySelector('.page-header') || { offsetHeight: 0 };
+            const scrollOffset = header.offsetHeight + 20;
+            const targetPosition = targetHeading.getBoundingClientRect().top + window.pageYOffset - scrollOffset;
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'auto'
+            });
+          }, 50);
+        }
+      }
+    });
+  </script>
 {{ end }}
