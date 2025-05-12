@@ -10,11 +10,11 @@
           loading="lazy"
           class="w-32 h-40 object-contain rounded-md shadow-lg mb-4"
         >
-    {{ else }}
+      {{ else }}
         <div class="w-32 h-32 flex items-center justify-center bg-gray-200 text-gray-500 mb-4 rounded-md">
           Image not found
         </div>
-    {{ end }}
+      {{ end }}
     {{ else if .Mail }}
       <img src="https://www.gravatar.com/avatar/{{ .Mail | md5 }}?s=128&pg&d=identicon" alt="{{ .Name }}" loading="lazy" class="w-32 h-32 rounded-full shadow-lg mb-4">
     {{ end }}
@@ -28,7 +28,7 @@
     </p>
 
     {{ if .Interests }}
-      <p class="mt-2 text-sm text-gray-600 dark:text-gray-400 line-clamp-3">
+      <p class="mt-2 text-sm text-gray-600 dark:text-gray-400 line-clamp-3 text-center">
         {{ .Interests }}
       </p>
     {{ end }}
