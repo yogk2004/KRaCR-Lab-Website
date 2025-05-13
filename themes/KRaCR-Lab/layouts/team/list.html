@@ -44,6 +44,14 @@
         flex-direction: column;
         gap: 0.75rem;
         z-index: 1000;
+        max-height: calc(100vh - 100px); /* Prevent nav from extending too far */
+        overflow-y: auto; /* Allow scrolling if nav is too tall */
+      }
+      .quick-nav.absolute {
+        position: absolute;
+        top: auto;
+        bottom: 1.5rem;
+        transform: none;
       }
       .quick-nav a {
         display: flex;
@@ -163,43 +171,56 @@
 
       @media (max-width: 768px) {
         .quick-nav {
-          flex-direction: row;
+          position: fixed;
           top: auto;
-          bottom: 1.5rem;
+          bottom: 1.5rem; /* Base bottom spacing */
           right: auto;
           left: 50%;
           transform: translateX(-50%);
           padding: 0.75rem;
           background: rgba(255, 255, 255, 0.95);
-          backdrop-filter: blur(8px); /* Adds subtle blur effect */
-          border-radius: 16px; /* Softer, modern radius */
+          backdrop-filter: blur(8px);
+          border-radius: 16px;
           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+          display: flex;
+          flex-direction: row; /* Horizontal layout */
+          gap: 0.5rem;
           overflow-x: auto;
+          overflow-y: hidden; /* Prevent vertical scrolling */
           overscroll-behavior-x: contain;
+          scroll-snap-type: x proximity; /* Smooth snapping for scrolling */
           white-space: nowrap;
           max-width: 90%;
-          min-height: 48px; /* Increased thickness */
+          min-height: 48px;
           align-items: center;
+          z-index: 1000;
         }
         .dark .quick-nav {
           background: rgba(31, 41, 55, 0.95);
           backdrop-filter: blur(8px);
         }
+        .quick-nav.absolute {
+          position: absolute;
+          bottom: auto;
+          top: auto;
+          transform: translateX(-50%);
+        }
         .quick-nav a {
-          padding: 0.6rem 1rem; /* Larger tap target */
+          padding: 0.6rem 1rem;
           min-width: 80px;
-          font-size: 0.85rem; /* Slightly larger text */
-          border-radius: 12px; /* Softer button radius */
+          font-size: 0.85rem;
+          border-radius: 12px;
           touch-action: manipulation;
+          scroll-snap-align: center; /* Center items when scrolling */
         }
         .quick-nav a::after {
           right: auto;
-          bottom: 120%; /* Position above for better visibility */
+          bottom: 120%;
           top: auto;
           transform: translateX(-50%);
           left: 50%;
           margin-bottom: 0.75rem;
-          padding: 0.4rem 0.8rem; /* Compact tooltip */
+          padding: 0.4rem 0.8rem;
           font-size: 0.7rem;
           border-radius: 4px;
         }
@@ -212,7 +233,7 @@
         .quick-nav {
           padding: 0.5rem;
           max-width: 95%;
-          min-height: 44px; /* Slightly smaller for very small screens */
+          min-height: 44px;
           border-radius: 14px;
         }
         .quick-nav a {
@@ -308,6 +329,12 @@
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const navLinks = document.querySelectorAll('.quick-nav a');
+      const quickNav = document.querySelector('.quick-nav');
+      const templateWrapper = document.querySelector('.template-wrapper');
+      const footer = document.querySelector('.page-footer') || document.querySelector('footer');
+      const alumniSection = document.querySelector('#alumni');
+      let footerHeight = footer ? footer.offsetHeight : 0;
+      let alumniBottom = alumniSection ? alumniSection.getBoundingClientRect().bottom + window.pageYOffset : 0;
 
       // Smooth scroll to section heading
       navLinks.forEach(link => {
@@ -347,6 +374,62 @@
           }, 50);
         }
       }
+
+      // Adjust quick-nav position to avoid overlapping footer or stick after Alumni section
+      function adjustQuickNavPosition() {
+        if (!quickNav || !templateWrapper) return;
+
+        const wrapperRect = templateWrapper.getBoundingClientRect();
+        const navRect = quickNav.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
+        const buffer = 20; /* Space above footer or Alumni section */
+        let stopPoint;
+
+        /* Update footer height and Alumni section bottom */
+        footerHeight = footer ? footer.offsetHeight : 0;
+        alumniBottom = alumniSection ? alumniSection.getBoundingClientRect().bottom + window.pageYOffset : wrapperRect.bottom + window.pageYOffset;
+
+        /* Use the higher of the footer top or Alumni section bottom */
+        const footerTop = footer ? footer.getBoundingClientRect().top + window.pageYOffset : Infinity;
+        stopPoint = Math.min(footerTop, alumniBottom) - navRect.height - buffer;
+
+        if (window.innerWidth <= 768) {
+          /* Mobile view */
+          if (window.pageYOffset + viewportHeight > stopPoint + navRect.height + buffer) {
+            quickNav.classList.add('absolute');
+            quickNav.style.top = `${stopPoint - wrapperRect.top}px`;
+            quickNav.style.bottom = 'auto';
+          } else {
+            quickNav.classList.remove('absolute');
+            quickNav.style.top = 'auto';
+            quickNav.style.bottom = '1.5rem';
+          }
+        } else {
+          /* Desktop view */
+          if (footer && window.pageYOffset + viewportHeight > footerTop + buffer) {
+            quickNav.classList.add('absolute');
+            quickNav.style.bottom = `${wrapperRect.bottom + window.pageYOffset - stopPoint + buffer}px`;
+            quickNav.style.top = 'auto';
+          } else {
+            quickNav.classList.remove('absolute');
+            quickNav.style.bottom = 'auto';
+            quickNav.style.top = '50%';
+          }
+        }
+      }
+
+      /* Update footer height and Alumni bottom on resize */
+      window.addEventListener('resize', () => {
+        footerHeight = footer ? footer.offsetHeight : 0;
+        alumniBottom = alumniSection ? alumniSection.getBoundingClientRect().bottom + window.pageYOffset : 0;
+        adjustQuickNavPosition();
+      });
+
+      /* Update position on scroll */
+      window.addEventListener('scroll', adjustQuickNavPosition);
+
+      /* Initial adjustment */
+      adjustQuickNavPosition();
     });
   </script>
 {{ end }}
