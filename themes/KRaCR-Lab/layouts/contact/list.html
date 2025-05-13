@@ -1,105 +1,507 @@
 {{ define "main" }}
-  {{ partial "page-header" . }}
+  <!-- Wrapper to hold the grid background -->
+  <div class="template-wrapper">
+    {{ partial "page-header" . }}
 
-  <section class="section-sm pb-16 md:pb-24 lg:pb-32">
-    <div class="container">
-      <div class="grid md:grid-cols-2 gap-8">
-        <!-- Left Column - Contact Card -->
-        <div class="bg-white dark:bg-darkmode-body p-8 rounded-2xl shadow-lg">
-          <h3 class="text-2xl font-bold mb-6 text-dark dark:text-white">Contact Information</h3>
-          <div class="space-y-6">
-            <div class="flex items-start gap-4">
-              <div class="w-8 text-center">
-                <i class="fas fa-envelope text-primary dark:text-darkmode-primary text-lg"></i>
-              </div>
-              <div>
-                <a href="mailto:raghava.mutharaju@iiitd.ac.in"
-                   class="hover:text-primary transition-colors text-dark dark:text-gray-200">
-                  raghava.mutharaju@iiitd.ac.in
-                </a>
-              </div>
-            </div>
+    <style>
+      /* Modern typography */
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        margin: 0;
+        background: #f8fafc;
+      }
+      .dark body {
+        background: #1c1c1c;
+      }
 
-            <div class="flex items-start gap-4">
-              <div class="w-8 text-center">
-                <i class="fas fa-phone text-primary dark:text-darkmode-primary text-lg"></i>
-              </div>
-              <div class="text-dark dark:text-gray-200">
-                011-26907455
-              </div>
-            </div>
+      /* Container styling */
+      .section {
+        padding: 2rem 0;
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(180deg, rgba(248, 250, 252, 0.8), rgba(255, 255, 255, 0.9));
+      }
+      .dark .section {
+        background: linear-gradient(180deg, rgba(28, 28, 28, 0.8), rgba(44, 44, 44, 0.9));
+      }
+      .section-sm {
+        padding: 1.5rem 0;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+        position: relative;
+        z-index: 10;
+      }
 
-            <div class="flex items-start gap-4">
-              <div class="w-8 text-center">
-                <i class="fas fa-map-marker-alt text-primary dark:text-darkmode-primary text-lg"></i>
-              </div>
-              <address class="not-italic text-dark dark:text-gray-200">
-                (R&D Block) Kracr Lab, B Wing, 4th Floor, R&D Building, IIIT-Delhi,<br>
-                IIIT Road, Okhla Phase III, Okhla Industrial Estate, New Delhi,<br>
-                Delhi 110020, India
-              </address>
-            </div>
-          </div>
-        </div>
+      /* Contact section styling */
+      .bg-white {
+        background: #ffffff;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .dark .bg-white {
+        background: #1c1c1c;
+      }
+      .bg-white:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+      }
+      .dark .bg-white:hover {
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+      }
+      .bg-theme-light {
+        background: #f8fafc;
+        transition: background 0.3s ease;
+      }
+      .dark .bg-theme-light {
+        background: #2d3748;
+      }
+      .text-dark {
+        color: #1a202c;
+      }
+      .dark .text-dark {
+        color: #e2e8f0;
+      }
+      .text-primary {
+        color: #3b82f6;
+      }
+      .dark .text-primary {
+        color: #60a5fa;
+      }
+      .shadow-lg {
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      }
+      .rounded-2xl {
+        border-radius: 1rem;
+      }
+      .p-8 {
+        padding: 2rem;
+      }
+      .gap-8 {
+        gap: 2rem;
+      }
+      .space-y-6 > * + * {
+        margin-top: 1.5rem;
+      }
+      .text-2xl {
+        font-size: 1.5rem;
+        line-height: 2rem;
+        letter-spacing: -0.025em;
+      }
+      .font-bold {
+        font-weight: 700;
+      }
+      .mb-6 {
+        margin-bottom: 1.5rem;
+      }
+      .grid-cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .gap-4 {
+        gap: 1rem;
+      }
+      .p-4 {
+        padding: 1rem;
+      }
+      .rounded-lg {
+        border-radius: 0.5rem;
+      }
+      .text-sm {
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+      }
+      .font-semibold {
+        font-weight: 600;
+      }
+      .mt-8 {
+        margin-top: 2rem;
+      }
+      .h-96 {
+        height: 24rem;
+      }
+      .text-4xl {
+        font-size: 2.25rem;
+        line-height: 2.5rem;
+        letter-spacing: -0.03em;
+      }
+      .mb-4 {
+        margin-bottom: 1rem;
+      }
+      .text-center {
+        text-align: center;
+      }
+      .text-gray-900 {
+        color: #1a202c;
+      }
+      .dark .text-gray-900 {
+        color: #ffffff;
+      }
+      .bg-clip-text {
+        background-clip: text;
+        -webkit-background-clip: text;
+      }
+      .text-transparent {
+        color: transparent;
+      }
+      .bg-gradient-to-r {
+        background-image: linear-gradient(to right, #3b82f6, #9333ea);
+      }
 
-        <!-- Right Column - How to Reach -->
-        <div class="bg-white dark:bg-darkmode-body p-8 rounded-2xl shadow-lg">
-          <h3 class="text-2xl font-bold mb-6 text-dark dark:text-white">How to Reach</h3>
-          <div class="grid grid-cols-2 gap-4">
-            <!-- Metro -->
-            <div class="flex items-center gap-4 p-4 bg-theme-light dark:bg-darkmode-theme-light rounded-lg">
-              <div class="p-3 bg-primary/10 rounded-full">
-                <i class="fas fa-subway text-2xl text-primary dark:text-darkmode-primary"></i>
-              </div>
-              <div>
-                <p class="font-semibold text-dark dark:text-white">Metro</p>
-                <p class="text-sm text-dark dark:text-gray-300">0.5 km from<br>Govind Puri Metro Station</p>
-              </div>
-            </div>
-            <!-- Bus -->
-            <div class="flex items-center gap-4 p-4 bg-theme-light dark:bg-darkmode-theme-light rounded-lg">
-              <div class="p-3 bg-blue-500/10 rounded-full">
-                <i class="fas fa-bus text-2xl text-blue-500"></i>
-              </div>
-              <div>
-                <p class="font-semibold text-dark dark:text-white">Bus</p>
-                <p class="text-sm text-dark dark:text-gray-300">Nearest Stop:<br>Okhla Phase III</p>
-              </div>
-            </div>
-            <!-- Car -->
-            <div class="flex items-center gap-4 p-4 bg-theme-light dark:bg-darkmode-theme-light rounded-lg">
-              <div class="p-3 bg-green-500/10 rounded-full">
-                <i class="fas fa-car text-2xl text-green-500"></i>
-              </div>
-              <div>
-                <p class="font-semibold text-dark dark:text-white">Car</p>
-                <p class="text-sm text-dark dark:text-gray-300">Ample Parking<br>Available</p>
-              </div>
-            </div>
-            <!-- Accessibility -->
-            <div class="flex items-center gap-4 p-4 bg-theme-light dark:bg-darkmode-theme-light rounded-lg">
-              <div class="p-3 bg-purple-500/10 rounded-full">
-                <i class="fas fa-wheelchair text-2xl text-purple-500"></i>
-              </div>
-              <div>
-                <p class="font-semibold text-dark dark:text-white">Accessibility</p>
-                <p class="text-sm text-dark dark:text-gray-300">Wheelchair<br>Friendly</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      /* Gradient line for card bottoms */
+      .card-divider {
+        height: 4px;
+        background: linear-gradient(to right, #3b82f6, #9333ea, #3b82f6);
+        background-size: 200% 100%;
+        border-radius: 2px;
+        margin-top: 1.5rem;
+        width: 100%;
+        animation: gradientShift 3s ease infinite;
+      }
 
-      <!-- Map Section -->
-      <div class="mt-8 overflow-hidden rounded-2xl shadow-lg">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1522.340860903018!2d77.27198493668924!3d28.54536567427281!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce3e45d85d3e3%3A0x691393414902968e!2sIIIT-Delhi%20R%26D%20Building!5e0!3m2!1sen!2sin!4v1743764044153!5m2!1sen!2sin"
-          class="w-full h-96 border-0"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          style="filter: grayscale(0.2) invert(1) hue-rotate(180deg) contrast(0.9) brightness(1.1);">
-        </iframe>
+      /* Address styling */
+      .address-line {
+        display: block;
+        margin: 0;
+        line-height: 1.25rem;
+      }
+      .address-container {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+
+      /* Map styling */
+      .map-container {
+        position: relative;
+        overflow: hidden;
+        border-radius: 1rem;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+      }
+      .dark .map-container {
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+      .map-light {
+        display: block;
+      }
+      .dark .map-light {
+        display: none;
+      }
+      .map-dark {
+        display: none;
+      }
+      .dark .map-dark {
+        display: block;
+      }
+
+      /* Icon styling */
+      .icon-circle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1));
+        transition: transform 0.3s ease;
+        flex-shrink: 0;
+      }
+      .icon-circle:hover {
+        transform: scale(1.1);
+      }
+      .dark .icon-circle {
+        background: linear-gradient(135deg, rgba(96, 165, 250, 0.2), rgba(192, 132, 252, 0.2));
+      }
+
+      /* Background animations */
+      @keyframes float1 {
+        0%, 100% { transform: translate(0, 0) rotate(0deg); }
+        50% { transform: translate(-20px, -20px) rotate(5deg); }
+      }
+      @keyframes float2 {
+        0%, 100% { transform: translate(0, 0) rotate(0deg); }
+        50% { transform: translate(20px, 20px) rotate(-5deg); }
+      }
+
+
+      @keyframes gradientShift {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+      .animate-float1 {
+        animation: float1 12s ease-in-out infinite;
+      }
+      .animate-float2 {
+        animation: float2 15s ease-in-out infinite;
+        animation-delay: 2s;
+      }
+
+      /* Grid pattern for the entire template */
+      .template-wrapper {
+        position: relative;
+        min-height: 100vh;
+      }
+      .grid-background {
+        position: absolute;
+        inset: 0;
+        opacity: 0.80;
+        z-index: 1;
+      }
+      #grid-pattern path {
+        stroke: rgba(0, 0, 0, 0.5);
+      }
+      .dark #grid-pattern path {
+        stroke: rgba(255, 255, 255, 0.5);
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 1024px) {
+        .section-sm {
+          padding: 1.25rem 0;
+        }
+        .p-8 {
+          padding: 1.5rem;
+        }
+        .gap-8 {
+          gap: 1.5rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .md\\:grid-cols-2 {
+          grid-template-columns: 1fr;
+        }
+        .section-sm {
+          padding: 1rem 0;
+        }
+        .p-8 {
+          padding: 1.25rem;
+        }
+        .gap-8 {
+          gap: 1rem;
+        }
+        .h-96 {
+          height: 20rem;
+        }
+        .grid-cols-2 {
+          grid-template-columns: 1fr;
+        }
+        .gap-4 {
+          gap: 0.75rem;
+        }
+        .text-4xl {
+          font-size: 1.875rem;
+          line-height: 2.25rem;
+        }
+        .icon-circle {
+          width: 36px;
+          height: 36px;
+        }
+        .address-container {
+          gap: 0.2rem;
+        }
+        .address-line {
+          font-size: 0.75rem;
+          line-height: 1rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .section-sm {
+          padding: 0.75rem 0;
+        }
+        .p-8 {
+          padding: 1rem;
+        }
+        .gap-8 {
+          gap: 0.75rem;
+        }
+        .h-96 {
+          height: 16rem;
+        }
+        .text-2xl {
+          font-size: 1.25rem;
+          line-height: 1.75rem;
+        }
+        .text-sm {
+          font-size: 0.75rem;
+          line-height: 1rem;
+        }
+        .text-4xl {
+          font-size: 1.5rem;
+          line-height: 2rem;
+        }
+        .icon-circle {
+          width: 32px;
+          height: 32px;
+        }
+        .card-divider {
+          height: 2px;
+          margin-top: 1rem;
+        }
+        .address-container {
+          gap: 0.15rem;
+        }
+        .address-line {
+          font-size: 0.7rem;
+          line-height: 0.9rem;
+        }
+        .address-item {
+          align-items: flex-start;
+          gap: 0.75rem;
+        }
+      }
+    </style>
+
+    <!-- Animated abstract shapes and grid background -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none" style="z-index: 1;">
+      <div class="absolute -left-20 -top-20 w-64 h-64 rounded-full bg-blue-500/10 dark:bg-blue-400/5 blur-3xl animate-float1"></div>
+      <div class="absolute -right-20 -bottom-20 w-72 h-72 rounded-full bg-purple-500/10 dark:bg-purple-400/5 blur-3xl animate-float2"></div>
+      <div class="grid-background">
+        <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+          <pattern id="grid-pattern" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" stroke-width="0.5"/>
+          </pattern>
+          <rect width="100%" height="100%" fill="url(#grid-pattern)"/>
+        </svg>
       </div>
     </div>
-  </section>
+
+    <section class="section">
+      <div class="container">
+        <!-- Contact Section -->
+        <section class="section-sm pb-16 md:pb-24 lg:pb-32" id="contact" aria-labelledby="contact-heading">
+          <h2 id="contact-heading" class="mb-4 text-4xl font-bold text-gray-900 dark:text-white text-center">
+            <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-600">
+              Contact
+            </span>
+          </h2>
+          <div class="grid md:grid-cols-2 gap-8">
+            <!-- Contact Card -->
+            <div class="bg-white dark:bg-darkmode-body p-8 rounded-2xl shadow-lg">
+              <h3 class="text-2xl font-bold mb-6 text-dark dark:text-white">Contact Information</h3>
+              <div class="space-y-6">
+                <div class="flex items-start gap-4">
+                  <div class="icon-circle">
+                    <i class="fas fa-envelope text-primary dark:text-darkmode-primary text-lg"></i>
+                  </div>
+                  <div>
+                    <a href="mailto:raghava.mutharaju@iiitd.ac.in"
+                       class="hover:text-primary transition-colors text-dark dark:text-gray-200">
+                      raghava.mutharaju@iiitd.ac.in
+                    </a>
+                  </div>
+                </div>
+                <div class="flex items-start gap-4">
+                  <div class="icon-circle">
+                    <i class="fas fa-phone text-primary dark:text-darkmode-primary text-lg"></i>
+                  </div>
+                  <div class="text-dark dark:text-gray-200">
+                    011-26907455
+                  </div>
+                </div>
+                <div class="flex items-start gap-4 address-item">
+                  <div class="icon-circle">
+                    <i class="fas fa-map-marker-alt text-primary dark:text-darkmode-primary text-lg"></i>
+                  </div>
+                  <address class="not-italic text-dark dark:text-gray-200 address-container">
+                    <span class="address-line">(R&D Block) Kracr Lab, B Wing, 4th Floor</span>
+                    <span class="address-line">R&D Building, IIIT-Delhi</span>
+                    <span class="address-line">IIIT Road, Okhla Phase III</span>
+                    <span class="address-line">Okhla Industrial Estate, New Delhi</span>
+                    <span class="address-line">Delhi 110020, India</span>
+                  </address>
+                </div>
+              </div>
+              <div class="card-divider"></div>
+            </div>
+            <!-- How to Reach -->
+            <div class="bg-white dark:bg-darkmode-body p-8 rounded-2xl shadow-lg">
+              <h3 class="text-2xl font-bold mb-6 text-dark dark:text-white">How to Reach</h3>
+              <div class="grid grid-cols-2 gap-4">
+                <div class="flex items-center gap-4 p-4 bg-theme-light dark:bg-darkmode-theme-light rounded-lg">
+                  <div class="icon-circle">
+                    <i class="fas fa-subway text-2xl text-primary dark:text-darkmode-primary"></i>
+                  </div>
+                  <div>
+                    <p class="font-semibold text-dark dark:text-white">Metro</p>
+                    <p class="text-sm text-dark dark:text-gray-300">0.5 km from<br>Govind Puri Metro Station</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-4 p-4 bg-theme-light dark:bg-darkmode-theme-light rounded-lg">
+                  <div class="icon-circle">
+                    <i class="fas fa-bus text-2xl text-blue-500"></i>
+                  </div>
+                  <div>
+                    <p class="font-semibold text-dark dark:text-white">Bus</p>
+                    <p class="text-sm text-dark dark:text-gray-300">Nearest Stop:<br>Okhla Phase III</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-4 p-4 bg-theme-light dark:bg-darkmode-theme-light rounded-lg">
+                  <div class="icon-circle">
+                    <i class="fas fa-car text-2xl text-green-500"></i>
+                  </div>
+                  <div>
+                    <p class="font-semibold text-dark dark:text-white">Car</p>
+                    <p class="text-sm text-dark dark:text-gray-300">Ample Parking<br>Available</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-4 p-4 bg-theme-light dark:bg-darkmode-theme-light rounded-lg">
+                  <div class="icon-circle">
+                    <i class="fas fa-wheelchair text-2xl text-purple-500"></i>
+                  </div>
+                  <div>
+                    <p class="font-semibold text-dark dark:text-white">Accessibility</p>
+                    <p class="text-sm text-dark dark:text-gray-300">Wheelchair<br>Friendly</p>
+                  </div>
+                </div>
+              </div>
+              <div class="card-divider"></div>
+            </div>
+          </div>
+          <!-- Map Section -->
+          <div class="mt-8 map-container">
+            <iframe
+              class="w-full h-96 border-0 map-light"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1522.340860903018!2d77.27198493668924!3d28.54536567427281!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce3e45d85d3e3%3A0x691393414902968e!2sIIIT-Delhi%20R%26D%20Building!5e0!3m2!1sen!2sin!4v1743764044153!5m2!1sen!2sin"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              style="filter: grayscale(0.2) contrast(0.9) brightness(1.1);">
+            </iframe>
+            <iframe
+              class="w-full h-96 border-0 map-dark"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1522.340860903018!2d77.27198493668924!3d28.54536567427281!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce3e45d85d3e3%3A0x691393414902968e!2sIIIT-Delhi%20R%26D%20Building!5e0!3m2!1sen!2sin!4v1743764044153!5m2!1sen!2sin&maptype=roadmap&style=feature%3Aall%7Celement%3Aall%7Cinvert_lightness%3Atrue%7Csaturation%3A-100%7Clightness%3A-30%7Cgamma%3A0.5"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              style="filter: contrast(0.9) brightness(0.9);">
+            </iframe>
+          </div>
+        </section>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Handle initial hash in URL
+      if (window.location.hash) {
+        const targetId = window.location.hash.substring(1);
+        const targetHeading = document.getElementById(`${targetId}-heading`);
+        if (targetHeading) {
+          setTimeout(() => {
+            const header = document.querySelector('.page-header') || { offsetHeight: 0 };
+            const scrollOffset = header.offsetHeight + 20;
+            const targetPosition = targetHeading.getBoundingClientRect().top + window.pageYOffset - scrollOffset;
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'auto'
+            });
+          }, 50);
+        }
+      }
+    });
+  </script>
 {{ end }}
