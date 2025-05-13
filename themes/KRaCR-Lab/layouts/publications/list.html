@@ -1,83 +1,340 @@
 {{ define "main" }}
   {{ partial "page-header" . }}
 
-  <style>
-    /* Custom scrollbar styles */
-    .scrollbar::-webkit-scrollbar { width: 8px; }
-    .scrollbar::-webkit-scrollbar-track { background: transparent; }
-    .scrollbar::-webkit-scrollbar-thumb { background-color: #c89b3f; border-radius: 15px; }
-  </style>
+  <section class="publications-timeline py-16 bg-white dark:bg-[#1c1c1c]">
+    <div class="container max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      {{ $pubs := sort site.Data.publications "Year" "desc" }}
+      {{ $byYear := dict }}
+      {{ range $pubs }}
+        {{ $yr := .Year }}
+        {{ $slice := index $byYear $yr | default (slice) }}
+        {{ $slice = $slice | append . }}
+        {{ $byYear = merge $byYear (dict $yr $slice) }}
+      {{ end }}
 
-  <div class="container mx-auto p-6">
-    {{/* 1) Sort and group publications by Year descending */}}
-    {{ $pubs := sort site.Data.publications "Year" "desc" }}
-    {{ $byYear := dict }}
-    {{ range $pubs }}
-      {{ $yr := .Year }}
-      {{ $slice := index $byYear $yr | default (slice) }}
-      {{ $slice = $slice | append . }}
-      {{ $byYear = merge $byYear (dict $yr $slice) }}
-    {{ end }}
+      {{ $years := slice }}
+      {{ range $y, $_ := $byYear }} {{ $years = $years | append $y }} {{ end }}
+      {{ $years = sort $years }}
+      {{ $yearsDesc := slice }}
+      {{ $nYears := len $years }}
+      {{ range $i := seq (sub $nYears 1) -1 0 }}
+        {{ $year := index $years $i }}
+        {{ $yearsDesc = $yearsDesc | append $year }}
+      {{ end }}
 
-    {{/* 2) Build sorted list of years */}}
-    {{ $years := slice }}
-    {{ range $y, $_ := $byYear }}
-      {{ $years = $years | append $y }}
-    {{ end }}
-    {{ $years = sort $years }}
-    {{ $nYears := len $years }}
-
-    {{/* 3) Render accordion per year */}}
-    {{ range $i, $_ := $years }}
-      {{ $year := index $years (sub (sub $nYears 1) $i) }}
-      <div class="accordion mb-4 border rounded bg-white shadow">
-        <button class="accordion-header w-full text-left px-4 py-3 font-semibold text-gray-800 focus:outline-none">
-          {{ $year }}
-        </button>
-        <div class="accordion-content" style="max-height: 0; overflow: hidden; transition: max-height 0.2s ease-out;">
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4 pb-6 scrollbar">
-            {{ range index $byYear $year }}
-              <div class="bg-[#f9f9f9] dark:bg-[#1f1f1f] text-left rounded-2xl shadow-md p-6 border border-gray-200 dark:border-white flex flex-col h-full">
-                <div>
-                  <!-- Title -->
-                  <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">{{ .Title }}</h3>
-                  <!-- Authors -->
-                  <p class="text-sm text-gray-600 dark:text-gray-200">By: {{ .Authors }}</p>
-                  <!-- Description -->
-                  <div class="mt-4 text-gray-700 dark:text-gray-200 text-sm max-h-72 overflow-y-scroll pr-2 scrollbar">
-                    {{ .Description }}
-                  </div>
-                </div>
-                <!-- Publication URL Button -->
-                <div class="mt-auto pt-4 flex justify-between items-center">
-                  {{ if .PublicationURL }}
-                    <a href="{{ .PublicationURL }}" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm">
-                      Publication URL
-                    </a>
-                  {{ end }}
-                </div>
-              </div>
+      <!-- Jump to Year card -->
+      <div class="jump-to-year-card mb-12 sticky top-4 z-20 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-lg shadow-md border-l-4 border-green-500 dark:border-green-400 animate-publication">
+        <div class="p-6">
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Jump to Year</h3>
+          <div class="flex flex-wrap gap-2">
+            {{ if gt (len $yearsDesc) 10 }}
+              <select id="year-select" class="year-select px-4 py-2 text-sm font-medium bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-md hover:bg-green-100 dark:hover:bg-green-900/50 hover:text-green-700 dark:hover:text-green-400 transition-all duration-300 w-full md:w-auto" aria-label="Select a year to view publications">
+                {{ range $i, $year := $yearsDesc }}
+                  <option value="{{ $year }}" {{ if eq $i 0 }}selected{{ end }}>{{ $year }}</option>
+                {{ end }}
+              </select>
+            {{ else }}
+              {{ range $i, $year := $yearsDesc }}
+                <button
+                  class="year-btn px-4 py-1.5 text-sm font-medium rounded-md transition-all duration-300 {{ if eq $i 0 }}bg-green-600 text-white{{ else }}bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-green-100 dark:hover:bg-green-900/50 hover:text-green-700 dark:hover:text-green-400{{ end }}"
+                  data-year="{{ $year }}"
+                  aria-label="View publications for {{ $year }}"
+                >
+                  {{ $year }}
+                </button>
+              {{ end }}
             {{ end }}
           </div>
         </div>
       </div>
-    {{ end }}
-  </div>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      document.querySelectorAll(".accordion-header").forEach(function(header) {
-        header.addEventListener("click", function() {
-          var content = this.nextElementSibling;
-          var computedMaxHeight = window.getComputedStyle(content).maxHeight;
-          if (computedMaxHeight !== "0px") {
-            content.style.maxHeight = "0px";
-          } else {
-            void content.offsetHeight; // force repaint
-            content.style.maxHeight = content.scrollHeight + "px";
+      <!-- Publications -->
+      <div class="timeline relative">
+        {{ range $i, $year := $yearsDesc }}
+          {{ $items := index $byYear $year }}
+          <div class="year-section {{ if ne $i 0 }}hidden{{ end }}" data-year="{{ $year }}">
+            <div class="year-header flex items-center mb-8 cursor-pointer" data-toggle="year-{{ $year }}">
+              <div class="timeline-dot w-4 h-4 rounded-full bg-green-600 dark:bg-green-400 mr-4"></div>
+              <h2 class="text-2xl font-bold text-gray-900 dark:text-white">{{ $year }}</h2>
+            </div>
+            <div class="publication-items grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 {{ if ne $i 0 }}hidden{{ end }}" data-year-content="{{ $year }}">
+              {{ range $index, $item := $items }}
+                <div class="publication-card bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-lg shadow-md hover:shadow-xl transition-all duration-300 border-l-4 border-green-500 dark:border-green-400 group animate-publication" style="animation-delay: {{ printf "%.1fs" (mul $index 0.2) }};">
+                  <div class="p-6 flex flex-col h-full">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">
+                      {{ if $item.PublicationURL }}
+                        <a href="{{ $item.PublicationURL }}" target="_blank" rel="noopener noreferrer" class="hover:underline">
+                          {{ $item.Title | markdownify }}
+                        </a>
+                      {{ else }}
+                        {{ $item.Title | markdownify }}
+                      {{ end }}
+                    </h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 italic mb-2 line-clamp-2">
+                      {{ $item.Authors | markdownify }}
+                    </p>
+                    <div class="text-sm text-gray-700 dark:text-gray-300 mb-4 line-clamp-4 overflow-y-auto scrollbar">
+                      {{ $item.Description | markdownify }}
+                    </div>
+                    {{ if $item.PublicationURL }}
+                      <div class="mt-auto">
+                        <a href="{{ $item.PublicationURL }}" target="_blank" rel="noopener noreferrer" class="inline-block px-4 py-2 bg-green-100 dark:bg-green-900/50 text-green-800 dark:text-green-300 rounded-md hover:bg-green-200 dark:hover:bg-green-900 transition-all duration-300">
+                          View Publication
+                        </a>
+                      </div>
+                    {{ end }}
+                  </div>
+                </div>
+              {{ end }}
+            </div>
+          </div>
+        {{ end }}
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const yearButtons = document.querySelectorAll('.year-btn');
+        const yearSelect = document.querySelector('.year-select');
+        const yearSections = document.querySelectorAll('.year-section');
+
+        // Function to show a specific year
+        const showYear = (year) => {
+          console.log(`Showing year: ${year}`); // Debug log
+          // Update button states
+          yearButtons.forEach(btn => {
+            btn.classList.remove('bg-green-600', 'text-white');
+            btn.classList.add('bg-gray-200', 'dark:bg-gray-800', 'text-gray-700', 'dark:text-gray-300');
+            if (btn.dataset.year === year) {
+              btn.classList.add('bg-green-600', 'text-white');
+            }
+          });
+
+          // Update select value
+          if (yearSelect) {
+            yearSelect.value = year;
           }
+
+          // Show selected year section
+          yearSections.forEach(section => {
+            if (section.dataset.year === year) {
+              section.classList.remove('hidden');
+              const content = section.querySelector('.publication-items');
+              if (content) {
+                content.classList.remove('hidden');
+              }
+              const header = section.querySelector('.year-header h2');
+              if (header) {
+                header.classList.add('text-green-600');
+              }
+            } else {
+              section.classList.add('hidden');
+              const header = section.querySelector('.year-header h2');
+              if (header) {
+                header.classList.remove('text-green-600');
+              }
+            }
+          });
+        };
+
+        // Initialize first year
+        if (yearSections.length > 0) {
+          const firstYear = yearSections[0].dataset.year;
+          console.log(`Initializing with year: ${firstYear}`); // Debug log
+          showYear(firstYear);
+        }
+
+        // Year button click handler
+        yearButtons.forEach(button => {
+          button.addEventListener('click', () => {
+            const year = button.dataset.year;
+            console.log(`Button clicked for year: ${year}`); // Debug log
+            showYear(year);
+          });
+
+          // Keyboard accessibility
+          button.addEventListener('keydown', e => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              console.log(`Keyboard trigger for year: ${button.dataset.year}`); // Debug log
+              button.click();
+            }
+          });
         });
+
+        // Year select change handler
+        if (yearSelect) {
+          yearSelect.addEventListener('change', () => {
+            const year = yearSelect.value;
+            console.log(`Dropdown changed to year: ${year}`); // Debug log
+            showYear(year);
+          });
+        }
+
+        // Year header toggle
+        const yearHeaders = document.querySelectorAll('.year-header');
+        yearHeaders.forEach(header => {
+          header.addEventListener('click', () => {
+            const year = header.dataset.toggle.split('-')[1];
+            console.log(`Toggling year header: ${year}`); // Debug log
+            const content = document.querySelector(`.publication-items[data-year-content="${year}"]`);
+            if (content) {
+              content.classList.toggle('hidden');
+              const h2 = header.querySelector('h2');
+              if (h2) {
+                h2.classList.toggle('text-green-600', !content.classList.contains('hidden'));
+              }
+            }
+          });
+        });
+
+        // Animate publication cards and jump-to-year card
+        const animatedElements = document.querySelectorAll('.animate-publication');
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+              entry.target.style.animationDelay = `${index * 0.2}s`;
+              entry.target.classList.add('animate-publication-active');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+
+        animatedElements.forEach(element => observer.observe(element));
       });
-    });
-  </script>
+    </script>
+
+    <style>
+      .publications-timeline {
+        min-height: 100vh;
+      }
+
+      .jump-to-year-card {
+        transition: all 0.3s ease;
+      }
+
+      .jump-to-year-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      .dark .jump-to-year-card:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+      }
+
+      .year-btn, .year-select {
+        transition: all 0.3s ease;
+      }
+
+      .year-btn:hover:not(.bg-green-600), .year-select:hover {
+        transform: scale(1.05);
+      }
+
+      .year-select {
+        appearance: none;
+        background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%2310B981%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+        background-repeat: no-repeat;
+        background-position: right 0.7rem top 50%;
+        background-size: 0.65rem auto;
+        padding-right: 2rem;
+      }
+
+      .dark .year-select {
+        background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%234B9E80%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+      }
+
+      .timeline {
+        position: relative;
+        padding-left: 2rem;
+      }
+
+      .timeline:before {
+        content: '';
+        position: absolute;
+        left: 0.45rem;
+        top: 0;
+        bottom: 0;
+        width: 0.25rem;
+        background: linear-gradient(to bottom, #10B981, #6EE7B7);
+      }
+
+      .dark .timeline:before {
+        background: linear-gradient(to bottom, #4B9E80, #A7F3D0);
+      }
+
+      .timeline-dot {
+        transition: all 0.3s ease;
+      }
+
+      .year-header:hover .timeline-dot {
+        transform: scale(1.2);
+      }
+
+      .publication-card {
+        transition: all 0.3s ease;
+      }
+
+      .publication-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      .dark .publication-card:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+      }
+
+      .line-clamp-2 {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .line-clamp-4 {
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .scrollbar::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      .scrollbar::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      .scrollbar::-webkit-scrollbar-thumb {
+        background-color: #10B981;
+        border-radius: 15px;
+      }
+
+      .dark .scrollbar::-webkit-scrollbar-thumb {
+        background-color: #4B9E80;
+      }
+
+      .animate-publication {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 0.6s ease-out forwards;
+      }
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (min-width: 640px) {
+        .timeline {
+          padding-left: 3rem;
+        }
+
+        .timeline:before {
+          left: 0.95rem;
+        }
+      }
+    </style>
+  </section>
 {{ end }}
