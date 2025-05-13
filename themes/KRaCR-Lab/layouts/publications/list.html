@@ -28,7 +28,7 @@
           <h3 class="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-4">Jump to Year</h3>
           <div class="flex flex-wrap gap-2 overflow-x-auto">
             {{ if gt (len $yearsDesc) 10 }}
-              <select id="year-select" class="year-select px-3 py-1.5 sm:px-4 sm:py-2 text-sm sm:text-base font-medium bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-md hover:bg-green-100 dark:hover:bg-green-900/50 hover:text-green-700 dark:hover:text-green-400 transition-all duration-300 w-full md:w-auto" aria-label="Select a year to view publications">
+              <select id="year-select" class="year-select px-3 py-1.5 sm:px-4 sm:py-2 text-sm sm:text-base font-medium bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-md hover:bg-green-100 dark:hover:bg-green-900/50 hover:text-green-700 dark:hover:text-green-400 transition-all duration-300 w-full md:w-auto focus:bg-green-600 focus:text-white focus:dark:bg-green-600 focus:dark:text-white" aria-label="Select a year to view publications">
                 {{ range $i, $year := $yearsDesc }}
                   <option value="{{ $year }}" {{ if eq $i 0 }}selected{{ end }}>{{ $year }}</option>
                 {{ end }}
@@ -36,7 +36,7 @@
             {{ else }}
               {{ range $i, $year := $yearsDesc }}
                 <button
-                  class="year-btn px-3 py-1 sm:px-4 sm:py-1.5 text-sm sm:text-base font-medium rounded-md transition-all duration-300 {{ if eq $i 0 }}bg-green-600 text-white{{ else }}bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-green-100 dark:hover:bg-green-900/50 hover:text-green-700 dark:hover:text-green-400{{ end }}"
+                  class="year-btn px-3 py-1 sm:px-4 sm:py-1.5 text-sm sm:text-base font-medium rounded-md transition-all duration-300 {{ if eq $i 0 }}bg-green-600 text-white dark:bg-green-600 dark:text-white{{ else }}bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-green-100 dark:hover:bg-green-900/50 hover:text-green-700 dark:hover:text-green-400{{ end }}"
                   data-year="{{ $year }}"
                   aria-label="View publications for {{ $year }}"
                 >
@@ -130,15 +130,19 @@
         const showYear = (year) => {
           console.log(`Showing year: ${year}`);
           yearButtons.forEach(btn => {
-            btn.classList.remove('bg-green-600', 'text-white');
+            btn.classList.remove('bg-green-600', 'text-white', 'dark:bg-green-600', 'dark:text-white');
             btn.classList.add('bg-gray-200', 'dark:bg-gray-800', 'text-gray-700', 'dark:text-gray-300');
             if (btn.dataset.year === year) {
-              btn.classList.add('bg-green-600', 'text-white');
+              btn.classList.add('bg-green-600', 'text-white', 'dark:bg-green-600', 'dark:text-white');
             }
           });
 
           if (yearSelect) {
             yearSelect.value = year;
+            // Force highlight for dropdown
+            if (yearSelect.value === year) {
+              yearSelect.classList.add('bg-green-600', 'text-white', 'dark:bg-green-600', 'dark:text-white');
+            }
           }
 
           yearSections.forEach(section => {
@@ -147,11 +151,11 @@
               const content = section.querySelector('.publication-items');
               if (content) content.classList.remove('hidden');
               const header = section.querySelector('.year-header h2');
-              if (header) header.classList.add('text-green-600');
+              if (header) header.classList.add('text-green-600', 'dark:text-green-400');
             } else {
               section.classList.add('hidden');
               const header = section.querySelector('.year-header h2');
-              if (header) header.classList.remove('text-green-600');
+              if (header) header.classList.remove('text-green-600', 'dark:text-green-400');
             }
           });
         };
@@ -200,6 +204,7 @@
               content.classList.toggle('hidden');
               const h2 = header.querySelector('h2');
               if (h2) h2.classList.toggle('text-green-600', !content.classList.contains('hidden'));
+              if (h2) h2.classList.toggle('dark:text-green-400', !content.classList.contains('hidden'));
             }
           });
         });
@@ -278,6 +283,16 @@
         transform: scale(1.05);
       }
 
+      .year-btn.bg-green-600 {
+        background-color: #10B981 !important;
+        color: #ffffff !important;
+      }
+
+      .dark .year-btn.bg-green-600 {
+        background-color: #4B9E80 !important;
+        color: #ffffff !important;
+      }
+
       .year-select {
         appearance: none;
         background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%2310B981%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
@@ -289,6 +304,16 @@
 
       .dark .year-select {
         background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%234B9E80%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+      }
+
+      .year-select.bg-green-600 {
+        background-color: #10B981 !important;
+        color: #ffffff !important;
+      }
+
+      .dark .year-select.bg-green-600 {
+        background-color: #4B9E80 !important;
+        color: #ffffff !important;
       }
 
       .timeline {
