@@ -148,17 +148,6 @@
         background-image: linear-gradient(to right, #3b82f6, #9333ea);
       }
 
-      /* Gradient line for card bottoms */
-      .card-divider {
-        height: 4px;
-        background: linear-gradient(to right, #3b82f6, #9333ea, #3b82f6);
-        background-size: 200% 100%;
-        border-radius: 2px;
-        margin-top: 1.5rem;
-        width: 100%;
-        animation: gradientShift 3s ease infinite;
-      }
-
       /* Address styling */
       .address-line {
         display: block;
@@ -223,13 +212,6 @@
       @keyframes float2 {
         0%, 100% { transform: translate(0, 0) rotate(0deg); }
         50% { transform: translate(20px, 20px) rotate(-5deg); }
-      }
-
-
-      @keyframes gradientShift {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
       }
       .animate-float1 {
         animation: float1 12s ease-in-out infinite;
@@ -338,10 +320,6 @@
           width: 32px;
           height: 32px;
         }
-        .card-divider {
-          height: 2px;
-          margin-top: 1rem;
-        }
         .address-container {
           gap: 0.15rem;
         }
@@ -374,11 +352,7 @@
       <div class="container">
         <!-- Contact Section -->
         <section class="section-sm pb-16 md:pb-24 lg:pb-32" id="contact" aria-labelledby="contact-heading">
-          {{/*  <h2 id="contact-heading" class="mb-4 text-4xl font-bold text-gray-900 dark:text-white text-center">
-            <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-600">
 
-            </span>
-          </h2>  */}}
           <div class="grid md:grid-cols-2 gap-8">
             <!-- Contact Card -->
             <div class="bg-white dark:bg-darkmode-body p-8 rounded-2xl shadow-lg">
@@ -416,7 +390,6 @@
                   </address>
                 </div>
               </div>
-              <div class="card-divider"></div>
             </div>
             <!-- How to Reach -->
             <div class="bg-white dark:bg-darkmode-body p-8 rounded-2xl shadow-lg">
@@ -459,7 +432,6 @@
                   </div>
                 </div>
               </div>
-              <div class="card-divider"></div>
             </div>
           </div>
           <!-- Map Section -->
