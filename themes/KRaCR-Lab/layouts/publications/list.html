@@ -59,9 +59,27 @@
             </div>
             <div class="publication-items grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 {{ if ne $i 0 }}hidden{{ end }}" data-year-content="{{ $year }}">
               {{ range $index, $item := $items }}
-                <div class="publication-card bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-lg shadow-md hover:shadow-xl transition-all duration-300 border-l-4 border-green-500 dark:border-green-400 group animate-publication" style="animation-delay: {{ printf "%.1fs" (mul $index 0.2) }};">
-                  <div class="p-6 flex flex-col h-full">
-                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">
+                {{ $authors := $item.Authors }}
+                {{ $isLongAuthors := gt (len $authors) 100 }}
+                {{ $authorsList := split $authors ", " }}
+                {{ $authorsTruncated := "" }}
+                {{ if $isLongAuthors }}
+                  {{ $count := 0 }}
+                  {{ range $authorsList }}
+                    {{ if lt $count 5 }}
+                      {{ if gt $count 0 }}{{ $authorsTruncated = printf "%s, %s" $authorsTruncated . }}{{ else }}{{ $authorsTruncated = . }}{{ end }}
+                      {{ $count = add $count 1 }}
+                    {{ end }}
+                  {{ end }}
+                  {{ $authorsTruncated = printf "%s, et al." $authorsTruncated }}
+                {{ else }}
+                  {{ $authorsTruncated = $authors }}
+                {{ end }}
+                {{ $description := $item.Description }}
+                {{ $isLongDescription := gt (len $description) 500 }}
+                <div class="publication-card bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-lg shadow-md hover:shadow-xl transition-all duration-300 border-l-4 border-green-500 dark:border-green-400 group animate-publication min-h-[300px] flex flex-col" style="animation-delay: {{ printf "%.1fs" (mul $index 0.2) }};">
+                  <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors break-words">
                       {{ if $item.PublicationURL }}
                         <a href="{{ $item.PublicationURL }}" target="_blank" rel="noopener noreferrer" class="hover:underline">
                           {{ $item.Title | markdownify }}
@@ -70,11 +88,21 @@
                         {{ $item.Title | markdownify }}
                       {{ end }}
                     </h3>
-                    <p class="text-sm text-gray-600 dark:text-gray-400 italic mb-2 line-clamp-2">
-                      {{ $item.Authors | markdownify }}
-                    </p>
-                    <div class="text-sm text-gray-700 dark:text-gray-300 mb-4 line-clamp-4 overflow-y-auto scrollbar">
-                      {{ $item.Description | markdownify }}
+                    <div class="text-sm text-gray-600 dark:text-gray-400 italic mb-2 authors-container {{ if $isLongAuthors }}relative{{ end }}" {{ if $isLongAuthors }}title="{{ $authors | markdownify | plainify }}"{{ end }}>
+                      <p class="authors-text {{ if $isLongAuthors }}line-clamp-2{{ else }}line-clamp-3{{ end }} break-words" data-full="{{ $authors | markdownify | plainify }}">
+                        {{ $authorsTruncated | markdownify }}
+                      </p>
+                      {{ if $isLongAuthors }}
+                        <button class="authors-toggle text-green-600 dark:text-green-400 text-xs underline mt-1 hover:text-green-700 dark:hover:text-green-300" aria-label="Toggle full authors list">Show More</button>
+                      {{ end }}
+                    </div>
+                    <div class="text-sm text-gray-700 dark:text-gray-300 mb-4 description-container {{ if $isLongDescription }}relative max-h-24 overflow-y-auto scrollbar{{ else }}line-clamp-6{{ end }}" data-full="{{ $description | markdownify | plainify }}">
+                      <div class="description-text break-words {{ if $isLongDescription }}pr-2{{ else }}line-clamp-6{{ end }}">
+                        {{ $description | markdownify }}
+                      </div>
+                      {{ if $isLongDescription }}
+                        <button class="description-toggle text-green-600 dark:text-green-400 text-xs underline mt-1 hover:text-green-700 dark:hover:text-green-300" aria-label="Toggle full description">Read More</button>
+                      {{ end }}
                     </div>
                     {{ if $item.PublicationURL }}
                       <div class="mt-auto">
@@ -98,10 +126,9 @@
         const yearSelect = document.querySelector('.year-select');
         const yearSections = document.querySelectorAll('.year-section');
 
-        // Function to show a specific year
+        // Show a specific year
         const showYear = (year) => {
-          console.log(`Showing year: ${year}`); // Debug log
-          // Update button states
+          console.log(`Showing year: ${year}`);
           yearButtons.forEach(btn => {
             btn.classList.remove('bg-green-600', 'text-white');
             btn.classList.add('bg-gray-200', 'dark:bg-gray-800', 'text-gray-700', 'dark:text-gray-300');
@@ -110,29 +137,21 @@
             }
           });
 
-          // Update select value
           if (yearSelect) {
             yearSelect.value = year;
           }
 
-          // Show selected year section
           yearSections.forEach(section => {
             if (section.dataset.year === year) {
               section.classList.remove('hidden');
               const content = section.querySelector('.publication-items');
-              if (content) {
-                content.classList.remove('hidden');
-              }
+              if (content) content.classList.remove('hidden');
               const header = section.querySelector('.year-header h2');
-              if (header) {
-                header.classList.add('text-green-600');
-              }
+              if (header) header.classList.add('text-green-600');
             } else {
               section.classList.add('hidden');
               const header = section.querySelector('.year-header h2');
-              if (header) {
-                header.classList.remove('text-green-600');
-              }
+              if (header) header.classList.remove('text-green-600');
             }
           });
         };
@@ -140,7 +159,7 @@
         // Initialize first year
         if (yearSections.length > 0) {
           const firstYear = yearSections[0].dataset.year;
-          console.log(`Initializing with year: ${firstYear}`); // Debug log
+          console.log(`Initializing with year: ${firstYear}`);
           showYear(firstYear);
         }
 
@@ -148,15 +167,14 @@
         yearButtons.forEach(button => {
           button.addEventListener('click', () => {
             const year = button.dataset.year;
-            console.log(`Button clicked for year: ${year}`); // Debug log
+            console.log(`Button clicked for year: ${year}`);
             showYear(year);
           });
 
-          // Keyboard accessibility
           button.addEventListener('keydown', e => {
-            if (e.key === 'Enter' || e.key === ' ') {
+            if (e.key === 'Enter' || e.key === 'Space') {
               e.preventDefault();
-              console.log(`Keyboard trigger for year: ${button.dataset.year}`); // Debug log
+              console.log(`Keyboard trigger for year: ${button.dataset.year}`);
               button.click();
             }
           });
@@ -166,7 +184,7 @@
         if (yearSelect) {
           yearSelect.addEventListener('change', () => {
             const year = yearSelect.value;
-            console.log(`Dropdown changed to year: ${year}`); // Debug log
+            console.log(`Dropdown changed to year: ${year}`);
             showYear(year);
           });
         }
@@ -176,15 +194,42 @@
         yearHeaders.forEach(header => {
           header.addEventListener('click', () => {
             const year = header.dataset.toggle.split('-')[1];
-            console.log(`Toggling year header: ${year}`); // Debug log
+            console.log(`Toggling year header: ${year}`);
             const content = document.querySelector(`.publication-items[data-year-content="${year}"]`);
             if (content) {
               content.classList.toggle('hidden');
               const h2 = header.querySelector('h2');
-              if (h2) {
-                h2.classList.toggle('text-green-600', !content.classList.contains('hidden'));
-              }
+              if (h2) h2.classList.toggle('text-green-600', !content.classList.contains('hidden'));
             }
+          });
+        });
+
+        // Authors toggle
+        document.querySelectorAll('.authors-toggle').forEach(toggle => {
+          toggle.addEventListener('click', () => {
+            const container = toggle.closest('.authors-container');
+            const text = container.querySelector('.authors-text');
+            const isExpanded = text.classList.contains('expanded');
+            text.classList.toggle('line-clamp-2', isExpanded);
+            text.classList.toggle('expanded', !isExpanded);
+            text.innerHTML = isExpanded ? text.dataset.truncated : text.dataset.full;
+            toggle.textContent = isExpanded ? 'Show More' : 'Show Less';
+            toggle.setAttribute('aria-label', isExpanded ? 'Show full authors list' : 'Hide full authors list');
+          });
+        });
+
+        // Description toggle
+        document.querySelectorAll('.description-toggle').forEach(toggle => {
+          toggle.addEventListener('click', () => {
+            const container = toggle.closest('.description-container');
+            const text = container.querySelector('.description-text');
+            const isExpanded = text.classList.contains('expanded');
+            container.classList.toggle('max-h-24', isExpanded);
+            container.classList.toggle('max-h-48', !isExpanded);
+            text.classList.toggle('line-clamp-6', isExpanded);
+            text.classList.toggle('expanded', !isExpanded);
+            toggle.textContent = isExpanded ? 'Read More' : 'Read Less';
+            toggle.setAttribute('aria-label', isExpanded ? 'Show full description' : 'Hide full description');
           });
         });
 
@@ -290,15 +335,22 @@
         overflow: hidden;
       }
 
-      .line-clamp-4 {
+      .line-clamp-3 {
         display: -webkit-box;
-        -webkit-line-clamp: 4;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .line-clamp-6 {
+        display: -webkit-box;
+        -webkit-line-clamp: 6;
         -webkit-box-orient: vertical;
         overflow: hidden;
       }
 
       .scrollbar::-webkit-scrollbar {
-        width: 8px;
+        width: 10px;
       }
 
       .scrollbar::-webkit-scrollbar-track {
@@ -308,10 +360,20 @@
       .scrollbar::-webkit-scrollbar-thumb {
         background-color: #10B981;
         border-radius: 15px;
+        border: 2px solid transparent;
+        background-clip: content-box;
+      }
+
+      .scrollbar::-webkit-scrollbar-thumb:hover {
+        background-color: #6EE7B7;
       }
 
       .dark .scrollbar::-webkit-scrollbar-thumb {
         background-color: #4B9E80;
+      }
+
+      .dark .scrollbar::-webkit-scrollbar-thumb:hover {
+        background-color: #A7F3D0;
       }
 
       .animate-publication {
@@ -319,6 +381,7 @@
         transform: translateY(20px);
         animation: fadeInUp 0.6s ease-out forwards;
       }
+
       @keyframes fadeInUp {
         to {
           opacity: 1;
