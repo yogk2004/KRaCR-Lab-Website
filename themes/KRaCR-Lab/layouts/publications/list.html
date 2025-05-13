@@ -1,7 +1,7 @@
 {{ define "main" }}
   {{ partial "page-header" . }}
 
-  <section class="publications-timeline py-16 bg-white dark:bg-[#1c1c1c]">
+  <section class="publications-timeline py-12 sm:py-16 bg-white dark:bg-[#1c1c1c]">
     <div class="container max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       {{ $pubs := sort site.Data.publications "Year" "desc" }}
       {{ $byYear := dict }}
@@ -23,12 +23,12 @@
       {{ end }}
 
       <!-- Jump to Year card -->
-      <div class="jump-to-year-card mb-12 sm:sticky sm:top-4 z-20 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-lg shadow-md border-l-4 border-green-500 dark:border-green-400 animate-publication">
-        <div class="p-6">
-          <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Jump to Year</h3>
-          <div class="flex flex-wrap gap-2">
+      <div class="jump-to-year-card mb-8 sm:mb-12 z-20 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-lg shadow-md border-l-4 border-green-500 dark:border-green-400 animate-publication">
+        <div class="p-4 sm:p-6">
+          <h3 class="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-4">Jump to Year</h3>
+          <div class="flex flex-wrap gap-2 overflow-x-auto">
             {{ if gt (len $yearsDesc) 10 }}
-              <select id="year-select" class="year-select px-4 py-2 text-sm font-medium bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-md hover:bg-green-100 dark:hover:bg-green-900/50 hover:text-green-700 dark:hover:text-green-400 transition-all duration-300 w-full md:w-auto" aria-label="Select a year to view publications">
+              <select id="year-select" class="year-select px-3 py-1.5 sm:px-4 sm:py-2 text-sm sm:text-base font-medium bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-md hover:bg-green-100 dark:hover:bg-green-900/50 hover:text-green-700 dark:hover:text-green-400 transition-all duration-300 w-full md:w-auto" aria-label="Select a year to view publications">
                 {{ range $i, $year := $yearsDesc }}
                   <option value="{{ $year }}" {{ if eq $i 0 }}selected{{ end }}>{{ $year }}</option>
                 {{ end }}
@@ -36,7 +36,7 @@
             {{ else }}
               {{ range $i, $year := $yearsDesc }}
                 <button
-                  class="year-btn px-4 py-1.5 text-sm font-medium rounded-md transition-all duration-300 {{ if eq $i 0 }}bg-green-600 text-white{{ else }}bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-green-100 dark:hover:bg-green-900/50 hover:text-green-700 dark:hover:text-green-400{{ end }}"
+                  class="year-btn px-3 py-1 sm:px-4 sm:py-1.5 text-sm sm:text-base font-medium rounded-md transition-all duration-300 {{ if eq $i 0 }}bg-green-600 text-white{{ else }}bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-green-100 dark:hover:bg-green-900/50 hover:text-green-700 dark:hover:text-green-400{{ end }}"
                   data-year="{{ $year }}"
                   aria-label="View publications for {{ $year }}"
                 >
@@ -49,15 +49,15 @@
       </div>
 
       <!-- Publications -->
-      <div class="timeline relative">
+      <div class="timeline relative pl-6 sm:pl-8 lg:pl-12">
         {{ range $i, $year := $yearsDesc }}
           {{ $items := index $byYear $year }}
           <div class="year-section {{ if ne $i 0 }}hidden{{ end }}" data-year="{{ $year }}">
-            <div class="year-header flex items-center mb-8 cursor-pointer" data-toggle="year-{{ $year }}">
+            <div class="year-header flex items-center mb-6 sm:mb-8 cursor-pointer" data-toggle="year-{{ $year }}">
               <div class="timeline-dot w-4 h-4 rounded-full bg-green-600 dark:bg-green-400 mr-4"></div>
-              <h2 class="text-2xl font-bold text-gray-900 dark:text-white">{{ $year }}</h2>
+              <h2 class="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">{{ $year }}</h2>
             </div>
-            <div class="publication-items grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 {{ if ne $i 0 }}hidden{{ end }}" data-year-content="{{ $year }}">
+            <div class="publication-items grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 {{ if ne $i 0 }}hidden{{ end }}" data-year-content="{{ $year }}">
               {{ range $index, $item := $items }}
                 {{ $authors := $item.Authors }}
                 {{ $isLongAuthors := gt (len $authors) 100 }}
@@ -77,9 +77,9 @@
                 {{ end }}
                 {{ $description := $item.Description }}
                 {{ $isLongDescription := gt (len $description) 500 }}
-                <div class="publication-card bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-lg shadow-md hover:shadow-xl transition-all duration-300 border-l-4 border-green-500 dark:border-green-400 group animate-publication min-h-[300px] flex flex-col" style="animation-delay: {{ printf "%.1fs" (mul $index 0.2) }};">
-                  <div class="p-6 flex flex-col flex-grow">
-                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors break-words">
+                <div class="publication-card bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-lg shadow-md hover:shadow-xl transition-all duration-300 border-l-4 border-green-500 dark:border-green-400 group animate-publication min-h-[250px] flex flex-col" style="animation-delay: {{ printf "%.1fs" (mul $index 0.2) }};">
+                  <div class="p-4 sm:p-6 flex flex-col flex-grow">
+                    <h3 class="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors break-words">
                       {{ if $item.PublicationURL }}
                         <a href="{{ $item.PublicationURL }}" target="_blank" rel="noopener noreferrer" class="hover:underline">
                           {{ $item.Title | markdownify }}
@@ -88,16 +88,16 @@
                         {{ $item.Title | markdownify }}
                       {{ end }}
                     </h3>
-                    <div class="text-sm text-gray-600 dark:text-gray-400 italic mb-2 authors-container {{ if $isLongAuthors }}relative{{ end }}" {{ if $isLongAuthors }}title="{{ $authors | markdownify | plainify }}"{{ end }}>
-                      <p class="authors-text {{ if $isLongAuthors }}line-clamp-2{{ else }}line-clamp-3{{ end }} break-words" data-full="{{ $authors | markdownify | plainify }}">
+                    <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 italic mb-2 authors-container {{ if $isLongAuthors }}relative{{ end }}" {{ if $isLongAuthors }}title="{{ $authors | markdownify | plainify }}"{{ end }}>
+                      <p class="authors-text {{ if $isLongAuthors }}line-clamp-2{{ else }}line-clamp-3{{ end }} break-words" data-full="{{ $authors | markdownify | plainify }}" data-truncated="{{ $authorsTruncated | markdownify | plainify }}">
                         {{ $authorsTruncated | markdownify }}
                       </p>
                       {{ if $isLongAuthors }}
                         <button class="authors-toggle text-green-600 dark:text-green-400 text-xs underline mt-1 hover:text-green-700 dark:hover:text-green-300" aria-label="Toggle full authors list">Show More</button>
                       {{ end }}
                     </div>
-                    <div class="text-sm text-gray-700 dark:text-gray-300 mb-4 description-container {{ if $isLongDescription }}relative max-h-24 overflow-y-auto scrollbar{{ else }}line-clamp-6{{ end }}" data-full="{{ $description | markdownify | plainify }}">
-                      <div class="description-text break-words {{ if $isLongDescription }}pr-2{{ else }}line-clamp-6{{ end }}">
+                    <div class="text-xs sm:text-sm text-gray-700 dark:text-gray-300 mb-4 description-container {{ if $isLongDescription }}relative max-h-20 sm:max-h-24 overflow-y-auto scrollbar{{ else }}line-clamp-5 sm:line-clamp-6{{ end }}" data-full="{{ $description | markdownify | plainify }}">
+                      <div class="description-text break-words {{ if $isLongDescription }}pr-2{{ else }}line-clamp-5 sm:line-clamp-6{{ end }}">
                         {{ $description | markdownify }}
                       </div>
                       {{ if $isLongDescription }}
@@ -106,7 +106,7 @@
                     </div>
                     {{ if $item.PublicationURL }}
                       <div class="mt-auto">
-                        <a href="{{ $item.PublicationURL }}" target="_blank" rel="noopener noreferrer" class="inline-block px-4 py-2 bg-green-100 dark:bg-green-900/50 text-green-800 dark:text-green-300 rounded-md hover:bg-green-200 dark:hover:bg-green-900 transition-all duration-300">
+                        <a href="{{ $item.PublicationURL }}" target="_blank" rel="noopener noreferrer" class="inline-block px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm bg-green-100 dark:bg-green-900/50 text-green-800 dark:text-green-300 rounded-md hover:bg-green-200 dark:hover:bg-green-900 transition-all duration-300">
                           View Publication
                         </a>
                       </div>
@@ -224,9 +224,12 @@
             const container = toggle.closest('.description-container');
             const text = container.querySelector('.description-text');
             const isExpanded = text.classList.contains('expanded');
-            container.classList.toggle('max-h-24', isExpanded);
-            container.classList.toggle('max-h-48', !isExpanded);
-            text.classList.toggle('line-clamp-6', isExpanded);
+            container.classList.toggle('max-h-20', isExpanded);
+            container.classList.toggle('max-h-40', !isExpanded);
+            container.classList.toggle('sm:max-h-24', isExpanded);
+            container.classList.toggle('sm:max-h-48', !isExpanded);
+            text.classList.toggle('line-clamp-5', isExpanded);
+            text.classList.toggle('sm:line-clamp-6', isExpanded);
             text.classList.toggle('expanded', !isExpanded);
             toggle.textContent = isExpanded ? 'Read More' : 'Read Less';
             toggle.setAttribute('aria-label', isExpanded ? 'Show full description' : 'Hide full description');
@@ -290,13 +293,11 @@
 
       .timeline {
         position: relative;
-        padding-left: 2rem;
       }
 
       .timeline:before {
         content: '';
         position: absolute;
-        left: 0.45rem;
         top: 0;
         bottom: 0;
         width: 0.25rem;
@@ -342,15 +343,15 @@
         overflow: hidden;
       }
 
-      .line-clamp-6 {
+      .line-clamp-5 {
         display: -webkit-box;
-        -webkit-line-clamp: 6;
+        -webkit-line-clamp: 5;
         -webkit-box-orient: vertical;
         overflow: hidden;
       }
 
       .scrollbar::-webkit-scrollbar {
-        width: 10px;
+        width: 8px;
       }
 
       .scrollbar::-webkit-scrollbar-track {
@@ -389,11 +390,29 @@
         }
       }
 
+      /* Responsive styles */
+      @media (max-width: 639px) {
+        .timeline {
+          padding-left: 1.5rem;
+        }
+        .timeline:before {
+          left: 0.35rem;
+        }
+      }
+
       @media (min-width: 640px) {
+        .timeline {
+          padding-left: 2rem;
+        }
+        .timeline:before {
+          left: 0.45rem;
+        }
+      }
+
+      @media (min-width: 1024px) {
         .timeline {
           padding-left: 3rem;
         }
-
         .timeline:before {
           left: 0.95rem;
         }
