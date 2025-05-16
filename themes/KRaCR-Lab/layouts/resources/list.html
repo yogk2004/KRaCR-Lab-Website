@@ -1,8 +1,11 @@
 {{ define "main" }}
+  <!-- Vanta.js Globe Background -->
+  <div id="vanta-globe" class="fixed inset-0 -z-10 opacity-50 dark:opacity-30 transition-opacity duration-500"></div>
+
   {{ partial "page-header" . }}
 
-  <section class="section py-16">
-    <div class="container">
+  <section class="section py-16 relative">
+    <div class="container relative z-10">
       {{ $page := . }}
 
       {{ range $category, $links := $page.Params.resources }}
@@ -26,7 +29,7 @@
                   href="{{ .url }}"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="group relative bg-white/80 dark:bg-gray-800/80 backdrop-blur-md rounded-2xl shadow-md border border-gray-200/50 dark:border-gray-700/50 hover:shadow-xl transition-all duration-500 hover:-translate-y-2 flex flex-col h-full animate-card"
+                  class="group relative bg-white/90 dark:bg-gray-800/90 backdrop-blur-md rounded-2xl shadow-md border border-gray-200/50 dark:border-gray-700/50 hover:shadow-xl transition-all duration-500 hover:-translate-y-2 flex flex-col h-full animate-card"
                   style="animation-delay: {{ mul $index 0.1 }}s;"
                 >
                   <!-- Title and URL -->
@@ -61,6 +64,63 @@
       {{ end }}
     </div>
   </section>
+
+  <!-- Vanta.js for 3D globe background -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Initialize Vanta.js globe with color scheme matching your design
+      let vantaEffect;
+      const initVanta = () => {
+        if (vantaEffect) vantaEffect.destroy();
+
+        const isDark = document.documentElement.classList.contains('dark');
+
+        vantaEffect = VANTA.GLOBE({
+          el: "#vanta-globe",
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 200.00,
+          minWidth: 200.00,
+          scale: 1.00,
+          scaleMobile: 1.00,
+          backgroundColor: isDark ? 0x111827 : 0xf3f4f6,
+          color: isDark ? 0xD19A52 : 0xF28C4E,
+          color2: isDark ? 0xFF5C57 : 0xD19A52,
+          size: 0.8
+        });
+      };
+
+      // Initialize on load
+      initVanta();
+
+      // Watch for dark mode changes
+      const darkModeObserver = new MutationObserver(() => {
+        initVanta();
+      });
+
+      darkModeObserver.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['class']
+      });
+
+      // Existing card animation code
+      const animatedCards = document.querySelectorAll('.animate-card');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = 1;
+            entry.target.style.transform = 'translateY(0)';
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      animatedCards.forEach(card => observer.observe(card));
+    });
+  </script>
 
   <style>
     /* Modern font stack */
@@ -114,11 +174,16 @@
       .group .text-sm {
         font-size: 0.875rem; /* Smaller text on mobile */
       }
+
+      /* Reduce Vanta.js intensity on mobile */
+      #vanta-globe {
+        opacity: 0.3 !important;
+      }
     }
 
     /* Dark mode adjustments */
-    .dark .bg-white\/80 {
-      background: rgba(31, 41, 55, 0.8); /* Slightly transparent gray in dark mode */
+    .dark .bg-white\/90 {
+      background: rgba(31, 41, 55, 0.9); /* Slightly transparent gray in dark mode */
     }
   </style>
 {{ end }}

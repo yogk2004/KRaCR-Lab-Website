@@ -47,7 +47,7 @@
             <div class="flex flex-wrap gap-2 overflow-x-auto">
               {{ if gt (len $years) 10 }}
                 <!-- Dropdown for many years -->
-                <select id="year-select" class="year-select px-3 py-1.5 sm:px-4 sm:py-2 text-sm font-medium bg-gray-200/80 dark:bg-gray-800/80 text-gray-700 dark:text-gray-300 rounded-md hover:bg-[#F28C4E] dark:hover:bg-[#d95e2d] hover:text-white dark:hover:text-white transition-all duration-300 w-full md:w-auto focus:bg-[#FF5C57] focus:text-white focus:dark:bg-[#e63934] focus:dark:text-white backdrop-blur-sm" aria-label="Select a year to view news">
+                <select id="year-select" class="year-select px-3 py-1.5 sm:px-4 sm:py-2 text-sm font-medium bg-gray-200/80 dark:bg-gray-800/80 text-gray-700 dark:text-gray-300 rounded-md transition-all duration-300 w-full md:w-auto backdrop-blur-sm" aria-label="Select a year to view news">
                   <option value="ALL" selected>ALL</option>
                   {{ range $year := $years }}
                     <option value="{{ $year }}">{{ $year }}</option>
@@ -64,7 +64,7 @@
                 </button>
                 {{ range $year := $years }}
                   <button
-                    class="year-btn px-3 py-1 sm:px-4 sm:py-1.5 text-sm font-medium rounded-md transition-all duration-300 bg-gray-200/80 dark:bg-gray-800/80 text-gray-700 dark:text-gray-300 hover:bg-[#F28C4E] dark:hover:bg-[#d95e2d] hover:text-white dark:hover:text-white backdrop-blur-sm"
+                    class="year-btn px-3 py-1 sm:px-4 sm:py-1.5 text-sm font-medium rounded-md transition-all duration-300 bg-gray-200/80 dark:bg-gray-800/80 text-gray-700 dark:text-gray-300 backdrop-blur-sm"
                     data-year="{{ $year }}"
                     aria-label="View news for {{ $year }}"
                   >
@@ -164,15 +164,14 @@
           minWidth: 200.00,
           scale: 1.00,
           scaleMobile: 1.00,
-          // Light mode colors (new scheme)
-          color: isDarkMode ? 0x1a1a1a : 0xD19A52,
-          shininess: isDarkMode ? 30 : 50,
+          // Light mode: distinct grey shades, Dark mode: unchanged
+          color: isDarkMode ? 0x1a1a1a : 0x9CA3AF, // gray-400
+          shininess: isDarkMode ? 30 : 30,
           waveHeight: isDarkMode ? 15 : 10,
           waveSpeed: isDarkMode ? 1 : 0.8,
           zoom: isDarkMode ? 1 : 0.8,
-          // Light mode specific colors
-          color2: isDarkMode ? 0x1a1a1a : 0xF28C4E,
-          color3: isDarkMode ? 0x1a1a1a : 0xFF5C57
+          color2: isDarkMode ? 0x1a1a1a : 0x6B7280, // gray-500
+          color3: isDarkMode ? 0x1a1a1a : 0xD1D5DB // gray-300
         });
       };
 
@@ -208,23 +207,19 @@
         yearButtons.forEach(btn => {
           btn.classList.remove('bg-[#FF5C57]', 'text-white', 'dark:bg-[#e63934]', 'dark:text-white');
           btn.classList.add('bg-gray-200', 'dark:bg-gray-800', 'text-gray-700', 'dark:text-gray-300');
+          if (btn.dataset.year === year) {
+            btn.classList.add('bg-[#FF5C57]', 'text-white', 'dark:bg-[#e63934]', 'dark:text-white');
+          }
         });
+
         if (yearSelect) {
+          yearSelect.value = year;
           yearSelect.classList.remove('bg-[#FF5C57]', 'text-white', 'dark:bg-[#e63934]', 'dark:text-white');
           yearSelect.classList.add('bg-gray-200', 'dark:bg-gray-800', 'text-gray-700', 'dark:text-gray-300');
-          yearSelect.value = year;
           if (yearSelect.value === year) {
             yearSelect.classList.add('bg-[#FF5C57]', 'text-white', 'dark:bg-[#e63934]', 'dark:text-white');
           }
         }
-
-        // Highlight the selected button
-        yearButtons.forEach(btn => {
-          if (btn.dataset.year === year) {
-            btn.classList.add('bg-[#FF5C57]', 'text-white', 'dark:bg-[#e63934]', 'dark:text-white');
-            btn.classList.remove('bg-gray-200', 'dark:bg-gray-800', 'text-gray-700', 'dark:text-gray-300');
-          }
-        });
 
         // Show selected year section or all years
         yearSections.forEach(section => {
@@ -357,31 +352,65 @@
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     }
 
+    /* Year button and select styles */
     .year-btn, .year-select {
       transition: all 0.3s ease;
       -webkit-transition: all 0.3s ease;
+      padding: 8px 16px;
+      font-size: 0.95rem;
+      border-radius: 8px;
+      cursor: pointer;
     }
 
-    .year-btn:hover:not(.bg-[#FF5C57]), .year-select:hover:not(.bg-[#FF5C57]) {
-      transform: scale(1.05);
-      -webkit-transform: scale(1.05);
-      background-color: #F28C4E;
+    .year-btn {
+      background: #e5e7eb;
+      color: #374151;
+    }
+
+    .dark .year-btn {
+      background: #374151;
+      color: #d1d5db;
+    }
+
+    .year-btn:hover {
+      background: linear-gradient(to right, #F28C4E, #FF5C57);
       color: #ffffff;
+      transform: scale(1.05);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
-    .dark .year-btn:hover:not(.bg-[#FF5C57]), .dark .year-select:hover:not(.bg-[#FF5C57]) {
-      background-color: #d95e2d;
+    .dark .year-btn:hover {
+      background: linear-gradient(to right, #d95e2d, #e63934);
       color: #ffffff;
     }
 
     .year-btn.bg-[#FF5C57] {
-      background-color: #FF5C57 !important;
+      background: linear-gradient(to right, #D19A52, #FF5C57) !important;
       color: #ffffff !important;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      border: 1px solid #F28C4E;
     }
 
     .dark .year-btn.bg-[#FF5C57] {
-      background-color: #e63934 !important;
+      background: linear-gradient(to right, #b87532, #e63934) !important;
       color: #ffffff !important;
+      border: 1px solid #d95e2d;
+    }
+
+    .year-btn[data-year="ALL"] {
+      font-weight: 600;
+      padding: 10px 20px;
+      font-size: 1rem;
+    }
+
+    .year-btn[data-year="ALL"]:hover {
+      background: linear-gradient(to right, #F28C4E, #FF5C57, #D19A52);
+      transform: scale(1.1);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+    }
+
+    .dark .year-btn[data-year="ALL"]:hover {
+      background: linear-gradient(to right, #d95e2d, #e63934, #b87532);
     }
 
     .year-select {
@@ -393,20 +422,47 @@
       background-position: right 0.7rem top 50%;
       background-size: 0.65rem auto;
       padding-right: 2rem;
+      background-color: #e5e7eb;
+      color: #374151;
     }
 
     .dark .year-select {
       background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23d95e2d%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+      background-color: #374151;
+      color: #d1d5db;
     }
 
-    .year-select.bg-[#FF5C57] {
-      background-color: #FF5C57 !important;
-      color: #ffffff !important;
+    .year-select:hover {
+      background-color: #F28C4E;
+      color: #ffffff;
+      transform: scale(1.05);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
-    .dark .year-select.bg-[#FF5C57] {
-      background-color: #e63934 !important;
+    .dark .year-select:hover {
+      background-color: #d95e2d;
+      color: #ffffff;
+    }
+
+    .year-select.bg-[#FF5C57], .year-select:focus {
+      background: linear-gradient(to right, #D19A52, #FF5C57) !important;
+      background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+      background-repeat: no-repeat;
+      background-position: right 0.7rem top 50%;
+      background-size: 0.65rem auto;
       color: #ffffff !important;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      border: 1px solid #F28C4E;
+    }
+
+    .dark .year-select.bg-[#FF5C57], .dark .year-select:focus {
+      background: linear-gradient(to right, #b87532, #e63934) !important;
+      background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+      border: 1px solid #d95e2d;
+    }
+
+    .year-select option[value="ALL"] {
+      font-weight: 600;
     }
 
     .timeline {
@@ -458,6 +514,24 @@
       overflow: hidden;
     }
 
+    /* Animation for news cards */
+    .animate-news {
+      opacity: 0;
+      transform: translateY(24px);
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-news-active {
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+
     /* Responsive styles */
     @media (max-width: 639px) {
       .timeline {
@@ -465,6 +539,14 @@
       }
       .timeline:before {
         left: 0.35rem;
+      }
+      .year-btn, .year-select {
+        font-size: 0.85rem;
+        padding: 6px 12px;
+      }
+      .year-btn[data-year="ALL"] {
+        padding: 8px 14px;
+        font-size: 0.9rem;
       }
     }
 

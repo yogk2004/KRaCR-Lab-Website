@@ -15,11 +15,11 @@
       background: transparent;
     }
     .scrollbar::-webkit-scrollbar-thumb {
-      background: linear-gradient(to bottom, #3b82f6, #9333ea);
+      background: linear-gradient(to bottom, #D19A52, #F28C4E, #FF5C57);
       border-radius: 12px;
     }
     .dark .scrollbar::-webkit-scrollbar-thumb {
-      background: linear-gradient(to bottom, #60a5fa, #a855f7);
+      background: linear-gradient(to bottom, #b87532, #d95e2d, #e63934);
     }
 
     /* Line clamp for text */
@@ -56,8 +56,8 @@
     }
     .project-card:hover {
       transform: translateY(-16px);
-      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.25), 0 0 0 3px rgba(59, 130, 246, 0.4);
-      background: rgba(59, 130, 246, 0.05);
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.25), 0 0 0 3px rgba(241, 140, 78, 0.4);
+      background: rgba(241, 140, 78, 0.05);
       transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
 
@@ -97,6 +97,10 @@
       transition: transform 0.2s ease;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       width: fit-content;
+      background: linear-gradient(to right, #D19A52, #FF5C57);
+    }
+    .dark .category-badge {
+      background: linear-gradient(to right, #b87532, #e63934);
     }
     .category-badge:hover {
       transform: scale(1.05);
@@ -108,28 +112,31 @@
       align-items: center;
       gap: 6px;
       font-size: 0.875rem;
-      color: #3b82f6;
+      color: #F28C4E;
       font-weight: 500;
       transition: color 0.2s ease, transform 0.2s ease;
     }
     .dark .github-button {
-      color: #93c5fd;
+      color: #d95e2d;
     }
     .github-button:hover {
-      color: #2563eb;
+      color: #FF5C57;
       transform: translateX(2px);
     }
     .dark .github-button:hover {
-      color: #bfdbfe;
+      color: #e63934;
     }
 
     /* Gradient border */
     .gradient-border {
       height: 4px;
-      background: linear-gradient(to right, #3b82f6, #9333ea);
+      background: linear-gradient(to right, #D19A52, #F28C4E, #FF5C57);
       border-bottom-left-radius: 16px;
       border-bottom-right-radius: 16px;
       flex-shrink: 0;
+    }
+    .dark .gradient-border {
+      background: linear-gradient(to right, #b87532, #d95e2d, #e63934);
     }
 
     /* Jump to Year card */
@@ -138,10 +145,12 @@
       background: white;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      border-left: 4px solid #F28C4E;
     }
     .dark .jump-to-year-card {
       background: #1E2838;
       backdrop-filter: blur(10px);
+      border-left: 4px solid #d95e2d;
     }
     .jump-to-year-card:hover {
       transform: translateY(-4px);
@@ -151,38 +160,99 @@
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     }
 
+    /* Year button and select styles */
     .year-btn, .year-select {
       transition: all 0.3s ease;
+      padding: 8px 16px;
+      font-size: 0.95rem;
+      border-radius: 8px;
+      cursor: pointer;
     }
-    .year-btn:hover:not(.bg-green-600), .year-select:hover {
+    .year-btn {
+      background: #e5e7eb;
+      color: #374151;
+    }
+    .dark .year-btn {
+      background: #374151;
+      color: #d1d5db;
+    }
+    .year-btn:hover {
+      background: linear-gradient(to right, #F28C4E, #FF5C57);
+      color: #ffffff;
       transform: scale(1.05);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
-    .year-btn.bg-green-600 {
-      background-color: #10B981 !important;
+    .dark .year-btn:hover {
+      background: linear-gradient(to right, #d95e2d, #e63934);
+      color: #ffffff;
+    }
+    .year-btn.bg-amber-600 {
+      background: linear-gradient(to right, #D19A52, #FF5C57) !important;
       color: #ffffff !important;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      border: 1px solid #F28C4E;
     }
-    .dark .year-btn.bg-green-600 {
-      background-color: #4B9E80 !important;
+    .dark .year-btn.bg-amber-600 {
+      background: linear-gradient(to right, #b87532, #e63934) !important;
       color: #ffffff !important;
+      border: 1px solid #d95e2d;
     }
+    .year-btn[data-year="ALL"] {
+      font-weight: 600;
+      padding: 10px 20px;
+      font-size: 1rem;
+    }
+    .year-btn[data-year="ALL"]:hover {
+      background: linear-gradient(to right, #F28C4E, #FF5C57, #D19A52);
+      transform: scale(1.1);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+    }
+    .dark .year-btn[data-year="ALL"]:hover {
+      background: linear-gradient(to right, #d95e2d, #e63934, #b87532);
+    }
+
     .year-select {
       appearance: none;
-      background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%2310B981%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+      background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23F28C4E%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
       background-repeat: no-repeat;
       background-position: right 0.7rem top 50%;
       background-size: 0.65rem auto;
       padding-right: 2rem;
+      background-color: #e5e7eb;
+      color: #374151;
     }
     .dark .year-select {
-      background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%234B9E80%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+      background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23d95e2d%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+      background-color: #374151;
+      color: #d1d5db;
     }
-    .year-select.bg-green-600 {
-      background-color: #10B981 !important;
-      color: #ffffff !important;
+    .year-select:hover {
+      background-color: #F28C4E;
+      color: #ffffff;
+      transform: scale(1.05);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
-    .dark .year-select.bg-green-600 {
-      background-color: #4B9E80 !important;
+    .dark .year-select:hover {
+      background-color: #d95e2d;
+      color: #ffffff;
+    }
+    .year-select.bg-amber-600, .year-select:focus {
+      background: linear-gradient(to right, #D19A52, #FF5C57) !important;
+      background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+      background-repeat: no-repeat;
+      background-position: right 0.7rem top 50%;
+      background-size: 0.65rem auto;
       color: #ffffff !important;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      border: 1px solid #F28C4E;
+    }
+    .dark .year-select.bg-amber-600, .dark .year-select:focus {
+      background: linear-gradient(to right, #b87532, #e63934) !important;
+      background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+      border: 1px solid #d95e2d;
+    }
+    .year-select option[value="ALL"] {
+      font-weight: 600;
     }
 
     /* Timeline styles */
@@ -196,17 +266,39 @@
       top: 0;
       bottom: 0;
       width: 0.25rem;
-      background: linear-gradient(to bottom, #10B981, #6EE7B7);
+      background: linear-gradient(to bottom, #D19A52, #F28C4E, #FF5C57);
       left: 0.45rem;
     }
     .dark .timeline:before {
-      background: linear-gradient(to bottom, #4B9E80, #A7F3D0);
+      background: linear-gradient(to bottom, #b87532, #d95e2d, #e63934);
     }
-    .timeline-dot {
+    .year-dot {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #F28C4E;
+      position: absolute;
+      left: 0.15rem;
+      transform: translateY(-2px);
       transition: all 0.3s ease;
     }
-    .year-header:hover .timeline-dot {
-      transform: scale(1.2);
+    .dark .year-dot {
+      background: #d95e2d;
+    }
+    .year-header:hover .year-dot {
+      transform: scale(1.3) translateY(-2px);
+      box-shadow: 0 0 8px rgba(241, 140, 78, 0.5);
+    }
+    .dark .year-header:hover .year-dot {
+      box-shadow: 0 0 8px rgba(217, 94, 45, 0.5);
+    }
+    @keyframes pulse {
+      0% { transform: scale(1) translateY(-2px); }
+      50% { transform: scale(1.2) translateY(-2px); }
+      100% { transform: scale(1) translateY(-2px); }
+    }
+    .year-header:hover .year-dot {
+      animation: pulse 0.6s ease-in-out;
     }
 
     /* Animations for project cards */
@@ -276,8 +368,17 @@
         font-size: 0.85rem;
         padding: 6px 12px;
       }
+      .year-btn[data-year="ALL"] {
+        padding: 8px 14px;
+        font-size: 0.9rem;
+      }
       .jump-to-year-card {
         padding: 12px;
+      }
+      .year-dot {
+        width: 12px;
+        height: 12px;
+        left: 0.1rem;
       }
     }
     @media (min-width: 640px) and (max-width: 1023px) {
@@ -292,6 +393,9 @@
       .timeline:before {
         left: 0.95rem;
       }
+      .year-dot {
+        left: 0.65rem;
+      }
     }
   </style>
 
@@ -299,7 +403,7 @@
   <div class="fixed top-0 left-0 w-[100vw] h-[100vh] pointer-events-none z-[-1]">
     <!-- Semi-Transparent Research Symbols -->
     <div class="absolute left-[-50px] top-[-50px] w-48 h-48 animate-drift1 opacity-20">
-      <svg class="w-full h-full text-green-400 dark:text-green-200" fill="currentColor" viewBox="0 0 100 100">
+      <svg class="w-full h-full text-amber-400 dark:text-amber-200" fill="currentColor" viewBox="0 0 100 100">
         <path d="M50 10c-5 0-9 4-9 9s4 9 9 9 9-4 9-9-4-9-9-9zm0 12c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3z"/>
         <path d="M50 28v24"/>
         <path d="M30 52c-5 0-9 4-9 9s4 9 9 9 9-4 9-9-4-9-9-9zm0 12c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3z"/>
@@ -309,7 +413,7 @@
       </svg>
     </div>
     <div class="absolute left-[-60px] bottom-[-60px] w-40 h-40 animate-drift2 opacity-20">
-      <svg class="w-full h-full text-green-400 dark:text-green-200" fill="currentColor" viewBox="0 0 100 100">
+      <svg class="w-full h-full text-amber-400 dark:text-amber-200" fill="currentColor" viewBox="0 0 100 100">
         <path d="M50 10c-5 0-9 4-9 9s4 9 9 9 9-4 9-9-4-9-9-9zm0 12c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3z"/>
         <path d="M50 28v24"/>
         <path d="M30 52c-5 0-9 4-9 9s4 9 9 9 9-4 9-9-4-9-9-9zm0 12c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3z"/>
@@ -319,7 +423,7 @@
       </svg>
     </div>
     <div class="absolute left-[-70px] top-[30vh] w-36 h-36 animate-drift3 opacity-20">
-      <svg class="w-full h-full text-green-400 dark:text-green-200" fill="currentColor" viewBox="0 0 100 100">
+      <svg class="w-full h-full text-amber-400 dark:text-amber-200" fill="currentColor" viewBox="0 0 100 100">
         <path d="M50 10c-5 0-9 4-9 9s4 9 9 9 9-4 9-9-4-9-9-9zm0 12c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3z"/>
         <path d="M50 28v24"/>
         <path d="M30 52c-5 0-9 4-9 9s4 9 9 9 9-4 9-9-4-9-9-9zm0 12c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3z"/>
@@ -329,7 +433,7 @@
       </svg>
     </div>
     <div class="absolute right-[-50px] top-[-50px] w-44 h-44 animate-drift4 opacity-20">
-      <svg class="w-full h-full text-blue-400 dark:text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 100 100">
+      <svg class="w-full h-full text-orange-400 dark:text-orange-200" fill="none" stroke="currentColor" viewBox="0 0 100 100">
         <circle cx="50" cy="50" r="10" fill="currentColor" />
         <circle cx="30" cy="30" r="8" fill="currentColor" />
         <circle cx="70" cy="30" r="8" fill="currentColor" />
@@ -342,8 +446,7 @@
       </svg>
     </div>
     <div class="absolute right-[-60px] bottom-[-60px] w-40 h-40 animate-drift5 opacity-20">
-      <svg class="w-full h-full text-blue-4
-System: 00 dark:text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 100 100">
+      <svg class="w-full h-full text-orange-400 dark:text-orange-200" fill="none" stroke="currentColor" viewBox="0 0 100 100">
         <circle cx="50" cy="50" r="10" fill="currentColor" />
         <circle cx="30" cy="30" r="8" fill="currentColor" />
         <circle cx="70" cy="30" r="8" fill="currentColor" />
@@ -356,7 +459,7 @@ System: 00 dark:text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 10
       </svg>
     </div>
     <div class="absolute right-[-50px] top-[50vh] w-36 h-36 animate-drift1 opacity-20">
-      <svg class="w-full h-full text-blue-400 dark:text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 100 100">
+      <svg class="w-full h-full text-orange-400 dark:text-orange-200" fill="none" stroke="currentColor" viewBox="0 0 100 100">
         <circle cx="50" cy="50" r="10" fill="currentColor" />
         <circle cx="30" cy="30" r="8" fill="currentColor" />
         <circle cx="70" cy="30" r="8" fill="currentColor" />
@@ -390,7 +493,7 @@ System: 00 dark:text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 10
       </svg>
     </div>
     <div class="absolute left-[30vw] top-[-60px] w-40 h-40 animate-drift5 opacity-20">
-      <svg class="w-full h-full text-purple-400 dark:text-purple-200" fill="none" stroke="currentColor" viewBox="0 0 100 100">
+      <svg class="w-full h-full text-red-400 dark:text-red-200" fill="none" stroke="currentColor" viewBox="0 0 100 100">
         <circle cx="50" cy="20" r="8" fill="currentColor" />
         <circle cx="30" cy="80" r="8" fill="currentColor" />
         <circle cx="70" cy="80" r="8" fill="currentColor" />
@@ -400,7 +503,7 @@ System: 00 dark:text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 10
       </svg>
     </div>
     <div class="absolute left-[70vw] bottom-[-50px] w-36 h-36 animate-drift1 opacity-20">
-      <svg class="w-full h-full text-purple-400 dark:text-purple-200" fill="none" stroke="currentColor" viewBox="0 0 100 100">
+      <svg class="w-full h-full text-red-400 dark:text-red-200" fill="none" stroke="currentColor" viewBox="0 0 100 100">
         <circle cx="50" cy="20" r="8" fill="currentColor" />
         <circle cx="30" cy="80" r="8" fill="currentColor" />
         <circle cx="70" cy="80" r="8" fill="currentColor" />
@@ -443,20 +546,28 @@ System: 00 dark:text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 10
     {{ $years = sort $years "value" "desc" }}
 
     <!-- Jump to Year card -->
-    <div class="jump-to-year-card mb-8 sm:mb-12 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-lg shadow-md border-l-4 border-green-500 dark:border-green-400 animate-project-card">
+    <div class="jump-to-year-card mb-8 sm:mb-12 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-lg shadow-md animate-project-card">
       <div class="p-4 sm:p-6">
         <h3 class="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-4">Jump to Year</h3>
         <div class="flex flex-wrap gap-2 overflow-x-auto">
           {{ if gt (len $years) 10 }}
-            <select id="year-select" class="year-select px-3 py-1.5 sm:px-4 sm:py-2 text-sm font-medium bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-md hover:bg-green-100 dark:hover:bg-green-900/50 hover:text-green-700 dark:hover:text-green-400 transition-all duration-300 w-full md:w-auto focus:bg-green-600 focus:text-white focus:dark:bg-green-600 focus:dark:text-white" aria-label="Select a year to view projects">
-              {{ range $i, $year := $years }}
-                <option value="{{ $year }}" {{ if eq $i 0 }}selected{{ end }}>{{ $year }}</option>
+            <select id="year-select" class="year-select px-3 py-1.5 sm:px-4 sm:py-2 text-sm font-medium rounded-md transition-all duration-300 w-full md:w-auto" aria-label="Select a year to view projects">
+              <option value="ALL" selected>ALL</option>
+              {{ range $years }}
+                <option value="{{ . }}">{{ . }}</option>
               {{ end }}
             </select>
           {{ else }}
+            <button
+              class="year-btn px-3 py-1 sm:px-4 sm:py-1.5 text-sm font-medium rounded-md transition-all duration-300 bg-amber-600 text-white dark:bg-amber-600 dark:text-white"
+              data-year="ALL"
+              aria-label="View all projects"
+            >
+              ALL
+            </button>
             {{ range $i, $year := $years }}
               <button
-                class="year-btn px-3 py-1 sm:px-4 sm:py-1.5 text-sm font-medium rounded-md transition-all duration-300 {{ if eq $i 0 }}bg-green-600 text-white dark:bg-green-600 dark:text-white{{ else }}bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-green-100 dark:hover:bg-green-900/50 hover:text-green-700 dark:hover:text-green-400{{ end }}"
+                class="year-btn px-3 py-1 sm:px-4 sm:py-1.5 text-sm font-medium rounded-md transition-all duration-300 {{ if eq $i 0 }}bg-amber-600 text-white dark:bg-amber-600 dark:text-white{{ else }}bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300{{ end }}"
                 data-year="{{ $year }}"
                 aria-label="View projects for {{ $year }}"
               >
@@ -474,7 +585,8 @@ System: 00 dark:text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 10
         {{ $projects := index $byYear $year }}
         <div class="year-section {{ if ne $i 0 }}hidden{{ end }}" data-year="{{ $year }}">
           <div class="year-header flex items-center mb-6 sm:mb-8 cursor-pointer" data-toggle="year-{{ $year }}">
-            <div class="timeline-dot w-4 h-4 rounded-full bg-green-600 dark:bg-green-400 mr-4"></div>
+            <div class="year-dot"></div>
+            <div class="timeline-dot w-4 h-4 rounded-full bg-amber-600 dark:bg-amber-400 mr-4"></div>
             <h2 class="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">{{ $year }}</h2>
           </div>
           <div class="project-items grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 {{ if ne $i 0 }}hidden{{ end }}" data-year-content="{{ $year }}">
@@ -483,7 +595,7 @@ System: 00 dark:text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 10
                 <div class="content-container">
                   <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2 line-clamp-2">{{ $project.Title }}</h3>
                   <p class="text-sm text-gray-500 dark:text-gray-400 mb-3 line-clamp-1">By: {{ $project.Authors }}</p>
-                  <span class="category-badge {{ with index (site.GetPage "/projects").Params.categories $project.Category }}{{ .color }}{{ else }}bg-gray-500{{ end }}">
+                  <span class="category-badge {{ with index (site.GetPage "/projects").Params.categories $project.Category }}{{ .color }}{{ else }}bg-gradient-to-r from-[#D19A52] to-[#FF5C57] dark:from-[#b87532] dark:to-[#e63934]{{ end }}">
                     {{ $project.Category }}
                   </span>
                   <div class="description-container scrollbar pr-3" tabindex="0">
@@ -518,45 +630,52 @@ System: 00 dark:text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 10
       const yearSections = document.querySelectorAll('.year-section');
       const yearHeaders = document.querySelectorAll('.year-header');
 
-      // Show a specific year
+      // Show a specific year or all years
       const showYear = (year) => {
         console.log(`Showing year: ${year}`);
         yearButtons.forEach(btn => {
-          btn.classList.remove('bg-green-600', 'text-white', 'dark:bg-green-600', 'dark:text-white');
+          btn.classList.remove('bg-amber-600', 'text-white', 'dark:bg-amber-600', 'dark:text-white');
           btn.classList.add('bg-gray-200', 'dark:bg-gray-800', 'text-gray-700', 'dark:text-gray-300');
           if (btn.dataset.year === year) {
-            btn.classList.add('bg-green-600', 'text-white', 'dark:bg-green-600', 'dark:text-white');
+            btn.classList.add('bg-amber-600', 'text-white', 'dark:bg-amber-600', 'dark:text-white');
           }
         });
 
         if (yearSelect) {
           yearSelect.value = year;
+          yearSelect.classList.remove('bg-amber-600', 'text-white', 'dark:bg-amber-600', 'dark:text-white');
+          yearSelect.classList.add('bg-gray-200', 'dark:bg-gray-800', 'text-gray-700', 'dark:text-gray-300');
           if (yearSelect.value === year) {
-            yearSelect.classList.add('bg-green-600', 'text-white', 'dark:bg-green-600', 'dark:text-white');
+            yearSelect.classList.add('bg-amber-600', 'text-white', 'dark:bg-amber-600', 'dark:text-white');
           }
         }
 
         yearSections.forEach(section => {
-          if (section.dataset.year === year) {
+          if (year === 'ALL') {
             section.classList.remove('hidden');
             const content = section.querySelector('.project-items');
             if (content) content.classList.remove('hidden');
             const header = section.querySelector('.year-header h2');
-            if (header) header.classList.add('text-green-600', 'dark:text-green-400');
+            if (header) header.classList.add('text-amber-600', 'dark:text-amber-400');
           } else {
-            section.classList.add('hidden');
-            const header = section.querySelector('.year-header h2');
-            if (header) header.classList.remove('text-green-600', 'dark:text-green-400');
+            if (section.dataset.year === year) {
+              section.classList.remove('hidden');
+              const content = section.querySelector('.project-items');
+              if (content) content.classList.remove('hidden');
+              const header = section.querySelector('.year-header h2');
+              if (header) header.classList.add('text-amber-600', 'dark:text-amber-400');
+            } else {
+              section.classList.add('hidden');
+              const header = section.querySelector('.year-header h2');
+              if (header) header.classList.remove('text-amber-600', 'dark:text-amber-400');
+            }
           }
         });
       };
 
-      // Initialize first year
-      if (yearSections.length > 0) {
-        const firstYear = yearSections[0].dataset.year;
-        console.log(`Initializing with year: ${firstYear}`);
-        showYear(firstYear);
-      }
+      // Initialize with ALL
+      console.log(`Initializing with ALL`);
+      showYear('ALL');
 
       // Year button click handler
       yearButtons.forEach(button => {
@@ -593,8 +712,8 @@ System: 00 dark:text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 10
           if (content) {
             content.classList.toggle('hidden');
             const h2 = header.querySelector('h2');
-            if (h2) h2.classList.toggle('text-green-600', !content.classList.contains('hidden'));
-            if (h2) h2.classList.toggle('dark:text-green-400', !content.classList.contains('hidden'));
+            if (h2) h2.classList.toggle('text-amber-600', !content.classList.contains('hidden'));
+            if (h2) h2.classList.toggle('dark:text-amber-400', !content.classList.contains('hidden'));
           }
         });
       });
