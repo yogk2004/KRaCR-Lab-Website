@@ -200,9 +200,6 @@
       .icon-circle:hover {
         transform: scale(1.1);
       }
-      .dark .icon-circle {
-        background: linear-gradient(135deg, rgba(96, 165, 250, 0.2), rgba(192, 132, 252, 0.2));
-      }
 
       /* Background animations */
       @keyframes float1 {
@@ -278,10 +275,6 @@
           font-size: 1.875rem;
           line-height: 2.25rem;
         }
-        .icon-circle {
-          width: 36px;
-          height: 36px;
-        }
         .address-container {
           gap: 0.2rem;
         }
@@ -315,10 +308,6 @@
         .text-4xl {
           font-size: 1.5rem;
           line-height: 2rem;
-        }
-        .icon-circle {
-          width: 32px;
-          height: 32px;
         }
         .address-container {
           gap: 0.15rem;
@@ -359,8 +348,8 @@
               <h3 class="text-2xl font-bold mb-6 text-dark dark:text-white">Contact Information</h3>
               <div class="space-y-6">
                 <div class="flex items-start gap-4">
-                  <div class="icon-circle">
-                    <i class="fas fa-envelope text-primary dark:text-darkmode-primary text-lg"></i>
+                  <div class="flex items-center justify-center w-10 h-10 rounded-full bg-[#F8E9D5] dark:bg-[#7B3E23] transition-transform duration-300 hover:scale-110">
+                    <i class="fas fa-envelope text-[#7B3E23] dark:text-[#F8E9D5] text-lg"></i>
                   </div>
                   <div>
                     <a href="mailto:raghava.mutharaju@iiitd.ac.in"
@@ -370,16 +359,16 @@
                   </div>
                 </div>
                 <div class="flex items-start gap-4">
-                  <div class="icon-circle">
-                    <i class="fas fa-phone text-primary dark:text-darkmode-primary text-lg"></i>
+                  <div class="flex items-center justify-center w-10 h-10 rounded-full bg-[#F8E9D5] dark:bg-[#7B3E23] transition-transform duration-300 hover:scale-110">
+                    <i class="fas fa-phone text-[#7B3E23] dark:text-[#F8E9D5] text-lg"></i>
                   </div>
                   <div class="text-dark dark:text-gray-200">
                     011-26907455
                   </div>
                 </div>
                 <div class="flex items-start gap-4 address-item">
-                  <div class="icon-circle">
-                    <i class="fas fa-map-marker-alt text-primary dark:text-darkmode-primary text-lg"></i>
+                  <div class="flex items-center justify-center w-10 h-10 rounded-full bg-[#F8E9D5] dark:bg-[#7B3E23] transition-transform duration-300 hover:scale-110">
+                    <i class="fas fa-map-marker-alt text-[#7B3E23] dark:text-[#F8E9D5] text-lg"></i>
                   </div>
                   <address class="not-italic text-dark dark:text-gray-200 address-container">
                     <span class="address-line">(R&D Block) Kracr Lab, B Wing, 4th Floor</span>

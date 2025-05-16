@@ -74,12 +74,6 @@ While we strive to use reasonable means to protect any information you provide, 
 
 ---
 
-## Children's Privacy
-
-Our website is intended for a general academic audience and does not knowingly collect any personal information from children under the age of 13.
-
----
-
 ## Links to Other Websites
 
 Our website may contain links to external sites that are not operated by us. We are not responsible for the content or privacy practices of those sites. Please review the privacy policy of any external site you visit.
