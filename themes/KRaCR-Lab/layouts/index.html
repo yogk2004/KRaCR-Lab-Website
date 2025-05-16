@@ -36,7 +36,7 @@
         font-size: 1.1rem;
         font-weight: 700;
         letter-spacing: 0.5px;
-        color: #4b5563;
+        color: #B0743F;
         opacity: 0;
         text-transform: uppercase;
       }
@@ -53,7 +53,7 @@
         line-height: 1;
         color: transparent;
         background-clip: text;
-        background-image: linear-gradient(to right, #3b82f6, #9333ea);
+        background-image: linear-gradient(to bottom, #F8E9D5, #D9A875, #B0743F, #7B3E23, #3B1D0F);
         margin: 0;
         opacity: 0;
         transform: scale(0.9);
@@ -141,7 +141,7 @@
       /* Dark Mode */
       .dark .hero-subtitle,
       .dark .hero-tagline {
-        color: #e5e7eb;
+        color: #D9A875;
       }
 
       /* Respect reduced motion */
@@ -176,11 +176,11 @@
         function initParticles() {
           const particleCount = window.innerWidth < 640 ? 30 : 60;
           particles = [];
-          const color = document.documentElement.classList.contains('dark') ? '255, 255, 255' : '0, 0, 0';
+          const particleColor = '217, 168, 117'; // #D9A875 in RGB
 
           for (let i = 0; i < particleCount; i++) {
             const size = Math.random() * 12 + 5;
-            const type = Math.floor(Math.random() * 2); // 0 = circle, 1 = triangle
+            const type = Math.floor(Math.random() * 2);
 
             particles.push({
               x: Math.random() * canvas.width,
@@ -189,7 +189,7 @@
               baseSize: size,
               speedX: (Math.random() * 1 - 0.5) * 1.5,
               speedY: (Math.random() * 1 - 0.5) * 1.5,
-              color: `rgba(${color}, ${Math.random() * 0.3 + 0.2})`,
+              color: `rgba(${particleColor}, ${Math.random() * 0.3 + 0.2})`,
               type: type,
               rotation: Math.random() * 360,
               rotationSpeed: (Math.random() * 1 - 0.5) * 0.5,
@@ -205,11 +205,11 @@
           ctx.rotate(particle.rotation * Math.PI / 180);
           ctx.fillStyle = particle.color;
 
-          if (particle.type === 0) { // Circle
+          if (particle.type === 0) {
             ctx.beginPath();
             ctx.arc(0, 0, particle.size / 2, 0, Math.PI * 2);
             ctx.fill();
-          } else { // Triangle
+          } else {
             ctx.beginPath();
             ctx.moveTo(0, -particle.size / 2);
             ctx.lineTo(particle.size / 2, particle.size / 2);
@@ -217,12 +217,14 @@
             ctx.closePath();
             ctx.fill();
           }
-
           ctx.restore();
         }
 
         // Connect particles near each other
         function connectParticles() {
+          const isDarkMode = document.documentElement.classList.contains('dark');
+          const lineColor = isDarkMode ? '248, 233, 213' : '176, 116, 63'; // #F8E9D5 or #B0743F
+
           for (let a = 0; a < particles.length; a++) {
             for (let b = a; b < particles.length; b++) {
               const dx = particles[a].x - particles[b].x;
@@ -231,7 +233,7 @@
 
               if (distance < 120) {
                 const opacity = 1 - distance / 120;
-                ctx.strokeStyle = `rgba(${document.documentElement.classList.contains('dark') ? '255, 255, 255' : '0, 0, 0'}, ${opacity * 0.3})`;
+                ctx.strokeStyle = `rgba(${lineColor}, ${opacity * 0.3})`;
                 ctx.lineWidth = 1.5;
                 ctx.beginPath();
                 ctx.moveTo(particles[a].x, particles[a].y);
@@ -414,7 +416,7 @@
           <div class="relative">
             <div class="absolute -left-10 top-0 w-16 h-16 rounded-full bg-gradient-to-br from-blue-200/20 to-purple-200/20 dark:from-blue-900/10 dark:to-purple-900/10 blur-lg"></div>
             <h2 class="mb-6 text-4xl font-bold text-gray-900 dark:text-white relative">
-              <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-600">{{ .Params.AboutUs.title | markdownify | safeHTML }}</span>
+              <span class="bg-clip-text text-transparent" style="background-image: linear-gradient(to top, #D9A875, #B0743F, #7B3E23);">{{ .Params.AboutUs.title | markdownify | safeHTML }}</span>
             </h2>
           </div>
           <p class="mb-8 text-lg text-gray-700 dark:text-gray-300 relative pl-8 border-l-4 border-blue-300 dark:border-blue-700/50">
@@ -732,7 +734,7 @@
       <div class="row">
         <div class="md:col-10 lg:col-8 xl:col-6 mx-auto mb-12 text-center">
           <h2 class="mb-4 text-4xl font-bold text-gray-900 dark:text-white">
-            <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-600">Latest News</span>
+            <span class="bg-clip-text text-transparent" style="background-image: linear-gradient(to right, #e77f25,#e77f25 , #FF5C57);">Latest News</span>
           </h2>
           <p class="text-lg text-gray-700 dark:text-gray-300">
             Discover our latest achievements and events in ontology and knowledge graph research.
@@ -741,7 +743,7 @@
       </div>
       <div class="row justify-center relative gap-y-16">
         <!-- Timeline Line -->
-        <div class="absolute top-0 bottom-0 left-1/2 w-1 bg-gradient-to-b from-blue-500 to-purple-600 dark:from-blue-400 dark:to-purple-500 transform -translate-x-1/2 z-0"></div>
+        <div class="absolute top-0 bottom-0 left-1/2 w-1 bg-gradient-to-b from-[#D19A52] via-[#F28C4E] to-[#FF5C57] dark:from-[#b87532] dark:via-[#d95e2d] dark:to-[#e63934] transform -translate-x-1/2 z-0"></div>
 
         {{ $rawNews := site.Data.news }}
         {{ if not $rawNews }}
@@ -957,7 +959,7 @@
       <div class="row">
         <div class="md:col-10 lg:col-8 xl:col-6 mx-auto mb-12 text-center">
           <h2 class="mb-4 text-4xl font-bold text-gray-900 dark:text-white">
-            <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-600">Our Projects</span>
+            <span class="bg-clip-text text-transparent" style="background-image: linear-gradient(to top, #D9A875, #B0743F, #7B3E23);">Our Projects</span>
           </h2>
           <p class="text-lg text-gray-700 dark:text-gray-300">
             Explore our cutting-edge research in ontology and knowledge graph technologies.
@@ -1245,7 +1247,7 @@
       <div class="row">
         <div class="md:col-10 lg:col-8 xl:col-6 mx-auto mb-12 text-center">
           <h2 class="mb-4 text-4xl font-bold text-gray-900 dark:text-white">
-            <span class="bg-clip-text text-transparent bg-gradient-to-r from-green-500 to-teal-600">Latest Publications</span>
+            <span class="bg-clip-text text-transparent" style="background-image: linear-gradient(to right, #e77f25,#e77f25 , #FF5C57);">Latest Publications</span>
           </h2>
           <p class="text-lg text-gray-700 dark:text-gray-300">
             Explore our most recent contributions to ontology and knowledge graph research.
@@ -1394,7 +1396,7 @@
       <div class="row justify-center">
         <div class="lg:col-8 md:col-10 text-center mb-16">
           <h2 class="mb-6 text-4xl font-bold text-gray-900 dark:text-white">
-            <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-600">Have Questions or Ideas? Collaborate with Our Knowledge Graph & Ontology Lab</span>
+            <span class="bg-clip-text text-transparent" style="background-image: linear-gradient(to top, #D9A875, #B0743F, #7B3E23);">Have Questions or Ideas? Collaborate with Our Knowledge Graph & Ontology Lab</span>
           </h2>
           <p class="text-xl text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
             Have doubts or questions? Contact us!
