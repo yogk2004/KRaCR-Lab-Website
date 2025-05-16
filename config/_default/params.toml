@@ -27,7 +27,7 @@ google_adsense = ""     # example: ca-pub-xxxxxxxxxxxxxxxx
 # custom script on header, example: custom_script= "<script>console.log(\"Hello World\")</script>"
 custom_script = ""
 # copyright
-copyright = "Designed & Developed by Yash Singh and [Yogesh Kumar](https://www.linkedin.com/in/yogesh-kumar-906557263/)"
+copyright = "© 2025 Designed & Developed by [Yash Singh](https://www.linkedin.com/in/yash-singh-iiitd/) and [Yogesh Kumar](https://www.linkedin.com/in/yogesh-kumar-906557263/)"
 
 # Preloader
 # preloader module: https://github.com/gethugothemes/hugo-modules/tree/master/components/preloader

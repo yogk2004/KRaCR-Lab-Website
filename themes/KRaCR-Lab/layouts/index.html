@@ -416,10 +416,10 @@
           <div class="relative">
             <div class="absolute -left-10 top-0 w-16 h-16 rounded-full bg-gradient-to-br from-blue-200/20 to-purple-200/20 dark:from-blue-900/10 dark:to-purple-900/10 blur-lg"></div>
             <h2 class="mb-6 text-4xl font-bold text-gray-900 dark:text-white relative">
-              <span class="bg-clip-text text-transparent" style="background-image: linear-gradient(to top, #D9A875, #B0743F, #7B3E23);">{{ .Params.AboutUs.title | markdownify | safeHTML }}</span>
+              <span class="bg-clip-text text-transparent" style="background-image: linear-gradient(to right, #e77f25,#e77f25 , #FF5C57);">{{ .Params.AboutUs.title | markdownify | safeHTML }}</span>
             </h2>
           </div>
-          <p class="mb-8 text-lg text-gray-700 dark:text-gray-300 relative pl-8 border-l-4 border-blue-300 dark:border-blue-700/50">
+          <p class="mb-8 text-lg text-gray-700 dark:text-gray-300 relative pl-8 border-l-4 border-[#F8E9D5] dark:border-[#e63934]">
             {{ .Params.AboutUs.content | markdownify | safeHTML }}
           </p>
           <ul class="space-y-6">
@@ -427,27 +427,27 @@
               <li class="relative mb-8 pl-12 animate-fadeInUp group hover:translate-x-2 transition-transform duration-300">
                 <div class="absolute left-0 top-0 flex items-center justify-center w-10 h-10 rounded-lg bg-white dark:bg-gray-800 shadow-lg group-hover:shadow-xl group-hover:-translate-y-1 transition-all duration-300 transform-style-preserve-3d group-hover:rotate-y-10">
                   <div class="relative w-full h-full transform-style-preserve-3d">
-                    <div class="absolute inset-0 flex items-center justify-center backface-hidden bg-gradient-to-br from-blue-100 to-blue-50 dark:from-blue-900/50 dark:to-blue-800/30 rounded-lg">
+                    <div class="absolute inset-0 flex items-center justify-center backface-hidden rounded-lg transition-colors duration-300" style="background-color: var(--icon-bg)">
                       {{ if eq (mod $index 4) 0 }}
-                        <svg class="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-6 h-6 transition-colors duration-300" style="color: var(--icon-color)" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                         </svg>
                       {{ else if eq (mod $index 4) 1 }}
-                        <svg class="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-6 h-6 transition-colors duration-300" style="color: var(--icon-color)" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
                         </svg>
                       {{ else if eq (mod $index 4) 2 }}
-                        <svg class="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-6 h-6 transition-colors duration-300" style="color: var(--icon-color)" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
                         </svg>
                       {{ else }}
-                        <svg class="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-6 h-6 transition-colors duration-300" style="color: var(--icon-color)" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
                         </svg>
                       {{ end }}
                     </div>
-                    <div class="absolute inset-0 flex items-center justify-center backface-hidden bg-gradient-to-br from-blue-600 to-blue-400 rounded-lg transform rotate-y-180 text-white">
-                      {{ add $index 1 }}
+                    <div class="absolute inset-0 flex items-center justify-center backface-hidden rounded-lg transform rotate-y-180 transition-colors duration-300" style="background-color: var(--icon-color)">
+                      <span class="text-white dark:text-[#D9A875] font-bold transition-colors duration-300">{{ add $index 1 }}</span>
                     </div>
                   </div>
                 </div>
@@ -470,6 +470,14 @@
 
     <style>
       /* 3D Transformations */
+      :root {
+        --icon-bg: #F8E9D5;
+        --icon-color: #7B3E23;
+      }
+      .dark {
+        --icon-bg: #7B3E23;
+        --icon-color: #F8E9D5;
+      }
       .perspective-1200 {
         perspective: 1200px;
       }
@@ -716,8 +724,8 @@
     <!-- Animated abstract shapes background -->
     <div class="absolute inset-0 overflow-hidden pointer-events-none">
       <!-- Floating circles -->
-      <div class="absolute -left-20 -top-20 w-64 h-64 rounded-full bg-blue-500/10 dark:bg-blue-400/5 blur-3xl animate-float1"></div>
-      <div class="absolute -right-20 -bottom-20 w-72 h-72 rounded-full bg-purple-500/10 dark:bg-purple-400/5 blur-3xl animate-float2"></div>
+      <div class="absolute -left-20 -top-20 w-64 h-64 rounded-full bg-[#e77f25]/30 dark:bg-[#e77f25]/15 blur-3xl animate-float1"></div>
+      <div class="absolute -right-20 -bottom-20 w-72 h-72 rounded-full bg-[#FF5C57]/30 dark:bg-[#FF5C57]/15 blur-3xl animate-float2"></div>
 
       <!-- Abstract grid pattern -->
       <div class="absolute inset-0 opacity-40 dark:opacity-40">
@@ -732,16 +740,16 @@
 
     <div class="container py-8 relative z-10">
       <div class="row">
-        <div class="md:col-10 lg:col-8 xl:col-6 mx-auto mb-12 text-center">
+        <div class="md:col-12 lg:col-10 xl:col-8 mx-auto mb-12 text-center">
           <h2 class="mb-4 text-4xl font-bold text-gray-900 dark:text-white">
             <span class="bg-clip-text text-transparent" style="background-image: linear-gradient(to right, #e77f25,#e77f25 , #FF5C57);">Latest News</span>
           </h2>
-          <p class="text-lg text-gray-700 dark:text-gray-300">
+          <p class="text-lg text-gray-700 dark:text-gray-300 px-4 sm:px-0">
             Discover our latest achievements and events in ontology and knowledge graph research.
           </p>
         </div>
       </div>
-      <div class="row justify-center relative gap-y-16">
+      <div class="row justify-center relative gap-y-8 md:gap-y-16">
         <!-- Timeline Line -->
         <div class="absolute top-0 bottom-0 left-1/2 w-1 bg-gradient-to-b from-[#D19A52] via-[#F28C4E] to-[#FF5C57] dark:from-[#b87532] dark:via-[#d95e2d] dark:to-[#e63934] transform -translate-x-1/2 z-0"></div>
 
@@ -778,22 +786,14 @@
 
             <!-- Display news items -->
             {{ range $index, $item := $news }}
-              <div class="md:col-6 animate-news-card {{ if eq (mod $index 2) 0 }}news-card-left{{ else }}news-card-right{{ end }}" style="animation-delay: {{ printf "%.1fs" (mul $index 0.3) }};">
+              <div class="md:col-6 animate-news-card {{ if eq (mod $index 2) 0 }}news-card-left{{ else }}news-card-right{{ end }} mb-4 md:mb-0" style="animation-delay: {{ printf "%.1fs" (mul $index 0.3) }};">
                 <div class="relative flex {{ if eq (mod $index 2) 0 }}justify-start{{ else }}justify-end{{ end }} items-start">
                   <!-- News Card -->
-                  <div class="w-full md:w-4/5 bg-white/80 dark:bg-gray-800/80 backdrop-blur-md rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:rotate-1 group relative overflow-hidden h-[150px] flex flex-col">
+                  <div class="w-full md:w-4/5 bg-white/80 dark:bg-gray-800/80 backdrop-blur-md rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:rotate-1 group relative overflow-hidden h-[110px] flex flex-col">
                     <div class="p-4 flex-grow">
-                      <p class="text-xs text-gray-500 dark:text-gray-400 italic mb-2 inline-flex items-center">
-                        {{ if eq $item.Category "Paper" }}
-                          <i class="fas fa-file-alt text-blue-500 dark:text-blue-300 mr-2 text-base"></i>
-                          {{ $item.Category }}
-                        {{ else if eq $item.Category "Talk" }}
-                          <i class="fas fa-microphone-alt text-blue-500 dark:text-blue-300 mr-2 text-base"></i>
-                          {{ $item.Category }}
-                        {{ else }}
-                          <i class="fas fa-calendar-alt text-blue-500 dark:text-blue-300 mr-2 text-base"></i>
-                          {{ $item.ParsedDate.Format "January 2, 2006" }}
-                        {{ end }}
+                      <p class="text-xs text-black dark:text-white italic mb-2 inline-flex items-center">
+                        <i class="fas fa-calendar-alt text-blue-500 mr-2 text-base"></i>
+                        {{ $item.ParsedDate.Format "January 2, 2006" }}
                       </p>
                       <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2 line-clamp-2">
                         {{ if $item.Url }}
@@ -822,7 +822,7 @@
       <div class="text-center mt-12">
         <a
           href="{{ "news/" | relURL }}"
-          class="btn btn-primary inline-flex items-center group transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+          class="btn inline-flex items-center group transition-all duration-300 bg-[#C18149] hover:bg-[#E04D48] text-white hover:-translate-y-1 hover:shadow-lg">
           <span class="relative z-10">See All News</span>
           <i class="fa fa-arrow-right pl-2 transition-transform group-hover:translate-x-2"></i>
         </a>
@@ -902,8 +902,12 @@
 
       /* Responsive adjustments */
       @media (max-width: 768px) {
+        .row.justify-center.relative {
+          gap: 1rem !important; /* 16px instead of 64px */
+        }
         .md\:col-6 {
           width: 100%;
+          padding: 0 8px; /* Adds slight horizontal padding */
         }
 
         .md\:w-4\/5 {
@@ -957,11 +961,11 @@
   <section class="section">
     <div class="container">
       <div class="row">
-        <div class="md:col-10 lg:col-8 xl:col-6 mx-auto mb-12 text-center">
+        <div class="md:col-12 lg:col-10 xl:col-8 mx-auto mb-12 text-center">
           <h2 class="mb-4 text-4xl font-bold text-gray-900 dark:text-white">
-            <span class="bg-clip-text text-transparent" style="background-image: linear-gradient(to top, #D9A875, #B0743F, #7B3E23);">Our Projects</span>
+            <span class="bg-clip-text text-transparent" style="background-image: linear-gradient(to right, #e77f25,#e77f25 , #FF5C57);">Our Projects</span>
           </h2>
-          <p class="text-lg text-gray-700 dark:text-gray-300">
+          <p class="text-lg text-gray-700 dark:text-gray-300 px-4 sm:px-0">
             Explore our cutting-edge research in ontology and knowledge graph technologies.
           </p>
         </div>
@@ -973,32 +977,28 @@
               {{ with site.Data.projects }}
                 {{ range . }}
                   <div class="swiper-slide animate-project-card rounded-xl">
-                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col min-h-[340px]">
-                      <div class="p-5 flex flex-col flex-grow">
-                        <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2 line-clamp-2">
+                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col h-full">
+                      <div class="p-5 flex flex-col h-full">
+                        <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2 line-clamp-2 leading-tight">
                           {{ .Title | markdownify }}
                         </h3>
-                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-3 line-clamp-4 flex-grow">
-                          {{ .Description | markdownify }}
-                        </p>
-                        <p class="text-blue-600 dark:text-blue-400 text-sm mb-3 line-clamp-1 hidden md:block">
+                        <div class="flex-1 overflow-hidden">
+                          <p class="text-gray-600 dark:text-gray-300 text-sm mb-3 line-clamp-3 md:line-clamp-4 leading-snug">
+                            {{ .Description | markdownify }}
+                          </p>
+                        </div>
+                        <p class="text-[#e77f25] dark:text-[#e77f25] text-sm mb-3 line-clamp-1 hidden md:block">
                           <span class="font-medium">Category:</span> {{ .Category }}
                         </p>
-                        <div class="mt-auto h-6">
+                        <div class="mt-2 h-6">
                           {{ if .githubUrl }}
-                            <a
-                              href="{{ .githubUrl }}"
-                              target="_blank"
-                              rel="noopener"
-                              class="text-blue-500 dark:text-blue-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 inline-block line-clamp-1">
-                              <i class="fab fa-github mr-1"></i> View on GitHub
+                            <a href="{{ .githubUrl }}" class="inline-block bg-[#B0743F] hover:bg-[#E77F25] text-white text-sm px-3 py-1 rounded-md transition-all duration-300 hover:shadow-md">
+                              <i class="fab fa-github mr-1"></i> Visit GitHub Repository
                             </a>
-                          {{ else }}
-                            <div class="h-6"></div>
                           {{ end }}
                         </div>
                       </div>
-                      <div class="h-1 bg-gradient-to-r from-blue-500 to-purple-600 rounded-b-xl"></div>
+                      <div class="h-1 bg-gradient-to-r from-[#B0743F] via-[#E77F25] to-[#FF5C57] rounded-b-xl"></div>
                     </div>
                   </div>
                 {{ end }}
@@ -1010,10 +1010,11 @@
           </div>
         </div>
       </div>
+      <div style="padding: 2rem;"></div> <!-- padding -->
       <div class="text-center mt-6">
         <a
           href="{{ "projects/" | relURL }}"
-          class="btn btn-primary inline-flex items-center group transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+          class="btn inline-flex items-center group transition-all duration-300 bg-[#B0743F] hover:bg-[#C18149] text-white hover:-translate-y-1 hover:shadow-lg">
           <span class="relative z-10">See All Projects</span>
           <i class="fa fa-arrow-right pl-2 transition-transform group-hover:translate-x-2"></i>
         </a>
@@ -1040,18 +1041,23 @@
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
         overflow: hidden;
+        text-overflow: ellipsis;
       }
+
       .line-clamp-3 {
         display: -webkit-box;
-        -webkit-line-clamp: 3;
+        -webkit-line-clamp: 10;
         -webkit-box-orient: vertical;
         overflow: hidden;
+        text-overflow: ellipsis;
       }
+
       .line-clamp-4 {
         display: -webkit-box;
         -webkit-line-clamp: 4;
         -webkit-box-orient: vertical;
         overflow: hidden;
+        text-overflow: ellipsis;
       }
 
       /* Swiper styles */
@@ -1065,10 +1071,9 @@
       }
 
       .projectSwiper .swiper-slide {
-        width: 320px; /* Default card width */
-        min-height: 340px; /* Use min-height */
-        margin-right: 0; /* Remove margin, rely on spaceBetween */
-        transition: all 0.3s ease;
+        width: 320px;
+        height: 380px; /* Fixed card height */
+        margin-right: 0;
       }
 
       .projectSwiper .swiper-slide-active {
@@ -1086,18 +1091,29 @@
         justify-content: space-between;
         height: 100%;
       }
+      
+      .projectSwiper .swiper-slide .flex-col {
+        height: 100%;
+        justify-content: space-between;
+      }
+
+      .projectSwiper .swiper-slide .flex-1 {
+        flex: 1 1 auto;
+        min-height: 0;
+      }
 
       /* Navigation buttons */
       .swiper-button-prev,
       .swiper-button-next {
-        width: 48px;
-        height: 48px;
+        width: 40px;  /* Reduced from 48px */
+        height: 40px; /* Reduced from 48px */
         border-radius: 50%;
         background: rgba(255, 255, 255, 0.9);
         backdrop-filter: blur(10px);
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         transition: all 0.3s ease;
-        color: #3b82f6; /* Blue arrow in light mode */
+        color: #3b82f6;
+        top: 45%; /* Adjust vertical position */
       }
 
       /* Dark mode: white arrow with white circle */
@@ -1121,61 +1137,100 @@
 
       .swiper-button-prev:after,
       .swiper-button-next:after {
-        font-size: 16px;
+        font-size: 14px; /* Reduced from 16px */
         font-weight: bold;
       }
 
       /* Responsive breakpoints */
       @media (max-width: 768px) {
         .projectSwiper .swiper-slide {
-          width: 80vw; /* Reduced width for better fit */
-          min-height: 360px; /* Increased for more vertical space */
+          height: 280px; /* Increased from 250px */
+          min-height: 280px;
         }
         .projectSwiper .swiper-slide .p-5 {
           padding: 0.75rem;
         }
         .projectSwiper .swiper-slide h3 {
-          font-size: 0.95rem;
-          margin-bottom: 0.5rem;
+          font-size: 1.5rem;
+          line-height: 1;
         }
         .projectSwiper .swiper-slide p {
-          font-size: 0.85rem;
-          margin-bottom: 0.5rem;
+          font-size: 1rem;
         }
         .projectSwiper .swiper-slide .text-gray-600 {
-          -webkit-line-clamp: 3; /* Reduce description to 3 lines on mobile */
+          -webkit-line-clamp: 8; /* Reduce description to 8 lines on mobile */
+        }
+        .projectSwiper .swiper-slide .mt-2 {
+          margin-bottom: 12px;
+        }
+        .projectSwiper .swiper-slide a {
+          padding: 6px 12px;
+          font-size: 0.875rem;
+        }
+        .swiper-button-prev,
+        .swiper-button-next {
+          width: 36px;
+          height: 36px;
+          top: 40%; /* Lower position for mobile */
+        }
+        .swiper-button-prev:after,
+        .swiper-button-next:after {
+          font-size: 12px;
         }
       }
 
       @media (max-width: 480px) {
         .projectSwiper .swiper-slide {
-          width: 80vw;
-          min-height: 360px;
+          height: 320px; /* Adjusted height for smallest screens */
+          min-height: 320px;
+        }
+        .projectSwiper .swiper-slide .flex-col {
+          padding-bottom: 8px;
         }
         .projectSwiper .swiper-slide .p-5 {
           padding: 0.5rem;
         }
         .projectSwiper .swiper-slide h3 {
-          font-size: 0.9rem;
+          font-size: 1.5rem;
         }
         .projectSwiper .swiper-slide p {
-          font-size: 0.8rem;
+          font-size: 1rem;
+        }
+        .swiper-button-prev,
+        .swiper-button-next {
+          width: 32px;
+          height: 32px;
+          transform: translateY(-50%) scale(0.9); /* Scale down further */
+        }
+
+        /* Position arrows closer to edges on mobile */
+        .swiper-button-prev {
+          left: 8px;
+        }
+        .swiper-button-next {
+          right: 8px;
         }
       }
 
       @media (max-width: 360px) {
         .projectSwiper .swiper-slide {
           width: 85vw;
-          min-height: 340px; /* Slightly smaller for very small screens */
+          min-height: 300px; /* Slightly smaller for very small screens */
         }
         .projectSwiper .swiper-slide .p-5 {
           padding: 0.5rem;
         }
         .projectSwiper .swiper-slide h3 {
-          font-size: 0.85rem;
+          font-size: 1.5rem;
         }
         .projectswiper .swiper-slide p {
-          font-size: 0.75rem;
+          font-size: 1rem;
+        }
+      }
+      @media (hover: hover) {
+        .swiper-button-prev:hover,
+        .swiper-button-next:hover {
+          transform: scale(1.1);
         }
       }
     </style>
@@ -1245,12 +1300,12 @@
   <section class="section-sm relative">
     <div class="container py-8">
       <div class="row">
-        <div class="md:col-10 lg:col-8 xl:col-6 mx-auto mb-12 text-center">
+        <div class="md:col-12 lg:col-10 xl:col-8 mx-auto mb-12 text-center">
           <h2 class="mb-4 text-4xl font-bold text-gray-900 dark:text-white">
             <span class="bg-clip-text text-transparent" style="background-image: linear-gradient(to right, #e77f25,#e77f25 , #FF5C57);">Latest Publications</span>
           </h2>
-          <p class="text-lg text-gray-700 dark:text-gray-300">
-            Explore our most recent contributions to ontology and knowledge graph research.
+          <p class="text-lg text-gray-700 dark:text-gray-300 px-4 sm:px-0">
+            Discover our latest achievements and events in ontology and knowledge graph research.
           </p>
         </div>
       </div>
@@ -1284,11 +1339,11 @@
           <!-- Display publications -->
           {{ range $index, $pub := $displayPublications }}
             <div class="col-12 mb-6 animate-publication" style="animation-delay: {{ printf "%.1fs" (mul $index 0.2) }};">
-              <div class="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-lg shadow-md hover:shadow-xl transition-all duration-300 border-l-4 border-green-500 dark:border-green-400 group">
+              <div class="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-lg shadow-md hover:shadow-xl transition-all duration-300 border-l-4 border-[#C18149] dark:border-[#D9A875] group">
                 <div class="p-6 flex flex-col md:flex-row md:items-center md:justify-between">
                   <!-- Publication Details -->
                   <div class="flex-1 mb-4 md:mb-0">
-                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-[#C18149] dark:group-hover:text-[#D9A875] transition-colors">
                       {{ if $pub.PublicationURL }}
                         <a href="{{ $pub.PublicationURL | absURL }}" target="_blank" rel="noopener noreferrer" class="hover:underline">
                           {{ $pub.Title | markdownify }}
@@ -1306,7 +1361,7 @@
                   </div>
                   <!-- Year -->
                   <div class="md:ml-6 flex-shrink-0">
-                    <span class="inline-block px-4 py-2 bg-green-100 dark:bg-green-900/50 text-green-800 dark:text-green-300 rounded-full text-sm font-semibold">
+                    <span class="inline-block px-4 py-2 bg-[#F8E9D5] dark:bg-[#C18149] text-[#C18149] dark:text-[#F8E9D5] rounded-full text-sm font-semibold">
                       {{ $pub.Year }}
                     </span>
                   </div>
@@ -1320,7 +1375,7 @@
       <div class="text-center mt-12">
         <a
           href="{{ "publications/" | relURL }}"
-          class="btn btn-primary inline-flex items-center group transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+          class="btn inline-flex items-center group transition-all duration-300 bg-[#B0743F] hover:bg-[#C18149] text-white hover:-translate-y-1 hover:shadow-lg">
           <span class="relative z-10">See All Publications</span>
           <i class="fa fa-arrow-right pl-2 transition-transform group-hover:translate-x-2"></i>
         </a>
@@ -1378,8 +1433,8 @@
     <!-- Animated abstract shapes background -->
     <div class="absolute inset-0 overflow-hidden pointer-events-none">
       <!-- Floating circles -->
-      <div class="absolute -left-20 -top-20 w-64 h-64 rounded-full bg-blue-500/10 dark:bg-blue-400/5 blur-3xl animate-float1"></div>
-      <div class="absolute -right-20 -bottom-20 w-72 h-72 rounded-full bg-purple-500/10 dark:bg-purple-400/5 blur-3xl animate-float2"></div>
+      <div class="absolute -left-20 -top-20 w-64 h-64 rounded-full bg-[#e77f25]/30 dark:bg-[#e77f25]/15 blur-3xl animate-float1"></div>
+      <div class="absolute -right-20 -bottom-20 w-72 h-72 rounded-full bg-[#FF5C57]/30 dark:bg-[#FF5C57]/15 blur-3xl animate-float2"></div>
 
       <!-- Abstract grid pattern - enhanced contrast -->
       <div class="absolute inset-0 opacity-40 dark:opacity-40">
@@ -1396,7 +1451,7 @@
       <div class="row justify-center">
         <div class="lg:col-8 md:col-10 text-center mb-16">
           <h2 class="mb-6 text-4xl font-bold text-gray-900 dark:text-white">
-            <span class="bg-clip-text text-transparent" style="background-image: linear-gradient(to top, #D9A875, #B0743F, #7B3E23);">Have Questions or Ideas? Collaborate with Our Knowledge Graph & Ontology Lab</span>
+            <span class="bg-clip-text text-transparent" style="background-image: linear-gradient(to top, #D9A875, #B0743F, #7B3E23);">Have Questions or Ideas? Collaborate with Our Lab</span>
           </h2>
           <p class="text-xl text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
             Have doubts or questions? Contact us!
@@ -1405,24 +1460,20 @@
 
           <!-- Animated CTA button with 3D effect -->
           <div class="relative inline-block group">
-            <a
-              href="{{ "contact/" | relURL }}"
-              class="relative z-10 inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl shadow-2xl hover:shadow-3xl transition-all duration-300 transform group-hover:-translate-y-1 group-hover:scale-105"
-            >
+            <a href="{{ "contact/" | relURL }}" class="relative z-10 inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-t from-[#b4201b] to-[#ce7930] rounded-xl shadow-2xl hover:shadow-3xl transition-all duration-300 transform group-hover:-translate-y-1 group-hover:scale-105">
               <span>Contact Us</span>
               <i class="fas fa-paper-plane ml-3 transition-transform group-hover:translate-x-2"></i>
             </a>
             <!-- 3D effect behind button -->
-            <span class="absolute -z-1 -bottom-2 left-4 right-4 h-6 bg-gradient-to-r from-blue-700 to-purple-700 rounded-xl opacity-60 group-hover:opacity-80 blur-md transition-all duration-300 transform group-hover:translate-y-1"></span>
+            <span class="absolute -z-1 -bottom-2 left-4 right-4 h-6 bg-gradient-to-r from-[#b4201b] to-[#ce7930] rounded-xl opacity-60 group-hover:opacity-80 blur-md transition-all duration-300 transform group-hover:translate-y-1"></span>
           </div>
-
 
           <!-- Alternative contact methods -->
           <div class="mt-12 flex flex-wrap justify-center gap-6">
             <!-- Email -->
             <div class="flex items-center bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm px-6 py-3 rounded-lg shadow-sm hover:shadow-md transition-all">
-              <div class="mr-4 p-2 bg-blue-100 dark:bg-blue-900/50 rounded-full">
-                <i class="fas fa-envelope text-blue-600 dark:text-blue-400 text-xl"></i>
+              <div class="mr-4 p-2 rounded-full" style="background-color: var(--icon-bg)">
+                <i class="fas fa-envelope text-xl" style="color: var(--icon-color)"></i>
               </div>
               <div>
                 <p class="text-sm text-gray-500 dark:text-gray-400">Email us at</p>
@@ -1432,8 +1483,8 @@
 
             <!-- Social Media -->
             <div class="flex items-center bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm px-6 py-3 rounded-lg shadow-sm hover:shadow-md transition-all">
-              <div class="mr-4 p-2 bg-purple-100 dark:bg-purple-900/50 rounded-full">
-                <i class="fas fa-hashtag text-purple-600 dark:text-purple-400 text-xl"></i>
+              <div class="mr-4 p-2 rounded-full" style="background-color: var(--icon-bg)">
+                <i class="fas fa-hashtag text-xl" style="color: var(--icon-color)"></i>
               </div>
               <div>
                 <p class="text-sm text-gray-500 dark:text-gray-400">Connect with us</p>
